@@ -11,17 +11,38 @@ REPO="${GITHUB_REPOSITORY:-messinaalex3/CS-Tradeup-Calc}"
 create_issue() {
   local title="$1"
   local body="$2"
-  local labels="$3"
+  local labels="${3:-}"
+
+  # Skip if an issue with this exact title already exists (prevents duplicates on re-run)
+  local existing
+  existing=$(gh issue list \
+    --repo "$REPO" \
+    --state all \
+    --limit 200 \
+    --json title \
+    --jq '.[].title' 2>/dev/null || true)
+  if printf '%s\n' "$existing" | grep -qxF "$title"; then
+    echo "Skipping (already exists): $title"
+    return 0
+  fi
+
   echo "Creating: $title"
-  gh issue create \
-    --repo "$REPO" \
-    --title "$title" \
-    --body "$body" \
-    --label "$labels" 2>/dev/null || \
-  gh issue create \
-    --repo "$REPO" \
-    --title "$title" \
-    --body "$body"
+  if [[ -n "$labels" ]]; then
+    gh issue create \
+      --repo "$REPO" \
+      --title "$title" \
+      --body "$body" \
+      --label "$labels" 2>/dev/null || \
+    gh issue create \
+      --repo "$REPO" \
+      --title "$title" \
+      --body "$body"
+  else
+    gh issue create \
+      --repo "$REPO" \
+      --title "$title" \
+      --body "$body"
+  fi
 }
 
 # ─────────────────────────────────────────────
