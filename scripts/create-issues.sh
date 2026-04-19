@@ -417,7 +417,7 @@ GET https://steamcommunity.com/market/priceoverview/?currency=1&appid=730&market
 \`\`\`
 Response:
 \`\`\`json
-{ \"success\": true, \"lowest_price\": \"$12.34\", \"volume\": \"142\", \"median_price\": \"$12.10\" }
+{ \"success\": true, \"lowest_price\": \"\$12.34\", \"volume\": \"142\", \"median_price\": \"\$12.10\" }
 \`\`\`
 
 ## Tasks
