@@ -31,10 +31,18 @@ VALID_RARITIES = {
 }
 
 
-def fetch_json(url):
+def fetch_json(url: str) -> list:
+    """Fetch JSON from URL, raising a clear error on failure."""
     print(f"Fetching {url}...")
-    with urllib.request.urlopen(url, timeout=60) as resp:
-        data = resp.read().decode("utf-8")
+    try:
+        with urllib.request.urlopen(url, timeout=60) as resp:  # noqa: S310
+            data = resp.read().decode("utf-8")
+    except Exception as exc:
+        raise SystemExit(
+            f"ERROR: Failed to fetch {url}\n"
+            f"  {exc}\n"
+            "Please check your network connectivity and try again."
+        ) from exc
     return json.loads(data)
 
 
@@ -226,7 +234,7 @@ def main():
     lines.append("")
     lines.append("export const SKINS: Skin[] = [")
 
-    skins_by_coll: dict[str, list] = {}
+    skins_by_coll: dict[str, list[dict]] = {}
     for sk in out_skins:
         skins_by_coll.setdefault(sk["collectionId"], []).append(sk)
 
