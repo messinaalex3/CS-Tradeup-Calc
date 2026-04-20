@@ -106,7 +106,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ssg-08-slashed",
@@ -117,7 +117,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.15,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "dual-berettas-retribution",
@@ -128,7 +128,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.45,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "galil-ar-kami",
@@ -139,7 +139,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p90-desert-warfare",
@@ -150,7 +150,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "cz75-auto-poison-dart",
@@ -161,7 +161,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "cz75-auto-twist",
@@ -172,7 +172,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p90-module",
@@ -183,7 +183,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.35,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p2000-pulse",
@@ -194,7 +194,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "aug-torque",
@@ -205,7 +205,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "pp-bizon-antique",
@@ -216,7 +216,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mac-10-curse",
@@ -227,7 +227,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "xm1014-heaven-guard",
@@ -238,7 +238,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.03,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mac-10-tatter",
@@ -249,7 +249,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m4a1-s-atomic-alloy",
@@ -260,7 +260,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.9,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "scar-20-cyrex",
@@ -271,7 +271,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "usp-s-orion",
@@ -282,7 +282,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "usp-s-caiman",
@@ -293,7 +293,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.4,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ak-47-vulcan",
@@ -304,7 +304,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 0.9,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m4a4-desert-strike",
@@ -315,7 +315,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   // ─── The Arms Deal Collection ───
   {
@@ -327,7 +327,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.1,
     maxFloat: 0.26,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "aug-wings",
@@ -338,7 +338,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.14,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "sg-553-ultraviolet",
@@ -349,7 +349,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "glock-18-dragon-tattoo",
@@ -360,7 +360,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.08,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "usp-s-dark-water",
@@ -371,7 +371,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.1,
     maxFloat: 0.26,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m4a1-s-dark-water",
@@ -382,7 +382,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.1,
     maxFloat: 0.26,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ak-47-case-hardened",
@@ -393,7 +393,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "desert-eagle-hypnotic",
@@ -404,7 +404,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.08,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "awp-lightning-strike",
@@ -415,7 +415,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 0.08,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   // ─── The eSports 2013 Collection ───
   {
@@ -427,7 +427,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mag-7-memento",
@@ -438,7 +438,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.02,
     maxFloat: 0.18,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "famas-doomkitty",
@@ -449,7 +449,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.08,
     maxFloat: 0.22,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "galil-ar-orange-ddpat",
@@ -460,7 +460,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "sawed-off-orange-ddpat",
@@ -471,7 +471,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p250-splash",
@@ -482,7 +482,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.06,
     maxFloat: 0.18,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ak-47-red-laminate",
@@ -493,7 +493,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "awp-boom",
@@ -504,7 +504,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.06,
     maxFloat: 0.28,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p90-death-by-kitty",
@@ -515,7 +515,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.08,
     maxFloat: 0.32,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   // ─── The Bravo Collection ───
   {
@@ -527,7 +527,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "dual-berettas-black-limba",
@@ -538,7 +538,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "nova-tempest",
@@ -549,7 +549,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.06,
     maxFloat: 0.22,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "galil-ar-shattered",
@@ -560,7 +560,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ump-45-bone-pile",
@@ -571,7 +571,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.06,
     maxFloat: 0.34,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "g3sg1-demeter",
@@ -582,7 +582,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "usp-s-overgrowth",
@@ -593,7 +593,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m4a4-zirka",
@@ -604,7 +604,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.06,
     maxFloat: 0.42,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mac-10-graven",
@@ -615,7 +615,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m4a1-s-bright-water",
@@ -626,7 +626,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.1,
     maxFloat: 0.22,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p90-emerald-dragon",
@@ -637,7 +637,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.06,
     maxFloat: 0.52,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p2000-ocean-foam",
@@ -648,7 +648,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.12,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "awp-graphite",
@@ -659,7 +659,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.12,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ak-47-fire-serpent",
@@ -670,7 +670,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.06,
     maxFloat: 0.76,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "desert-eagle-golden-koi",
@@ -681,7 +681,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 0.12,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   // ─── The Arms Deal 2 Collection ───
   {
@@ -693,7 +693,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.04,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m4a1-s-blood-tiger",
@@ -704,7 +704,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.3,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "famas-hexane",
@@ -715,7 +715,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.4,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p250-hive",
@@ -726,7 +726,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.3,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "scar-20-crimson-web",
@@ -737,7 +737,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "five-seven-case-hardened",
@@ -748,7 +748,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp9-hypnotic",
@@ -759,7 +759,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.08,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "nova-graphite",
@@ -770,7 +770,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.12,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "dual-berettas-hemoglobin",
@@ -781,7 +781,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.2,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p90-cold-blooded",
@@ -792,7 +792,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.08,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "usp-s-serum",
@@ -803,7 +803,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.25,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ssg-08-blood-in-the-water",
@@ -814,7 +814,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.06,
     maxFloat: 0.2,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   // ─── The eSports 2013 Winter Collection ───
   {
@@ -826,7 +826,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.04,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "five-seven-nightshade",
@@ -837,7 +837,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "pp-bizon-water-sigil",
@@ -848,7 +848,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "nova-ghost-camo",
@@ -859,7 +859,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.4,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "g3sg1-azure-zebra",
@@ -870,7 +870,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.28,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p250-steel-disruption",
@@ -881,7 +881,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.2,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ak-47-blue-laminate",
@@ -892,7 +892,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.02,
     maxFloat: 0.4,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p90-blind-spot",
@@ -903,7 +903,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "famas-afterimage",
@@ -914,7 +914,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.02,
     maxFloat: 0.4,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "awp-electric-hive",
@@ -925,7 +925,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.4,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "desert-eagle-cobalt-disruption",
@@ -936,7 +936,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.2,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m4a4-x-ray",
@@ -947,7 +947,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 0.3,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   // ─── The Winter Offensive Collection ───
   {
@@ -959,7 +959,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.1,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "five-seven-kami",
@@ -970,7 +970,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.3,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m249-magma",
@@ -981,7 +981,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "pp-bizon-cobalt-halftone",
@@ -992,7 +992,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.05,
     maxFloat: 0.45,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "famas-pulse",
@@ -1003,7 +1003,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.4,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "dual-berettas-marina",
@@ -1014,7 +1014,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.05,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp9-rose-iron",
@@ -1025,7 +1025,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.3,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "nova-rising-skull",
@@ -1036,7 +1036,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m4a1-s-guardian",
@@ -1047,7 +1047,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p250-mehndi",
@@ -1058,7 +1058,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "awp-redline",
@@ -1069,7 +1069,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.1,
     maxFloat: 0.4,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m4a4-asiimov",
@@ -1080,7 +1080,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.18,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "sawed-off-the-kraken",
@@ -1091,7 +1091,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 0.4,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   // ─── The Arms Deal 3 Collection ───
   {
@@ -1103,7 +1103,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p2000-red-fragcam",
@@ -1114,7 +1114,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "dual-berettas-panther",
@@ -1125,7 +1125,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.58,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "usp-s-stainless",
@@ -1136,7 +1136,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "glock-18-blue-fissure",
@@ -1147,7 +1147,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.06,
     maxFloat: 0.58,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "cz75-auto-tread-plate",
@@ -1158,7 +1158,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.2,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "tec-9-titanium-bit",
@@ -1169,7 +1169,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.2,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "desert-eagle-heirloom",
@@ -1180,7 +1180,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "five-seven-copper-galaxy",
@@ -1191,7 +1191,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.2,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "cz75-auto-the-fuschia-is-now",
@@ -1202,7 +1202,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.4,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p250-undertow",
@@ -1213,7 +1213,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.2,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "cz75-auto-victoria",
@@ -1224,7 +1224,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 0.75,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   // ─── The Phoenix Collection ───
   {
@@ -1236,7 +1236,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.05,
     maxFloat: 0.75,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "negev-terrain",
@@ -1247,7 +1247,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.45,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "tec-9-sandstorm",
@@ -1258,7 +1258,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.1,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mag-7-heaven-guard",
@@ -1269,7 +1269,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.4,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mac-10-heat",
@@ -1280,7 +1280,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "sg-553-pulse",
@@ -1291,7 +1291,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.1,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "famas-sergeant",
@@ -1302,7 +1302,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.1,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "usp-s-guardian",
@@ -1313,7 +1313,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.38,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ak-47-redline",
@@ -1324,7 +1324,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.1,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p90-trigon",
@@ -1335,7 +1335,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.08,
     maxFloat: 0.75,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "nova-antique",
@@ -1346,7 +1346,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.3,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "awp-asiimov",
@@ -1357,7 +1357,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.18,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "aug-chameleon",
@@ -1368,7 +1368,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   // ─── The Breakout Collection ───
   {
@@ -1380,7 +1380,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "negev-desert-strike",
@@ -1391,7 +1391,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p2000-ivory",
@@ -1402,7 +1402,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ssg-08-abyss",
@@ -1413,7 +1413,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ump-45-labyrinth",
@@ -1424,7 +1424,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.4,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "pp-bizon-osiris",
@@ -1435,7 +1435,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "cz75-auto-tigris",
@@ -1446,7 +1446,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "nova-koi",
@@ -1457,7 +1457,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.3,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p250-supernova",
@@ -1468,7 +1468,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.4,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "desert-eagle-conspiracy",
@@ -1479,7 +1479,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.3,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "five-seven-fowl-play",
@@ -1490,7 +1490,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "glock-18-water-elemental",
@@ -1501,7 +1501,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p90-asiimov",
@@ -1512,7 +1512,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 0.92,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m4a1-s-cyrex",
@@ -1523,7 +1523,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   // ─── The eSports 2014 Summer Collection ───
   {
@@ -1535,7 +1535,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.1,
     maxFloat: 0.26,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mac-10-ultraviolet",
@@ -1546,7 +1546,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "usp-s-blood-tiger",
@@ -1557,7 +1557,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.3,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "cz75-auto-hexane",
@@ -1568,7 +1568,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.4,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "negev-bratatat",
@@ -1579,7 +1579,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "xm1014-red-python",
@@ -1590,7 +1590,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.08,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "pp-bizon-blue-streak",
@@ -1601,7 +1601,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p90-virus",
@@ -1612,7 +1612,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp7-ocean-foam",
@@ -1623,7 +1623,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.08,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "glock-18-steel-disruption",
@@ -1634,7 +1634,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.2,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "desert-eagle-crimson-web",
@@ -1645,7 +1645,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "aug-bengal-tiger",
@@ -1656,7 +1656,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "nova-bloomstick",
@@ -1667,7 +1667,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "awp-corticera",
@@ -1678,7 +1678,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.06,
     maxFloat: 0.3,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p2000-corticera",
@@ -1689,7 +1689,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.06,
     maxFloat: 0.3,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m4a4-bullet-rain",
@@ -1700,7 +1700,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.02,
     maxFloat: 0.46,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ak-47-jaguar",
@@ -1711,7 +1711,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   // ─── The Vanguard Collection ───
   {
@@ -1723,7 +1723,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.25,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mag-7-firestarter",
@@ -1734,7 +1734,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.06,
     maxFloat: 0.49,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp9-dart",
@@ -1745,7 +1745,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.46,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "five-seven-urban-hazard",
@@ -1756,7 +1756,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.25,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ump-45-delusion",
@@ -1767,7 +1767,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.06,
     maxFloat: 0.35,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "glock-18-grinder",
@@ -1778,7 +1778,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.02,
     maxFloat: 0.25,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m4a1-s-basilisk",
@@ -1789,7 +1789,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.68,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m4a4-griffin",
@@ -1800,7 +1800,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "sawed-off-highwayman",
@@ -1811,7 +1811,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p250-cartel",
@@ -1822,7 +1822,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.75,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "scar-20-cardiac",
@@ -1833,7 +1833,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "xm1014-tranquility",
@@ -1844,7 +1844,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ak-47-wasteland-rebel",
@@ -1855,7 +1855,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.05,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p2000-fire-elemental",
@@ -1866,7 +1866,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   // ─── The Chroma Collection ───
   {
@@ -1878,7 +1878,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m249-system-lock",
@@ -1889,7 +1889,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp9-deadly-poison",
@@ -1900,7 +1900,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "scar-20-grotto",
@@ -1911,7 +1911,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "xm1014-quicksilver",
@@ -1922,7 +1922,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "dual-berettas-urban-shock",
@@ -1933,7 +1933,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.47,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "desert-eagle-naga",
@@ -1944,7 +1944,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mac-10-malachite",
@@ -1955,7 +1955,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "sawed-off-serenity",
@@ -1966,7 +1966,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ak-47-cartel",
@@ -1977,7 +1977,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.75,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m4a4-dragon-king",
@@ -1988,7 +1988,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.75,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p250-muertos",
@@ -1999,7 +1999,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "awp-man-o-war",
@@ -2010,7 +2010,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.1,
     maxFloat: 0.2,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "galil-ar-chatterbox",
@@ -2021,7 +2021,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.35,
     maxFloat: 0.85,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   // ─── The Chroma 2 Collection ───
   {
@@ -2033,7 +2033,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp7-armor-core",
@@ -2044,7 +2044,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "desert-eagle-bronze-deco",
@@ -2055,7 +2055,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.46,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p250-valence",
@@ -2066,7 +2066,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "negev-man-o-war",
@@ -2077,7 +2077,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.1,
     maxFloat: 0.2,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "sawed-off-origami",
@@ -2088,7 +2088,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.55,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "awp-worm-god",
@@ -2099,7 +2099,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.45,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mag-7-heat",
@@ -2110,7 +2110,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "cz75-auto-pole-position",
@@ -2121,7 +2121,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ump-45-grand-prix",
@@ -2132,7 +2132,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.25,
     maxFloat: 0.35,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "five-seven-monkey-business",
@@ -2143,7 +2143,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.1,
     maxFloat: 0.9,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "galil-ar-eco",
@@ -2154,7 +2154,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.1,
     maxFloat: 0.85,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "famas-djinn",
@@ -2165,7 +2165,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m4a1-s-hyper-beast",
@@ -2176,7 +2176,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mac-10-neon-rider",
@@ -2187,7 +2187,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 0.45,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   // ─── The Dust Collection ───
   {
@@ -2199,7 +2199,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "scar-20-palm",
@@ -2210,7 +2210,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ak-47-predator",
@@ -2221,7 +2221,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "aug-copperhead",
@@ -2232,7 +2232,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.12,
     maxFloat: 0.38,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "awp-snake-camo",
@@ -2243,7 +2243,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "sawed-off-copper",
@@ -2254,7 +2254,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "desert-eagle-blaze",
@@ -2265,7 +2265,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.08,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p2000-scorpion",
@@ -2276,7 +2276,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.08,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "glock-18-brass",
@@ -2287,7 +2287,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   // ─── The Aztec Collection ───
   {
@@ -2299,7 +2299,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ssg-08-lichen-dashed",
@@ -2310,7 +2310,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "five-seven-jungle",
@@ -2321,7 +2321,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m4a4-jungle-tiger",
@@ -2332,7 +2332,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ak-47-jungle-spray",
@@ -2343,7 +2343,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "tec-9-ossified",
@@ -2354,7 +2354,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.08,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   // ─── The Vertigo Collection ───
   {
@@ -2366,7 +2366,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "xm1014-urban-perforated",
@@ -2377,7 +2377,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "pp-bizon-carbon-fiber",
@@ -2388,7 +2388,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.12,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p90-glacier-mesh",
@@ -2399,7 +2399,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ak-47-black-laminate",
@@ -2410,7 +2410,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "dual-berettas-demolition",
@@ -2421,7 +2421,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.26,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   // ─── The Inferno Collection ───
   {
@@ -2433,7 +2433,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "nova-walnut",
@@ -2444,7 +2444,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p250-gunsmoke",
@@ -2455,7 +2455,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m4a4-tornado",
@@ -2466,7 +2466,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "dual-berettas-anodized-navy",
@@ -2477,7 +2477,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.08,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "tec-9-brass",
@@ -2488,7 +2488,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   // ─── The Militia Collection ───
   {
@@ -2500,7 +2500,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "xm1014-grassland",
@@ -2511,7 +2511,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mac-10-tornado",
@@ -2522,7 +2522,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p2000-grassland-leaves",
@@ -2533,7 +2533,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "pp-bizon-modern-hunter",
@@ -2544,7 +2544,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "nova-modern-hunter",
@@ -2555,7 +2555,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p250-modern-hunter",
@@ -2566,7 +2566,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "nova-blaze-orange",
@@ -2577,7 +2577,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "xm1014-blaze-orange",
@@ -2588,7 +2588,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m4a4-modern-hunter",
@@ -2599,7 +2599,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "scar-20-splash-jam",
@@ -2610,7 +2610,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   // ─── The Nuke Collection ───
   {
@@ -2622,7 +2622,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mag-7-irradiated-alert",
@@ -2633,7 +2633,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "sawed-off-irradiated-alert",
@@ -2644,7 +2644,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p90-fallout-warning",
@@ -2655,7 +2655,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ump-45-fallout-warning",
@@ -2666,7 +2666,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "xm1014-fallout-warning",
@@ -2677,7 +2677,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m4a4-radiation-hazard",
@@ -2688,7 +2688,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p250-nuclear-threat",
@@ -2699,7 +2699,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "tec-9-nuclear-threat",
@@ -2710,7 +2710,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   // ─── The Office Collection ───
   {
@@ -2722,7 +2722,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "g3sg1-arctic-camo",
@@ -2733,7 +2733,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m249-blizzard-marbleized",
@@ -2744,7 +2744,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "galil-ar-winter-forest",
@@ -2755,7 +2755,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p2000-silver",
@@ -2766,7 +2766,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.08,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp7-whiteout",
@@ -2777,7 +2777,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   // ─── The Assault Collection ───
   {
@@ -2789,7 +2789,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "sg-553-tornado",
@@ -2800,7 +2800,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "five-seven-candy-apple",
@@ -2811,7 +2811,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.3,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "negev-anodized-navy",
@@ -2822,7 +2822,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.08,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "aug-hot-rod",
@@ -2833,7 +2833,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.08,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "glock-18-fade",
@@ -2844,7 +2844,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.08,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp9-bulldozer",
@@ -2855,7 +2855,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   // ─── The Alpha Collection ───
   {
@@ -2867,7 +2867,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m249-jungle-ddpat",
@@ -2878,7 +2878,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "xm1014-jungle",
@@ -2889,7 +2889,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "tec-9-tornado",
@@ -2900,7 +2900,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp7-groundwater",
@@ -2911,7 +2911,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "five-seven-anodized-gunmetal",
@@ -2922,7 +2922,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.08,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ssg-08-mayan-dreams",
@@ -2933,7 +2933,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "negev-palm",
@@ -2944,7 +2944,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "sawed-off-mosaico",
@@ -2955,7 +2955,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p250-facets",
@@ -2966,7 +2966,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "glock-18-sand-dune",
@@ -2977,7 +2977,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "aug-anodized-navy",
@@ -2988,7 +2988,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.08,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mag-7-hazard",
@@ -2999,7 +2999,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "pp-bizon-rust-coat",
@@ -3010,7 +3010,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "famas-spitfire",
@@ -3021,7 +3021,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "scar-20-emerald",
@@ -3032,7 +3032,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.08,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   // ─── The Dust 2 Collection ───
   {
@@ -3044,7 +3044,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p250-sand-dune",
@@ -3055,7 +3055,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "scar-20-sand-mesh",
@@ -3066,7 +3066,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p90-sand-spray",
@@ -3077,7 +3077,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp9-sand-dashed",
@@ -3088,7 +3088,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "nova-predator",
@@ -3099,7 +3099,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "sawed-off-snake-camo",
@@ -3110,7 +3110,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ak-47-safari-mesh",
@@ -3121,7 +3121,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "five-seven-orange-peel",
@@ -3132,7 +3132,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mac-10-palm",
@@ -3143,7 +3143,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "tec-9-varicamo",
@@ -3154,7 +3154,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "pp-bizon-brass",
@@ -3165,7 +3165,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m4a1-s-varicamo",
@@ -3176,7 +3176,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "sg-553-damascus-steel",
@@ -3187,7 +3187,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p2000-amber-fade",
@@ -3198,7 +3198,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.4,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "r8-revolver-amber-fade",
@@ -3209,7 +3209,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.4,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   // ─── The Train Collection ───
   {
@@ -3221,7 +3221,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "dual-berettas-colony",
@@ -3232,7 +3232,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "g3sg1-polar-camo",
@@ -3243,7 +3243,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "five-seven-forest-night",
@@ -3254,7 +3254,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "nova-polar-mesh",
@@ -3265,7 +3265,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "pp-bizon-urban-dashed",
@@ -3276,7 +3276,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mac-10-candy-apple",
@@ -3287,7 +3287,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.3,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m4a4-urban-ddpat",
@@ -3298,7 +3298,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mag-7-metallic-ddpat",
@@ -3309,7 +3309,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.08,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p250-metallic-ddpat",
@@ -3320,7 +3320,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.08,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "scar-20-carbon-fiber",
@@ -3331,7 +3331,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.12,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p90-ash-wood",
@@ -3342,7 +3342,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.45,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "desert-eagle-urban-rubble",
@@ -3353,7 +3353,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "sawed-off-amber-fade",
@@ -3364,7 +3364,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.4,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "tec-9-red-quartz",
@@ -3375,7 +3375,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.4,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   // ─── The Mirage Collection ───
   {
@@ -3387,7 +3387,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "five-seven-contractor",
@@ -3398,7 +3398,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "aug-colony",
@@ -3409,7 +3409,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "g3sg1-safari-mesh",
@@ -3420,7 +3420,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p90-scorched",
@@ -3431,7 +3431,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "galil-ar-hunting-blind",
@@ -3442,7 +3442,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "glock-18-groundwater",
@@ -3453,7 +3453,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp7-orange-peel",
@@ -3464,7 +3464,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ssg-08-tropical-storm",
@@ -3475,7 +3475,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "negev-calicamo",
@@ -3486,7 +3486,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "sg-553-gator-mesh",
@@ -3497,7 +3497,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp9-hot-rod",
@@ -3508,7 +3508,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.08,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ump-45-blaze",
@@ -3519,7 +3519,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.08,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mac-10-amber-fade",
@@ -3530,7 +3530,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.4,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mag-7-bulldozer",
@@ -3541,7 +3541,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   // ─── The Italy Collection ───
   {
@@ -3553,7 +3553,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "aug-contractor",
@@ -3564,7 +3564,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "famas-colony",
@@ -3575,7 +3575,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "nova-sand-dune",
@@ -3586,7 +3586,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "pp-bizon-sand-dashed",
@@ -3597,7 +3597,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "nova-candy-apple",
@@ -3608,7 +3608,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.3,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ump-45-gunsmoke",
@@ -3619,7 +3619,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p2000-granite-marbleized",
@@ -3630,7 +3630,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "dual-berettas-stained",
@@ -3641,7 +3641,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m4a1-s-boreal-forest",
@@ -3652,7 +3652,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "xm1014-calicamo",
@@ -3663,7 +3663,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "glock-18-candy-apple",
@@ -3674,7 +3674,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.3,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp7-anodized-navy",
@@ -3685,7 +3685,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.08,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "sawed-off-full-stop",
@@ -3696,7 +3696,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "awp-pit-viper",
@@ -3707,7 +3707,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.08,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   // ─── The Lake Collection ───
   {
@@ -3719,7 +3719,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "xm1014-blue-spruce",
@@ -3730,7 +3730,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "aug-storm",
@@ -3741,7 +3741,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "galil-ar-sage-spray",
@@ -3752,7 +3752,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "sg-553-waves-perforated",
@@ -3763,7 +3763,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "g3sg1-jungle-dashed",
@@ -3774,7 +3774,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "xm1014-blue-steel",
@@ -3785,7 +3785,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "awp-safari-mesh",
@@ -3796,7 +3796,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "desert-eagle-mudder",
@@ -3807,7 +3807,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "famas-cyanospatter",
@@ -3818,7 +3818,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "pp-bizon-night-ops",
@@ -3829,7 +3829,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "sg-553-anodized-navy",
@@ -3840,7 +3840,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.08,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "usp-s-night-ops",
@@ -3851,7 +3851,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p90-teardown",
@@ -3862,7 +3862,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "dual-berettas-cobalt-quartz",
@@ -3873,7 +3873,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.4,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   // ─── The Safehouse Collection ───
   {
@@ -3885,7 +3885,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "scar-20-contractor",
@@ -3896,7 +3896,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ssg-08-blue-spruce",
@@ -3907,7 +3907,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "tec-9-army-mesh",
@@ -3918,7 +3918,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp7-army-recon",
@@ -3929,7 +3929,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "usp-s-forest-leaves",
@@ -3940,7 +3940,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "aug-condemned",
@@ -3951,7 +3951,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp9-orange-peel",
@@ -3962,7 +3962,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "g3sg1-varicamo",
@@ -3973,7 +3973,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "galil-ar-varicamo",
@@ -3984,7 +3984,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m249-gator-mesh",
@@ -3995,7 +3995,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "famas-teardown",
@@ -4006,7 +4006,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "five-seven-silver-quartz",
@@ -4017,7 +4017,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.4,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ssg-08-acid-fade",
@@ -4028,7 +4028,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.03,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m4a1-s-nitro",
@@ -4039,7 +4039,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   // ─── The Bank Collection ───
   {
@@ -4051,7 +4051,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "sawed-off-forest-ddpat",
@@ -4062,7 +4062,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "tec-9-urban-ddpat",
@@ -4073,7 +4073,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "r8-revolver-bone-mask",
@@ -4084,7 +4084,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "negev-army-sheen",
@@ -4095,7 +4095,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.3,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "sg-553-army-sheen",
@@ -4106,7 +4106,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.3,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mac-10-silver",
@@ -4117,7 +4117,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.08,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ump-45-carbon-fiber",
@@ -4128,7 +4128,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.12,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "glock-18-death-rattle",
@@ -4139,7 +4139,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.08,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "g3sg1-green-apple",
@@ -4150,7 +4150,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.3,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "nova-caged-steel",
@@ -4161,7 +4161,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.2,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "desert-eagle-meteorite",
@@ -4172,7 +4172,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.18,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "galil-ar-tuxedo",
@@ -4183,7 +4183,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "cz75-auto-tuxedo",
@@ -4194,7 +4194,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ak-47-emerald-pinstripe",
@@ -4205,7 +4205,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p250-franklin",
@@ -4216,7 +4216,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.4,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   // ─── The Overpass Collection ───
   {
@@ -4228,7 +4228,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mag-7-storm",
@@ -4239,7 +4239,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp9-storm",
@@ -4250,7 +4250,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "sawed-off-sage-spray",
@@ -4261,7 +4261,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ump-45-scorched",
@@ -4272,7 +4272,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp7-gunsmoke",
@@ -4283,7 +4283,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "desert-eagle-urban-ddpat",
@@ -4294,7 +4294,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "glock-18-night",
@@ -4305,7 +4305,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p2000-grassland",
@@ -4316,7 +4316,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "xm1014-varicamo-blue",
@@ -4327,7 +4327,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ssg-08-detour",
@@ -4338,7 +4338,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.43,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "cz75-auto-nitro",
@@ -4349,7 +4349,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "awp-pink-ddpat",
@@ -4360,7 +4360,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "usp-s-road-rash",
@@ -4371,7 +4371,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m4a1-s-master-piece",
@@ -4382,7 +4382,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   // ─── The Cobblestone Collection ───
   {
@@ -4394,7 +4394,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "scar-20-storm",
@@ -4405,7 +4405,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "dual-berettas-briar",
@@ -4416,7 +4416,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.22,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mac-10-indigo",
@@ -4427,7 +4427,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ump-45-indigo",
@@ -4438,7 +4438,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mag-7-silver",
@@ -4449,7 +4449,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.08,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "nova-green-apple",
@@ -4460,7 +4460,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.3,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "sawed-off-rust-coat",
@@ -4471,7 +4471,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "usp-s-royal-blue",
@@ -4482,7 +4482,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p2000-chainmail",
@@ -4493,7 +4493,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.22,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp9-dark-age",
@@ -4504,7 +4504,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.22,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "cz75-auto-chalice",
@@ -4515,7 +4515,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.1,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "desert-eagle-hand-cannon",
@@ -4526,7 +4526,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.01,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m4a1-s-knight",
@@ -4537,7 +4537,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.1,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "awp-dragon-lore",
@@ -4548,7 +4548,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   // ─── The Baggage Collection ───
   {
@@ -4560,7 +4560,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ssg-08-sand-dune",
@@ -4571,7 +4571,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp7-olive-plaid",
@@ -4582,7 +4582,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.58,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp9-green-plaid",
@@ -4593,7 +4593,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.58,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "cz75-auto-green-plaid",
@@ -4604,7 +4604,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.58,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p90-leather",
@@ -4615,7 +4615,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mac-10-commuter",
@@ -4626,7 +4626,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p2000-coach-class",
@@ -4637,7 +4637,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "sg-553-traveler",
@@ -4648,7 +4648,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "sawed-off-first-class",
@@ -4659,7 +4659,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "xm1014-red-leather",
@@ -4670,7 +4670,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.56,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "usp-s-business-class",
@@ -4681,7 +4681,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ak-47-first-class",
@@ -4692,7 +4692,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "desert-eagle-pilot",
@@ -4703,7 +4703,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ak-47-jet-set",
@@ -4714,7 +4714,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   // ─── The Cache Collection ───
   {
@@ -4726,7 +4726,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.4,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p250-contamination",
@@ -4737,7 +4737,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.83,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "aug-radiation-hazard",
@@ -4748,7 +4748,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.55,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "pp-bizon-chemical-green",
@@ -4759,7 +4759,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.9,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "five-seven-hot-shot",
@@ -4770,7 +4770,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "sg-553-fallout-warning",
@@ -4781,7 +4781,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "glock-18-reactor",
@@ -4792,7 +4792,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp9-setting-sun",
@@ -4803,7 +4803,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "xm1014-bone-machine",
@@ -4814,7 +4814,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mac-10-nuclear-garden",
@@ -4825,7 +4825,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "tec-9-toxic",
@@ -4836,7 +4836,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "famas-styx",
@@ -4847,7 +4847,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "galil-ar-cerberus",
@@ -4858,7 +4858,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.9,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   // ─── The Gods and Monsters Collection ───
   {
@@ -4870,7 +4870,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.55,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "aug-daedalus",
@@ -4881,7 +4881,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.55,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "dual-berettas-moon-in-libra",
@@ -4892,7 +4892,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "nova-moon-in-libra",
@@ -4903,7 +4903,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "tec-9-hades",
@@ -4914,7 +4914,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p2000-pathfinder",
@@ -4925,7 +4925,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.35,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "awp-sun-in-leo",
@@ -4936,7 +4936,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m249-shipping-forecast",
@@ -4947,7 +4947,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ump-45-minotaur-s-labyrinth",
@@ -4958,7 +4958,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.39,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp9-pandora-s-box",
@@ -4969,7 +4969,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.3,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "g3sg1-chronos",
@@ -4980,7 +4980,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.4,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m4a1-s-icarus-fell",
@@ -4991,7 +4991,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.1,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m4a4-poseidon",
@@ -5002,7 +5002,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.33,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "awp-medusa",
@@ -5013,7 +5013,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   // ─── The Chop Shop Collection ───
   {
@@ -5025,7 +5025,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.3,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "cz75-auto-army-sheen",
@@ -5036,7 +5036,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.3,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m249-impact-drill",
@@ -5047,7 +5047,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mag-7-seabird",
@@ -5058,7 +5058,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "desert-eagle-night",
@@ -5069,7 +5069,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "galil-ar-urban-rubble",
@@ -5080,7 +5080,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "usp-s-para-green",
@@ -5091,7 +5091,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mac-10-fade",
@@ -5102,7 +5102,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.08,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p250-whiteout",
@@ -5113,7 +5113,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp7-full-stop",
@@ -5124,7 +5124,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "five-seven-nitro",
@@ -5135,7 +5135,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "cz75-auto-emerald",
@@ -5146,7 +5146,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.08,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "sg-553-bulldozer",
@@ -5157,7 +5157,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "dual-berettas-duelist",
@@ -5168,7 +5168,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "glock-18-twilight-galaxy",
@@ -5179,7 +5179,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.2,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m4a1-s-hot-rod",
@@ -5190,7 +5190,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.08,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   // ─── The Rising Sun Collection ───
   {
@@ -5202,7 +5202,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "sawed-off-bamboo-shadow",
@@ -5213,7 +5213,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "tec-9-bamboo-forest",
@@ -5224,7 +5224,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "g3sg1-orange-kimono",
@@ -5235,7 +5235,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p250-mint-kimono",
@@ -5246,7 +5246,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p250-crimson-kimono",
@@ -5257,7 +5257,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "desert-eagle-midnight-storm",
@@ -5268,7 +5268,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.75,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "galil-ar-aqua-terrace",
@@ -5279,7 +5279,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mag-7-counter-terrace",
@@ -5290,7 +5290,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.65,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "tec-9-terrace",
@@ -5301,7 +5301,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "five-seven-neon-kimono",
@@ -5312,7 +5312,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "desert-eagle-sunset-storm",
@@ -5323,7 +5323,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.75,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "desert-eagle-sunset-storm-rising-sun",
@@ -5334,7 +5334,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.75,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m4a4-daybreak",
@@ -5345,7 +5345,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ak-47-hydroponic",
@@ -5356,7 +5356,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "aug-akihabara-accept",
@@ -5367,7 +5367,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   // ─── The Falchion Collection ───
   {
@@ -5379,7 +5379,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "glock-18-bunsen-burner",
@@ -5390,7 +5390,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "nova-ranger",
@@ -5401,7 +5401,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p90-elite-build",
@@ -5412,7 +5412,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ump-45-riot",
@@ -5423,7 +5423,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "usp-s-torque",
@@ -5434,7 +5434,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.46,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "famas-neural-net",
@@ -5445,7 +5445,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m4a4-evil-daimyo",
@@ -5456,7 +5456,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.52,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp9-ruby-poison-dart",
@@ -5467,7 +5467,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "negev-loudmouth",
@@ -5478,7 +5478,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.14,
     maxFloat: 0.65,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p2000-handgun",
@@ -5489,7 +5489,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "cz75-auto-yellow-jacket",
@@ -5500,7 +5500,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp7-nemesis",
@@ -5511,7 +5511,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.32,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "sg-553-cyrex",
@@ -5522,7 +5522,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ak-47-aquamarine-revenge",
@@ -5533,7 +5533,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "awp-hyper-beast",
@@ -5544,7 +5544,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   // ─── The Shadow Collection ───
   {
@@ -5556,7 +5556,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "famas-survivor-z",
@@ -5567,7 +5567,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "glock-18-wraiths",
@@ -5578,7 +5578,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mac-10-rangeen",
@@ -5589,7 +5589,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mag-7-cobalt-core",
@@ -5600,7 +5600,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "scar-20-green-marine",
@@ -5611,7 +5611,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "xm1014-scumbria",
@@ -5622,7 +5622,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "galil-ar-stone-cold",
@@ -5633,7 +5633,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.9,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m249-nebula-crusader",
@@ -5644,7 +5644,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp7-special-delivery",
@@ -5655,7 +5655,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.62,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p250-wingshot",
@@ -5666,7 +5666,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.9,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ak-47-frontside-misty",
@@ -5677,7 +5677,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.02,
     maxFloat: 0.87,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "g3sg1-flux",
@@ -5688,7 +5688,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.9,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ssg-08-big-iron",
@@ -5699,7 +5699,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.64,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m4a1-s-golden-coil",
@@ -5710,7 +5710,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "usp-s-kill-confirmed",
@@ -5721,7 +5721,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   // ─── The Revolver Case Collection ───
   {
@@ -5733,7 +5733,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "aug-ricochet",
@@ -5744,7 +5744,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "desert-eagle-corinthian",
@@ -5755,7 +5755,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.44,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p2000-imperial",
@@ -5766,7 +5766,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.2,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "sawed-off-yorick",
@@ -5777,7 +5777,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "scar-20-outbreak",
@@ -5788,7 +5788,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "pp-bizon-fuel-rod",
@@ -5799,7 +5799,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "five-seven-retrobution",
@@ -5810,7 +5810,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "negev-power-loader",
@@ -5821,7 +5821,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "sg-553-tiger-moth",
@@ -5832,7 +5832,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "tec-9-avalanche",
@@ -5843,7 +5843,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "xm1014-teclu-burner",
@@ -5854,7 +5854,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.65,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ak-47-point-disarray",
@@ -5865,7 +5865,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.67,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "g3sg1-the-executioner",
@@ -5876,7 +5876,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.14,
     maxFloat: 0.85,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p90-shapewood",
@@ -5887,7 +5887,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m4a4-royal-paladin",
@@ -5898,7 +5898,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "r8-revolver-fade",
@@ -5909,7 +5909,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 0.4,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   // ─── The Wildfire Collection ───
   {
@@ -5921,7 +5921,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "dual-berettas-cartel",
@@ -5932,7 +5932,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mac-10-lapis-gator",
@@ -5943,7 +5943,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ssg-08-necropos",
@@ -5954,7 +5954,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "tec-9-jambiya",
@@ -5965,7 +5965,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "usp-s-lead-conduit",
@@ -5976,7 +5976,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "famas-valence",
@@ -5987,7 +5987,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "five-seven-triumvirate",
@@ -5998,7 +5998,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.61,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "glock-18-royal-legion",
@@ -6009,7 +6009,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mag-7-praetorian",
@@ -6020,7 +6020,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.45,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp7-impire",
@@ -6031,7 +6031,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.4,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "awp-elite-build",
@@ -6042,7 +6042,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "desert-eagle-kumicho-dragon",
@@ -6053,7 +6053,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.76,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "nova-hyper-beast",
@@ -6064,7 +6064,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ak-47-fuel-injector",
@@ -6075,7 +6075,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m4a4-the-battlestar",
@@ -6086,7 +6086,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 0.64,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   // ─── The 2018 Nuke Collection ───
   {
@@ -6098,7 +6098,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p250-facility-draft",
@@ -6109,7 +6109,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ump-45-facility-dark",
@@ -6120,7 +6120,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "five-seven-coolant",
@@ -6131,7 +6131,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "nova-mandrel",
@@ -6142,7 +6142,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m4a4-mainframe",
@@ -6153,7 +6153,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp7-motherboard",
@@ -6164,7 +6164,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "negev-bulkhead",
@@ -6175,7 +6175,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "galil-ar-cold-fusion",
@@ -6186,7 +6186,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.83,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p90-facility-negative",
@@ -6197,7 +6197,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp5-sd-co-processor",
@@ -6208,7 +6208,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p250-exchanger",
@@ -6219,7 +6219,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "awp-acheron",
@@ -6230,7 +6230,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.83,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "aug-random-access",
@@ -6241,7 +6241,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mag-7-core-breach",
@@ -6252,7 +6252,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "glock-18-nuclear-garden",
@@ -6263,7 +6263,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "tec-9-remote-control",
@@ -6274,7 +6274,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m4a1-s-control-panel",
@@ -6285,7 +6285,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   // ─── The 2018 Inferno Collection ───
   {
@@ -6297,7 +6297,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp5-sd-dirt-drop",
@@ -6308,7 +6308,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp9-slide",
@@ -6319,7 +6319,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "aug-sweeper",
@@ -6330,7 +6330,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mag-7-rust-coat",
@@ -6341,7 +6341,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "pp-bizon-candy-apple",
@@ -6352,7 +6352,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.3,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mac-10-calf-skin",
@@ -6363,7 +6363,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "r8-revolver-nitro",
@@ -6374,7 +6374,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "glock-18-high-beam",
@@ -6385,7 +6385,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.08,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ssg-08-hand-brake",
@@ -6396,7 +6396,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m4a4-converter",
@@ -6407,7 +6407,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.4,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "usp-s-check-engine",
@@ -6418,7 +6418,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "sawed-off-brake-light",
@@ -6429,7 +6429,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.08,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p250-vino-primo",
@@ -6440,7 +6440,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp7-fade",
@@ -6451,7 +6451,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.25,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ak-47-safety-net",
@@ -6462,7 +6462,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "dual-berettas-twin-turbo",
@@ -6473,7 +6473,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "sg-553-integrale",
@@ -6484,7 +6484,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   // ─── The X-Ray Collection ───
   {
@@ -6496,7 +6496,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.3,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   // ─── The Chroma 3 Collection ───
   {
@@ -6508,7 +6508,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.45,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "g3sg1-orange-crash",
@@ -6519,7 +6519,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.52,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m249-spectre",
@@ -6530,7 +6530,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp9-bioleak",
@@ -6541,7 +6541,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p2000-oceanic",
@@ -6552,7 +6552,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "sawed-off-fubar",
@@ -6563,7 +6563,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.4,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "sg-553-atlas",
@@ -6574,7 +6574,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.81,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "cz75-auto-red-astor",
@@ -6585,7 +6585,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "galil-ar-firefight",
@@ -6596,7 +6596,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ssg-08-ghost-crusader",
@@ -6607,7 +6607,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "tec-9-re-entry",
@@ -6618,7 +6618,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.43,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "xm1014-black-tie",
@@ -6629,7 +6629,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.75,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "aug-fleet-flock",
@@ -6640,7 +6640,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p250-asiimov",
@@ -6651,7 +6651,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.1,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ump-45-primal-saber",
@@ -6662,7 +6662,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.77,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "pp-bizon-judgement-of-anubis",
@@ -6673,7 +6673,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m4a1-s-chantico-s-fire",
@@ -6684,7 +6684,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 0.99,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   // ─── The Gamma Collection ───
   {
@@ -6696,7 +6696,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mac-10-carnivore",
@@ -6707,7 +6707,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "nova-exo",
@@ -6718,7 +6718,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p250-iron-clad",
@@ -6729,7 +6729,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.05,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "pp-bizon-harvester",
@@ -6740,7 +6740,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "sg-553-aerial",
@@ -6751,7 +6751,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "tec-9-ice-cap",
@@ -6762,7 +6762,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "aug-aristocrat",
@@ -6773,7 +6773,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.66,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "awp-phobos",
@@ -6784,7 +6784,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.4,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p90-chopper",
@@ -6795,7 +6795,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "r8-revolver-reboot",
@@ -6806,7 +6806,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "sawed-off-limelight",
@@ -6817,7 +6817,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m4a4-desolate-space",
@@ -6828,7 +6828,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p2000-imperial-dragon",
@@ -6839,7 +6839,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.63,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "scar-20-bloodsport",
@@ -6850,7 +6850,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.45,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "glock-18-wasteland-rebel",
@@ -6861,7 +6861,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 0.54,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m4a1-s-mecha-industries",
@@ -6872,7 +6872,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   // ─── The Gamma 2 Collection ───
   {
@@ -6884,7 +6884,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "five-seven-scumbria",
@@ -6895,7 +6895,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "g3sg1-ventilator",
@@ -6906,7 +6906,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.45,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "negev-dazzle",
@@ -6917,7 +6917,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.1,
     maxFloat: 0.65,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p90-grim",
@@ -6928,7 +6928,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ump-45-briefing",
@@ -6939,7 +6939,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "xm1014-slipstream",
@@ -6950,7 +6950,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "desert-eagle-directive",
@@ -6961,7 +6961,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.06,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "glock-18-weasel",
@@ -6972,7 +6972,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mag-7-petroglyph",
@@ -6983,7 +6983,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.44,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "scar-20-powercore",
@@ -6994,7 +6994,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "sg-553-triarch",
@@ -7005,7 +7005,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "aug-syd-mead",
@@ -7016,7 +7016,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp9-airlock",
@@ -7027,7 +7027,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "tec-9-fuel-injector",
@@ -7038,7 +7038,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ak-47-neon-revolution",
@@ -7049,7 +7049,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "famas-roll-cage",
@@ -7060,7 +7060,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   // ─── The Glove Collection ───
   {
@@ -7072,7 +7072,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "glock-18-ironwork",
@@ -7083,7 +7083,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp7-cirrus",
@@ -7094,7 +7094,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.75,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "galil-ar-black-sand",
@@ -7105,7 +7105,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp9-sand-scale",
@@ -7116,7 +7116,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.45,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mag-7-sonar",
@@ -7127,7 +7127,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.45,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p2000-turf",
@@ -7138,7 +7138,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "dual-berettas-royal-consorts",
@@ -7149,7 +7149,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "g3sg1-stinger",
@@ -7160,7 +7160,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m4a1-s-flashback",
@@ -7171,7 +7171,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "nova-gila",
@@ -7182,7 +7182,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.3,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "usp-s-cyrex",
@@ -7193,7 +7193,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.55,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "famas-mecha-industries",
@@ -7204,7 +7204,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p90-shallow-grave",
@@ -7215,7 +7215,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.75,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "sawed-off-wasteland-princess",
@@ -7226,7 +7226,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ssg-08-dragonfire",
@@ -7237,7 +7237,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m4a4-buzz-kill",
@@ -7248,7 +7248,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   // ─── The Spectrum Collection ───
   {
@@ -7260,7 +7260,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "scar-20-blueprint",
@@ -7271,7 +7271,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.75,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "desert-eagle-oxide-blaze",
@@ -7282,7 +7282,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "five-seven-capillary",
@@ -7293,7 +7293,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp7-akoben",
@@ -7304,7 +7304,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p250-ripple",
@@ -7315,7 +7315,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "sawed-off-zander",
@@ -7326,7 +7326,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.05,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "galil-ar-crimson-tsunami",
@@ -7337,7 +7337,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.55,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m249-emerald-poison-dart",
@@ -7348,7 +7348,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.45,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mac-10-last-dive",
@@ -7359,7 +7359,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.52,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ump-45-scaffold",
@@ -7370,7 +7370,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "xm1014-seasons",
@@ -7381,7 +7381,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "awp-fever-dream",
@@ -7392,7 +7392,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.55,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "cz75-auto-xiangliu",
@@ -7403,7 +7403,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.56,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m4a1-s-decimator",
@@ -7414,7 +7414,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.85,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ak-47-bloodsport",
@@ -7425,7 +7425,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 0.45,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "usp-s-neo-noir",
@@ -7436,7 +7436,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   // ─── The Operation Hydra Collection ───
   {
@@ -7448,7 +7448,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.86,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "famas-macabre",
@@ -7459,7 +7459,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m4a1-s-briefing",
@@ -7470,7 +7470,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mac-10-aloha",
@@ -7481,7 +7481,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.65,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mag-7-hard-water",
@@ -7492,7 +7492,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.45,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "tec-9-cut-out",
@@ -7503,7 +7503,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ump-45-metal-flowers",
@@ -7514,7 +7514,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ak-47-orbit-mk01",
@@ -7525,7 +7525,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.55,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p2000-woodsman",
@@ -7536,7 +7536,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p250-red-rock",
@@ -7547,7 +7547,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p90-death-grip",
@@ -7558,7 +7558,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ssg-08-death-s-head",
@@ -7569,7 +7569,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.51,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "dual-berettas-cobra-strike",
@@ -7580,7 +7580,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "galil-ar-sugar-rush",
@@ -7591,7 +7591,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.55,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m4a4-hellfire",
@@ -7602,7 +7602,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "five-seven-hyper-beast",
@@ -7613,7 +7613,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "awp-oni-taiji",
@@ -7624,7 +7624,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   // ─── The Spectrum 2 Collection ───
   {
@@ -7636,7 +7636,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "aug-triqua",
@@ -7647,7 +7647,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "g3sg1-hunter",
@@ -7658,7 +7658,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "glock-18-off-world",
@@ -7669,7 +7669,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mac-10-oceanic",
@@ -7680,7 +7680,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "tec-9-cracked-opal",
@@ -7691,7 +7691,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "scar-20-jungle-slipstream",
@@ -7702,7 +7702,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp9-goo",
@@ -7713,7 +7713,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "sg-553-phantom",
@@ -7724,7 +7724,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "cz75-auto-tacticat",
@@ -7735,7 +7735,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ump-45-exposure",
@@ -7746,7 +7746,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.55,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "xm1014-ziggy",
@@ -7757,7 +7757,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.72,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "pp-bizon-high-roller",
@@ -7768,7 +7768,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m4a1-s-leaded-glass",
@@ -7779,7 +7779,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "r8-revolver-llama-cannon",
@@ -7790,7 +7790,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.03,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ak-47-the-empress",
@@ -7801,7 +7801,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p250-see-ya-later",
@@ -7812,7 +7812,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   // ─── The Blacksite Collection ───
   {
@@ -7824,7 +7824,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.35,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   // ─── The Clutch Collection ───
   {
@@ -7836,7 +7836,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "five-seven-flame-test",
@@ -7847,7 +7847,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.65,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp9-black-sand",
@@ -7858,7 +7858,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p2000-urban-hazard",
@@ -7869,7 +7869,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "r8-revolver-grip",
@@ -7880,7 +7880,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "sg-553-aloha",
@@ -7891,7 +7891,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.55,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "xm1014-oxide-blaze",
@@ -7902,7 +7902,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "glock-18-moonrise",
@@ -7913,7 +7913,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.65,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "negev-lionfish",
@@ -7924,7 +7924,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.55,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "nova-wild-six",
@@ -7935,7 +7935,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mag-7-swag-7",
@@ -7946,7 +7946,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.92,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ump-45-arctic-wolf",
@@ -7957,7 +7957,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "aug-stymphalian",
@@ -7968,7 +7968,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.63,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "awp-mortis",
@@ -7979,7 +7979,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.64,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "usp-s-cortex",
@@ -7990,7 +7990,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m4a4-neo-noir",
@@ -8001,7 +8001,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 0.9,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp7-bloodsport",
@@ -8012,7 +8012,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 0.65,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   // ─── The Horizon Collection ───
   {
@@ -8024,7 +8024,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.55,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "dual-berettas-shred",
@@ -8035,7 +8035,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "glock-18-warhawk",
@@ -8046,7 +8046,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp9-capillary",
@@ -8057,7 +8057,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p90-traction",
@@ -8068,7 +8068,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "r8-revolver-survivalist",
@@ -8079,7 +8079,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "tec-9-snek-9",
@@ -8090,7 +8090,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "cz75-auto-eco",
@@ -8101,7 +8101,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "g3sg1-high-seas",
@@ -8112,7 +8112,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "nova-toy-soldier",
@@ -8123,7 +8123,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "awp-paw",
@@ -8134,7 +8134,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp7-powercore",
@@ -8145,7 +8145,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m4a1-s-nightmare",
@@ -8156,7 +8156,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "sawed-off-devourer",
@@ -8167,7 +8167,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "famas-eye-of-athena",
@@ -8178,7 +8178,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ak-47-neon-rider",
@@ -8189,7 +8189,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "desert-eagle-code-red",
@@ -8200,7 +8200,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   // ─── The St. Marc Collection ───
   {
@@ -8212,7 +8212,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.55,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mac-10-surfwood",
@@ -8223,7 +8223,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "pp-bizon-seabird",
@@ -8234,7 +8234,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "sawed-off-jungle-thicket",
@@ -8245,7 +8245,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m249-jungle",
@@ -8256,7 +8256,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p90-sunset-lily",
@@ -8267,7 +8267,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m4a4-dark-blossom",
@@ -8278,7 +8278,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "xm1014-banana-leaf",
@@ -8289,7 +8289,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "tec-9-rust-leaf",
@@ -8300,7 +8300,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ump-45-day-lily",
@@ -8311,7 +8311,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.55,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "five-seven-crimson-blossom",
@@ -8322,7 +8322,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp7-teal-blossom",
@@ -8333,7 +8333,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "famas-sundown",
@@ -8344,7 +8344,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ssg-08-sea-calico",
@@ -8355,7 +8355,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "glock-18-synth-leaf",
@@ -8366,7 +8366,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "aug-midnight-lily",
@@ -8377,7 +8377,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp9-wild-lily",
@@ -8388,7 +8388,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ak-47-wild-lotus",
@@ -8399,7 +8399,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   // ─── The Canals Collection ───
   {
@@ -8411,7 +8411,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "scar-20-stone-mosaico",
@@ -8422,7 +8422,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.06,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "r8-revolver-canal-spray",
@@ -8433,7 +8433,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.06,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "negev-boroque-sand",
@@ -8444,7 +8444,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "cz75-auto-indigo",
@@ -8455,7 +8455,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ak-47-baroque-purple",
@@ -8466,7 +8466,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "sg-553-candy-apple",
@@ -8477,7 +8477,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p250-dark-filigree",
@@ -8488,7 +8488,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "tec-9-orange-murano",
@@ -8499,7 +8499,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p90-baroque-red",
@@ -8510,7 +8510,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "g3sg1-violet-murano",
@@ -8521,7 +8521,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "dual-berettas-emerald",
@@ -8532,7 +8532,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.08,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ssg-08-orange-filigree",
@@ -8543,7 +8543,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp9-stained-glass",
@@ -8554,7 +8554,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mac-10-red-filigree",
@@ -8565,7 +8565,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "nova-baroque-orange",
@@ -8576,7 +8576,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mag-7-cinquedea",
@@ -8587,7 +8587,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "awp-the-prince",
@@ -8598,7 +8598,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   // ─── The Norse Collection ───
   {
@@ -8610,7 +8610,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.65,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "galil-ar-tornado",
@@ -8621,7 +8621,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp7-scorched",
@@ -8632,7 +8632,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ssg-08-red-stone",
@@ -8643,7 +8643,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.06,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "famas-night-borre",
@@ -8654,7 +8654,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.55,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m4a1-s-moss-quartz",
@@ -8665,7 +8665,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "usp-s-pathfinder",
@@ -8676,7 +8676,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.35,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mag-7-chainmail",
@@ -8687,7 +8687,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.22,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "dual-berettas-pyre",
@@ -8698,7 +8698,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.06,
     maxFloat: 0.55,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "scar-20-brass",
@@ -8709,7 +8709,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "cz75-auto-emerald-quartz",
@@ -8720,7 +8720,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "xm1014-frost-borre",
@@ -8731,7 +8731,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mac-10-copper-borre",
@@ -8742,7 +8742,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "aug-flame-j-rmungandr",
@@ -8753,7 +8753,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "desert-eagle-emerald-j-rmungandr",
@@ -8764,7 +8764,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p90-astral-j-rmungandr",
@@ -8775,7 +8775,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "negev-mj-lnir",
@@ -8786,7 +8786,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "awp-gungnir",
@@ -8797,7 +8797,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   // ─── The Danger Zone Collection ───
   {
@@ -8809,7 +8809,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.75,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "glock-18-oxide-blaze",
@@ -8820,7 +8820,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.85,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "nova-wood-fired",
@@ -8831,7 +8831,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.75,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m4a4-magnesium",
@@ -8842,7 +8842,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "sawed-off-black-sand",
@@ -8853,7 +8853,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.9,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "sg-553-danger-close",
@@ -8864,7 +8864,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.02,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "tec-9-fubar",
@@ -8875,7 +8875,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.14,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "g3sg1-scavenger",
@@ -8886,7 +8886,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.65,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "galil-ar-signal",
@@ -8897,7 +8897,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mac-10-pipe-down",
@@ -8908,7 +8908,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.9,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p250-nevermore",
@@ -8919,7 +8919,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.4,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "usp-s-flashback",
@@ -8930,7 +8930,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ump-45-momentum",
@@ -8941,7 +8941,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "desert-eagle-mecha-industries",
@@ -8952,7 +8952,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp5-sd-phosphor",
@@ -8963,7 +8963,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ak-47-asiimov",
@@ -8974,7 +8974,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.05,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "awp-neo-noir",
@@ -8985,7 +8985,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   // ─── The Prisma Collection ───
   {
@@ -8997,7 +8997,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.55,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ak-47-uncharted",
@@ -9008,7 +9008,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.75,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mac-10-whitefish",
@@ -9019,7 +9019,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "galil-ar-akoben",
@@ -9030,7 +9030,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.75,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp7-mischief",
@@ -9041,7 +9041,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.1,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p250-verdigris",
@@ -9052,7 +9052,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p90-off-world",
@@ -9063,7 +9063,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.75,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "awp-atheris",
@@ -9074,7 +9074,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "tec-9-bamboozle",
@@ -9085,7 +9085,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "desert-eagle-light-rail",
@@ -9096,7 +9096,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.9,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp5-sd-gauss",
@@ -9107,7 +9107,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ump-45-moonrise",
@@ -9118,7 +9118,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.4,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "r8-revolver-skull-crusher",
@@ -9129,7 +9129,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.25,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "aug-momentum",
@@ -9140,7 +9140,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.05,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "xm1014-incinegator",
@@ -9151,7 +9151,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.14,
     maxFloat: 0.65,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "five-seven-angry-mob",
@@ -9162,7 +9162,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m4a4-the-emperor",
@@ -9173,7 +9173,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   // ─── The Shattered Web Collection ───
   {
@@ -9185,7 +9185,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.68,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "nova-plume",
@@ -9196,7 +9196,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "g3sg1-black-sand",
@@ -9207,7 +9207,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "r8-revolver-memento",
@@ -9218,7 +9218,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "dual-berettas-balance",
@@ -9229,7 +9229,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "scar-20-torn",
@@ -9240,7 +9240,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.45,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m249-warbird",
@@ -9251,7 +9251,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.05,
     maxFloat: 0.65,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "pp-bizon-embargo",
@@ -9262,7 +9262,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ak-47-rat-rod",
@@ -9273,7 +9273,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "aug-arctic-wolf",
@@ -9284,7 +9284,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp7-neon-ply",
@@ -9295,7 +9295,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p2000-obsidian",
@@ -9306,7 +9306,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "tec-9-decimator",
@@ -9317,7 +9317,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.75,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "sg-553-colony-iv",
@@ -9328,7 +9328,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ssg-08-bloodshot",
@@ -9339,7 +9339,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.14,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "awp-containment-breach",
@@ -9350,7 +9350,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mac-10-stalker",
@@ -9361,7 +9361,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   // ─── The CS20 Collection ───
   {
@@ -9373,7 +9373,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "tec-9-flash-out",
@@ -9384,7 +9384,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mac-10-classic-crate",
@@ -9395,7 +9395,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mag-7-popdog",
@@ -9406,7 +9406,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "scar-20-assault",
@@ -9417,7 +9417,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.62,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "famas-decommissioned",
@@ -9428,7 +9428,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "glock-18-sacrifice",
@@ -9439,7 +9439,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m249-aztec",
@@ -9450,7 +9450,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.75,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp5-sd-agent",
@@ -9461,7 +9461,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "five-seven-buddy",
@@ -9472,7 +9472,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.55,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p250-inferno",
@@ -9483,7 +9483,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.68,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ump-45-plastique",
@@ -9494,7 +9494,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp9-hydra",
@@ -9505,7 +9505,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p90-nostalgia",
@@ -9516,7 +9516,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.57,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "aug-death-by-puppy",
@@ -9527,7 +9527,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.4,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "awp-wildfire",
@@ -9538,7 +9538,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.01,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "famas-commemoration",
@@ -9549,7 +9549,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   // ─── The 2021 Dust 2 Collection ───
   {
@@ -9561,7 +9561,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p90-desert-ddpat",
@@ -9572,7 +9572,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "sg-553-bleached",
@@ -9583,7 +9583,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp7-prey",
@@ -9594,7 +9594,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.48,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "sawed-off-parched",
@@ -9605,7 +9605,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.49,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "aug-spalted-wood",
@@ -9616,7 +9616,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.48,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp9-old-roots",
@@ -9627,7 +9627,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "five-seven-withered-vine",
@@ -9638,7 +9638,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m249-midnight-palm",
@@ -9649,7 +9649,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p250-black-tan",
@@ -9660,7 +9660,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "nova-quick-sand",
@@ -9671,7 +9671,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "g3sg1-new-roots",
@@ -9682,7 +9682,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.55,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "galil-ar-amber-fade",
@@ -9693,7 +9693,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.4,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "usp-s-orange-anolis",
@@ -9704,7 +9704,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.37,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m4a4-red-ddpat",
@@ -9715,7 +9715,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mac-10-case-hardened",
@@ -9726,7 +9726,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ump-45-fade",
@@ -9737,7 +9737,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.08,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ssg-08-death-strike",
@@ -9748,7 +9748,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ak-47-gold-arabesque",
@@ -9759,7 +9759,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   // ─── The 2021 Mirage Collection ───
   {
@@ -9771,7 +9771,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.44,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "pp-bizon-anolis",
@@ -9782,7 +9782,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mag-7-navy-sheen",
@@ -9793,7 +9793,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.55,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mac-10-sienna-damask",
@@ -9804,7 +9804,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ssg-08-prey",
@@ -9815,7 +9815,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.48,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "dual-berettas-drift-wood",
@@ -9826,7 +9826,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "famas-calicamo",
@@ -9837,7 +9837,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "cz75-auto-midnight-palm",
@@ -9848,7 +9848,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p90-verdant-growth",
@@ -9859,7 +9859,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.47,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "usp-s-purple-ddpat",
@@ -9870,7 +9870,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.55,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp9-music-box",
@@ -9881,7 +9881,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.55,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m249-humidor",
@@ -9892,7 +9892,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "sg-553-desert-blossom",
@@ -9903,7 +9903,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.49,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "xm1014-elegant-vines",
@@ -9914,7 +9914,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.37,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "glock-18-pink-ddpat",
@@ -9925,7 +9925,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "aug-sand-storm",
@@ -9936,7 +9936,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp5-sd-oxide-oasis",
@@ -9947,7 +9947,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.55,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "desert-eagle-fennec-fox",
@@ -9958,7 +9958,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "awp-desert-hydra",
@@ -9969,7 +9969,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   // ─── The Prisma 2 Collection ───
   {
@@ -9981,7 +9981,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "awp-capillary",
@@ -9992,7 +9992,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.05,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "cz75-auto-distressed",
@@ -10003,7 +10003,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "desert-eagle-blue-ply",
@@ -10014,7 +10014,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp5-sd-desert-strike",
@@ -10025,7 +10025,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "negev-prototype",
@@ -10036,7 +10036,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "r8-revolver-bone-forged",
@@ -10047,7 +10047,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p2000-acid-etched",
@@ -10058,7 +10058,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "sawed-off-apocalypto",
@@ -10069,7 +10069,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "scar-20-enforcer",
@@ -10080,7 +10080,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "sg-553-darkwing",
@@ -10091,7 +10091,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ssg-08-fever-dream",
@@ -10102,7 +10102,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.72,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ak-47-phantom-disruptor",
@@ -10113,7 +10113,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.65,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mac-10-disco-tech",
@@ -10124,7 +10124,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mag-7-justice",
@@ -10135,7 +10135,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m4a1-s-player-two",
@@ -10146,7 +10146,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 0.84,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "glock-18-bullet-queen",
@@ -10157,7 +10157,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   // ─── The Fracture Collection ───
   {
@@ -10169,7 +10169,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.79,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p2000-gnarled",
@@ -10180,7 +10180,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "sg-553-ol-rusty",
@@ -10191,7 +10191,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ssg-08-mainframe-001",
@@ -10202,7 +10202,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p250-cassette",
@@ -10213,7 +10213,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p90-freight",
@@ -10224,7 +10224,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "pp-bizon-runic",
@@ -10235,7 +10235,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mag-7-monster-call",
@@ -10246,7 +10246,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "tec-9-brother",
@@ -10257,7 +10257,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mac-10-allure",
@@ -10268,7 +10268,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "galil-ar-connexion",
@@ -10279,7 +10279,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp5-sd-kitbash",
@@ -10290,7 +10290,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m4a4-tooth-fairy",
@@ -10301,7 +10301,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.73,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "glock-18-vogue",
@@ -10312,7 +10312,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.75,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "xm1014-entombed",
@@ -10323,7 +10323,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "desert-eagle-printstream",
@@ -10334,7 +10334,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ak-47-legion-of-anubis",
@@ -10345,7 +10345,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   // ─── The Operation Broken Fang Collection ───
   {
@@ -10357,7 +10357,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p90-cocoa-rampage",
@@ -10368,7 +10368,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "g3sg1-digital-mesh",
@@ -10379,7 +10379,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "galil-ar-vandal",
@@ -10390,7 +10390,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p250-contaminant",
@@ -10401,7 +10401,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m249-deep-relief",
@@ -10412,7 +10412,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp5-sd-condition-zero",
@@ -10423,7 +10423,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "awp-exoskeleton",
@@ -10434,7 +10434,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "dual-berettas-dezastre",
@@ -10445,7 +10445,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "nova-clear-polymer",
@@ -10456,7 +10456,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ssg-08-parallax",
@@ -10467,7 +10467,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ump-45-gold-bismuth",
@@ -10478,7 +10478,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "five-seven-fairy-tale",
@@ -10489,7 +10489,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.02,
     maxFloat: 0.9,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m4a4-cyber-security",
@@ -10500,7 +10500,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.98,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "usp-s-monster-mashup",
@@ -10511,7 +10511,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m4a1-s-printstream",
@@ -10522,7 +10522,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "glock-18-neo-noir",
@@ -10533,7 +10533,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   // ─── The Control Collection ───
   {
@@ -10545,7 +10545,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.65,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "aug-surveillance",
@@ -10556,7 +10556,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp9-army-sheen",
@@ -10567,7 +10567,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.3,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p250-forest-night",
@@ -10578,7 +10578,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "cz75-auto-jungle-dashed",
@@ -10589,7 +10589,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "desert-eagle-the-bronze",
@@ -10600,7 +10600,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.3,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "dual-berettas-switch-board",
@@ -10611,7 +10611,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.65,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp5-sd-nitro",
@@ -10622,7 +10622,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mag-7-carbon-fiber",
@@ -10633,7 +10633,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.12,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m4a4-global-offensive",
@@ -10644,7 +10644,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ssg-08-threat-detected",
@@ -10655,7 +10655,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.65,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p2000-dispatch",
@@ -10666,7 +10666,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.65,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "scar-20-magna-carta",
@@ -10677,7 +10677,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "famas-prime-conspiracy",
@@ -10688,7 +10688,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.55,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "five-seven-berries-and-cherries",
@@ -10699,7 +10699,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.1,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ump-45-crime-scene",
@@ -10710,7 +10710,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.75,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "usp-s-target-acquired",
@@ -10721,7 +10721,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m4a1-s-blue-phosphor",
@@ -10732,7 +10732,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.08,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "awp-fade",
@@ -10743,7 +10743,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 0.08,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   // ─── The Havoc Collection ───
   {
@@ -10755,7 +10755,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "tec-9-phoenix-chalk",
@@ -10766,7 +10766,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "sawed-off-clay-ambush",
@@ -10777,7 +10777,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "pp-bizon-death-rattle",
@@ -10788,7 +10788,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.08,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m249-predator",
@@ -10799,7 +10799,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp7-vault-heist",
@@ -10810,7 +10810,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ump-45-houndstooth",
@@ -10821,7 +10821,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "r8-revolver-phoenix-marker",
@@ -10832,7 +10832,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "nova-rust-coat",
@@ -10843,7 +10843,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "desert-eagle-night-heist",
@@ -10854,7 +10854,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.65,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "negev-phoenix-stencil",
@@ -10865,7 +10865,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.65,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p90-tiger-pit",
@@ -10876,7 +10876,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p250-bengal-tiger",
@@ -10887,7 +10887,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "galil-ar-phoenix-blacklight",
@@ -10898,7 +10898,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "sg-553-hypnotic",
@@ -10909,7 +10909,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.08,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "glock-18-franklin",
@@ -10920,7 +10920,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.4,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "awp-silk-tiger",
@@ -10931,7 +10931,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mac-10-hot-snakes",
@@ -10942,7 +10942,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ak-47-x-ray",
@@ -10953,7 +10953,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   // ─── The Ancient Collection ───
   {
@@ -10965,7 +10965,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "sg-553-lush-ruins",
@@ -10976,7 +10976,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "nova-army-sheen",
@@ -10987,7 +10987,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.3,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ssg-08-jungle-dashed",
@@ -10998,7 +10998,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "r8-revolver-night",
@@ -11009,7 +11009,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p2000-panther-camo",
@@ -11020,7 +11020,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp7-tall-grass",
@@ -11031,7 +11031,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.65,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "g3sg1-ancient-ritual",
@@ -11042,7 +11042,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.76,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "cz75-auto-silver",
@@ -11053,7 +11053,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.08,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "tec-9-blast-from-the-past",
@@ -11064,7 +11064,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.65,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "aug-carved-jade",
@@ -11075,7 +11075,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.2,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "galil-ar-dusk-ruins",
@@ -11086,7 +11086,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "famas-dark-water",
@@ -11097,7 +11097,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.1,
     maxFloat: 0.26,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "xm1014-ancient-lore",
@@ -11108,7 +11108,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mac-10-gold-brick",
@@ -11119,7 +11119,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "usp-s-ancient-visions",
@@ -11130,7 +11130,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.45,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p90-run-and-hide",
@@ -11141,7 +11141,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ak-47-panthera-onca",
@@ -11152,7 +11152,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m4a1-s-welcome-to-the-jungle",
@@ -11163,7 +11163,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   // ─── The Snakebite Collection ───
   {
@@ -11175,7 +11175,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m249-o-s-i-p-r",
@@ -11186,7 +11186,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "sg-553-heavy-metal",
@@ -11197,7 +11197,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "r8-revolver-junk-yard",
@@ -11208,7 +11208,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ump-45-oscillator",
@@ -11219,7 +11219,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "nova-windblown",
@@ -11230,7 +11230,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "cz75-auto-circaetus",
@@ -11241,7 +11241,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.9,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ak-47-slate",
@@ -11252,7 +11252,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p250-cyber-shell",
@@ -11263,7 +11263,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.85,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "negev-dev-texture",
@@ -11274,7 +11274,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.65,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mac-10-button-masher",
@@ -11285,7 +11285,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "desert-eagle-trigger-discipline",
@@ -11296,7 +11296,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.97,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp9-food-chain",
@@ -11307,7 +11307,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "xm1014-xoxo",
@@ -11318,7 +11318,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.9,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "galil-ar-chromatic-aberration",
@@ -11329,7 +11329,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "usp-s-the-traitor",
@@ -11340,7 +11340,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m4a4-in-living-color",
@@ -11351,7 +11351,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 0.79,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   // ─── The 2021 Train Collection ───
   {
@@ -11363,7 +11363,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m4a1-s-fizzy-pop",
@@ -11374,7 +11374,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.57,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ssg-08-spring-twilly",
@@ -11385,7 +11385,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.55,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "aug-amber-fade",
@@ -11396,7 +11396,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.4,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ump-45-full-stop",
@@ -11407,7 +11407,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "tec-9-safety-net",
@@ -11418,7 +11418,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "r8-revolver-blaze",
@@ -11429,7 +11429,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.08,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "cz75-auto-syndicate",
@@ -11440,7 +11440,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "awp-pop-awp",
@@ -11451,7 +11451,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.44,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p2000-space-race",
@@ -11462,7 +11462,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp5-sd-autumn-twilly",
@@ -11473,7 +11473,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.58,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "nova-red-quartz",
@@ -11484,7 +11484,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.4,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "famas-meltdown",
@@ -11495,7 +11495,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.4,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mac-10-propaganda",
@@ -11506,7 +11506,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.62,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "usp-s-whiteout",
@@ -11517,7 +11517,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.06,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "glock-18-gamma-doppler",
@@ -11528,7 +11528,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "glock-18-gamma-doppler-2021-train",
@@ -11539,7 +11539,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "glock-18-gamma-doppler-2",
@@ -11550,7 +11550,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "glock-18-gamma-doppler-3",
@@ -11561,7 +11561,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "glock-18-gamma-doppler-4",
@@ -11572,7 +11572,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m4a4-the-coalition",
@@ -11583,7 +11583,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   // ─── The 2021 Vertigo Collection ───
   {
@@ -11595,7 +11595,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "famas-faulty-wiring",
@@ -11606,7 +11606,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "xm1014-blue-tire",
@@ -11617,7 +11617,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.55,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "cz75-auto-framework",
@@ -11628,7 +11628,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "dual-berettas-oil-change",
@@ -11639,7 +11639,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "glock-18-red-tire",
@@ -11650,7 +11650,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.55,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ump-45-mechanism",
@@ -11661,7 +11661,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.49,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ssg-08-carbon-fiber",
@@ -11672,7 +11672,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.12,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "pp-bizon-breaker-box",
@@ -11683,7 +11683,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.44,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ak-47-green-laminate",
@@ -11694,7 +11694,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.02,
     maxFloat: 0.4,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p90-schematic",
@@ -11705,7 +11705,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "nova-interlock",
@@ -11716,7 +11716,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "negev-infrastructure",
@@ -11727,7 +11727,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.49,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "galil-ar-caution",
@@ -11738,7 +11738,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.55,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mag-7-prism-terrace",
@@ -11749,7 +11749,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.37,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p250-digital-architect",
@@ -11760,7 +11760,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.49,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "five-seven-fall-hazard",
@@ -11771,7 +11771,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.01,
     maxFloat: 0.52,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "sg-553-hazard-pay",
@@ -11782,7 +11782,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.48,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m4a1-s-imminent-danger",
@@ -11793,7 +11793,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   // ─── The Anubis Collection ───
   {
@@ -11805,7 +11805,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.76,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m249-submerged",
@@ -11816,7 +11816,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.02,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "xm1014-hieroglyph",
@@ -11827,7 +11827,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp7-sunbaked",
@@ -11838,7 +11838,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "aug-snake-pit",
@@ -11849,7 +11849,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.55,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m4a1-s-mud-spec",
@@ -11860,7 +11860,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.73,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ssg-08-azure-glyph",
@@ -11871,7 +11871,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.01,
     maxFloat: 0.99,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mac-10-echoing-sands",
@@ -11882,7 +11882,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.02,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "usp-s-desert-tactical",
@@ -11893,7 +11893,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ak-47-steel-delta",
@@ -11904,7 +11904,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.73,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "awp-black-nile",
@@ -11915,7 +11915,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.75,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "tec-9-mummy-s-rot",
@@ -11926,7 +11926,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mag-7-copper-coated",
@@ -11937,7 +11937,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "glock-18-ramese-s-reach",
@@ -11948,7 +11948,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "nova-sobek-s-bite",
@@ -11959,7 +11959,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p90-scarab-rush",
@@ -11970,7 +11970,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "famas-waters-of-nephthys",
@@ -11981,7 +11981,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p250-apep-s-curse",
@@ -11992,7 +11992,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m4a4-eye-of-horus",
@@ -12003,7 +12003,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   // ─── The Operation Riptide Collection ───
   {
@@ -12015,7 +12015,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.76,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "dual-berettas-tread",
@@ -12026,7 +12026,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "g3sg1-keeping-tabs",
@@ -12037,7 +12037,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp7-guerrilla",
@@ -12048,7 +12048,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "pp-bizon-lumen",
@@ -12059,7 +12059,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.77,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "usp-s-black-lotus",
@@ -12070,7 +12070,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.9,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "xm1014-watchdog",
@@ -12081,7 +12081,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mag-7-bi83-spectrum",
@@ -12092,7 +12092,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "famas-zx-spectron",
@@ -12103,7 +12103,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "five-seven-boost-protocol",
@@ -12114,7 +12114,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.41,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp9-mount-fuji",
@@ -12125,7 +12125,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.55,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m4a4-spider-lily",
@@ -12136,7 +12136,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mac-10-toybox",
@@ -12147,7 +12147,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "glock-18-snack-attack",
@@ -12158,7 +12158,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ssg-08-turbo-peek",
@@ -12169,7 +12169,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "desert-eagle-ocean-drive",
@@ -12180,7 +12180,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ak-47-leet-museo",
@@ -12191,7 +12191,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 0.65,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   // ─── The Dreams & Nightmares Collection ───
   {
@@ -12203,7 +12203,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mac-10-ensnared",
@@ -12214,7 +12214,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.9,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mag-7-foresight",
@@ -12225,7 +12225,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp5-sd-necro-jr",
@@ -12236,7 +12236,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p2000-lifted-spirits",
@@ -12247,7 +12247,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "scar-20-poultrygeist",
@@ -12258,7 +12258,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.57,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "sawed-off-spirit-board",
@@ -12269,7 +12269,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "pp-bizon-space-cat",
@@ -12280,7 +12280,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.67,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "g3sg1-dream-glade",
@@ -12291,7 +12291,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m4a1-s-night-terror",
@@ -12302,7 +12302,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "xm1014-zombie-offensive",
@@ -12313,7 +12313,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "usp-s-ticket-to-hell",
@@ -12324,7 +12324,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.76,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "dual-berettas-melondrama",
@@ -12335,7 +12335,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "famas-rapid-eye-movement",
@@ -12346,7 +12346,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp7-abyssal-apparition",
@@ -12357,7 +12357,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ak-47-nightwish",
@@ -12368,7 +12368,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp9-starlight-protector",
@@ -12379,7 +12379,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   // ─── The Recoil Collection ───
   {
@@ -12391,7 +12391,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "galil-ar-destroyer",
@@ -12402,7 +12402,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m4a4-poly-mag",
@@ -12413,7 +12413,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mac-10-monkeyflage",
@@ -12424,7 +12424,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "negev-drop-me",
@@ -12435,7 +12435,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ump-45-roadblock",
@@ -12446,7 +12446,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "glock-18-winterized",
@@ -12457,7 +12457,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "r8-revolver-crazy-8",
@@ -12468,7 +12468,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m249-downtown",
@@ -12479,7 +12479,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.65,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "sg-553-dragon-tech",
@@ -12490,7 +12490,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p90-vent-rush",
@@ -12501,7 +12501,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "dual-berettas-flora-carnivora",
@@ -12512,7 +12512,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ak-47-ice-coaled",
@@ -12523,7 +12523,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.77,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p250-visions",
@@ -12534,7 +12534,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "sawed-off-kiss-love",
@@ -12545,7 +12545,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "usp-s-printstream",
@@ -12556,7 +12556,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 0.85,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "awp-chromatic-aberration",
@@ -12567,7 +12567,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   // ─── The Revolution Collection ───
   {
@@ -12579,7 +12579,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp9-featherweight",
@@ -12590,7 +12590,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "scar-20-fragments",
@@ -12601,7 +12601,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.78,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p250-re-built",
@@ -12612,7 +12612,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.9,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp5-sd-liquidation",
@@ -12623,7 +12623,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "sg-553-cyberforce",
@@ -12634,7 +12634,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.9,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "tec-9-rebel",
@@ -12645,7 +12645,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m4a1-s-emphorosaur-s",
@@ -12656,7 +12656,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "glock-18-umbral-rabbit",
@@ -12667,7 +12667,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.75,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mac-10-sakkaku",
@@ -12678,7 +12678,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.21,
     maxFloat: 0.79,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "r8-revolver-banana-cannon",
@@ -12689,7 +12689,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p90-neoqueen",
@@ -12700,7 +12700,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ump-45-wild-child",
@@ -12711,7 +12711,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p2000-wicked-sick",
@@ -12722,7 +12722,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "awp-duality",
@@ -12733,7 +12733,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ak-47-head-shot",
@@ -12744,7 +12744,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m4a4-temukau",
@@ -12755,7 +12755,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   // ─── The Kilowatt Collection ───
   {
@@ -12767,7 +12767,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.6985,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mac-10-light-box",
@@ -12778,7 +12778,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "nova-dark-sigil",
@@ -12789,7 +12789,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.6985,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ssg-08-dezastre",
@@ -12800,7 +12800,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "tec-9-slag",
@@ -12811,7 +12811,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.9,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ump-45-motorized",
@@ -12822,7 +12822,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.8014,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "xm1014-irezumi",
@@ -12833,7 +12833,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.7994,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "glock-18-block-18",
@@ -12844,7 +12844,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.6719,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m4a4-etch-lord",
@@ -12855,7 +12855,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "five-seven-hybrid",
@@ -12866,7 +12866,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp7-just-smile",
@@ -12877,7 +12877,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "sawed-off-analog-input",
@@ -12888,7 +12888,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.6189,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m4a1-s-black-lotus",
@@ -12899,7 +12899,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "zeus-x27-olympus",
@@ -12910,7 +12910,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.67,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "usp-s-jawbreaker",
@@ -12921,7 +12921,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "awp-chrome-cannon",
@@ -12932,7 +12932,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ak-47-inheritance",
@@ -12943,7 +12943,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 0.7973,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   // ─── The Gallery Collection ───
   {
@@ -12955,7 +12955,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "desert-eagle-calligraffiti",
@@ -12966,7 +12966,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp5-sd-statics",
@@ -12977,7 +12977,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "aug-luxe-trim",
@@ -12988,7 +12988,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.9,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m249-hypnosis",
@@ -12999,7 +12999,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "r8-revolver-tango",
@@ -13010,7 +13010,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.8511,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "scar-20-trail-blazer",
@@ -13021,7 +13021,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.7026,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m4a4-turbine",
@@ -13032,7 +13032,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.85,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "dual-berettas-hydro-strike",
@@ -13043,7 +13043,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.8014,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mac-10-saib-oni",
@@ -13054,7 +13054,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.66,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p90-randy-rush",
@@ -13065,7 +13065,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.75,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ssg-08-rapid-transit",
@@ -13076,7 +13076,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.75,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ak-47-the-outsiders",
@@ -13087,7 +13087,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.9,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p250-epicenter",
@@ -13098,7 +13098,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ump-45-neo-noir",
@@ -13109,7 +13109,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "glock-18-gold-toof",
@@ -13120,7 +13120,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 0.7305,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m4a1-s-vaporwave",
@@ -13131,7 +13131,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 0.5973,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   // ─── The Fever Collection ───
   {
@@ -13143,7 +13143,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mag-7-resupply",
@@ -13154,7 +13154,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ssg-08-memorial",
@@ -13165,7 +13165,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p2000-sure-grip",
@@ -13176,7 +13176,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.9,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "usp-s-pc-grn",
@@ -13187,7 +13187,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.9,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp9-nexus",
@@ -13198,7 +13198,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "xm1014-mockingbird",
@@ -13209,7 +13209,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "desert-eagle-serpent-strike",
@@ -13220,7 +13220,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.57,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "zeus-x27-tosai",
@@ -13231,7 +13231,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "nova-rising-sun",
@@ -13242,7 +13242,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "galil-ar-control",
@@ -13253,7 +13253,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.799,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p90-wave-breaker",
@@ -13264,7 +13264,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.9505,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ak-47-searing-rage",
@@ -13275,7 +13275,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "glock-18-shinobu",
@@ -13286,7 +13286,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ump-45-k-o-factory",
@@ -13297,7 +13297,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "famas-bad-trip",
@@ -13308,7 +13308,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "awp-printstream",
@@ -13319,7 +13319,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   // ─── The Genesis Collection ───
   {
@@ -13331,7 +13331,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "aug-trigger-discipline",
@@ -13342,7 +13342,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p2000-red-wing",
@@ -13353,7 +13353,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp9-broken-record",
@@ -13364,7 +13364,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p250-bullfrog",
@@ -13375,7 +13375,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mag-7-magnitude",
@@ -13386,7 +13386,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp5-sd-focus",
@@ -13397,7 +13397,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "nova-ocular",
@@ -13408,7 +13408,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m4a1-s-liquidation",
@@ -13419,7 +13419,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "dual-berettas-angel-eyes",
@@ -13430,7 +13430,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mac-10-cat-fight",
@@ -13441,7 +13441,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ump-45-continuum",
@@ -13452,7 +13452,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "awp-ice-coaled",
@@ -13463,7 +13463,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp7-smoking-kills",
@@ -13474,7 +13474,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "glock-18-mirror-mosaic",
@@ -13485,7 +13485,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m4a4-full-throttle",
@@ -13496,7 +13496,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ak-47-the-oligarch",
@@ -13507,7 +13507,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   // ─── The Dead Hand Collection ───
   {
@@ -13519,7 +13519,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m4a4-zubastick",
@@ -13530,7 +13530,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ump-45-fragment",
@@ -13541,7 +13541,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "sawed-off-fusion",
@@ -13552,7 +13552,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "five-seven-dark-polymer",
@@ -13563,7 +13563,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "usp-s-silent-shot",
@@ -13574,7 +13574,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "pp-bizon-rmx",
@@ -13585,7 +13585,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "desert-eagle-firebreathing",
@@ -13596,7 +13596,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m4a1-s-electrum",
@@ -13607,7 +13607,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp7-amberline",
@@ -13618,7 +13618,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "galil-ar-galigator",
@@ -13629,7 +13629,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp9-urban-sovereign",
@@ -13640,7 +13640,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ak-47-crane-flight",
@@ -13651,7 +13651,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p250-kintsugi",
@@ -13662,7 +13662,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p90-deathgaze",
@@ -13673,7 +13673,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "awp-queen-s-gambit",
@@ -13684,7 +13684,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "glock-18-fully-tuned",
@@ -13695,7 +13695,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   // ─── The Graphic Design Collection ───
   {
@@ -13707,7 +13707,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ssg-08-halftone-whorl",
@@ -13718,7 +13718,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "famas-halftone-wash",
@@ -13729,7 +13729,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp7-astrolabe",
@@ -13740,7 +13740,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "galil-ar-nv",
@@ -13751,7 +13751,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.47,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p2000-coral-halftone",
@@ -13762,7 +13762,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.52,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "scar-20-wild-berry",
@@ -13773,7 +13773,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.65,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "sg-553-berry-gel-coat",
@@ -13784,7 +13784,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ak-47-crossfade",
@@ -13795,7 +13795,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "xm1014-halftone-shift",
@@ -13806,7 +13806,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "cz75-auto-slalom",
@@ -13817,7 +13817,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.57,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p90-attack-vector",
@@ -13828,7 +13828,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.55,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m4a4-polysoup",
@@ -13839,7 +13839,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.64,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "desert-eagle-starcade",
@@ -13850,7 +13850,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.75,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "aug-lil-pig",
@@ -13861,7 +13861,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "awp-cmyk",
@@ -13872,7 +13872,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   // ─── The Overpass 2024 Collection ───
   {
@@ -13884,7 +13884,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p90-wash-me",
@@ -13895,7 +13895,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp5-sd-neon-squeezer",
@@ -13906,7 +13906,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.2,
     maxFloat: 0.9,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m4a1-s-wash-me-plz",
@@ -13917,7 +13917,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.58,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "desert-eagle-tilted",
@@ -13928,7 +13928,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.75,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "negev-wall-bang",
@@ -13939,7 +13939,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "galil-ar-metallic-squeezer",
@@ -13950,7 +13950,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mac-10-pipsqueak",
@@ -13961,7 +13961,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.9,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "nova-wurst-h-lle",
@@ -13972,7 +13972,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "glock-18-teal-graf",
@@ -13983,7 +13983,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "dual-berettas-sweet-little-angels",
@@ -13994,7 +13994,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.82,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "xm1014-monster-melt",
@@ -14005,7 +14005,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.75,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "aug-eye-of-zapems",
@@ -14016,7 +14016,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.85,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "awp-crakow",
@@ -14027,7 +14027,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "zeus-x27-dragon-snore",
@@ -14038,7 +14038,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ak-47-b-the-monster",
@@ -14049,7 +14049,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   // ─── The Sport & Field Collection ───
   {
@@ -14061,7 +14061,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.25,
     maxFloat: 0.75,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "tec-9-tiger-stencil",
@@ -14072,7 +14072,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "famas-half-sleeve",
@@ -14083,7 +14083,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ak-47-olive-polycam",
@@ -14094,7 +14094,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "pp-bizon-cold-cell",
@@ -14105,7 +14105,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.4,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mag-7-wildwood",
@@ -14116,7 +14116,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ssg-08-zeno",
@@ -14127,7 +14127,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p250-small-game",
@@ -14138,7 +14138,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "nova-yorkshire",
@@ -14149,7 +14149,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "usp-s-alpine-camo",
@@ -14160,7 +14160,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.68,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "five-seven-heat-treated",
@@ -14171,7 +14171,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp9-arctic-tri-tone",
@@ -14182,7 +14182,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ump-45-crimson-foil",
@@ -14193,7 +14193,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.68,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "galil-ar-rainbow-spoon",
@@ -14204,7 +14204,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.5544,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "glock-18-axia",
@@ -14215,7 +14215,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m4a1-s-fade",
@@ -14226,7 +14226,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 0.08,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   // ─── The Achroma Collection ───
   {
@@ -14238,7 +14238,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.65,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "pp-bizon-bizoom",
@@ -14249,7 +14249,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.58,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "dual-berettas-silver-pour",
@@ -14260,7 +14260,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.6784,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ssg-08-sans-comic",
@@ -14271,7 +14271,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "scar-20-zinc",
@@ -14282,7 +14282,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m249-sleet",
@@ -14293,7 +14293,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p250-sleet",
@@ -14304,7 +14304,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "nova-currents",
@@ -14315,7 +14315,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.65,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mac-10-snow-splash",
@@ -14326,7 +14326,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp5-sd-snow-splash",
@@ -14337,7 +14337,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "famas-vendetta",
@@ -14348,7 +14348,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m4a4-aeolian-dark",
@@ -14359,7 +14359,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.65,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "r8-revolver-dark-chamber",
@@ -14370,7 +14370,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.8034,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "aug-creep",
@@ -14381,7 +14381,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p90-aeolian-light",
@@ -14392,7 +14392,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.65,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "desert-eagle-the-daily-deagle",
@@ -14403,7 +14403,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.58,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p2000-grip-tape",
@@ -14414,7 +14414,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.75,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ak-47-breakthrough",
@@ -14425,7 +14425,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.75,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "glock-18-trace-lock",
@@ -14436,7 +14436,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "awp-the-end",
@@ -14447,7 +14447,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   // ─── The Ascent Collection ───
   {
@@ -14459,7 +14459,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.7808,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p90-blue-tac",
@@ -14470,7 +14470,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p250-plum-netting",
@@ -14481,7 +14481,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp5-sd-lime-hex",
@@ -14492,7 +14492,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.6382,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp9-buff-blue",
@@ -14503,7 +14503,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "sg-553-night-camo",
@@ -14514,7 +14514,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.7952,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "r8-revolver-cobalt-grip",
@@ -14525,7 +14525,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.8034,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ssg-08-grey-smoke",
@@ -14536,7 +14536,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "galil-ar-grey-smoke",
@@ -14547,7 +14547,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mac-10-storm-camo",
@@ -14558,7 +14558,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.6373,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "tec-9-blue-blast",
@@ -14569,7 +14569,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "xm1014-gum-wall-camo",
@@ -14580,7 +14580,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "negev-sour-grapes",
@@ -14591,7 +14591,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "five-seven-sky-blue",
@@ -14602,7 +14602,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "zeus-x27-electric-blue",
@@ -14613,7 +14613,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.75,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "galil-ar-robin-s-egg",
@@ -14624,7 +14624,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "nova-turquoise-pour",
@@ -14635,7 +14635,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.6784,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "dual-berettas-rose-nacre",
@@ -14646,7 +14646,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "glock-18-ocean-topo",
@@ -14657,7 +14657,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m4a4-naval-shred-camo",
@@ -14668,7 +14668,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p2000-royal-baroque",
@@ -14679,7 +14679,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p90-reef-grief",
@@ -14690,7 +14690,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp9-cobalt-paisley",
@@ -14701,7 +14701,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.65,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "famas-yeti-camo",
@@ -14712,7 +14712,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "desert-eagle-mint-fan",
@@ -14723,7 +14723,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ak-47-midnight-laminate",
@@ -14734,7 +14734,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.75,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "usp-s-royal-guard",
@@ -14745,7 +14745,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m4a1-s-stratosphere",
@@ -14756,7 +14756,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   // ─── The Harlequin Collection ───
   {
@@ -14768,7 +14768,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "famas-byproduct",
@@ -14779,7 +14779,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.55,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "pp-bizon-thermal-currents",
@@ -14790,7 +14790,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "sawed-off-crimson-batik",
@@ -14801,7 +14801,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "cz75-auto-honey-paisley",
@@ -14812,7 +14812,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "r8-revolver-mauve-aside",
@@ -14823,7 +14823,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.8034,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp9-bee-tron",
@@ -14834,7 +14834,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.9,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp7-coral-paisley",
@@ -14845,7 +14845,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.65,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp5-sd-picnic",
@@ -14856,7 +14856,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.75,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "tec-9-banana-leaf",
@@ -14867,7 +14867,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "xm1014-xooom",
@@ -14878,7 +14878,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ssg-08-calligrafaux",
@@ -14889,7 +14889,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "galil-ar-sky-mandala",
@@ -14900,7 +14900,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ump-45-warm-blooded",
@@ -14911,7 +14911,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "zeus-x27-earth-mandala",
@@ -14922,7 +14922,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.66,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "five-seven-fraise-crane",
@@ -14933,7 +14933,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.65,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "awp-exothermic",
@@ -14944,7 +14944,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "usp-s-sleeping-potion",
@@ -14955,7 +14955,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m4a1-s-party-animal",
@@ -14966,7 +14966,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   // ─── The Boreal Collection ───
   {
@@ -14978,7 +14978,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.65,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m249-sage-camo",
@@ -14989,7 +14989,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "zeus-x27-swamp-ddpat",
@@ -15000,7 +15000,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "aug-commando-company",
@@ -15011,7 +15011,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.65,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "famas-palm",
@@ -15022,7 +15022,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.75,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ssg-08-green-ceramic",
@@ -15033,7 +15033,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.75,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp9-pine",
@@ -15044,7 +15044,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "tec-9-raw-ceramic",
@@ -15055,7 +15055,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.75,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "negev-raw-ceramic",
@@ -15066,7 +15066,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.75,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mag-7-copper-oxide",
@@ -15077,7 +15077,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.65,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p250-copper-oxide",
@@ -15088,7 +15088,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.65,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ump-45-green-swirl",
@@ -15099,7 +15099,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "dual-berettas-polished-malachite",
@@ -15110,7 +15110,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "r8-revolver-leafhopper",
@@ -15121,7 +15121,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.651,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mac-10-acid-hex",
@@ -15132,7 +15132,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.58,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ssg-08-tiger-tear",
@@ -15143,7 +15143,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.55,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "galil-ar-acid-dart",
@@ -15154,7 +15154,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p90-mustard-gas",
@@ -15165,7 +15165,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.63,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ak-47-varicamo-grey",
@@ -15176,7 +15176,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.6719,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p2000-marsh",
@@ -15187,7 +15187,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "tec-9-garter-9",
@@ -15198,7 +15198,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp5-sd-gold-leaf",
@@ -15209,7 +15209,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mac-10-poplar-thicket",
@@ -15220,7 +15220,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.68,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "xm1014-copperflage",
@@ -15231,7 +15231,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "usp-s-tropical-breeze",
@@ -15242,7 +15242,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.55,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ak-47-wintergreen",
@@ -15253,7 +15253,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.75,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m4a4-sheet-lightning",
@@ -15264,7 +15264,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.75,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "glock-18-glockingbird",
@@ -15275,7 +15275,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.67,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "awp-green-energy",
@@ -15286,7 +15286,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.75,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   // ─── The Radiant Collection ───
   {
@@ -15298,7 +15298,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.7466,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "scar-20-short-ochre",
@@ -15309,7 +15309,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.7466,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "dual-berettas-bordeux",
@@ -15320,7 +15320,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "five-seven-autumn-thicket",
@@ -15331,7 +15331,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.637,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mac-10-bronzer",
@@ -15342,7 +15342,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.8,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "xm1014-canvas-cloud",
@@ -15353,7 +15353,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "pp-bizon-wood-block-camo",
@@ -15364,7 +15364,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "nova-marsh-grass",
@@ -15375,7 +15375,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.55,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "g3sg1-red-jasper",
@@ -15386,7 +15386,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.6373,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p90-desert-halftone",
@@ -15397,7 +15397,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.65,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "cz75-auto-pink-pearl",
@@ -15408,7 +15408,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp9-multi-terrain",
@@ -15419,7 +15419,7 @@ export const SKINS: Skin[] = [
     rarity: "consumer_grade",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "sg-553-basket-halftone",
@@ -15430,7 +15430,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p250-sedimentary",
@@ -15441,7 +15441,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.68,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "famas-grey-ghost",
@@ -15452,7 +15452,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.6373,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "tec-9-citric-acid",
@@ -15463,7 +15463,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "galil-ar-o-ranger",
@@ -15474,7 +15474,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.75,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m4a4-steel-work",
@@ -15485,7 +15485,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m4a1-s-rose-hex",
@@ -15496,7 +15496,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.5,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "awp-arsenic-spill",
@@ -15507,7 +15507,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.502,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ssg-08-blush-pour",
@@ -15518,7 +15518,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.6784,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p250-red-tide",
@@ -15529,7 +15529,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.75,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "glock-18-coral-bloom",
@@ -15540,7 +15540,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.7529,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp9-shredded",
@@ -15551,7 +15551,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "desert-eagle-mulberry",
@@ -15562,7 +15562,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.75,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "usp-s-bleeding-edge",
@@ -15573,7 +15573,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.6,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m4a1-s-glitched-paint",
@@ -15584,7 +15584,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.67,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ak-47-nouveau-rouge",
@@ -15595,7 +15595,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   // ─── The Train 2025 Collection ───
   {
@@ -15607,7 +15607,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.3,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p250-constructivist",
@@ -15618,7 +15618,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.35,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "p90-straight-dimes",
@@ -15629,7 +15629,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "cz75-auto-copper-fiber",
@@ -15640,7 +15640,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.5633,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "aug-steel-sentinel",
@@ -15651,7 +15651,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "nova-rain-station",
@@ -15662,7 +15662,7 @@ export const SKINS: Skin[] = [
     rarity: "industrial_grade",
     minFloat: 0.0,
     maxFloat: 0.35,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ump-45-late-night-transit",
@@ -15673,7 +15673,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "xm1014-run-run-run",
@@ -15684,7 +15684,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.7466,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "glock-18-green-line",
@@ -15695,7 +15695,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "famas-2a2f",
@@ -15706,7 +15706,7 @@ export const SKINS: Skin[] = [
     rarity: "mil_spec",
     minFloat: 0.0,
     maxFloat: 0.86,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "tec-9-whiteout",
@@ -15717,7 +15717,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.06,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mac-10-derailment",
@@ -15728,7 +15728,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "zeus-x27-charged-up",
@@ -15739,7 +15739,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m4a4-hellish",
@@ -15750,7 +15750,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "mp9-latte-rush",
@@ -15761,7 +15761,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "awp-longdog",
@@ -15772,7 +15772,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   // ─── Limited Edition Item ───
   {
@@ -15784,7 +15784,7 @@ export const SKINS: Skin[] = [
     rarity: "restricted",
     minFloat: 0.0,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "desert-eagle-heat-treated",
@@ -15795,7 +15795,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "m4a1-s-solitude",
@@ -15806,7 +15806,7 @@ export const SKINS: Skin[] = [
     rarity: "classified",
     minFloat: 0.0,
     maxFloat: 0.7,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
   {
     id: "ak-47-aphrodite",
@@ -15817,7 +15817,7 @@ export const SKINS: Skin[] = [
     rarity: "covert",
     minFloat: 0.0,
     maxFloat: 1.0,
-    stattrak: false,
+    stattrak: false,  // StatTrak not differentiated in the catalog
   },
 ];
 

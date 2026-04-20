@@ -2,6 +2,7 @@
 """Generate catalog.ts from ByMykel CSGO-API data."""
 
 import json
+import os
 import re
 import urllib.request
 
@@ -249,7 +250,7 @@ def main():
             lines.append(f'    rarity: "{sk["rarity"]}",')
             lines.append(f'    minFloat: {sk["minFloat"]},')
             lines.append(f'    maxFloat: {sk["maxFloat"]},')
-            lines.append(f'    stattrak: false,')
+            lines.append(f'    stattrak: false,  // StatTrak not differentiated in the catalog')
             lines.append("  },")
 
     lines.append("];")
@@ -281,7 +282,7 @@ def main():
     lines.append("")
 
     output = "\n".join(lines)
-    out_path = "/home/runner/work/CS-Tradeup-Calc/CS-Tradeup-Calc/lib/catalog.ts"
+    out_path = os.path.join(os.path.dirname(__file__), "..", "lib", "catalog.ts")
     with open(out_path, "w", encoding="utf-8") as f:
         f.write(output)
     print(f"Written to {out_path}")
