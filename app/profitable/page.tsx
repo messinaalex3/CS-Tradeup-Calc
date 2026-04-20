@@ -13,6 +13,13 @@ interface ProfitableContract {
     wear: Wear;
     price: number | null;
   }>;
+  outputs: Array<{
+    skinId: string;
+    skinName: string;
+    probability: number;
+    wear: Wear;
+    estimatedPrice: number | null;
+  }>;
   rarity: Rarity;
   totalCost: number;
   ev: number;
@@ -251,6 +258,39 @@ export default function ProfitablePage() {
                             {inp.skinName} ({WEAR_LABELS[inp.wear]},{" "}
                             {inp.float.toFixed(2)})
                           </span>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="mt-4">
+                      <h3 className="text-xs text-zinc-500 uppercase tracking-wider mb-2">
+                        Potential Outputs
+                      </h3>
+                      <div className="grid gap-2 sm:grid-cols-2">
+                        {contract.outputs.map((out, j) => (
+                          <div
+                            key={j}
+                            className="bg-zinc-800/50 rounded p-2 flex items-center justify-between text-xs"
+                          >
+                            <div className="min-w-0 flex-1">
+                              <div className="text-zinc-200 truncate">
+                                {out.skinName}
+                              </div>
+                              <div className="text-zinc-500">
+                                {WEAR_LABELS[out.wear]} ·{" "}
+                                {(out.probability * 100).toFixed(1)}%
+                              </div>
+                            </div>
+                            <div
+                              className={`font-semibold ml-3 ${out.estimatedPrice !== null &&
+                                  out.estimatedPrice > contract.totalCost
+                                  ? "text-green-400"
+                                  : "text-red-400"
+                                }`}
+                            >
+                              {formatPrice(out.estimatedPrice)}
+                            </div>
+                          </div>
                         ))}
                       </div>
                     </div>

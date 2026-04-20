@@ -1,0 +1,17 @@
+name = "cs-tradeup-calc"
+compatibility_date = "2023-12-01"
+pages_build_output_dir = ".next"
+
+[[kv_namespaces]]
+binding = "PRICE_CACHE"
+id = "PUT_YOUR_PRODUCTION_KV_ID_HERE"
+preview_id = "PRICE_CACHE_LOCAL"
+
+[[r2_buckets]]
+binding = "PRICE_SNAPSHOTS"
+bucket_name = "cs-tradeup-prices"
+preview_bucket_name = "cs-tradeup-prices-local"
+
+# If you want to use a Cron trigger to update prices hourly
+# [triggers]
+# crons = ["0 * * * *"]

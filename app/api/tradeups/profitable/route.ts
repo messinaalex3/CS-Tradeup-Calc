@@ -6,8 +6,9 @@ import { evaluateTradeup } from "@/lib/tradeup/ev";
 import { getBestPrice } from "@/lib/pricing/steam";
 import { calculateOutputPool } from "@/lib/tradeup/pool";
 import { floatToWear } from "@/lib/tradeup/float";
+import { type CloudflareEnv } from "@/lib/storage";
 
-export const runtime = "nodejs";
+export const runtime = "edge";
 
 // Maximum number of profitable contracts to return
 const MAX_RESULTS = 20;
@@ -16,6 +17,13 @@ const MIN_ROI = 0;
 
 interface ProfitableContract {
   inputs: Array<{ skinId: string; skinName: string; float: number; wear: Wear; price: number | null }>;
+  outputs: Array<{
+    skinId: string;
+    skinName: string;
+    probability: number;
+    wear: Wear;
+    estimatedPrice: number | null;
+  }>;
   rarity: Rarity;
   totalCost: number;
   ev: number;
@@ -74,6 +82,9 @@ function generateCandidates(rarity: Rarity): TradeupInput[][] {
 }
 
 export async function GET(request: NextRequest) {
+  // @ts-expect-error - env is injected by Cloudflare Workers at runtime
+  const env = (process.env as unknown) as CloudflareEnv;
+
   const { searchParams } = request.nextUrl;
   const rarityParam = searchParams.get("rarity") as Rarity | null;
   const maxBudget = searchParams.get("maxBudget")
@@ -85,7 +96,7 @@ export async function GET(request: NextRequest) {
     ? [rarityParam]
     : (["industrial_grade", "mil_spec", "restricted", "classified"] as Rarity[]);
 
-  const priceGetter = (skinId: string, wear: Wear) => getBestPrice(skinId, wear);
+  const priceGetter = (skinId: string, wear: Wear) => getBestPrice(skinId, wear, env);
   const profitable: ProfitableContract[] = [];
 
   for (const rarity of scannableRarities) {
@@ -118,6 +129,13 @@ export async function GET(request: NextRequest) {
 
       profitable.push({
         inputs: contractInputs,
+        outputs: result.outputs.map((o) => ({
+          skinId: o.skinId,
+          skinName: o.skinName,
+          probability: o.probability,
+          wear: o.wear,
+          estimatedPrice: o.estimatedPrice,
+        })),
         rarity,
         totalCost: result.totalCost,
         ev: result.ev,

@@ -2,10 +2,14 @@ import { NextRequest, NextResponse } from "next/server";
 import type { TradeupInput, Wear } from "@/lib/types";
 import { evaluateTradeup } from "@/lib/tradeup/ev";
 import { getBestPrice } from "@/lib/pricing/steam";
+import { type CloudflareEnv } from "@/lib/storage";
 
-export const runtime = "nodejs";
+export const runtime = "edge";
 
 export async function POST(request: NextRequest) {
+  // @ts-expect-error - env is injected by Cloudflare Workers at runtime
+  const env = (process.env as unknown) as CloudflareEnv;
+
   let body: { inputs?: TradeupInput[] };
   try {
     body = await request.json() as { inputs?: TradeupInput[] };
@@ -22,7 +26,7 @@ export async function POST(request: NextRequest) {
   }
 
   const priceGetter = (skinId: string, wear: Wear) =>
-    getBestPrice(skinId, wear);
+    getBestPrice(skinId, wear, env);
 
   const result = await evaluateTradeup(inputs, priceGetter);
   return NextResponse.json(result);

@@ -1,6 +1,7 @@
 import type { PriceData, Wear } from "../types";
 import { WEAR_LABELS } from "../types";
 import { getSkinById } from "../catalog";
+import { getCachedPrice, type CloudflareEnv } from "../storage";
 
 // Steam Market App ID for CS2
 const CSGO_APP_ID = 730;
@@ -29,11 +30,29 @@ export function buildMarketHashName(skinId: string, wear: Wear): string {
 export async function fetchSteamPrice(
   skinId: string,
   wear: Wear,
+  env?: CloudflareEnv,
 ): Promise<PriceData> {
   const cacheKey = `${skinId}:${wear}`;
   const cached = priceCache.get(cacheKey);
   if (cached && cached.expiresAt > Date.now()) {
     return { ...cached.data, source: "cache" };
+  }
+
+  // Fallback to Cloudflare KV/R2 if env is provided
+  if (env) {
+    const cachedPrice = await getCachedPrice(env, skinId, wear);
+    if (cachedPrice !== null) {
+      return {
+        skinId,
+        wear,
+        lowestPrice: cachedPrice,
+        medianPrice: null,
+        volume: null,
+        currency: "USD",
+        fetchedAt: new Date().toISOString(),
+        source: "cache",
+      };
+    }
   }
 
   const skin = getSkinById(skinId);
@@ -149,7 +168,8 @@ export async function fetchSteamPrice(
 export async function getBestPrice(
   skinId: string,
   wear: Wear,
+  env?: CloudflareEnv,
 ): Promise<number | null> {
-  const data = await fetchSteamPrice(skinId, wear);
+  const data = await fetchSteamPrice(skinId, wear, env);
   return data.lowestPrice ?? data.medianPrice;
 }

@@ -1,10 +1,14 @@
 import { NextRequest, NextResponse } from "next/server";
 import { fetchSteamPrice } from "@/lib/pricing/steam";
 import type { Wear } from "@/lib/types";
+import { type CloudflareEnv } from "@/lib/storage";
 
-export const runtime = "nodejs";
+export const runtime = "edge";
 
 export async function GET(request: NextRequest) {
+  // @ts-expect-error - env is injected by Cloudflare Workers at runtime
+  const env = (process.env as unknown) as CloudflareEnv;
+
   const { searchParams } = request.nextUrl;
   const skinId = searchParams.get("skinId");
   const wear = searchParams.get("wear") as Wear | null;
@@ -19,6 +23,6 @@ export async function GET(request: NextRequest) {
     );
   }
 
-  const priceData = await fetchSteamPrice(skinId, wear);
+  const priceData = await fetchSteamPrice(skinId, wear, env);
   return NextResponse.json(priceData);
 }
