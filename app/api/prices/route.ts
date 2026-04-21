@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { fetchSteamPrice } from "@/lib/pricing/steam";
+import { getPrice } from "@/lib/pricing";
 import type { Wear } from "@/lib/types";
 import { type CloudflareEnv } from "@/lib/storage";
 import { getCloudflareContext } from "@opennextjs/cloudflare";
@@ -22,6 +22,6 @@ export async function GET(request: NextRequest) {
     );
   }
 
-  const priceData = await fetchSteamPrice(skinId, wear, env);
+  const priceData = await getPrice(skinId, wear, env);
   return NextResponse.json(priceData);
 }

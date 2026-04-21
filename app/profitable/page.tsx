@@ -115,7 +115,7 @@ export default function ProfitablePage() {
       </h1>
       <p className="text-zinc-400 text-sm mb-6">
         Automatically scanned trade-up contracts ranked by ROI. Prices are
-        fetched live from the Steam Community Market.
+        sourced from Skinport and refreshed hourly.
       </p>
 
       {/* Filters */}
@@ -168,7 +168,7 @@ export default function ProfitablePage() {
 
       {loading && (
         <div className="text-zinc-400 text-sm">
-          Fetching live prices from Steam Market… This may take a moment.
+          Scanning trade-up contracts… This may take a moment.
         </div>
       )}
 
@@ -283,9 +283,9 @@ export default function ProfitablePage() {
                             </div>
                             <div
                               className={`font-semibold ml-3 ${out.estimatedPrice !== null &&
-                                  out.estimatedPrice > contract.totalCost
-                                  ? "text-green-400"
-                                  : "text-red-400"
+                                out.estimatedPrice > contract.totalCost
+                                ? "text-green-400"
+                                : "text-red-400"
                                 }`}
                             >
                               {formatPrice(out.estimatedPrice)}

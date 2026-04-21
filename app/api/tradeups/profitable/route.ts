@@ -3,7 +3,7 @@ import type { Rarity, TradeupInput, Wear } from "@/lib/types";
 import { RARITY_LABELS } from "@/lib/types";
 import { SKINS } from "@/lib/catalog";
 import { evaluateTradeup } from "@/lib/tradeup/ev";
-import { getBestPrice } from "@/lib/pricing/steam";
+import { getBestPrice } from "@/lib/pricing";
 import { calculateOutputPool } from "@/lib/tradeup/pool";
 import { floatToWear } from "@/lib/tradeup/float";
 import { type CloudflareEnv } from "@/lib/storage";

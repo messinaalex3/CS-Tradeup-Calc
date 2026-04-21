@@ -109,5 +109,5 @@ export interface PriceData {
   volume: number | null;
   currency: string;
   fetchedAt: string;
-  source: "steam" | "cache";
+  source: "cache";
 }

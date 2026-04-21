@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import type { TradeupInput, Wear } from "@/lib/types";
 import { evaluateTradeup } from "@/lib/tradeup/ev";
-import { getBestPrice } from "@/lib/pricing/steam";
+import { getBestPrice } from "@/lib/pricing";
 import { type CloudflareEnv } from "@/lib/storage";
 import { getCloudflareContext } from "@opennextjs/cloudflare";
 

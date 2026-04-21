@@ -6,7 +6,7 @@ A web application for looking up CS2 skin prices and finding the most profitable
 
 ## Features
 
-- **Live Price Lookup** — fetches current lowest listing prices from the Steam Community Market
+- **Price Lookup** — prices sourced from the Skinport API, refreshed hourly via a cron job
 - **Trade-up Calculator** — select 10 same-rarity items, set float values, and compute EV/ROI
 - **Profitable Trade-ups** — automatically scans the catalog and surfaces the highest-ROI contracts
 
@@ -18,7 +18,7 @@ The calculator:
 1. Validates inputs (exactly 10 items, same rarity, valid float values)
 2. Determines the output pool and each item's probability
 3. Computes the output float using CS2's formula: `outputFloat = outputMin + avg(normalizedInputFloats) × (outputMax − outputMin)`
-4. Fetches live prices from Steam Market for each possible output
+4. Looks up cached prices (sourced from Skinport) for each possible output
 5. Calculates **EV** (Σ probability × price) and **ROI** ((EV − cost) / cost × 100%)
 
 ## Profitable Trade-ups — Deep Dive
@@ -43,14 +43,14 @@ For every *pair* of collections that contain skins of the given rarity, create a
 
 Each candidate contract is evaluated by `lib/tradeup/ev.ts`:
 
-1. **Input cost** — fetch the live Steam Market price for each input item (skin + wear tier derived from its float) and sum them to get `totalCost`.
+1. **Input cost** — look up the cached Skinport price for each input item (skin + wear tier derived from its float) and sum them to get `totalCost`.
 2. **Output pool** — `lib/tradeup/pool.ts` identifies all items of the next rarity tier that belong to the same collections as the inputs, and assigns each a probability proportional to how many inputs came from its collection.
 3. **Output float** — the output float is the same for every item in the pool and is computed as:
    ```
    normalizedAvg = average((inputFloat − skinMin) / (skinMax − skinMin))
    outputFloat   = outputMin + normalizedAvg × (outputMax − outputMin)
    ```
-4. **Output prices** — the Steam Market price is fetched for each output item at its predicted wear tier.
+4. **Output prices** — the cached Skinport price is looked up for each output item at its predicted wear tier.
 5. **EV & ROI** —
    ```
    EV  = Σ (probability × price)  for each output item
@@ -83,7 +83,6 @@ Each result card on the `/profitable` page displays:
 | **Small catalog** | The built-in catalog covers 6 collections and ~60 skins. Opportunities outside these collections are not visible. |
 | **Simple candidate strategies** | Only two float values are tried (0.20 for both strategies). A contract at float 0.05 might have a completely different ROI. |
 | **Single-skin inputs only** | Strategy A always uses 10 copies of the *same* skin. Contracts built from 3 or more distinct skins are not generated. |
-| **No price caching** | Every scan hits the Steam Market API in real time. With many candidates this is slow and may be throttled. |
 | **On-demand scanning** | Results are computed fresh on every page load. There is no background refresh or persistent storage of discovered contracts. |
 
 ### Ideas for improvement
@@ -91,9 +90,8 @@ Each result card on the `/profitable` page displays:
 - **Broader candidate generation** — sweep over multiple float values (e.g. 0.05, 0.15, 0.20, 0.35) and all permutations of 2–4 distinct skins from the same rarity tier to find contracts the current strategies miss.
 - **Exhaustive mixed-input contracts** — enumerate all combinations of *k* distinct skins (k = 2…5) rather than only pairs, giving a much richer search space.
 - **Expand the catalog** — import the full CS2 skin catalog (hundreds of collections) to surface a wider range of opportunities.
-- **Price caching** — cache Steam Market responses in a key-value store (e.g. Cloudflare KV) with a short TTL (5–15 minutes) so repeated scans and large candidate sets don't hit rate limits.
 - **Background / scheduled scanning** — run the scanner on a cron schedule (e.g. every 30 minutes) and persist results to a database. The UI then reads pre-computed results instead of evaluating on every request, making the page nearly instant to load.
-- **Multiple price sources** — incorporate third-party marketplace prices (e.g. Buff163, Skinport) to find arbitrage opportunities where buying inputs on one platform and receiving outputs on another is profitable.
+- **Multiple price sources** — incorporate additional marketplace prices (e.g. Buff163) to find arbitrage opportunities where buying inputs on one platform and receiving outputs on another is profitable.
 - **StatTrak support** — StatTrak trade-ups have separate price curves; modelling them can reveal additional profitable contracts.
 - **Adjustable ROI threshold** — expose the `MIN_ROI` constant as a UI slider so users can filter for only high-confidence contracts.
 
@@ -151,11 +149,60 @@ npm run preview    # builds then serves at http://localhost:8787
 
 ## Architecture & Storage Strategy
 
-To handle high-frequency price lookups while avoiding Steam API rate limits, this project uses a **Hybrid Storage Strategy**:
+Prices are sourced from the **Skinport public items API** in a single bulk request and stored in Cloudflare's edge infrastructure:
 
-- **Cloudflare R2 (Object Storage):** Stores a "Source of Truth" JSON snapshot of all skin prices. This is intended to be updated once per hour via a scheduled task.
-- **Cloudflare KV (Key-Value):** Acts as a high-speed edge cache. When a user requests a trade-up evaluation, the app checks KV for individual skin prices. If missing, it pulls from the R2 snapshot and populates the KV cache with a 1-hour TTL.
-- **Edge Runtime:** All API routes run on the Cloudflare Edge, ensuring sub-10ms response times for cached data.
+- **Cloudflare R2 (Object Storage):** Stores a full JSON snapshot of all skin prices (`latest_prices.json`), updated hourly by the cron job.
+- **Cloudflare KV (Key-Value):** Acts as a high-speed edge cache. When a price is requested, the app checks KV first. On a miss it pulls the price from the R2 snapshot and back-populates KV with a 1-hour TTL.
+- **Edge Runtime:** All API routes run on the Cloudflare Edge, ensuring fast response times for cached data.
+
+## Price Refresh — Cron Job Setup
+
+Prices are refreshed by calling `GET /api/prices/refresh`. This endpoint fetches all CS2 prices from Skinport in a single HTTP request and writes the result to R2/KV. It should be run hourly.
+
+### 1. Set a `CRON_SECRET` environment variable
+
+Protect the endpoint from unauthorized calls by setting a secret in your Cloudflare dashboard:
+
+**Dashboard:** Workers & Pages → your project → Settings → Variables and Secrets → add `CRON_SECRET`.
+
+Then call the endpoint with:
+```
+Authorization: Bearer <your-secret>
+```
+
+### 2. Cloudflare Pages Cron Trigger (recommended)
+
+Add a cron trigger in `wrangler.jsonc`:
+
+```jsonc
+{
+  "triggers": {
+    "crons": ["0 * * * *"]
+  }
+}
+```
+
+Then create `app/api/cron/route.ts` (or handle it in a Cloudflare scheduled worker) that calls `fetch('/api/prices/refresh', { headers: { Authorization: 'Bearer ...' } })`.
+
+Alternatively, configure the trigger directly in the Cloudflare dashboard under **Workers & Pages → your project → Triggers → Cron Triggers**, and add `0 * * * *` (every hour on the hour).
+
+### 3. External cron service (alternative)
+
+If you prefer not to use Cloudflare cron triggers, any external scheduler (GitHub Actions, cron-job.org, etc.) can call the endpoint:
+
+```bash
+# GitHub Actions example (.github/workflows/refresh-prices.yml)
+on:
+  schedule:
+    - cron: '0 * * * *'
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          curl -s -X GET "https://<your-domain>/api/prices/refresh" \
+            -H "Authorization: Bearer ${{ secrets.CRON_SECRET }}"
+```
 
 ## Project Structure
 
@@ -166,17 +213,19 @@ app/
   profitable/page.tsx             # Profitable trade-ups browser
   api/
     prices/route.ts               # GET /api/prices?skinId=&wear=
+    prices/refresh/route.ts       # GET /api/prices/refresh  (cron target)
     tradeups/evaluate/route.ts    # POST /api/tradeups/evaluate
     tradeups/profitable/route.ts  # GET /api/tradeups/profitable
 lib/
   types.ts                        # Shared TypeScript types
   catalog.ts                      # CS2 skin catalog (6 collections, 60 skins)
+  storage.ts                      # Cloudflare KV/R2 helpers
   tradeup/
     pool.ts                       # Output pool + probability calculation
     float.ts                      # Float normalization & output float math
     ev.ts                         # EV / ROI evaluation engine
   pricing/
-    steam.ts                      # Steam Community Market price fetcher
+    index.ts                      # Cache-only price lookup (reads from KV/R2)
 ```
 
 ## API

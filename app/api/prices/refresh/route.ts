@@ -1,57 +1,85 @@
 import { NextRequest, NextResponse } from "next/server";
-import { fetchSteamPrice } from "@/lib/pricing/steam";
 import { SKINS } from "@/lib/catalog";
-import { type Wear } from "@/lib/types";
+import { WEAR_LABELS, type Wear } from "@/lib/types";
 import { updatePriceSnapshot, type PriceSnapshot, type CloudflareEnv } from "@/lib/storage";
 import { getCloudflareContext } from "@opennextjs/cloudflare";
 
+const SKINPORT_API = "https://api.skinport.com/v1/items?app_id=730&currency=USD&tradable=0";
+const WEARS: Wear[] = ["FN", "MW", "FT", "WW", "BS"];
+
+interface SkinportItem {
+    market_hash_name: string;
+    /** Skinport's estimate of Steam Market value in USD */
+    suggested_price: number | null;
+    /** Lowest current Skinport listing price in USD */
+    min_price: number | null;
+    quantity: number;
+}
+
 /**
- * Background worker to refresh all prices in the catalog and save to R2.
- * This can be triggered by a Cloudflare Pages Cron Trigger.
+ * Fetches all CS2 prices from Skinport in a single request and saves the
+ * snapshot to Cloudflare R2. Triggered by a Cloudflare Pages Cron Trigger.
  */
 export async function GET(request: NextRequest) {
-    // Simple auth check to prevent abuse if called via URL
     const authHeader = request.headers.get("Authorization");
     const cronSecret = process.env.CRON_SECRET;
 
-    // If CRON_SECRET is set, require it. Otherwise, allow (for local testing)
     if (cronSecret && authHeader !== `Bearer ${cronSecret}`) {
         return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
 
-    const { env: rawEnv } = await getCloudflareContext();
-    const env = rawEnv as unknown as CloudflareEnv;
-    const snapshot: PriceSnapshot = {};
-    const wears: Wear[] = ["FN", "MW", "FT", "WW", "BS"];
-
-    console.log("Starting price refresh for all catalog items...");
-
+    // Build a reverse-lookup: "AK-47 | Redline (Field-Tested)" → { skinId, wear }
+    const hashToEntry = new Map<string, { skinId: string; wear: Wear }>();
     for (const skin of SKINS) {
-        snapshot[skin.id] = {};
-        for (const wear of wears) {
-            try {
-                // Fetch fresh from Steam (fetchSteamPrice handles its own internal request-level cache, 
-                // but since this is a new execution it hits Steam)
-                const priceData = await fetchSteamPrice(skin.id, wear);
-                if (priceData.lowestPrice) {
-                    snapshot[skin.id]![wear] = priceData.lowestPrice;
-                }
-
-                // Respect Steam rate limits - pause briefly between requests
-                // Note: In a real Cloudflare Worker, you'd use a more robust queueing system
-                console.log(`Fetched price for ${skin.id} (${wear}): ${priceData.lowestPrice}`);
-                await new Promise(resolve => setTimeout(resolve, 2000));
-            } catch (err) {
-                console.error(`Failed to fetch price for ${skin.id} (${wear}):`, err);
-            }
+        for (const wear of WEARS) {
+            hashToEntry.set(`${skin.name} (${WEAR_LABELS[wear]})`, { skinId: skin.id, wear });
         }
     }
 
-    // Persist to R2
+    console.log("Fetching prices from Skinport...");
+
+    let items: SkinportItem[];
+    try {
+        const response = await fetch(SKINPORT_API, {
+            headers: { "Accept-Encoding": "br" },
+            signal: AbortSignal.timeout(30_000),
+        });
+        if (!response.ok) {
+            throw new Error(`Skinport API returned HTTP ${response.status}`);
+        }
+        items = (await response.json()) as SkinportItem[];
+    } catch (err) {
+        console.error("Failed to fetch from Skinport:", err);
+        return NextResponse.json({ error: "Failed to fetch prices from Skinport" }, { status: 502 });
+    }
+
+    console.log(`Received ${items.length} items from Skinport.`);
+
+    const snapshot: PriceSnapshot = {};
+    let matched = 0;
+
+    for (const item of items) {
+        const entry = hashToEntry.get(item.market_hash_name);
+        if (!entry) continue;
+
+        // Prefer suggested_price (tracks Steam Market value); fall back to min_price
+        const price = item.suggested_price ?? item.min_price;
+        if (!price || price <= 0) continue;
+
+        if (!snapshot[entry.skinId]) snapshot[entry.skinId] = {};
+        snapshot[entry.skinId]![entry.wear] = price;
+        matched++;
+    }
+
+    console.log(`Matched ${matched} prices.`);
+
+    const { env: rawEnv } = await getCloudflareContext();
+    const env = rawEnv as unknown as CloudflareEnv;
+
     try {
         await updatePriceSnapshot(env, snapshot);
         console.log("Successfully updated R2 price snapshot.");
-        return NextResponse.json({ success: true, updatedCount: SKINS.length });
+        return NextResponse.json({ success: true, matchedCount: matched, totalItems: items.length });
     } catch (err) {
         console.error("Failed to update R2 snapshot:", err);
         return NextResponse.json({ error: "Storage failure" }, { status: 500 });
