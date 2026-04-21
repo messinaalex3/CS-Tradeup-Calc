@@ -19,6 +19,12 @@ export default function Navbar() {
         >
           Profitable Trade-ups
         </Link>
+        <Link
+          href="/inventory"
+          className="text-zinc-300 hover:text-white text-sm transition-colors"
+        >
+          My Inventory
+        </Link>
       </div>
     </nav>
   );
