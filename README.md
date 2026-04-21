@@ -99,12 +99,63 @@ Each result card on the `/profitable` page displays:
 
 ## Getting Started
 
+This app runs on the **Cloudflare Workers** runtime using [`@opennextjs/cloudflare`](https://opennext.js.org/cloudflare) v1.x. There is no Cloudflare Pages mode in v1.x — the adapter exclusively targets Workers.
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) (v20 or later)
+- A Cloudflare account — run `npx wrangler login` once to authenticate
+
+### Local Development
+
+You have two options:
+
+**Option A — Next.js dev server** (fast iteration, Cloudflare bindings available via `initOpenNextCloudflareForDev`)
 ```bash
 npm install
-npm run dev
+npm run dev        # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000).
+**Option B — Full Workers preview** (same runtime as production)
+```bash
+npm install
+npm run preview    # builds then serves at http://localhost:8787
+```
+
+> `npm run preview` runs `opennextjs-cloudflare build && opennextjs-cloudflare preview`. KV and R2 are simulated locally by Wrangler — no real Cloudflare resources are required for local development.
+
+### Deployment to Cloudflare Workers
+
+1.  **Create your Cloudflare resources** (one-time setup)
+    ```bash
+    # Create the KV namespace for price caching
+    npx wrangler kv namespace create PRICE_CACHE
+
+    # Create the R2 bucket for price snapshots
+    npx wrangler r2 bucket create cs-tradeup-prices
+    ```
+
+2.  **Update `wrangler.jsonc` with the real KV namespace ID**
+    The `kv namespace create` command prints an `id`. Replace the placeholder in `wrangler.jsonc`:
+    ```jsonc
+    "kv_namespaces": [
+      { "binding": "PRICE_CACHE", "id": "<paste-real-id-here>" }
+    ]
+    ```
+    > **Important:** Deploying with the placeholder `"price-cache-id"` will cause the Worker to crash at runtime with a binding error.
+
+3.  **Deploy**
+    ```bash
+    npm run deploy   # runs opennextjs-cloudflare build then deploys to Cloudflare Workers
+    ```
+
+## Architecture & Storage Strategy
+
+To handle high-frequency price lookups while avoiding Steam API rate limits, this project uses a **Hybrid Storage Strategy**:
+
+- **Cloudflare R2 (Object Storage):** Stores a "Source of Truth" JSON snapshot of all skin prices. This is intended to be updated once per hour via a scheduled task.
+- **Cloudflare KV (Key-Value):** Acts as a high-speed edge cache. When a user requests a trade-up evaluation, the app checks KV for individual skin prices. If missing, it pulls from the R2 snapshot and populates the KV cache with a 1-hour TTL.
+- **Edge Runtime:** All API routes run on the Cloudflare Edge, ensuring sub-10ms response times for cached data.
 
 ## Project Structure
 

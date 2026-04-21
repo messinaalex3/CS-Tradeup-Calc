@@ -10,6 +10,8 @@ node_modules/
 # Next.js build output
 /.next/
 /out/
+/.wrangler/
+/.open-next/
 
 # Environment files
 .env
@@ -27,3 +29,6 @@ yarn-error.log*
 
 # Vercel
 .vercel
+
+# OpenNext
+.open-next

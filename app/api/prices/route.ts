@@ -2,12 +2,11 @@ import { NextRequest, NextResponse } from "next/server";
 import { fetchSteamPrice } from "@/lib/pricing/steam";
 import type { Wear } from "@/lib/types";
 import { type CloudflareEnv } from "@/lib/storage";
-
-export const runtime = "edge";
+import { getCloudflareContext } from "@opennextjs/cloudflare";
 
 export async function GET(request: NextRequest) {
-  // @ts-expect-error - env is injected by Cloudflare Workers at runtime
-  const env = (process.env as unknown) as CloudflareEnv;
+  const { env: rawEnv } = await getCloudflareContext();
+  const env = rawEnv as unknown as CloudflareEnv;
 
   const { searchParams } = request.nextUrl;
   const skinId = searchParams.get("skinId");

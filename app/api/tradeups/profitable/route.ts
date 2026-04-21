@@ -7,8 +7,7 @@ import { getBestPrice } from "@/lib/pricing/steam";
 import { calculateOutputPool } from "@/lib/tradeup/pool";
 import { floatToWear } from "@/lib/tradeup/float";
 import { type CloudflareEnv } from "@/lib/storage";
-
-export const runtime = "edge";
+import { getCloudflareContext } from "@opennextjs/cloudflare";
 
 // Maximum number of profitable contracts to return
 const MAX_RESULTS = 20;
@@ -82,8 +81,8 @@ function generateCandidates(rarity: Rarity): TradeupInput[][] {
 }
 
 export async function GET(request: NextRequest) {
-  // @ts-expect-error - env is injected by Cloudflare Workers at runtime
-  const env = (process.env as unknown) as CloudflareEnv;
+  const { env: rawEnv } = await getCloudflareContext();
+  const env = rawEnv as unknown as CloudflareEnv;
 
   const { searchParams } = request.nextUrl;
   const rarityParam = searchParams.get("rarity") as Rarity | null;

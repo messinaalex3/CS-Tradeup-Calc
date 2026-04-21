@@ -3,12 +3,11 @@ import type { TradeupInput, Wear } from "@/lib/types";
 import { evaluateTradeup } from "@/lib/tradeup/ev";
 import { getBestPrice } from "@/lib/pricing/steam";
 import { type CloudflareEnv } from "@/lib/storage";
-
-export const runtime = "edge";
+import { getCloudflareContext } from "@opennextjs/cloudflare";
 
 export async function POST(request: NextRequest) {
-  // @ts-expect-error - env is injected by Cloudflare Workers at runtime
-  const env = (process.env as unknown) as CloudflareEnv;
+  const { env: rawEnv } = await getCloudflareContext();
+  const env = rawEnv as unknown as CloudflareEnv;
 
   let body: { inputs?: TradeupInput[] };
   try {
