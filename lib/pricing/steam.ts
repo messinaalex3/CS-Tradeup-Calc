@@ -129,8 +129,8 @@ export async function fetchSteamPrice(
 
     const parsePrice = (s?: string): number | null => {
       if (!s) return null;
-      // Steam returns prices like "$1.23" or "1,23€"
-      const cleaned = s.replace(/[^0-9.,]/g, "").replace(",", ".");
+      // Remove currency symbols, commas, spaces — keep only digits and dots
+      const cleaned = s.replace(/[^0-9.]/g, "");
       const value = parseFloat(cleaned);
       return isNaN(value) ? null : value;
     };

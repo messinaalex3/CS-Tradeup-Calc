@@ -1,0 +1,8320 @@
+{
+  "ak-47-aphrodite": {
+    "BS": 22.47,
+    "FN": 577.97,
+    "FT": 29.25,
+    "MW": 59.41,
+    "WW": 22.98
+  },
+  "ak-47-aquamarine-revenge": {
+    "BS": 48.53,
+    "FN": 338.66,
+    "FT": 59.44,
+    "MW": 100.61,
+    "WW": 49.12
+  },
+  "ak-47-asiimov": {
+    "BS": 56.88,
+    "FN": 664,
+    "FT": 59.71,
+    "MW": 77.97,
+    "WW": 59.62
+  },
+  "ak-47-baroque-purple": {
+    "FN": 172.26,
+    "FT": 7.84,
+    "MW": 20.11
+  },
+  "ak-47-black-laminate": {
+    "FT": 51,
+    "MW": 135.75,
+    "WW": 52.75
+  },
+  "ak-47-bloodsport": {
+    "FN": 279.2,
+    "FT": 196.75,
+    "MW": 220.21,
+    "WW": 190.75
+  },
+  "ak-47-blue-laminate": {
+    "FN": 77.13,
+    "FT": 22.15,
+    "MW": 24.48
+  },
+  "ak-47-breakthrough": {
+    "BS": 3.9,
+    "FN": 27.44,
+    "FT": 6.36,
+    "MW": 12.66,
+    "WW": 6.5
+  },
+  "ak-47-b-the-monster": {
+    "BS": 124.55,
+    "FN": 1230.51,
+    "FT": 284.94,
+    "MW": 449.23,
+    "WW": 243.68
+  },
+  "ak-47-cartel": {
+    "BS": 23.66,
+    "FN": 123.43,
+    "FT": 24.14,
+    "MW": 30.93
+  },
+  "ak-47-case-hardened": {
+    "BS": 228.12,
+    "FN": 1007.37,
+    "FT": 295,
+    "MW": 369.89,
+    "WW": 245.59
+  },
+  "ak-47-crane-flight": {
+    "BS": 23.57,
+    "FN": 160.79,
+    "FT": 39.41,
+    "MW": 69.67,
+    "WW": 27.32
+  },
+  "ak-47-crossfade": {
+    "BS": 2.95,
+    "FN": 11.67,
+    "FT": 3.46,
+    "MW": 5.04
+  },
+  "ak-47-elite-build": {
+    "BS": 2.32,
+    "FN": 16.61,
+    "FT": 3.2,
+    "MW": 4.47,
+    "WW": 2.42
+  },
+  "ak-47-emerald-pinstripe": {
+    "BS": 3.98,
+    "FN": 35.25,
+    "FT": 4.08,
+    "MW": 6.38,
+    "WW": 3.91
+  },
+  "ak-47-fire-serpent": {
+    "FN": 3258.5,
+    "FT": 961.21,
+    "MW": 1525.01,
+    "WW": 993.82
+  },
+  "ak-47-first-class": {
+    "MW": 167.45,
+    "WW": 105.36
+  },
+  "ak-47-frontside-misty": {
+    "BS": 21.46,
+    "FN": 259.35,
+    "FT": 25.5,
+    "MW": 43.17,
+    "WW": 23.47
+  },
+  "ak-47-fuel-injector": {
+    "BS": 151.34,
+    "FN": 719.55,
+    "FT": 254.57,
+    "MW": 357.88,
+    "WW": 190.78
+  },
+  "ak-47-gold-arabesque": {
+    "FT": 2255.15
+  },
+  "ak-47-green-laminate": {
+    "FN": 214.7,
+    "FT": 35.82,
+    "MW": 64.85,
+    "WW": 47.14
+  },
+  "ak-47-head-shot": {
+    "BS": 40.14,
+    "FN": 186.34,
+    "FT": 50.5,
+    "MW": 85.53,
+    "WW": 45.45
+  },
+  "ak-47-hydroponic": {
+    "FT": 1866.49,
+    "MW": 3062.51,
+    "WW": 1548.4
+  },
+  "ak-47-ice-coaled": {
+    "BS": 5.82,
+    "FN": 29.64,
+    "FT": 6.74,
+    "MW": 12.12,
+    "WW": 8.13
+  },
+  "ak-47-inheritance": {
+    "BS": 55.07,
+    "FN": 209.32,
+    "FT": 64.11,
+    "MW": 97.79,
+    "WW": 62.13
+  },
+  "ak-47-jaguar": {
+    "BS": 95.74,
+    "FN": 899.98,
+    "FT": 118.74,
+    "MW": 294.45,
+    "WW": 103.71
+  },
+  "ak-47-jet-set": {
+    "FN": 1336.13,
+    "FT": 461.16
+  },
+  "ak-47-jungle-spray": {
+    "BS": 10.94,
+    "FT": 22.26,
+    "MW": 64.58,
+    "WW": 10.47
+  },
+  "ak-47-leet-museo": {
+    "BS": 107.37,
+    "FT": 239.69,
+    "MW": 382.47,
+    "WW": 132.39
+  },
+  "ak-47-legion-of-anubis": {
+    "BS": 48.28,
+    "FN": 93.7,
+    "FT": 50.92,
+    "MW": 56.02,
+    "WW": 48.69
+  },
+  "ak-47-midnight-laminate": {
+    "BS": 4.27,
+    "FN": 37.44,
+    "FT": 7.02,
+    "MW": 17.75,
+    "WW": 6.44
+  },
+  "ak-47-neon-revolution": {
+    "BS": 139.56,
+    "FN": 384.83,
+    "FT": 148.21,
+    "MW": 158.7,
+    "WW": 140.95
+  },
+  "ak-47-neon-rider": {
+    "BS": 58.65,
+    "FN": 401.11,
+    "FT": 64.64,
+    "MW": 108.74,
+    "WW": 73.72
+  },
+  "ak-47-nightwish": {
+    "BS": 89.37,
+    "FN": 193.21,
+    "FT": 95.04,
+    "MW": 111.73,
+    "WW": 90.64
+  },
+  "ak-47-nouveau-rouge": {
+    "BS": 14.09,
+    "FN": 179.22,
+    "FT": 20.04,
+    "MW": 52.3,
+    "WW": 14.35
+  },
+  "ak-47-olive-polycam": {
+    "BS": 0.13,
+    "FN": 1.06,
+    "FT": 0.11,
+    "MW": 0.22,
+    "WW": 0.13
+  },
+  "ak-47-orbit-mk01": {
+    "BS": 38.59,
+    "FN": 195.35,
+    "FT": 39.25,
+    "MW": 56.59
+  },
+  "ak-47-panthera-onca": {
+    "FN": 1037.25,
+    "FT": 347.93,
+    "MW": 442.49
+  },
+  "ak-47-phantom-disruptor": {
+    "BS": 7.53,
+    "FN": 49.5,
+    "FT": 8.46,
+    "MW": 12.58,
+    "WW": 10.14
+  },
+  "ak-47-point-disarray": {
+    "BS": 18.44,
+    "FN": 122.39,
+    "FT": 19.58,
+    "MW": 32.22,
+    "WW": 22.59
+  },
+  "ak-47-predator": {
+    "FN": 98.5,
+    "FT": 15.36,
+    "MW": 33.54
+  },
+  "ak-47-rat-rod": {
+    "BS": 5.99,
+    "FT": 6.16,
+    "MW": 12.98,
+    "WW": 6.01
+  },
+  "ak-47-red-laminate": {
+    "BS": 85.87,
+    "FT": 87.01,
+    "MW": 242.88
+  },
+  "ak-47-redline": {
+    "BS": 37.61,
+    "FT": 43.88,
+    "MW": 241.8,
+    "WW": 39.48
+  },
+  "ak-47-safari-mesh": {
+    "BS": 0.11,
+    "FT": 0.11,
+    "MW": 0.43,
+    "WW": 0.11
+  },
+  "ak-47-safety-net": {
+    "BS": 4.2,
+    "FN": 35.75,
+    "FT": 4.18,
+    "MW": 6.48,
+    "WW": 5.32
+  },
+  "ak-47-searing-rage": {
+    "BS": 6.05,
+    "FN": 57.44,
+    "FT": 7.44,
+    "MW": 12.13,
+    "WW": 6.51
+  },
+  "ak-47-slate": {
+    "BS": 5.67,
+    "FN": 26.68,
+    "FT": 7.01,
+    "MW": 10.4,
+    "WW": 5.94
+  },
+  "ak-47-steel-delta": {
+    "BS": 3.66,
+    "FN": 35.03,
+    "FT": 3.23,
+    "MW": 6.27
+  },
+  "ak-47-the-empress": {
+    "BS": 131.37,
+    "FN": 437.91,
+    "FT": 135.19,
+    "MW": 150.1,
+    "WW": 130.24
+  },
+  "ak-47-the-oligarch": {
+    "BS": 55.81,
+    "FN": 448.74,
+    "FT": 119.11,
+    "MW": 178.25,
+    "WW": 68.34
+  },
+  "ak-47-the-outsiders": {
+    "BS": 10.98,
+    "FN": 136.58,
+    "FT": 11.9,
+    "MW": 26.32,
+    "WW": 11.46
+  },
+  "ak-47-uncharted": {
+    "BS": 0.98,
+    "FN": 6.27,
+    "FT": 0.98,
+    "MW": 1.47,
+    "WW": 1.97
+  },
+  "ak-47-varicamo-grey": {
+    "BS": 0.2,
+    "FN": 1.21,
+    "FT": 0.11,
+    "MW": 0.31,
+    "WW": 0.51
+  },
+  "ak-47-vulcan": {
+    "BS": 149.71,
+    "FN": 856.26,
+    "FT": 296.53,
+    "MW": 500.91,
+    "WW": 177.48
+  },
+  "ak-47-wasteland-rebel": {
+    "FN": 622.44,
+    "FT": 112.81,
+    "MW": 210.3
+  },
+  "ak-47-wild-lotus": {
+    "MW": 13842.28,
+    "WW": 6970.45
+  },
+  "ak-47-wintergreen": {
+    "BS": 0.78,
+    "FN": 11.27,
+    "FT": 1.54,
+    "MW": 4.38,
+    "WW": 2.39
+  },
+  "ak-47-x-ray": {
+    "BS": 479.69,
+    "WW": 636.2
+  },
+  "aug-akihabara-accept": {
+    "BS": 341.87
+  },
+  "aug-amber-fade": {
+    "FN": 16.52,
+    "FT": 2.72,
+    "MW": 3.42
+  },
+  "aug-amber-slipstream": {
+    "BS": 0.33,
+    "FN": 4.11,
+    "FT": 0.56,
+    "MW": 0.56
+  },
+  "aug-anodized-navy": {
+    "FN": 54.61,
+    "MW": 42.65
+  },
+  "aug-arctic-wolf": {
+    "BS": 2.37,
+    "FN": 41.86,
+    "FT": 2.69,
+    "MW": 6.14
+  },
+  "aug-aristocrat": {
+    "BS": 1.52,
+    "FN": 28.7,
+    "FT": 1.82,
+    "MW": 3.16,
+    "WW": 1.68
+  },
+  "aug-bengal-tiger": {
+    "FN": 143.51,
+    "FT": 16.39,
+    "MW": 47.99,
+    "WW": 15.3
+  },
+  "aug-carved-jade": {
+    "FN": 144.02
+  },
+  "aug-chameleon": {
+    "BS": 103.58,
+    "FN": 158.5,
+    "FT": 110.92,
+    "MW": 114.97,
+    "WW": 108.25
+  },
+  "aug-colony": {
+    "WW": 3.68
+  },
+  "aug-commando-company": {
+    "BS": 0.04,
+    "FN": 0.11,
+    "FT": 0.04,
+    "MW": 0.04,
+    "WW": 0.04
+  },
+  "aug-condemned": {
+    "BS": 0.06,
+    "FN": 11.19,
+    "FT": 0.07,
+    "MW": 0.26,
+    "WW": 0.06
+  },
+  "aug-contractor": {
+    "BS": 0.04,
+    "FN": 5.44,
+    "FT": 0.04,
+    "MW": 0.09,
+    "WW": 0.04
+  },
+  "aug-creep": {
+    "FN": 2.73,
+    "FT": 0.46,
+    "MW": 0.79,
+    "WW": 0.46
+  },
+  "aug-daedalus": {
+    "FN": 12.37,
+    "FT": 6.58,
+    "MW": 8.06,
+    "WW": 5.47
+  },
+  "aug-death-by-puppy": {
+    "FN": 37.4,
+    "FT": 6.05,
+    "MW": 7.33,
+    "WW": 8.95
+  },
+  "aug-eye-of-zapems": {
+    "BS": 3.68,
+    "FN": 32.7,
+    "FT": 5.32,
+    "MW": 12.15,
+    "WW": 4.6
+  },
+  "aug-flame-j-rmungandr": {
+    "BS": 539.58,
+    "MW": 496.7,
+    "WW": 519.35
+  },
+  "aug-fleet-flock": {
+    "BS": 15.61,
+    "FN": 91.33,
+    "FT": 16.91,
+    "MW": 17.76,
+    "WW": 15.92
+  },
+  "aug-hot-rod": {
+    "FN": 543.29,
+    "MW": 1233.62
+  },
+  "aug-lil-pig": {
+    "FT": 80.17,
+    "MW": 179.24
+  },
+  "aug-luxe-trim": {
+    "BS": 0.24,
+    "FN": 8.35,
+    "FT": 0.31,
+    "MW": 0.76,
+    "WW": 0.24
+  },
+  "aug-midnight-lily": {
+    "BS": 617.57,
+    "WW": 875
+  },
+  "aug-momentum": {
+    "BS": 7.09,
+    "FT": 7.8,
+    "MW": 25.62,
+    "WW": 7.26
+  },
+  "aug-navy-murano": {
+    "BS": 2.37,
+    "FN": 21.73,
+    "FT": 5.05,
+    "MW": 7.17,
+    "WW": 4.01
+  },
+  "aug-plague": {
+    "BS": 0.92,
+    "FN": 14.92,
+    "FT": 1.28,
+    "MW": 3.24
+  },
+  "aug-radiation-hazard": {
+    "BS": 3.73,
+    "FN": 24.88,
+    "FT": 4.74,
+    "MW": 8.79
+  },
+  "aug-random-access": {
+    "FN": 19.37,
+    "FT": 1.03,
+    "MW": 2.72,
+    "WW": 1.05
+  },
+  "aug-ricochet": {
+    "BS": 0.24,
+    "FN": 10.03,
+    "FT": 0.26,
+    "MW": 0.72
+  },
+  "aug-sand-storm": {
+    "BS": 78.97,
+    "FN": 145.07,
+    "WW": 71.17
+  },
+  "aug-snake-pit": {
+    "BS": 0.08,
+    "FN": 1.07,
+    "FT": 0.09,
+    "MW": 0.26,
+    "WW": 0.09
+  },
+  "aug-spalted-wood": {
+    "FN": 14.08,
+    "FT": 5.25,
+    "MW": 6.21
+  },
+  "aug-steel-sentinel": {
+    "BS": 0.07,
+    "FN": 3.5,
+    "FT": 0.09,
+    "MW": 0.29,
+    "WW": 0.07
+  },
+  "aug-storm": {
+    "BS": 0.04,
+    "FN": 5.64,
+    "FT": 0.04,
+    "MW": 0.08,
+    "WW": 0.04
+  },
+  "aug-stymphalian": {
+    "BS": 5.04,
+    "FN": 26.2,
+    "FT": 5.28,
+    "MW": 7.64,
+    "WW": 5.1
+  },
+  "aug-surveillance": {
+    "BS": 1.05,
+    "FN": 4.57,
+    "FT": 1.08,
+    "MW": 1.22,
+    "WW": 1.03
+  },
+  "aug-sweeper": {
+    "BS": 0.04,
+    "FN": 0.24,
+    "FT": 0.04,
+    "MW": 0.04,
+    "WW": 0.04
+  },
+  "aug-syd-mead": {
+    "BS": 13.78,
+    "FN": 58.02,
+    "FT": 15.22,
+    "MW": 15.66,
+    "WW": 14.11
+  },
+  "aug-tom-cat": {
+    "BS": 0.26,
+    "FN": 3.61,
+    "FT": 0.32,
+    "MW": 0.34,
+    "WW": 0.27
+  },
+  "aug-torque": {
+    "FN": 31.97,
+    "MW": 16.4
+  },
+  "aug-trigger-discipline": {
+    "BS": 0.12,
+    "FN": 1.46,
+    "FT": 0.19,
+    "MW": 0.36,
+    "WW": 0.13
+  },
+  "aug-triqua": {
+    "BS": 0.25,
+    "FN": 5.75,
+    "FT": 0.36,
+    "MW": 0.51,
+    "WW": 0.24
+  },
+  "aug-wings": {
+    "FN": 36.27,
+    "MW": 26.09
+  },
+  "awp-mortis": {
+    "FN": 32.87,
+    "BS": 5.43,
+    "FT": 5.51,
+    "MW": 8.28,
+    "WW": 6.23
+  },
+  "awp-acheron": {
+    "BS": 0.74,
+    "FN": 17.7,
+    "FT": 0.98,
+    "MW": 2.29,
+    "WW": 1.76
+  },
+  "awp-arsenic-spill": {
+    "BS": 0.71,
+    "FN": 2.6,
+    "FT": 0.63,
+    "MW": 1.03,
+    "WW": 0.72
+  },
+  "awp-asiimov": {
+    "BS": 106.59,
+    "FT": 174.07,
+    "WW": 120.77
+  },
+  "awp-atheris": {
+    "BS": 5.25,
+    "FN": 69.15,
+    "FT": 6.94,
+    "MW": 11.57,
+    "WW": 5.61
+  },
+  "awp-black-nile": {
+    "BS": 4.85,
+    "FN": 51.63,
+    "FT": 4.58,
+    "MW": 8.45,
+    "WW": 5.79
+  },
+  "awp-boom": {
+    "FN": 678.83,
+    "FT": 148.27,
+    "MW": 227.81
+  },
+  "awp-capillary": {
+    "BS": 0.88,
+    "FN": 23.29,
+    "FT": 0.91,
+    "MW": 1.58
+  },
+  "awp-chromatic-aberration": {
+    "BS": 39.4,
+    "FN": 133.6,
+    "FT": 50.73,
+    "MW": 68.59
+  },
+  "awp-chrome-cannon": {
+    "BS": 38.23,
+    "FN": 143.92,
+    "FT": 41.76,
+    "MW": 55.11,
+    "WW": 37.17
+  },
+  "awp-cmyk": {
+    "BS": 199.17,
+    "MW": 689.62,
+    "WW": 288.46
+  },
+  "awp-containment-breach": {
+    "BS": 67.17,
+    "FT": 148.17,
+    "MW": 299.3,
+    "WW": 77.69
+  },
+  "awp-corticera": {
+    "FN": 362.57,
+    "FT": 32.91,
+    "MW": 44.49
+  },
+  "awp-crakow": {
+    "BS": 32.8,
+    "FN": 328.95,
+    "FT": 54.52,
+    "MW": 113.67,
+    "WW": 36.8
+  },
+  "awp-desert-hydra": {
+    "FN": 3278.64,
+    "FT": 1851.85,
+    "MW": 2313.45,
+    "WW": 1699.88
+  },
+  "awp-dragon-lore": {
+    "FT": 8250,
+    "MW": 11529.53
+  },
+  "awp-duality": {
+    "BS": 4.51,
+    "FN": 26.18,
+    "FT": 5.32,
+    "MW": 8.87,
+    "WW": 5.2
+  },
+  "awp-electric-hive": {
+    "FN": 207.46,
+    "FT": 48.36,
+    "MW": 56.14,
+    "WW": 58.56
+  },
+  "awp-elite-build": {
+    "BS": 17.56,
+    "FN": 343,
+    "FT": 19.12,
+    "MW": 42.26,
+    "WW": 18.02
+  },
+  "awp-exoskeleton": {
+    "BS": 6.31,
+    "FN": 86.34,
+    "FT": 7.48,
+    "MW": 22.07,
+    "WW": 6.37
+  },
+  "awp-exothermic": {
+    "BS": 7.36,
+    "FN": 27.16,
+    "FT": 8.5,
+    "MW": 13.84,
+    "WW": 9.32
+  },
+  "awp-fade": {
+    "FN": 1227.33
+  },
+  "awp-fever-dream": {
+    "BS": 18.92,
+    "FN": 43.7,
+    "FT": 18.17,
+    "MW": 21.18,
+    "WW": 20.65
+  },
+  "awp-graphite": {
+    "FN": 268.87,
+    "MW": 235.92
+  },
+  "awp-green-energy": {
+    "BS": 14.32,
+    "FN": 114.45,
+    "FT": 17.19,
+    "MW": 33.72,
+    "WW": 16.04
+  },
+  "awp-gungnir": {
+    "WW": 9662.01
+  },
+  "awp-hyper-beast": {
+    "BS": 44.74,
+    "FN": 305.79,
+    "FT": 49.76,
+    "MW": 76.71,
+    "WW": 45.21
+  },
+  "awp-ice-coaled": {
+    "BS": 6.46,
+    "FN": 51.88,
+    "FT": 11.58,
+    "MW": 21.82,
+    "WW": 8.82
+  },
+  "awp-lightning-strike": {
+    "FN": 688.59
+  },
+  "awp-longdog": {
+    "BS": 100.47,
+    "FN": 1338.81,
+    "FT": 238.96,
+    "MW": 443.19,
+    "WW": 117.53
+  },
+  "awp-man-o-war": {
+    "FT": 174.59,
+    "MW": 176.28
+  },
+  "awp-medusa": {
+    "BS": 2243.77,
+    "FN": 5500,
+    "FT": 2541.53,
+    "MW": 3527.13,
+    "WW": 2276.32
+  },
+  "awp-neo-noir": {
+    "BS": 61.46,
+    "FN": 88.64,
+    "FT": 58.71,
+    "MW": 64.25,
+    "WW": 56.57
+  },
+  "awp-oni-taiji": {
+    "FN": 1092.8,
+    "FT": 394.15,
+    "MW": 558.16,
+    "WW": 430.79
+  },
+  "awp-paw": {
+    "BS": 3.27,
+    "FN": 12.07,
+    "FT": 3.23,
+    "MW": 4.82
+  },
+  "awp-phobos": {
+    "FN": 11.68,
+    "FT": 3.16,
+    "MW": 3.62,
+    "WW": 5.92
+  },
+  "awp-pink-ddpat": {
+    "FN": 292.64,
+    "FT": 50.42,
+    "MW": 136.31,
+    "WW": 46.15
+  },
+  "awp-pit-viper": {
+    "BS": 1.45,
+    "FT": 1.2,
+    "MW": 2.26,
+    "WW": 1.81
+  },
+  "awp-pop-awp": {
+    "FN": 83.35,
+    "FT": 12.01,
+    "MW": 16.82,
+    "WW": 12.52
+  },
+  "awp-printstream": {
+    "BS": 60.37,
+    "FN": 455.05,
+    "FT": 73.43,
+    "MW": 121.42,
+    "WW": 62.75
+  },
+  "awp-queen-s-gambit": {
+    "BS": 72.57,
+    "FN": 474.8,
+    "FT": 96.85,
+    "MW": 189.87,
+    "WW": 83.8
+  },
+  "awp-redline": {
+    "FT": 51.99,
+    "MW": 106,
+    "WW": 64.49
+  },
+  "awp-safari-mesh": {
+    "BS": 0.26,
+    "FN": 25.6,
+    "FT": 0.19,
+    "MW": 0.45,
+    "WW": 0.22
+  },
+  "awp-silk-tiger": {
+    "BS": 237.77,
+    "FN": 1041.79,
+    "WW": 243.31
+  },
+  "awp-snake-camo": {
+    "FN": 483.09,
+    "MW": 106.39,
+    "WW": 103.69
+  },
+  "awp-sun-in-leo": {
+    "FN": 117.59,
+    "FT": 29.64,
+    "MW": 41.29,
+    "WW": 29.69
+  },
+  "awp-the-end": {
+    "BS": 29.34,
+    "FN": 148.55,
+    "FT": 30.57,
+    "MW": 43.27,
+    "WW": 28.78
+  },
+  "awp-the-prince": {
+    "BS": 2250.93,
+    "FT": 2530.25,
+    "MW": 3035.05,
+    "WW": 2664.38
+  },
+  "awp-wildfire": {
+    "BS": 55.7,
+    "FN": 312.29,
+    "FT": 61.21,
+    "MW": 104.69,
+    "WW": 62.79
+  },
+  "awp-worm-god": {
+    "FN": 8.8,
+    "FT": 3.69,
+    "MW": 4.28,
+    "WW": 4.02
+  },
+  "cz75-auto-army-sheen": {
+    "FN": 9,
+    "FT": 4.13,
+    "MW": 5.23
+  },
+  "cz75-auto-chalice": {
+    "FN": 627.2,
+    "MW": 298.47
+  },
+  "cz75-auto-circaetus": {
+    "BS": 0.29,
+    "FN": 7.69,
+    "FT": 0.33,
+    "MW": 0.43,
+    "WW": 0.32
+  },
+  "cz75-auto-copper-fiber": {
+    "FN": 0.67,
+    "FT": 0.08,
+    "MW": 0.15,
+    "WW": 0.07
+  },
+  "cz75-auto-crimson-web": {
+    "FT": 3.28,
+    "MW": 8.26
+  },
+  "cz75-auto-distressed": {
+    "BS": 0.25,
+    "FN": 5.17,
+    "FT": 0.33,
+    "MW": 0.36,
+    "WW": 0.24
+  },
+  "cz75-auto-eco": {
+    "FN": 47.19,
+    "FT": 1.29,
+    "MW": 4.95,
+    "WW": 1.02
+  },
+  "cz75-auto-emerald": {
+    "FN": 77.14,
+    "MW": 49.16
+  },
+  "cz75-auto-emerald-quartz": {
+    "FT": 118.83,
+    "WW": 555.45
+  },
+  "cz75-auto-imprint": {
+    "BS": 0.29,
+    "FN": 8.4,
+    "FT": 0.48,
+    "MW": 0.63,
+    "WW": 0.31
+  },
+  "cz75-auto-framework": {
+    "FT": 2.3,
+    "MW": 3.08,
+    "WW": 1.95
+  },
+  "cz75-auto-green-plaid": {
+    "FT": 4.16
+  },
+  "cz75-auto-hexane": {
+    "FN": 12.38,
+    "FT": 3.51,
+    "WW": 3.73
+  },
+  "cz75-auto-honey-paisley": {
+    "BS": 0.04,
+    "FN": 0.11,
+    "FT": 0.04,
+    "MW": 0.04,
+    "WW": 0.04
+  },
+  "cz75-auto-indigo": {
+    "BS": 2.34,
+    "FN": 20.51,
+    "FT": 5.05,
+    "MW": 7.24,
+    "WW": 3.67
+  },
+  "cz75-auto-jungle-dashed": {
+    "FN": 6.34,
+    "FT": 1.13,
+    "MW": 1.38
+  },
+  "cz75-auto-midnight-palm": {
+    "BS": 3.41,
+    "FN": 13.65,
+    "FT": 7.06,
+    "MW": 9.2
+  },
+  "cz75-auto-nitro": {
+    "FN": 73.44,
+    "FT": 17,
+    "MW": 25.54
+  },
+  "cz75-auto-pink-pearl": {
+    "BS": 0.04,
+    "FN": 0.09,
+    "FT": 0.04,
+    "MW": 0.04,
+    "WW": 0.04
+  },
+  "cz75-auto-poison-dart": {
+    "BS": 8.83,
+    "FN": 19.79,
+    "FT": 3.19,
+    "WW": 13.92
+  },
+  "cz75-auto-pole-position": {
+    "BS": 1.58,
+    "FN": 17.93,
+    "FT": 1.85,
+    "MW": 3.66
+  },
+  "cz75-auto-polymer": {
+    "FN": 10.96,
+    "FT": 0.83,
+    "MW": 0.75
+  },
+  "cz75-auto-red-astor": {
+    "BS": 1.45,
+    "FN": 19.76,
+    "FT": 1.81,
+    "MW": 2.61,
+    "WW": 1.55
+  },
+  "cz75-auto-silver": {
+    "FN": 26.86,
+    "MW": 13.71
+  },
+  "cz75-auto-slalom": {
+    "FN": 39.46,
+    "FT": 16.5,
+    "MW": 21.96,
+    "WW": 12.42
+  },
+  "cz75-auto-syndicate": {
+    "FN": 63.51,
+    "FT": 14.4,
+    "MW": 22.83
+  },
+  "cz75-auto-tacticat": {
+    "BS": 1.21,
+    "FN": 13,
+    "FT": 1.23,
+    "MW": 2.17
+  },
+  "cz75-auto-the-fuschia-is-now": {
+    "FN": 72.07,
+    "MW": 27.22,
+    "WW": 26.27
+  },
+  "cz75-auto-tigris": {
+    "FN": 23.32,
+    "FT": 2.95,
+    "MW": 3.62,
+    "WW": 2.56
+  },
+  "cz75-auto-tread-plate": {
+    "FN": 23.53,
+    "FT": 7.32,
+    "MW": 7.42
+  },
+  "cz75-auto-tuxedo": {
+    "FN": 4.11,
+    "FT": 0.48,
+    "MW": 1.25
+  },
+  "cz75-auto-twist": {
+    "FN": 7.26,
+    "FT": 1.65,
+    "MW": 2.79
+  },
+  "cz75-auto-vendetta": {
+    "BS": 0.8,
+    "FN": 10.36,
+    "FT": 1.3,
+    "MW": 2.66,
+    "WW": 0.98
+  },
+  "cz75-auto-victoria": {
+    "BS": 103.79,
+    "FN": 167.94,
+    "FT": 129.68,
+    "MW": 142.86,
+    "WW": 89.05
+  },
+  "cz75-auto-xiangliu": {
+    "FN": 48.58,
+    "FT": 17.93,
+    "MW": 20.21,
+    "WW": 17.19
+  },
+  "cz75-auto-yellow-jacket": {
+    "FN": 60.02,
+    "FT": 6.71,
+    "MW": 12.22,
+    "WW": 6.34
+  },
+  "desert-eagle-blaze": {
+    "FN": 901.62,
+    "MW": 1044.15
+  },
+  "desert-eagle-blue-ply": {
+    "BS": 0.38,
+    "FN": 9.78,
+    "FT": 0.52,
+    "MW": 0.98,
+    "WW": 0.41
+  },
+  "desert-eagle-bronze-deco": {
+    "FN": 1.62,
+    "FT": 0.32,
+    "MW": 0.54,
+    "WW": 0.43
+  },
+  "desert-eagle-calligraffiti": {
+    "BS": 0.24,
+    "FN": 20.91,
+    "FT": 0.35,
+    "MW": 0.94,
+    "WW": 0.29
+  },
+  "desert-eagle-cobalt-disruption": {
+    "FN": 195.89,
+    "FT": 106.32,
+    "MW": 113.6
+  },
+  "desert-eagle-code-red": {
+    "BS": 57.16,
+    "FN": 375.57,
+    "FT": 63.2,
+    "MW": 81.83,
+    "WW": 58.58
+  },
+  "desert-eagle-conspiracy": {
+    "FN": 26.74,
+    "FT": 24.99,
+    "MW": 24.93
+  },
+  "desert-eagle-corinthian": {
+    "FN": 2.64,
+    "FT": 0.62,
+    "MW": 0.95,
+    "WW": 0.89
+  },
+  "desert-eagle-crimson-web": {
+    "BS": 17.2,
+    "FN": 365.24,
+    "FT": 17.34,
+    "MW": 55.95,
+    "WW": 17.36
+  },
+  "desert-eagle-directive": {
+    "BS": 1.3,
+    "FN": 153,
+    "FT": 1.7,
+    "MW": 9.84,
+    "WW": 1.4
+  },
+  "desert-eagle-emerald-j-rmungandr": {
+    "BS": 600.18,
+    "FN": 1078.29,
+    "FT": 622.77,
+    "MW": 690.94,
+    "WW": 629.02
+  },
+  "desert-eagle-fennec-fox": {
+    "BS": 402.2,
+    "FT": 464.93,
+    "MW": 568.37,
+    "WW": 484.38
+  },
+  "desert-eagle-firebreathing": {
+    "BS": 1.81,
+    "FN": 14.48,
+    "FT": 3.1,
+    "MW": 5.35,
+    "WW": 1.97
+  },
+  "desert-eagle-golden-koi": {
+    "FN": 500.97,
+    "MW": 282.78
+  },
+  "desert-eagle-hand-cannon": {
+    "FN": 709.8,
+    "FT": 574.92
+  },
+  "desert-eagle-heat-treated": {
+    "BS": 1.75,
+    "FN": 103.16,
+    "FT": 2.1,
+    "MW": 4.78,
+    "WW": 1.77
+  },
+  "desert-eagle-heirloom": {
+    "BS": 10.73,
+    "FN": 196.37,
+    "FT": 10.65,
+    "MW": 31.95
+  },
+  "desert-eagle-hypnotic": {
+    "FN": 366.53,
+    "MW": 229.33
+  },
+  "desert-eagle-kumicho-dragon": {
+    "BS": 25.58,
+    "FN": 142.66,
+    "FT": 27.16,
+    "MW": 40.91,
+    "WW": 30.04
+  },
+  "desert-eagle-pilot": {
+    "WW": 86.4,
+    "BS": 97.99,
+    "FT": 123.21
+  },
+  "desert-eagle-light-rail": {
+    "BS": 1.34,
+    "FN": 26.51,
+    "FT": 1.7,
+    "MW": 3.78,
+    "WW": 1.45
+  },
+  "desert-eagle-mecha-industries": {
+    "BS": 7.84,
+    "FN": 22.06,
+    "FT": 8.29,
+    "MW": 11.26,
+    "WW": 8.95
+  },
+  "desert-eagle-meteorite": {
+    "FN": 2.67,
+    "MW": 2.15
+  },
+  "desert-eagle-midnight-storm": {
+    "FN": 222.83,
+    "FT": 22.16,
+    "MW": 43.9
+  },
+  "desert-eagle-mint-fan": {
+    "BS": 0.38,
+    "FN": 4.49,
+    "FT": 0.48,
+    "MW": 1.18,
+    "WW": 0.48
+  },
+  "desert-eagle-mudder": {
+    "BS": 0.11,
+    "FN": 23.05,
+    "FT": 0.09,
+    "MW": 0.33,
+    "WW": 0.11
+  },
+  "desert-eagle-mulberry": {
+    "BS": 1.97,
+    "FN": 34.81,
+    "FT": 5.11,
+    "MW": 15.32,
+    "WW": 4.85
+  },
+  "desert-eagle-naga": {
+    "BS": 2.79,
+    "FN": 78.86,
+    "FT": 3.27,
+    "MW": 7.1,
+    "WW": 2.92
+  },
+  "desert-eagle-night": {
+    "BS": 16.07,
+    "FN": 157.91,
+    "FT": 17.24,
+    "MW": 34.52,
+    "WW": 16.12
+  },
+  "desert-eagle-night-heist": {
+    "FN": 216.69,
+    "FT": 26.19,
+    "MW": 44.2,
+    "WW": 27.8
+  },
+  "desert-eagle-ocean-drive": {
+    "BS": 101.34,
+    "FN": 443.74,
+    "FT": 99.04,
+    "MW": 140.16,
+    "WW": 93.55
+  },
+  "desert-eagle-oxide-blaze": {
+    "BS": 0.63,
+    "FN": 2.29,
+    "FT": 0.62,
+    "MW": 0.95,
+    "WW": 0.65
+  },
+  "desert-eagle-printstream": {
+    "BS": 47.14,
+    "FN": 117.8,
+    "FT": 52.93,
+    "MW": 66.59,
+    "WW": 51.03
+  },
+  "desert-eagle-serpent-strike": {
+    "BS": 0.78,
+    "FN": 5.23,
+    "FT": 0.63,
+    "MW": 1.65,
+    "WW": 0.86
+  },
+  "desert-eagle-sputnik": {
+    "FN": 12.42,
+    "FT": 2.7,
+    "MW": 4.36,
+    "WW": 2.72
+  },
+  "desert-eagle-starcade": {
+    "BS": 70.62,
+    "FN": 488.72,
+    "FT": 97.35,
+    "MW": 184.77,
+    "WW": 80.53
+  },
+  "desert-eagle-sunset-storm": {
+    "BS": 603.42,
+    "FN": 762.7,
+    "FT": 680.54,
+    "MW": 733.19,
+    "WW": 547.15
+  },
+  "desert-eagle-sunset-storm-rising-sun": {
+    "BS": 648.06,
+    "FN": 747.39,
+    "WW": 448.33
+  },
+  "desert-eagle-the-bronze": {
+    "FN": 20.21,
+    "FT": 4.64,
+    "MW": 4.91
+  },
+  "desert-eagle-the-daily-deagle": {
+    "BS": 0.4,
+    "FN": 3.28,
+    "FT": 0.48,
+    "MW": 1.16,
+    "WW": 0.71
+  },
+  "desert-eagle-tilted": {
+    "BS": 0.09,
+    "FN": 2.76,
+    "FT": 0.13,
+    "MW": 0.49,
+    "WW": 0.24
+  },
+  "desert-eagle-trigger-discipline": {
+    "BS": 0.78,
+    "FN": 13.76,
+    "FT": 1.14,
+    "MW": 2.63,
+    "WW": 0.85
+  },
+  "desert-eagle-urban-ddpat": {
+    "BS": 2.6,
+    "FT": 3.61,
+    "MW": 23.6
+  },
+  "desert-eagle-urban-rubble": {
+    "FN": 2.32,
+    "FT": 0.29,
+    "MW": 0.48
+  },
+  "dual-berettas-angel-eyes": {
+    "BS": 0.71,
+    "FN": 7.16,
+    "FT": 1.15,
+    "MW": 2.07,
+    "WW": 0.83
+  },
+  "dual-berettas-anodized-navy": {
+    "FN": 36.9,
+    "MW": 15.94
+  },
+  "dual-berettas-balance": {
+    "BS": 1.2,
+    "FT": 2.39,
+    "MW": 6.32,
+    "WW": 1.33
+  },
+  "dual-berettas-black-limba": {
+    "FT": 6.36
+  },
+  "dual-berettas-bordeux": {
+    "BS": 0.04,
+    "FN": 0.13,
+    "FT": 0.04,
+    "MW": 0.04,
+    "WW": 0.04
+  },
+  "dual-berettas-briar": {
+    "FN": 12.51,
+    "MW": 3.63
+  },
+  "dual-berettas-cartel": {
+    "BS": 0.56,
+    "FN": 13.06,
+    "FT": 1.14,
+    "MW": 2.96,
+    "WW": 0.61
+  },
+  "dual-berettas-cobalt-quartz": {
+    "FN": 1.2,
+    "FT": 0.52,
+    "MW": 0.56,
+    "WW": 0.71
+  },
+  "dual-berettas-cobra-strike": {
+    "BS": 67.59,
+    "FN": 278.61,
+    "MW": 98.71,
+    "WW": 65.43
+  },
+  "dual-berettas-colony": {
+    "BS": 0.04,
+    "FN": 3.93,
+    "FT": 0.04,
+    "MW": 0.07,
+    "WW": 0.05
+  },
+  "dual-berettas-contractor": {
+    "BS": 0.04,
+    "FN": 3.55,
+    "FT": 0.04,
+    "MW": 0.06,
+    "WW": 0.04
+  },
+  "dual-berettas-demolition": {
+    "BS": 17.78,
+    "FT": 34.53,
+    "WW": 18.56
+  },
+  "dual-berettas-dezastre": {
+    "BS": 3.61,
+    "FN": 41.51,
+    "FT": 5.84,
+    "MW": 20.62,
+    "WW": 4.29
+  },
+  "dual-berettas-drift-wood": {
+    "FN": 14.78,
+    "FT": 7.77,
+    "MW": 10.36,
+    "WW": 3.77
+  },
+  "dual-berettas-dualing-dragons": {
+    "BS": 0.32,
+    "FN": 13.55,
+    "FT": 0.54,
+    "MW": 1.39,
+    "WW": 0.32
+  },
+  "dual-berettas-duelist": {
+    "BS": 360.99,
+    "MW": 442.87
+  },
+  "dual-berettas-elite-1-6": {
+    "BS": 0.35,
+    "FN": 5.23,
+    "FT": 0.48,
+    "MW": 0.56
+  },
+  "dual-berettas-emerald": {
+    "FN": 83.08,
+    "MW": 60.21
+  },
+  "dual-berettas-flora-carnivora": {
+    "BS": 0.62,
+    "FN": 11.46,
+    "FT": 0.68,
+    "MW": 1.77,
+    "WW": 0.61
+  },
+  "dual-berettas-heist": {
+    "FN": 12.14,
+    "FT": 1.4,
+    "MW": 2.37
+  },
+  "dual-berettas-hemoglobin": {
+    "FN": 42.99,
+    "MW": 23.89
+  },
+  "dual-berettas-hideout": {
+    "BS": 0.12,
+    "FN": 0.83,
+    "FT": 0.12,
+    "MW": 0.26,
+    "WW": 0.12
+  },
+  "dual-berettas-hydro-strike": {
+    "BS": 0.93,
+    "FN": 15.03,
+    "FT": 1.23,
+    "MW": 3.47,
+    "WW": 1.45
+  },
+  "dual-berettas-marina": {
+    "FN": 39.95,
+    "FT": 6.11,
+    "MW": 9.19,
+    "WW": 7.79
+  },
+  "dual-berettas-melondrama": {
+    "BS": 8.56,
+    "FN": 38.91,
+    "FT": 9.24,
+    "MW": 11.94,
+    "WW": 8.78
+  },
+  "dual-berettas-moon-in-libra": {
+    "FN": 19.98,
+    "FT": 6.37
+  },
+  "dual-berettas-oil-change": {
+    "FN": 9.99,
+    "MW": 3.11,
+    "WW": 2.1
+  },
+  "dual-berettas-panther": {
+    "BS": 3.42,
+    "FN": 19.83,
+    "FT": 3.98,
+    "MW": 6.12,
+    "WW": 3.66
+  },
+  "dual-berettas-polished-malachite": {
+    "BS": 0.07,
+    "FN": 1.6,
+    "FT": 0.07,
+    "MW": 0.28,
+    "WW": 0.11
+  },
+  "dual-berettas-pyre": {
+    "FT": 20.68
+  },
+  "dual-berettas-retribution": {
+    "FN": 13.92,
+    "FT": 11.46,
+    "WW": 8.46
+  },
+  "dual-berettas-rose-nacre": {
+    "BS": 0.06,
+    "FN": 0.51,
+    "FT": 0.06,
+    "MW": 0.18,
+    "WW": 0.07
+  },
+  "dual-berettas-royal-consorts": {
+    "BS": 4.35,
+    "FN": 29,
+    "FT": 5.41,
+    "MW": 7.76,
+    "WW": 4.76
+  },
+  "dual-berettas-shred": {
+    "FN": 3.23,
+    "FT": 0.51,
+    "MW": 0.56
+  },
+  "dual-berettas-silver-pour": {
+    "BS": 0.04,
+    "FN": 0.12,
+    "FT": 0.04,
+    "MW": 0.04,
+    "WW": 0.04
+  },
+  "dual-berettas-stained": {
+    "BS": 0.18,
+    "FN": 4,
+    "FT": 0.16,
+    "MW": 0.31,
+    "WW": 0.16
+  },
+  "dual-berettas-sweet-little-angels": {
+    "BS": 3.71,
+    "FN": 29.4,
+    "FT": 5.29,
+    "MW": 12.25,
+    "WW": 4.53
+  },
+  "dual-berettas-switch-board": {
+    "BS": 4.44,
+    "FN": 14.34,
+    "FT": 4.48,
+    "MW": 7.16
+  },
+  "dual-berettas-tread": {
+    "BS": 0.85,
+    "FN": 11.51,
+    "MW": 3.94,
+    "WW": 0.98
+  },
+  "dual-berettas-twin-turbo": {
+    "BS": 2.44,
+    "FN": 62.66,
+    "FT": 4.26,
+    "MW": 10.56,
+    "WW": 2.47
+  },
+  "dual-berettas-urban-shock": {
+    "FN": 16.35,
+    "FT": 3.08,
+    "MW": 3.68
+  },
+  "dual-berettas-ventilators": {
+    "FN": 2.23,
+    "FT": 0.55,
+    "MW": 0.53
+  },
+  "famas-2a2f": {
+    "BS": 0.4,
+    "FN": 9.52,
+    "FT": 0.59,
+    "MW": 2.32,
+    "WW": 0.47
+  },
+  "famas-afterimage": {
+    "FN": 161.69,
+    "MW": 44.26,
+    "WW": 48.24
+  },
+  "famas-bad-trip": {
+    "BS": 64.23,
+    "FN": 147.01,
+    "FT": 68.01,
+    "MW": 78.56,
+    "WW": 60.71
+  },
+  "famas-byproduct": {
+    "BS": 0.04,
+    "FN": 0.11,
+    "FT": 0.04,
+    "MW": 0.04,
+    "WW": 0.05
+  },
+  "famas-calicamo": {
+    "BS": 4.17,
+    "FN": 33.76,
+    "FT": 6.86,
+    "MW": 10.16
+  },
+  "famas-colony": {
+    "BS": 0.04,
+    "FN": 7.71,
+    "FT": 0.04,
+    "MW": 0.08,
+    "WW": 0.04
+  },
+  "famas-commemoration": {
+    "FN": 109.67,
+    "FT": 46.63,
+    "MW": 52.54,
+    "WW": 48.46
+  },
+  "famas-contrast-spray": {
+    "MW": 20.31,
+    "WW": 7.06
+  },
+  "famas-crypsis": {
+    "BS": 0.35,
+    "FN": 6.31,
+    "FT": 0.35,
+    "MW": 0.51
+  },
+  "famas-cyanospatter": {
+    "BS": 0.07,
+    "FN": 26.46,
+    "FT": 0.08,
+    "MW": 0.34,
+    "WW": 0.07
+  },
+  "famas-decommissioned": {
+    "BS": 0.32,
+    "FN": 23.94,
+    "FT": 0.52,
+    "MW": 0.67,
+    "WW": 0.33
+  },
+  "famas-djinn": {
+    "BS": 14.99,
+    "FT": 17.26,
+    "MW": 27.67,
+    "WW": 15.67
+  },
+  "famas-doomkitty": {
+    "FT": 11.7,
+    "MW": 23.2
+  },
+  "famas-eye-of-athena": {
+    "FN": 96.53,
+    "FT": 7.29,
+    "MW": 15.26
+  },
+  "famas-faulty-wiring": {
+    "FN": 25.7,
+    "MW": 2.83
+  },
+  "famas-grey-ghost": {
+    "BS": 0.05,
+    "FN": 0.34,
+    "FT": 0.06,
+    "MW": 0.11,
+    "WW": 0.07
+  },
+  "famas-half-sleeve": {
+    "BS": 0.09,
+    "FN": 2,
+    "FT": 0.11,
+    "MW": 0.26,
+    "WW": 0.09
+  },
+  "famas-halftone-wash": {
+    "FN": 1.4,
+    "FT": 0.28,
+    "MW": 0.55
+  },
+  "famas-hexane": {
+    "FN": 34.31,
+    "FT": 4.51,
+    "MW": 4.65
+  },
+  "famas-macabre": {
+    "FT": 7.97,
+    "WW": 5.65
+  },
+  "famas-mecha-industries": {
+    "BS": 41.98,
+    "FN": 105.64,
+    "FT": 46.95,
+    "MW": 56.21
+  },
+  "famas-meltdown": {
+    "FN": 280.73,
+    "FT": 51.91,
+    "MW": 69.69,
+    "WW": 57.43
+  },
+  "famas-sundown": {
+    "MW": 102.7,
+    "BS": 73.2,
+    "FN": 155.64,
+    "WW": 59.72
+  },
+  "famas-meow-36": {
+    "BS": 0.11,
+    "FN": 3.73,
+    "FT": 0.13,
+    "MW": 0.31,
+    "WW": 0.11
+  },
+  "famas-neural-net": {
+    "FN": 30.33,
+    "FT": 1.48,
+    "MW": 3.16,
+    "WW": 1.87
+  },
+  "famas-night-borre": {
+    "FN": 37.45,
+    "FT": 12.05,
+    "MW": 14.76,
+    "WW": 11.72
+  },
+  "famas-palm": {
+    "BS": 0.04,
+    "FN": 0.11,
+    "FT": 0.04,
+    "MW": 0.04,
+    "WW": 0.04
+  },
+  "famas-prime-conspiracy": {
+    "FN": 166.3,
+    "MW": 135.73
+  },
+  "famas-pulse": {
+    "FN": 84.82,
+    "FT": 13.84,
+    "MW": 15.1
+  },
+  "famas-rapid-eye-movement": {
+    "BS": 8.47,
+    "FN": 41.34,
+    "FT": 9.22,
+    "MW": 11.79,
+    "WW": 8.7
+  },
+  "famas-roll-cage": {
+    "BS": 104.54,
+    "FT": 150.68,
+    "MW": 163,
+    "WW": 145.29
+  },
+  "famas-sergeant": {
+    "BS": 3.23,
+    "FT": 4.53,
+    "MW": 44.38,
+    "WW": 3.46
+  },
+  "famas-spitfire": {
+    "FN": 508.45,
+    "FT": 29.16
+  },
+  "famas-styx": {
+    "BS": 19.94,
+    "FN": 229.42,
+    "FT": 22.32,
+    "MW": 54.24
+  },
+  "famas-survivor-z": {
+    "BS": 0.36,
+    "FN": 8.57,
+    "FT": 0.48,
+    "MW": 1.26,
+    "WW": 0.75
+  },
+  "famas-teardown": {
+    "FN": 3.07,
+    "FT": 0.19,
+    "MW": 0.45
+  },
+  "famas-valence": {
+    "FN": 59.83,
+    "FT": 4.85,
+    "MW": 10.11,
+    "WW": 4.8
+  },
+  "famas-vendetta": {
+    "BS": 0.05,
+    "FN": 0.31,
+    "FT": 0.06,
+    "MW": 0.11,
+    "WW": 0.07
+  },
+  "famas-waters-of-nephthys": {
+    "FN": 470.14,
+    "FT": 101.02,
+    "MW": 177.15
+  },
+  "famas-yeti-camo": {
+    "FN": 4.91,
+    "FT": 0.53,
+    "MW": 1.81,
+    "WW": 0.4
+  },
+  "famas-zx-spectron": {
+    "BS": 3.51,
+    "FN": 59.9,
+    "FT": 4.77,
+    "MW": 9.83,
+    "WW": 3.67
+  },
+  "five-seven-nitro": {
+    "WW": 47.74,
+    "BS": 45.4,
+    "MW": 47.97
+  },
+  "g3sg1-hunter": {
+    "WW": 0.26,
+    "BS": 0.22,
+    "FN": 2.69,
+    "FT": 0.36,
+    "MW": 0.52
+  },
+  "five-seven-angry-mob": {
+    "BS": 78.87,
+    "FN": 164.96,
+    "FT": 77.96,
+    "MW": 87.1,
+    "WW": 79.32
+  },
+  "five-seven-anodized-gunmetal": {
+    "FN": 37.63,
+    "MW": 28.7
+  },
+  "five-seven-autumn-thicket": {
+    "BS": 0.04,
+    "FN": 0.11,
+    "FT": 0.04,
+    "MW": 0.04,
+    "WW": 0.04
+  },
+  "five-seven-berries-and-cherries": {
+    "FN": 227.74
+  },
+  "five-seven-crimson-blossom": {
+    "BS": 128.66,
+    "WW": 83.96
+  },
+  "five-seven-boost-protocol": {
+    "FN": 17.19,
+    "FT": 3.93,
+    "MW": 6.59
+  },
+  "five-seven-buddy": {
+    "FN": 18.72,
+    "FT": 0.92,
+    "MW": 2.12,
+    "WW": 0.98
+  },
+  "five-seven-candy-apple": {
+    "FT": 80.38,
+    "MW": 84.42
+  },
+  "five-seven-capillary": {
+    "BS": 0.43,
+    "FN": 6.1,
+    "FT": 0.52,
+    "MW": 0.75,
+    "WW": 0.43
+  },
+  "five-seven-case-hardened": {
+    "BS": 18.18,
+    "FN": 119.05,
+    "FT": 22.06,
+    "MW": 25.24,
+    "WW": 20.25
+  },
+  "five-seven-coolant": {
+    "BS": 0.04,
+    "FN": 0.13,
+    "FT": 0.04,
+    "MW": 0.04,
+    "WW": 0.04
+  },
+  "five-seven-copper-galaxy": {
+    "FN": 55.89,
+    "MW": 17.97
+  },
+  "five-seven-dark-polymer": {
+    "BS": 0.18,
+    "FN": 2.32,
+    "FT": 0.27,
+    "MW": 0.51,
+    "WW": 0.22
+  },
+  "five-seven-fairy-tale": {
+    "BS": 32.18,
+    "FN": 599.76,
+    "FT": 37.77,
+    "MW": 88.69,
+    "WW": 32.05
+  },
+  "five-seven-fall-hazard": {
+    "BS": 54.46,
+    "MW": 236.65,
+    "WW": 1153.88
+  },
+  "five-seven-flame-test": {
+    "BS": 0.22,
+    "FN": 1.87,
+    "FT": 0.2,
+    "MW": 0.31,
+    "WW": 0.22
+  },
+  "five-seven-forest-night": {
+    "BS": 0.04,
+    "FN": 10.04,
+    "FT": 0.04,
+    "MW": 0.07,
+    "WW": 0.04
+  },
+  "five-seven-fowl-play": {
+    "BS": 24.56,
+    "FN": 192,
+    "FT": 25.81,
+    "MW": 28.81,
+    "WW": 24.24
+  },
+  "five-seven-fraise-crane": {
+    "FN": 6.61,
+    "FT": 0.56,
+    "MW": 2.25
+  },
+  "five-seven-heat-treated": {
+    "BS": 5.61,
+    "FN": 49.58,
+    "FT": 6.01,
+    "MW": 12.52,
+    "WW": 5.68
+  },
+  "five-seven-hot-shot": {
+    "BS": 3.91,
+    "FN": 106.3,
+    "FT": 7.06,
+    "MW": 15.29,
+    "WW": 4.14
+  },
+  "five-seven-hybrid": {
+    "BS": 0.61,
+    "FN": 8.86,
+    "FT": 0.68,
+    "MW": 1.66,
+    "WW": 0.6
+  },
+  "five-seven-hyper-beast": {
+    "FT": 388.56,
+    "WW": 372.57
+  },
+  "five-seven-jungle": {
+    "FT": 5.44
+  },
+  "five-seven-kami": {
+    "FN": 13.71,
+    "FT": 3.62,
+    "MW": 4.09
+  },
+  "five-seven-midnight-paintover": {
+    "FN": 0.35,
+    "FT": 0.07,
+    "MW": 0.11,
+    "WW": 0.07
+  },
+  "five-seven-monkey-business": {
+    "BS": 15.45,
+    "FT": 16.75,
+    "MW": 97.68,
+    "WW": 15.93
+  },
+  "five-seven-neon-kimono": {
+    "BS": 661.11,
+    "MW": 983.53,
+    "WW": 717.14
+  },
+  "five-seven-nightshade": {
+    "BS": 34.73,
+    "FN": 27.16,
+    "MW": 4.96,
+    "WW": 41.19
+  },
+  "five-seven-orange-peel": {
+    "BS": 0.07,
+    "FN": 13.33,
+    "FT": 0.06,
+    "MW": 0.41,
+    "WW": 0.06
+  },
+  "five-seven-retrobution": {
+    "FN": 37.63,
+    "FT": 1.9,
+    "MW": 4.98
+  },
+  "five-seven-scrawl": {
+    "BS": 0.12,
+    "FN": 1.75,
+    "FT": 0.13,
+    "MW": 0.31,
+    "WW": 0.12
+  },
+  "five-seven-scumbria": {
+    "BS": 0.31,
+    "FN": 17.19,
+    "FT": 0.39,
+    "MW": 0.54,
+    "WW": 0.31
+  },
+  "five-seven-silver-quartz": {
+    "FN": 1.4,
+    "FT": 0.18,
+    "MW": 0.28
+  },
+  "five-seven-sky-blue": {
+    "BS": 0.07,
+    "FN": 0.59,
+    "FT": 0.07,
+    "MW": 0.16
+  },
+  "five-seven-triumvirate": {
+    "BS": 2.72,
+    "FN": 42.02,
+    "FT": 2.96,
+    "MW": 4.67
+  },
+  "five-seven-urban-hazard": {
+    "FN": 7.51,
+    "FT": 3.47,
+    "MW": 4.34
+  },
+  "five-seven-violent-daimyo": {
+    "BS": 0.47,
+    "FN": 4.73,
+    "FT": 0.66,
+    "MW": 1.03,
+    "WW": 0.59
+  },
+  "five-seven-withered-vine": {
+    "BS": 6.04,
+    "FN": 21.13,
+    "FT": 5.61
+  },
+  "g3sg1-ancient-ritual": {
+    "FN": 21.31,
+    "FT": 8.3
+  },
+  "g3sg1-arctic-camo": {
+    "BS": 13.81,
+    "FN": 110.2,
+    "WW": 17.71
+  },
+  "g3sg1-azure-zebra": {
+    "FN": 6.36,
+    "FT": 3.4
+  },
+  "g3sg1-black-sand": {
+    "BS": 1.23,
+    "FT": 1.38,
+    "MW": 4.65
+  },
+  "g3sg1-chronos": {
+    "WW": 526.53
+  },
+  "g3sg1-demeter": {
+    "FT": 7.09,
+    "MW": 6.74
+  },
+  "g3sg1-desert-storm": {
+    "BS": 0.04,
+    "FN": 1.77,
+    "FT": 0.04,
+    "MW": 0.06,
+    "WW": 0.04
+  },
+  "g3sg1-digital-mesh": {
+    "BS": 0.91,
+    "FN": 6.12,
+    "FT": 1.22
+  },
+  "g3sg1-dream-glade": {
+    "BS": 0.86,
+    "FN": 8.96,
+    "FT": 0.91,
+    "MW": 1.69,
+    "WW": 0.86
+  },
+  "g3sg1-flux": {
+    "FN": 58.26,
+    "FT": 9.66,
+    "MW": 16.89,
+    "WW": 8.87
+  },
+  "g3sg1-green-apple": {
+    "FN": 0.36,
+    "FT": 0.12,
+    "MW": 0.13
+  },
+  "g3sg1-green-cell": {
+    "BS": 0.04,
+    "FN": 0.09,
+    "FT": 0.04,
+    "MW": 0.04,
+    "WW": 0.04
+  },
+  "g3sg1-high-seas": {
+    "BS": 0.92,
+    "FN": 13.47,
+    "FT": 1.06,
+    "MW": 2.57
+  },
+  "g3sg1-jungle-dashed": {
+    "BS": 0.04,
+    "FN": 2.15,
+    "FT": 0.04,
+    "MW": 0.08,
+    "WW": 0.04
+  },
+  "g3sg1-keeping-tabs": {
+    "BS": 0.98,
+    "FN": 6.23,
+    "FT": 1.3,
+    "MW": 3.46
+  },
+  "g3sg1-murky": {
+    "FN": 4.73,
+    "FT": 1.36,
+    "MW": 1.49
+  },
+  "g3sg1-new-roots": {
+    "BS": 18.16,
+    "MW": 29.93
+  },
+  "g3sg1-orange-crash": {
+    "BS": 0.45,
+    "FN": 1.42,
+    "FT": 0.58,
+    "MW": 0.51
+  },
+  "g3sg1-orange-kimono": {
+    "BS": 8.06,
+    "FN": 18.78,
+    "FT": 12.99,
+    "MW": 15.87
+  },
+  "g3sg1-polar-camo": {
+    "BS": 0.04,
+    "FN": 2.52,
+    "FT": 0.04,
+    "MW": 0.08,
+    "WW": 0.04
+  },
+  "g3sg1-red-jasper": {
+    "BS": 0.04,
+    "FN": 0.09,
+    "FT": 0.04,
+    "MW": 0.04,
+    "WW": 0.04
+  },
+  "g3sg1-safari-mesh": {
+    "FT": 3.91
+  },
+  "g3sg1-scavenger": {
+    "BS": 0.75,
+    "FN": 4.65,
+    "FT": 0.75,
+    "MW": 1.22
+  },
+  "g3sg1-stinger": {
+    "FN": 13.38,
+    "FT": 5.11,
+    "MW": 5.94
+  },
+  "g3sg1-the-executioner": {
+    "BS": 10.73,
+    "FT": 13.55,
+    "MW": 76.39,
+    "WW": 11.47
+  },
+  "g3sg1-varicamo": {
+    "FN": 0.38,
+    "FT": 0.07,
+    "MW": 0.11,
+    "WW": 0.05
+  },
+  "g3sg1-ventilator": {
+    "FN": 1.73,
+    "FT": 0.35,
+    "MW": 0.43,
+    "WW": 0.32
+  },
+  "g3sg1-violet-murano": {
+    "BS": 47.41,
+    "WW": 27.04
+  },
+  "galil-ar-acid-dart": {
+    "BS": 0.06,
+    "FN": 0.4,
+    "FT": 0.07,
+    "MW": 0.16,
+    "WW": 0.08
+  },
+  "galil-ar-akoben": {
+    "BS": 0.38,
+    "FN": 11.55,
+    "FT": 0.42,
+    "MW": 0.73,
+    "WW": 0.49
+  },
+  "galil-ar-amber-fade": {
+    "FN": 95.59,
+    "FT": 24.58,
+    "MW": 30.67,
+    "WW": 25.1
+  },
+  "galil-ar-aqua-terrace": {
+    "BS": 123.73,
+    "FN": 109.25,
+    "WW": 163.83
+  },
+  "galil-ar-black-sand": {
+    "BS": 0.56,
+    "FN": 28.86,
+    "FT": 0.81,
+    "MW": 1.13,
+    "WW": 0.6
+  },
+  "galil-ar-blue-titanium": {
+    "FN": 27.09
+  },
+  "galil-ar-caution": {
+    "BS": 49.92,
+    "FN": 153.04,
+    "MW": 87.22,
+    "WW": 52.75
+  },
+  "galil-ar-cerberus": {
+    "BS": 36.66,
+    "FN": 540.52,
+    "FT": 54.14,
+    "MW": 137.06,
+    "WW": 42.61
+  },
+  "galil-ar-chatterbox": {
+    "BS": 162.76,
+    "FT": 280.07,
+    "WW": 169.3
+  },
+  "galil-ar-chromatic-aberration": {
+    "BS": 4.74,
+    "FN": 71.5,
+    "FT": 5.83,
+    "MW": 10.9,
+    "WW": 4.67
+  },
+  "galil-ar-cold-fusion": {
+    "BS": 0.06,
+    "FN": 1.6,
+    "FT": 0.06,
+    "MW": 0.2,
+    "WW": 0.08
+  },
+  "galil-ar-connexion": {
+    "BS": 0.75,
+    "FN": 7.59,
+    "FT": 0.68,
+    "MW": 1.28,
+    "WW": 0.72
+  },
+  "galil-ar-control": {
+    "BS": 0.66,
+    "FN": 9.45,
+    "FT": 0.71,
+    "MW": 1.63,
+    "WW": 0.71
+  },
+  "galil-ar-crimson-tsunami": {
+    "BS": 2.37,
+    "FN": 23.98,
+    "FT": 2.57,
+    "MW": 4.68,
+    "WW": 3.24
+  },
+  "galil-ar-destroyer": {
+    "BS": 0.11,
+    "FN": 2,
+    "FT": 0.12,
+    "MW": 0.27,
+    "WW": 0.13
+  },
+  "galil-ar-dusk-ruins": {
+    "BS": 26.35,
+    "FN": 138.13,
+    "FT": 26.53,
+    "MW": 32.08
+  },
+  "galil-ar-eco": {
+    "BS": 15.36,
+    "FT": 17.21,
+    "MW": 226.96,
+    "WW": 15.93
+  },
+  "galil-ar-firefight": {
+    "BS": 1.43,
+    "FN": 37.72,
+    "FT": 1.85,
+    "MW": 3.06,
+    "WW": 1.56
+  },
+  "galil-ar-galigator": {
+    "BS": 1.38,
+    "FN": 11.18,
+    "FT": 2.16,
+    "MW": 3.7,
+    "WW": 1.41
+  },
+  "galil-ar-green-apple": {
+    "FN": 0.67,
+    "FT": 0.09,
+    "MW": 0.11
+  },
+  "galil-ar-grey-smoke": {
+    "BS": 0.04,
+    "FN": 0.09,
+    "FT": 0.04,
+    "MW": 0.04,
+    "WW": 0.04
+  },
+  "galil-ar-hunting-blind": {
+    "FT": 4.07,
+    "WW": 4.85
+  },
+  "galil-ar-kami": {
+    "FN": 21.84,
+    "FT": 1.68,
+    "MW": 4.24,
+    "WW": 2.32
+  },
+  "galil-ar-metallic-squeezer": {
+    "BS": 0.43,
+    "FN": 3.06,
+    "FT": 0.56,
+    "MW": 1.05,
+    "WW": 0.36
+  },
+  "galil-ar-nv": {
+    "BS": 0.91,
+    "FN": 1.38,
+    "FT": 0.27,
+    "MW": 0.48
+  },
+  "galil-ar-orange-ddpat": {
+    "FN": 104.53,
+    "MW": 60.41,
+    "WW": 19.42
+  },
+  "galil-ar-o-ranger": {
+    "BS": 0.06,
+    "FN": 0.56,
+    "FT": 0.06,
+    "MW": 0.14,
+    "WW": 0.08
+  },
+  "galil-ar-phoenix-blacklight": {
+    "BS": 93.62,
+    "FN": 385.83,
+    "MW": 155.79
+  },
+  "galil-ar-rainbow-spoon": {
+    "BS": 50.36,
+    "FN": 108.94,
+    "FT": 48.01,
+    "MW": 54.91,
+    "WW": 50.72
+  },
+  "galil-ar-robin-s-egg": {
+    "BS": 0.06,
+    "FN": 0.56,
+    "FT": 0.06,
+    "MW": 0.15,
+    "WW": 0.08
+  },
+  "galil-ar-rocket-pop": {
+    "BS": 0.75,
+    "FN": 23.85,
+    "FT": 1.41,
+    "MW": 3.59,
+    "WW": 0.86
+  },
+  "galil-ar-sage-spray": {
+    "BS": 0.05,
+    "FN": 9.22,
+    "FT": 0.04,
+    "MW": 0.08,
+    "WW": 0.04
+  },
+  "galil-ar-sandstorm": {
+    "BS": 2.25,
+    "FT": 2.88,
+    "MW": 35.31,
+    "WW": 2.23
+  },
+  "galil-ar-shattered": {
+    "BS": 7.13,
+    "FT": 7.38
+  },
+  "galil-ar-signal": {
+    "BS": 0.98,
+    "FN": 7.61,
+    "FT": 0.93,
+    "MW": 1.5,
+    "WW": 0.95
+  },
+  "galil-ar-sky-mandala": {
+    "BS": 0.46,
+    "FN": 3.67,
+    "FT": 0.63,
+    "MW": 1.9,
+    "WW": 0.65
+  },
+  "galil-ar-stone-cold": {
+    "BS": 2.76,
+    "FN": 56.05,
+    "FT": 3.59,
+    "MW": 7.38,
+    "WW": 2.95
+  },
+  "galil-ar-sugar-rush": {
+    "BS": 64.31,
+    "FN": 374.8,
+    "FT": 76.15,
+    "MW": 119.06,
+    "WW": 70.94
+  },
+  "galil-ar-tornado": {
+    "BS": 10.32,
+    "FN": 46.68,
+    "FT": 12.45,
+    "MW": 14.99,
+    "WW": 12.31
+  },
+  "galil-ar-tuxedo": {
+    "FN": 5.82,
+    "FT": 0.87,
+    "MW": 2.57,
+    "WW": 0.91
+  },
+  "galil-ar-urban-rubble": {
+    "BS": 12.4,
+    "FN": 52.25,
+    "MW": 13.41
+  },
+  "galil-ar-vandal": {
+    "BS": 0.86,
+    "FN": 59.76,
+    "FT": 1.34,
+    "MW": 3.13,
+    "WW": 0.87
+  },
+  "galil-ar-varicamo": {
+    "BS": 0.07,
+    "FN": 0.94,
+    "FT": 0.06,
+    "MW": 0.11,
+    "WW": 0.08
+  },
+  "galil-ar-winter-forest": {
+    "BS": 24.86,
+    "MW": 47.38,
+    "WW": 18.68
+  },
+  "glock-18-axia": {
+    "BS": 49.37,
+    "FN": 202.8,
+    "FT": 47.83,
+    "MW": 69.05
+  },
+  "glock-18-block-18": {
+    "BS": 0.69,
+    "FN": 4.55,
+    "FT": 0.75,
+    "MW": 1.41,
+    "WW": 0.93
+  },
+  "glock-18-blue-fissure": {
+    "FN": 54.78,
+    "FT": 3.46,
+    "MW": 12.84,
+    "WW": 3.49
+  },
+  "glock-18-brass": {
+    "FT": 66.78,
+    "MW": 140.18
+  },
+  "glock-18-bullet-queen": {
+    "BS": 75.03,
+    "FN": 267.06,
+    "FT": 80.59,
+    "MW": 89.7,
+    "WW": 75.49
+  },
+  "glock-18-bunsen-burner": {
+    "BS": 0.88,
+    "FN": 12.89,
+    "FT": 1.09,
+    "MW": 1.61,
+    "WW": 1.22
+  },
+  "glock-18-candy-apple": {
+    "FN": 3.66,
+    "FT": 1.36,
+    "MW": 1.75
+  },
+  "glock-18-catacombs": {
+    "BS": 1.23,
+    "FN": 9.74,
+    "FT": 1.47,
+    "MW": 1.94,
+    "WW": 1.41
+  },
+  "glock-18-clear-polymer": {
+    "BS": 0.31,
+    "FN": 10.3,
+    "FT": 0.38,
+    "MW": 0.66,
+    "WW": 0.31
+  },
+  "glock-18-coral-bloom": {
+    "BS": 0.35,
+    "FN": 5.3,
+    "FT": 0.51,
+    "MW": 1.15
+  },
+  "glock-18-death-rattle": {
+    "BS": 0.12,
+    "FT": 0.11,
+    "MW": 0.56,
+    "WW": 0.13
+  },
+  "glock-18-dragon-tattoo": {
+    "FN": 192.99,
+    "MW": 187.72
+  },
+  "glock-18-fade": {
+    "FN": 2283.76
+  },
+  "glock-18-franklin": {
+    "FN": 325.85,
+    "MW": 138.14
+  },
+  "glock-18-fully-tuned": {
+    "BS": 68.89,
+    "FN": 396.19,
+    "FT": 98.86,
+    "MW": 181.05,
+    "WW": 84.01
+  },
+  "glock-18-gamma-doppler-4": {
+    "BS": 140.11,
+    "FN": 913.64,
+    "FT": 298.34,
+    "MW": 448.4,
+    "WW": 70.93
+  },
+  "glock-18-glockingbird": {
+    "BS": 1.29,
+    "FN": 12.85,
+    "FT": 1.68,
+    "MW": 4.03,
+    "WW": 1.52
+  },
+  "glock-18-gold-toof": {
+    "BS": 44.69,
+    "FN": 277.61,
+    "FT": 44.95,
+    "MW": 63.42,
+    "WW": 45.48
+  },
+  "glock-18-green-line": {
+    "BS": 0.41,
+    "FN": 14.51,
+    "FT": 0.8,
+    "MW": 2.57,
+    "WW": 0.51
+  },
+  "glock-18-grinder": {
+    "FN": 23.76,
+    "FT": 4.93,
+    "MW": 4.65
+  },
+  "glock-18-groundwater": {
+    "BS": 25.03,
+    "FT": 30.54,
+    "MW": 37.33,
+    "WW": 28.53
+  },
+  "glock-18-high-beam": {
+    "FN": 0.31,
+    "MW": 0.29
+  },
+  "glock-18-ironwork": {
+    "BS": 0.62,
+    "FN": 30.17,
+    "FT": 0.83,
+    "MW": 1.63,
+    "WW": 0.65
+  },
+  "glock-18-mirror-mosaic": {
+    "BS": 6.07,
+    "FN": 47.72,
+    "FT": 10.07,
+    "MW": 16.62,
+    "WW": 8.52
+  },
+  "glock-18-moonrise": {
+    "BS": 1.1,
+    "FN": 6.07,
+    "FT": 1.23,
+    "MW": 2.23,
+    "WW": 1.45
+  },
+  "glock-18-neo-noir": {
+    "BS": 44.67,
+    "FN": 420.18,
+    "FT": 56.8,
+    "MW": 92.44,
+    "WW": 50.29
+  },
+  "glock-18-night": {
+    "BS": 5.04,
+    "FN": 97.05,
+    "FT": 4.74,
+    "MW": 48.28,
+    "WW": 4.21
+  },
+  "glock-18-nuclear-garden": {
+    "BS": 2.16,
+    "FN": 40.69,
+    "FT": 2.77,
+    "MW": 7.39
+  },
+  "glock-18-ocean-topo": {
+    "BS": 0.11,
+    "FN": 0.91,
+    "FT": 0.11,
+    "MW": 0.28,
+    "WW": 0.16
+  },
+  "glock-18-off-world": {
+    "BS": 0.28,
+    "FN": 15.26,
+    "FT": 0.42,
+    "MW": 0.63,
+    "WW": 0.28
+  },
+  "glock-18-oxide-blaze": {
+    "BS": 0.26,
+    "FN": 10.23,
+    "FT": 0.32,
+    "MW": 0.6,
+    "WW": 0.42
+  },
+  "glock-18-pink-ddpat": {
+    "MW": 112.03,
+    "WW": 72.85
+  },
+  "glock-18-ramese-s-reach": {
+    "FN": 151.23,
+    "FT": 18.04,
+    "MW": 37.44,
+    "WW": 14.78
+  },
+  "glock-18-reactor": {
+    "BS": 20.14,
+    "FN": 208.33,
+    "FT": 33.59,
+    "MW": 48.28,
+    "WW": 25.4
+  },
+  "glock-18-red-tire": {
+    "FN": 70.21,
+    "FT": 8.2,
+    "MW": 9.93
+  },
+  "glock-18-royal-legion": {
+    "BS": 3.5,
+    "FN": 94.15,
+    "FT": 3.98,
+    "MW": 11.13,
+    "WW": 3.53
+  },
+  "glock-18-sacrifice": {
+    "BS": 0.32,
+    "FN": 24.51,
+    "FT": 0.54,
+    "MW": 0.76,
+    "WW": 0.41
+  },
+  "glock-18-sand-dune": {
+    "BS": 9.79,
+    "FN": 240.98,
+    "FT": 10.43,
+    "WW": 10.63
+  },
+  "glock-18-shinobu": {
+    "BS": 5.96,
+    "FN": 55.58,
+    "FT": 7.46,
+    "MW": 11.3,
+    "WW": 6.25
+  },
+  "glock-18-snack-attack": {
+    "BS": 19.97,
+    "FT": 24.14,
+    "MW": 51.32,
+    "WW": 19.78
+  },
+  "glock-18-steel-disruption": {
+    "FN": 88.82,
+    "FT": 22.62,
+    "MW": 34.61
+  },
+  "glock-18-synth-leaf": {
+    "BS": 487.51,
+    "FT": 429.19,
+    "WW": 498.29
+  },
+  "glock-18-teal-graf": {
+    "BS": 0.43,
+    "FN": 2.61,
+    "FT": 0.56,
+    "MW": 0.93
+  },
+  "glock-18-trace-lock": {
+    "BS": 2.69,
+    "FN": 13.73,
+    "FT": 2.9,
+    "MW": 5.22,
+    "WW": 2.88
+  },
+  "glock-18-twilight-galaxy": {
+    "FN": 1356.75,
+    "FT": 424.42,
+    "MW": 395.74
+  },
+  "glock-18-umbral-rabbit": {
+    "BS": 0.67,
+    "FN": 4.78,
+    "FT": 0.72,
+    "MW": 1.32,
+    "WW": 0.73
+  },
+  "glock-18-vogue": {
+    "BS": 5.1,
+    "FN": 21.98,
+    "FT": 5.45,
+    "MW": 8.59,
+    "WW": 5.6
+  },
+  "glock-18-warhawk": {
+    "BS": 0.41,
+    "FN": 24.01,
+    "FT": 0.62,
+    "MW": 1.07,
+    "WW": 0.43
+  },
+  "glock-18-wasteland-rebel": {
+    "BS": 148.44,
+    "FN": 179.29,
+    "FT": 150.05,
+    "MW": 159.2,
+    "WW": 143.22
+  },
+  "glock-18-water-elemental": {
+    "BS": 24.65,
+    "FN": 54.67,
+    "FT": 25.46,
+    "MW": 26.93,
+    "WW": 24.84
+  },
+  "glock-18-weasel": {
+    "BS": 1.36,
+    "FN": 75.08,
+    "FT": 1.62,
+    "MW": 2.66,
+    "WW": 1.38
+  },
+  "glock-18-winterized": {
+    "BS": 0.13,
+    "FN": 5.75,
+    "FT": 0.14,
+    "MW": 0.29,
+    "WW": 0.12
+  },
+  "glock-18-wraiths": {
+    "BS": 0.47,
+    "FN": 23.9,
+    "FT": 0.56,
+    "MW": 1.77,
+    "WW": 0.88
+  },
+  "mac-10-aloha": {
+    "FN": 28.61,
+    "BS": 5.07,
+    "WW": 5.52
+  },
+  "mac-10-curse": {
+    "WW": 14.23,
+    "BS": 15.18,
+    "FN": 38.04,
+    "MW": 16.12
+  },
+  "mac-10-heat": {
+    "WW": 3.55,
+    "BS": 3.59,
+    "FN": 32.88,
+    "FT": 4.07,
+    "MW": 7.82
+  },
+  "m249-aztec": {
+    "FN": 8.72,
+    "FT": 0.87,
+    "MW": 1.96
+  },
+  "m249-blizzard-marbleized": {
+    "BS": 16.01,
+    "FN": 171.13,
+    "FT": 27.18,
+    "MW": 39.41,
+    "WW": 13.41
+  },
+  "m249-bock-blocks": {
+    "BS": 0.19,
+    "FN": 2.12,
+    "FT": 0.28,
+    "MW": 0.41,
+    "WW": 0.22
+  },
+  "mac-10-palm": {
+    "WW": 0.05,
+    "BS": 0.07,
+    "FN": 8.2,
+    "FT": 0.06,
+    "MW": 0.35
+  },
+  "m249-contrast-spray": {
+    "FT": 1.77,
+    "WW": 1.38
+  },
+  "m249-deep-relief": {
+    "BS": 1.05,
+    "FT": 1.58,
+    "MW": 2.72,
+    "WW": 0.67
+  },
+  "m249-downtown": {
+    "BS": 0.63,
+    "FN": 3.53,
+    "FT": 0.67,
+    "MW": 1.09,
+    "WW": 0.66
+  },
+  "m249-emerald-poison-dart": {
+    "FN": 6.61,
+    "FT": 1.97,
+    "WW": 2.05
+  },
+  "m249-gator-mesh": {
+    "BS": 0.07,
+    "FN": 0.42,
+    "FT": 0.07,
+    "MW": 0.11,
+    "WW": 0.09
+  },
+  "m249-humidor": {
+    "BS": 16.86,
+    "FT": 15.06,
+    "MW": 15.18
+  },
+  "m249-hypnosis": {
+    "FN": 3.89,
+    "FT": 0.31,
+    "MW": 1.19,
+    "WW": 0.22
+  },
+  "m249-impact-drill": {
+    "BS": 3.87,
+    "FN": 13.92,
+    "FT": 5.63,
+    "MW": 8.3,
+    "WW": 4.61
+  },
+  "m249-jungle": {
+    "BS": 5.6,
+    "FT": 7.35,
+    "MW": 7.75
+  },
+  "m249-jungle-ddpat": {
+    "FN": 27.75,
+    "WW": 4.57
+  },
+  "m249-magma": {
+    "FN": 6.86,
+    "FT": 2.52
+  },
+  "m249-midnight-palm": {
+    "FN": 10.23,
+    "FT": 9.32,
+    "MW": 8.67,
+    "WW": 4.38
+  },
+  "m249-nebula-crusader": {
+    "BS": 1.58,
+    "FN": 16.84,
+    "FT": 1.81,
+    "MW": 3.75,
+    "WW": 1.61
+  },
+  "m249-o-s-i-p-r": {
+    "BS": 0.29,
+    "FN": 1.38,
+    "FT": 0.34,
+    "MW": 0.43,
+    "WW": 0.33
+  },
+  "m249-predator": {
+    "BS": 1.16,
+    "FT": 1.69,
+    "MW": 2.37
+  },
+  "m249-sage-camo": {
+    "BS": 0.05,
+    "FN": 0.08,
+    "FT": 0.04,
+    "MW": 0.04,
+    "WW": 0.04
+  },
+  "m249-shipping-forecast": {
+    "WW": 12.38
+  },
+  "m249-sleet": {
+    "BS": 0.04,
+    "FN": 0.11,
+    "FT": 0.04,
+    "MW": 0.04,
+    "WW": 0.04
+  },
+  "m249-spectre": {
+    "BS": 0.4,
+    "FN": 1.43,
+    "FT": 0.63,
+    "MW": 0.59,
+    "WW": 0.51
+  },
+  "m249-spectrogram": {
+    "BS": 0.33,
+    "FN": 1.23,
+    "FT": 0.28
+  },
+  "m249-submerged": {
+    "BS": 0.09,
+    "FN": 1.81,
+    "FT": 0.11,
+    "MW": 0.43,
+    "WW": 0.07
+  },
+  "m249-system-lock": {
+    "FN": 3.46,
+    "FT": 0.67,
+    "MW": 1.23
+  },
+  "m249-warbird": {
+    "FT": 1.77,
+    "MW": 5.47
+  },
+  "m4a1-s-atomic-alloy": {
+    "FN": 315.53,
+    "FT": 40.94,
+    "MW": 80.89
+  },
+  "m4a1-s-basilisk": {
+    "BS": 10.64,
+    "FN": 77.44,
+    "FT": 11.19,
+    "MW": 14.26
+  },
+  "m4a1-s-black-lotus": {
+    "BS": 7.48,
+    "FN": 26.34,
+    "FT": 7.7,
+    "MW": 12.26,
+    "WW": 8.85
+  },
+  "m4a1-s-blood-tiger": {
+    "FN": 42.57,
+    "MW": 7.48
+  },
+  "m4a1-s-blue-phosphor": {
+    "FN": 906.81
+  },
+  "m4a1-s-boreal-forest": {
+    "BS": 0.15,
+    "FN": 43.87,
+    "FT": 0.16,
+    "MW": 0.45,
+    "WW": 0.15
+  },
+  "m4a1-s-briefing": {
+    "FN": 123.38,
+    "FT": 9.58,
+    "MW": 20.05,
+    "WW": 8.76
+  },
+  "m4a1-s-bright-water": {
+    "FT": 56.53,
+    "MW": 117.84
+  },
+  "m4a1-s-chantico-s-fire": {
+    "BS": 158.12,
+    "FN": 476.81,
+    "FT": 170.93,
+    "MW": 180.91,
+    "WW": 160.91
+  },
+  "m4a1-s-control-panel": {
+    "BS": 7.1,
+    "FN": 341.86,
+    "FT": 19.39,
+    "MW": 53.41,
+    "WW": 7.15
+  },
+  "m4a1-s-cyrex": {
+    "BS": 228.41,
+    "FN": 278.68,
+    "FT": 234.09,
+    "MW": 245.58,
+    "WW": 229.37
+  },
+  "m4a1-s-dark-water": {
+    "FT": 94.09,
+    "MW": 210.36
+  },
+  "m4a1-s-decimator": {
+    "BS": 17.58,
+    "FN": 97.74,
+    "FT": 18.18,
+    "MW": 28.95,
+    "WW": 20.75
+  },
+  "m4a1-s-electrum": {
+    "BS": 2.95,
+    "FN": 21.19,
+    "FT": 4.53,
+    "MW": 7.7,
+    "WW": 3.44
+  },
+  "m4a1-s-emphorosaur-s": {
+    "BS": 0.68,
+    "FN": 6.05,
+    "FT": 0.76,
+    "MW": 1.59,
+    "WW": 0.98
+  },
+  "m4a1-s-fade": {
+    "FN": 467.24,
+    "MW": 498.9
+  },
+  "m4a1-s-fizzy-pop": {
+    "BS": 2.05,
+    "FN": 17.35,
+    "FT": 2.4,
+    "MW": 3.78,
+    "WW": 2.13
+  },
+  "m4a1-s-flashback": {
+    "BS": 4.42,
+    "FN": 73.36,
+    "FT": 5.22,
+    "MW": 7.84,
+    "WW": 4.73
+  },
+  "m4a1-s-glitched-paint": {
+    "BS": 2.79,
+    "FN": 19.09,
+    "FT": 3.23,
+    "MW": 7.19,
+    "WW": 4.82
+  },
+  "m4a1-s-golden-coil": {
+    "BS": 69.67,
+    "FN": 470.22,
+    "FT": 94.56,
+    "MW": 143.21,
+    "WW": 76.18
+  },
+  "m4a1-s-guardian": {
+    "FN": 123.79,
+    "FT": 36.67,
+    "MW": 45.18,
+    "WW": 35.82
+  },
+  "m4a1-s-hot-rod": {
+    "FN": 2804.28
+  },
+  "m4a1-s-hyper-beast": {
+    "BS": 156.41,
+    "FN": 456.67,
+    "FT": 170.55,
+    "MW": 187.35,
+    "WW": 157.79
+  },
+  "m4a1-s-icarus-fell": {
+    "FN": 888.97,
+    "MW": 914.68
+  },
+  "m4a1-s-imminent-danger": {
+    "FN": 2086.54,
+    "MW": 1527.98,
+    "WW": 3019.08
+  },
+  "m4a1-s-knight": {
+    "FN": 4437.5,
+    "MW": 4261.86
+  },
+  "m4a1-s-leaded-glass": {
+    "BS": 12.26,
+    "FN": 62.98,
+    "FT": 13.04,
+    "MW": 14.38,
+    "WW": 12.26
+  },
+  "m4a1-s-liquidation": {
+    "BS": 1.25,
+    "FN": 17.43,
+    "FT": 3.78,
+    "MW": 7.41,
+    "WW": 2.54
+  },
+  "m4a1-s-master-piece": {
+    "BS": 127.87,
+    "FT": 243.54,
+    "WW": 141.15
+  },
+  "m4a1-s-mecha-industries": {
+    "BS": 139.94,
+    "FN": 319.11,
+    "FT": 148.59,
+    "MW": 161.47,
+    "WW": 143.51
+  },
+  "m4a1-s-moss-quartz": {
+    "BS": 46.52,
+    "FN": 232.05,
+    "FT": 46.75,
+    "MW": 77.2,
+    "WW": 47.34
+  },
+  "m4a1-s-mud-spec": {
+    "BS": 0.83,
+    "FN": 7.93,
+    "FT": 0.49,
+    "MW": 1.81,
+    "WW": 0.76
+  },
+  "m4a1-s-nightmare": {
+    "BS": 11.11,
+    "FN": 365.11,
+    "FT": 13.15,
+    "MW": 32.18,
+    "WW": 10.94
+  },
+  "m4a1-s-night-terror": {
+    "BS": 1.14,
+    "FN": 4.28,
+    "FT": 0.98,
+    "MW": 1.47,
+    "WW": 1.19
+  },
+  "m4a1-s-nitro": {
+    "BS": 0.56,
+    "FN": 29.46,
+    "FT": 0.61,
+    "MW": 1.75,
+    "WW": 0.62
+  },
+  "m4a1-s-party-animal": {
+    "FN": 105.74,
+    "FT": 19.82,
+    "MW": 37.68,
+    "WW": 21.63
+  },
+  "m4a1-s-player-two": {
+    "BS": 74.76,
+    "FN": 286.35,
+    "FT": 79.68,
+    "MW": 87.23,
+    "WW": 75.97
+  },
+  "m4a1-s-printstream": {
+    "BS": 229.19,
+    "FN": 688.41,
+    "FT": 284.15,
+    "MW": 450.44,
+    "WW": 265.42
+  },
+  "m4a1-s-rose-hex": {
+    "FN": 2.21,
+    "FT": 0.39,
+    "MW": 0.78,
+    "WW": 0.41
+  },
+  "m4a1-s-solitude": {
+    "BS": 1.94,
+    "FN": 40.8,
+    "FT": 2.9,
+    "MW": 7.24,
+    "WW": 3.46
+  },
+  "m4a1-s-stratosphere": {
+    "BS": 7.91,
+    "FN": 134.61,
+    "FT": 8,
+    "MW": 26.81,
+    "WW": 13.73
+  },
+  "m4a1-s-vaporwave": {
+    "BS": 64.4,
+    "FN": 351.53,
+    "FT": 78.03,
+    "MW": 152.28,
+    "WW": 70.17
+  },
+  "m4a1-s-varicamo": {
+    "BS": 0.4,
+    "FN": 3.07,
+    "FT": 0.33,
+    "MW": 0.67,
+    "WW": 0.51
+  },
+  "m4a1-s-wash-me-plz": {
+    "BS": 0.09,
+    "FN": 0.98,
+    "FT": 0.08,
+    "MW": 0.16,
+    "WW": 0.14
+  },
+  "m4a1-s-welcome-to-the-jungle": {
+    "FT": 1248.75
+  },
+  "m4a4-aeolian-dark": {
+    "BS": 0.06,
+    "FN": 0.88,
+    "FT": 0.06,
+    "MW": 0.15,
+    "WW": 0.11
+  },
+  "m4a4-asiimov": {
+    "BS": 118.14,
+    "FT": 363.55,
+    "WW": 202.77
+  },
+  "m4a4-bullet-rain": {
+    "BS": 92.9,
+    "FT": 107.67,
+    "MW": 134.78,
+    "WW": 102.59
+  },
+  "m4a4-buzz-kill": {
+    "BS": 340.48,
+    "FN": 755.51,
+    "FT": 386.53,
+    "MW": 515.35,
+    "WW": 315.42
+  },
+  "m4a4-choppa": {
+    "BS": 0.12,
+    "FN": 3.89,
+    "FT": 0.15,
+    "MW": 0.39,
+    "WW": 0.12
+  },
+  "m4a4-converter": {
+    "FN": 3.97,
+    "FT": 1.3,
+    "MW": 1.66,
+    "WW": 1.26
+  },
+  "m4a4-cyber-security": {
+    "BS": 28.09,
+    "FN": 400.17,
+    "FT": 34.5,
+    "MW": 85.66,
+    "WW": 28.76
+  },
+  "m4a4-dark-blossom": {
+    "FN": 182.82,
+    "FT": 21.13,
+    "MW": 32.72
+  },
+  "m4a4-daybreak": {
+    "BS": 546.23,
+    "FN": 1584.91,
+    "MW": 722.27,
+    "WW": 669.12
+  },
+  "m4a4-desert-storm": {
+    "BS": 14.82,
+    "FT": 14.33,
+    "MW": 32.48
+  },
+  "m4a4-desert-strike": {
+    "BS": 46.2,
+    "FN": 220.55,
+    "FT": 45.1,
+    "MW": 56.33,
+    "WW": 53.67
+  },
+  "m4a4-desolate-space": {
+    "BS": 16.04,
+    "FN": 179.57,
+    "FT": 19.35,
+    "MW": 31.31,
+    "WW": 16.63
+  },
+  "m4a4-etch-lord": {
+    "BS": 0.63,
+    "FN": 11.43,
+    "FT": 0.73,
+    "MW": 1.77,
+    "WW": 0.62
+  },
+  "m4a4-evil-daimyo": {
+    "BS": 4.4,
+    "FN": 17.08,
+    "FT": 4.71,
+    "MW": 7.22,
+    "WW": 5.11
+  },
+  "m4a4-eye-of-horus": {
+    "BS": 263.27,
+    "FT": 533.76,
+    "MW": 856.17,
+    "WW": 374.92
+  },
+  "m4a4-faded-zebra": {
+    "BS": 6.05,
+    "FT": 5.47,
+    "MW": 23.6
+  },
+  "m4a4-full-throttle": {
+    "BS": 38.1,
+    "FN": 331.38,
+    "FT": 69.48,
+    "MW": 140.89,
+    "WW": 46.32
+  },
+  "m4a4-global-offensive": {
+    "FN": 128.07,
+    "FT": 18.88,
+    "MW": 26.22
+  },
+  "m4a4-griffin": {
+    "BS": 5.32,
+    "FN": 150.49,
+    "FT": 5.2,
+    "MW": 11.8
+  },
+  "m4a4-hellfire": {
+    "FT": 274.49,
+    "MW": 359.41
+  },
+  "m4a4-hellish": {
+    "BS": 27.46,
+    "FN": 351.66,
+    "FT": 49.08,
+    "MW": 109.54,
+    "WW": 28.46
+  },
+  "m4a4-in-living-color": {
+    "BS": 40.31,
+    "FN": 211.4,
+    "FT": 51.16,
+    "MW": 77.61,
+    "WW": 46.32
+  },
+  "m4a4-jungle-tiger": {
+    "BS": 12.45,
+    "FT": 17.01,
+    "MW": 50.16
+  },
+  "m4a4-magnesium": {
+    "BS": 0.24,
+    "FN": 10.65,
+    "FT": 0.6,
+    "MW": 1.58,
+    "WW": 0.27
+  },
+  "m4a4-mainframe": {
+    "BS": 0.07,
+    "FN": 0.68,
+    "FT": 0.06,
+    "MW": 0.11
+  },
+  "m4a4-modern-hunter": {
+    "BS": 50.47,
+    "FN": 750,
+    "MW": 130.69
+  },
+  "mag-7-seabird": {
+    "WW": 4.71,
+    "BS": 3.66,
+    "FN": 14.36,
+    "FT": 5.25,
+    "MW": 8.43
+  },
+  "m4a4-naval-shred-camo": {
+    "BS": 0.07,
+    "FN": 0.78,
+    "FT": 0.07,
+    "MW": 0.18,
+    "WW": 0.11
+  },
+  "m4a4-neo-noir": {
+    "BS": 41.31,
+    "FN": 216,
+    "FT": 50.6,
+    "MW": 83.23,
+    "WW": 46.12
+  },
+  "m4a4-poly-mag": {
+    "BS": 0.11,
+    "FN": 5.23,
+    "FT": 0.12,
+    "MW": 0.31,
+    "WW": 0.12
+  },
+  "m4a4-polysoup": {
+    "BS": 14.16,
+    "FN": 68.2,
+    "FT": 18.69,
+    "MW": 30.24,
+    "WW": 15.19
+  },
+  "m4a4-poseidon": {
+    "FN": 2583.05,
+    "FT": 1522.69,
+    "MW": 1457.3
+  },
+  "m4a4-radiation-hazard": {
+    "BS": 33.62,
+    "FT": 59.76,
+    "MW": 146.38,
+    "WW": 40.64
+  },
+  "m4a4-red-ddpat": {
+    "BS": 67.67,
+    "FT": 97.12
+  },
+  "m4a4-royal-paladin": {
+    "FN": 527.92,
+    "FT": 111.86,
+    "MW": 135.56,
+    "WW": 105.03
+  },
+  "m4a4-sheet-lightning": {
+    "BS": 1.29,
+    "FN": 21.86,
+    "FT": 1.76,
+    "MW": 6.42,
+    "WW": 1.97
+  },
+  "m4a4-spider-lily": {
+    "BS": 6.94,
+    "FN": 152.86,
+    "FT": 11.87,
+    "MW": 25.65,
+    "WW": 8.18
+  },
+  "m4a4-steel-work": {
+    "BS": 0.05,
+    "FN": 0.55,
+    "FT": 0.06,
+    "MW": 0.12
+  },
+  "m4a4-temukau": {
+    "BS": 41.01,
+    "FN": 169.61,
+    "FT": 51.3,
+    "MW": 86.2,
+    "WW": 45.2
+  },
+  "m4a4-the-battlestar": {
+    "BS": 41.27,
+    "FN": 246.96,
+    "FT": 43.42,
+    "MW": 63.07,
+    "WW": 42.3
+  },
+  "m4a4-the-coalition": {
+    "FT": 554.15,
+    "MW": 797.6,
+    "WW": 319.04
+  },
+  "m4a4-the-emperor": {
+    "BS": 81.36,
+    "FN": 412.21,
+    "FT": 79.34,
+    "MW": 106.39,
+    "WW": 76.6
+  },
+  "m4a4-tooth-fairy": {
+    "BS": 5.24,
+    "FN": 30.12,
+    "FT": 5.49,
+    "MW": 8.75,
+    "WW": 6.16
+  },
+  "m4a4-tornado": {
+    "BS": 11.11,
+    "FT": 15.4,
+    "MW": 77.61
+  },
+  "m4a4-turbine": {
+    "BS": 1.28,
+    "FN": 47.07,
+    "FT": 1.72,
+    "MW": 4.57,
+    "WW": 2.17
+  },
+  "m4a4-urban-ddpat": {
+    "BS": 0.15,
+    "FN": 65.93,
+    "FT": 0.12,
+    "MW": 1.12,
+    "WW": 0.12
+  },
+  "m4a4-x-ray": {
+    "FN": 318.46,
+    "FT": 107.49,
+    "MW": 113.04
+  },
+  "m4a4-zirka": {
+    "FN": 110.1,
+    "FT": 31.91,
+    "WW": 33.56
+  },
+  "m4a4-zubastick": {
+    "BS": 0.24,
+    "FN": 3.39,
+    "FT": 0.34,
+    "MW": 0.75,
+    "WW": 0.24
+  },
+  "m4a4-dragon-king": {
+    "BS": 18.36,
+    "FN": 132.94,
+    "FT": 20.02,
+    "MW": 37.01,
+    "WW": 26.6
+  },
+  "mac-10-acid-hex": {
+    "BS": 0.06,
+    "FN": 0.31,
+    "FT": 0.07,
+    "MW": 0.18,
+    "WW": 0.07
+  },
+  "mac-10-allure": {
+    "BS": 0.62,
+    "FN": 9.89,
+    "FT": 0.68,
+    "MW": 1.62,
+    "WW": 0.61
+  },
+  "mac-10-amber-fade": {
+    "FN": 72.18,
+    "WW": 22.72
+  },
+  "mac-10-bronzer": {
+    "BS": 0.04,
+    "FN": 0.13,
+    "FT": 0.04,
+    "MW": 0.04,
+    "WW": 0.04
+  },
+  "mac-10-button-masher": {
+    "BS": 0.66,
+    "FN": 14.16,
+    "FT": 0.68,
+    "MW": 1.62,
+    "WW": 0.61
+  },
+  "mac-10-calf-skin": {
+    "BS": 0.11,
+    "FN": 2.33,
+    "FT": 0.15,
+    "MW": 0.29,
+    "WW": 0.12
+  },
+  "mac-10-candy-apple": {
+    "FN": 0.81,
+    "FT": 0.24,
+    "MW": 0.25
+  },
+  "mac-10-carnivore": {
+    "BS": 0.4,
+    "FN": 13.08,
+    "FT": 0.54,
+    "MW": 0.86,
+    "WW": 0.43
+  },
+  "mac-10-case-hardened": {
+    "FN": 161.5,
+    "MW": 89.18,
+    "WW": 93.13
+  },
+  "mac-10-cat-fight": {
+    "BS": 0.71,
+    "FN": 7.03,
+    "FT": 1.16,
+    "MW": 2.16,
+    "WW": 0.86
+  },
+  "mac-10-classic-crate": {
+    "BS": 0.35,
+    "FN": 9.53,
+    "FT": 0.62,
+    "MW": 0.56,
+    "WW": 0.39
+  },
+  "mac-10-commuter": {
+    "FT": 8.82,
+    "WW": 8.47
+  },
+  "mac-10-copper-borre": {
+    "BS": 146.7,
+    "MW": 133.1,
+    "WW": 123.83
+  },
+  "mac-10-derailment": {
+    "BS": 3.46,
+    "FN": 30.67,
+    "FT": 5.15,
+    "MW": 12.44,
+    "WW": 4.58
+  },
+  "mac-10-disco-tech": {
+    "BS": 6.79,
+    "FN": 65.47,
+    "FT": 8,
+    "MW": 12.31,
+    "WW": 6.98
+  },
+  "mac-10-echoing-sands": {
+    "BS": 0.33,
+    "FN": 10.88,
+    "FT": 0.45,
+    "MW": 2.37,
+    "WW": 0.36
+  },
+  "mac-10-ensnared": {
+    "BS": 0.11,
+    "FN": 1.68,
+    "FT": 0.13,
+    "MW": 0.29,
+    "WW": 0.11
+  },
+  "mac-10-fade": {
+    "FN": 101.23,
+    "MW": 100.32
+  },
+  "mac-10-gold-brick": {
+    "BS": 62.13,
+    "FN": 191.73,
+    "MW": 103.42,
+    "WW": 69.73
+  },
+  "mac-10-graven": {
+    "FN": 107.22,
+    "FT": 28.95
+  },
+  "mac-10-hot-snakes": {
+    "BS": 193.22,
+    "FN": 544.66,
+    "WW": 221.64
+  },
+  "mac-10-indigo": {
+    "BS": 2.79,
+    "FN": 39.42,
+    "FT": 3.11,
+    "MW": 6.02,
+    "WW": 2.8
+  },
+  "mac-10-lapis-gator": {
+    "FN": 6.56,
+    "FT": 1.05,
+    "MW": 1.81,
+    "WW": 0.76
+  },
+  "mac-10-last-dive": {
+    "BS": 1.87,
+    "FN": 15.66,
+    "FT": 2.03,
+    "MW": 2.44,
+    "WW": 2.19
+  },
+  "mac-10-light-box": {
+    "BS": 0.11,
+    "FN": 1.73,
+    "FT": 0.12,
+    "MW": 0.32,
+    "WW": 0.11
+  },
+  "mac-10-malachite": {
+    "FN": 21.43,
+    "FT": 3.24,
+    "MW": 5.16
+  },
+  "mac-10-monkeyflage": {
+    "BS": 0.11,
+    "FN": 3.04,
+    "FT": 0.11,
+    "MW": 0.29,
+    "WW": 0.11
+  },
+  "mac-10-neon-rider": {
+    "FN": 194.69,
+    "FT": 174.59,
+    "MW": 181.13,
+    "WW": 175.04
+  },
+  "mac-10-nuclear-garden": {
+    "BS": 18.28,
+    "FN": 72.83,
+    "FT": 27.46,
+    "MW": 42.42,
+    "WW": 16.12
+  },
+  "mac-10-oceanic": {
+    "FN": 2.93,
+    "FT": 0.39,
+    "MW": 0.43,
+    "WW": 0.31
+  },
+  "mac-10-pipe-down": {
+    "BS": 0.71,
+    "FN": 20.55,
+    "FT": 0.87,
+    "MW": 1.95,
+    "WW": 0.73
+  },
+  "mac-10-pipsqueak": {
+    "BS": 0.4,
+    "FN": 7.71,
+    "FT": 0.62,
+    "MW": 1.55,
+    "WW": 0.51
+  },
+  "mac-10-poplar-thicket": {
+    "BS": 0.15,
+    "FN": 2.12,
+    "FT": 0.18,
+    "MW": 0.6
+  },
+  "mac-10-propaganda": {
+    "BS": 53.46,
+    "FN": 283.3,
+    "FT": 57.59,
+    "MW": 91.81
+  },
+  "mac-10-rangeen": {
+    "FN": 3.74,
+    "FT": 0.39,
+    "MW": 0.54,
+    "WW": 0.32
+  },
+  "mac-10-red-filigree": {
+    "BS": 80.78,
+    "FT": 109.4,
+    "WW": 68.68
+  },
+  "mac-10-saib-oni": {
+    "BS": 1.41,
+    "FN": 13.09,
+    "FT": 1.77,
+    "MW": 4.2,
+    "WW": 2.13
+  },
+  "mac-10-sakkaku": {
+    "BS": 0.62,
+    "FT": 1.4,
+    "WW": 0.63
+  },
+  "mac-10-sienna-damask": {
+    "BS": 0.85,
+    "FN": 4.06,
+    "FT": 1.14,
+    "MW": 1.82,
+    "WW": 1.09
+  },
+  "mac-10-silver": {
+    "FN": 0.48,
+    "MW": 0.39
+  },
+  "mac-10-snow-splash": {
+    "BS": 0.06,
+    "FN": 0.45,
+    "FT": 0.06,
+    "MW": 0.12,
+    "WW": 0.07
+  },
+  "mac-10-stalker": {
+    "BS": 55.23,
+    "FN": 285.47,
+    "FT": 58.07,
+    "MW": 76.84,
+    "WW": 56.79
+  },
+  "mac-10-storm-camo": {
+    "BS": 0.04,
+    "FN": 0.09,
+    "FT": 0.04,
+    "MW": 0.04,
+    "WW": 0.04
+  },
+  "mac-10-strats": {
+    "FN": 15.35,
+    "WW": 1.66
+  },
+  "mac-10-surfwood": {
+    "BS": 6.44,
+    "FN": 14.98,
+    "FT": 7.5
+  },
+  "mac-10-tatter": {
+    "BS": 7.89,
+    "FN": 33.74,
+    "FT": 9.07,
+    "MW": 15.93
+  },
+  "mac-10-tornado": {
+    "FN": 122.36,
+    "FT": 3.02,
+    "WW": 2.64
+  },
+  "mac-10-toybox": {
+    "FT": 22.77,
+    "MW": 46.42,
+    "WW": 21.37
+  },
+  "mac-10-ultraviolet": {
+    "FT": 4,
+    "MW": 17.55,
+    "WW": 3.59
+  },
+  "mac-10-urban-ddpat": {
+    "BS": 3.37
+  },
+  "mac-10-whitefish": {
+    "BS": 0.32,
+    "FN": 9.26,
+    "FT": 0.45,
+    "MW": 0.78,
+    "WW": 0.32
+  },
+  "mag-7-bi83-spectrum": {
+    "FN": 15.39,
+    "FT": 2.99,
+    "MW": 4.16
+  },
+  "mag-7-bulldozer": {
+    "BS": 16.64,
+    "FN": 231.75,
+    "FT": 19.38,
+    "MW": 52.3
+  },
+  "mag-7-carbon-fiber": {
+    "FN": 6.7
+  },
+  "mag-7-chainmail": {
+    "FN": 30.94,
+    "FT": 19.87,
+    "MW": 22.43
+  },
+  "mag-7-cinquedea": {
+    "BS": 574.9
+  },
+  "mag-7-cobalt-core": {
+    "FN": 3.74,
+    "FT": 0.36,
+    "MW": 0.68
+  },
+  "mag-7-copper-coated": {
+    "BS": 1.63,
+    "FN": 17.69,
+    "FT": 2.67,
+    "MW": 7.33,
+    "WW": 2.05
+  },
+  "mag-7-copper-oxide": {
+    "BS": 0.04,
+    "FN": 0.09,
+    "FT": 0.04,
+    "MW": 0.04,
+    "WW": 0.04
+  },
+  "mag-7-core-breach": {
+    "BS": 0.82,
+    "FN": 29.06,
+    "FT": 1.21,
+    "MW": 7.82,
+    "WW": 0.96
+  },
+  "mag-7-counter-terrace": {
+    "BS": 139.53,
+    "FT": 129.42,
+    "MW": 174.44,
+    "WW": 140.95
+  },
+  "mag-7-firestarter": {
+    "FT": 1.41,
+    "MW": 4.02,
+    "WW": 1.4
+  },
+  "mag-7-foresight": {
+    "BS": 0.12,
+    "FN": 0.83,
+    "FT": 0.12,
+    "MW": 0.26,
+    "WW": 0.11
+  },
+  "mag-7-hard-water": {
+    "FN": 16.03,
+    "FT": 7.45,
+    "MW": 10.93,
+    "WW": 5.7
+  },
+  "mag-7-hazard": {
+    "FN": 159.66,
+    "MW": 41.65
+  },
+  "mag-7-heat": {
+    "BS": 1.58,
+    "FN": 25.55,
+    "FT": 1.99,
+    "MW": 3.59,
+    "WW": 1.63
+  },
+  "mag-7-heaven-guard": {
+    "FN": 2.09,
+    "FT": 0.81,
+    "MW": 0.83
+  },
+  "mag-7-insomnia": {
+    "BS": 0.11,
+    "FN": 1.54,
+    "FT": 0.12,
+    "MW": 0.29,
+    "WW": 0.11
+  },
+  "mag-7-irradiated-alert": {
+    "FN": 41.52
+  },
+  "mag-7-justice": {
+    "BS": 6.75,
+    "FN": 57.59,
+    "FT": 7.8,
+    "MW": 10.84,
+    "WW": 6.97
+  },
+  "mag-7-magnitude": {
+    "BS": 0.12,
+    "FN": 1.45,
+    "FT": 0.18,
+    "MW": 0.35,
+    "WW": 0.12
+  },
+  "mag-7-memento": {
+    "FN": 10.14,
+    "FT": 4.47
+  },
+  "mag-7-metallic-ddpat": {
+    "FN": 0.25,
+    "MW": 0.22
+  },
+  "mag-7-monster-call": {
+    "BS": 0.62,
+    "FN": 8.66,
+    "FT": 0.71,
+    "MW": 1.65,
+    "WW": 0.63
+  },
+  "mag-7-navy-sheen": {
+    "FN": 3.34,
+    "FT": 1.15,
+    "MW": 1.5,
+    "WW": 1.03
+  },
+  "mag-7-petroglyph": {
+    "FN": 6.94,
+    "FT": 1.62,
+    "MW": 1.55
+  },
+  "mag-7-popdog": {
+    "BS": 0.41,
+    "FN": 5.08,
+    "FT": 0.61,
+    "MW": 0.56
+  },
+  "mag-7-praetorian": {
+    "FN": 16.42,
+    "FT": 2.83,
+    "MW": 3.71
+  },
+  "mag-7-prism-terrace": {
+    "FN": 76.45
+  },
+  "mag-7-resupply": {
+    "BS": 0.11,
+    "FN": 1.58,
+    "FT": 0.12,
+    "MW": 0.29,
+    "WW": 0.11
+  },
+  "mag-7-rust-coat": {
+    "BS": 0.04,
+    "FN": 0.92,
+    "FT": 0.04,
+    "MW": 0.06,
+    "WW": 0.04
+  },
+  "mag-7-sand-dune": {
+    "FT": 4.06,
+    "WW": 2.83
+  },
+  "mag-7-silver": {
+    "FN": 37.53,
+    "MW": 24.63
+  },
+  "mag-7-sonar": {
+    "FN": 8.66,
+    "FT": 0.76,
+    "MW": 0.93,
+    "WW": 0.61
+  },
+  "mag-7-storm": {
+    "BS": 1.05,
+    "FN": 17,
+    "FT": 1.61,
+    "MW": 2.87,
+    "WW": 1.38
+  },
+  "mag-7-swag-7": {
+    "BS": 0.67,
+    "FN": 10,
+    "FT": 0.72,
+    "MW": 1.7,
+    "WW": 0.66
+  },
+  "mag-7-wildwood": {
+    "BS": 0.09,
+    "FN": 0.47,
+    "FT": 0.09,
+    "MW": 0.13,
+    "WW": 0.11
+  },
+  "mp5-sd-acid-wash": {
+    "FN": 7.03,
+    "FT": 1.45,
+    "MW": 4.04,
+    "WW": 1.4
+  },
+  "mp5-sd-agent": {
+    "BS": 0.74,
+    "FN": 17.88,
+    "FT": 0.93,
+    "MW": 2.93,
+    "WW": 0.76
+  },
+  "mp5-sd-autumn-twilly": {
+    "BS": 11.84,
+    "FN": 36.57,
+    "FT": 13.55,
+    "MW": 18.41
+  },
+  "mp5-sd-bamboo-garden": {
+    "FN": 11.37,
+    "FT": 7.61,
+    "MW": 8.76,
+    "WW": 6.11
+  },
+  "mp5-sd-condition-zero": {
+    "FN": 7.98,
+    "MW": 2.7
+  },
+  "mp5-sd-co-processor": {
+    "FN": 2.13,
+    "FT": 0.16,
+    "MW": 0.41
+  },
+  "mp5-sd-desert-strike": {
+    "BS": 0.24,
+    "FN": 4.1,
+    "FT": 0.32,
+    "MW": 0.34,
+    "WW": 0.27
+  },
+  "mp5-sd-dirt-drop": {
+    "BS": 0.04,
+    "FN": 2.83,
+    "FT": 0.04,
+    "MW": 0.08,
+    "WW": 0.04
+  },
+  "mp5-sd-focus": {
+    "BS": 0.12,
+    "FN": 1.45,
+    "FT": 0.19,
+    "MW": 0.35,
+    "WW": 0.12
+  },
+  "mp5-sd-gauss": {
+    "BS": 0.73,
+    "FN": 11.48,
+    "FT": 0.85,
+    "MW": 1.77,
+    "WW": 0.72
+  },
+  "mp5-sd-gold-leaf": {
+    "BS": 0.18,
+    "FN": 1.67,
+    "FT": 0.18,
+    "MW": 0.52
+  },
+  "mp5-sd-kitbash": {
+    "BS": 0.62,
+    "FN": 5.87,
+    "FT": 0.66,
+    "MW": 1.23
+  },
+  "mp5-sd-lime-hex": {
+    "BS": 0.04,
+    "FN": 0.09,
+    "FT": 0.04,
+    "MW": 0.04,
+    "WW": 0.04
+  },
+  "mp5-sd-liquidation": {
+    "BS": 0.12,
+    "FN": 1.58,
+    "FT": 0.12,
+    "MW": 0.29,
+    "WW": 0.11
+  },
+  "mp5-sd-necro-jr": {
+    "BS": 0.11,
+    "FN": 1.61,
+    "FT": 0.12,
+    "MW": 0.29,
+    "WW": 0.12
+  },
+  "mp5-sd-neon-squeezer": {
+    "BS": 0.06,
+    "FT": 0.16,
+    "WW": 0.08
+  },
+  "mp5-sd-nitro": {
+    "BS": 4.29,
+    "FN": 21.38,
+    "FT": 4.9,
+    "MW": 7.76
+  },
+  "mp5-sd-oxide-oasis": {
+    "BS": 701.4,
+    "FT": 446.21,
+    "WW": 303.99
+  },
+  "mp5-sd-phosphor": {
+    "BS": 5.58,
+    "FN": 31.93,
+    "FT": 6.18,
+    "MW": 10.16,
+    "WW": 5.72
+  },
+  "mp5-sd-picnic": {
+    "BS": 0.06,
+    "FN": 0.51,
+    "FT": 0.06,
+    "MW": 0.16,
+    "WW": 0.06
+  },
+  "mp5-sd-savannah-halftone": {
+    "BS": 0.09,
+    "FT": 0.21,
+    "WW": 0.11
+  },
+  "mp5-sd-snow-splash": {
+    "FN": 0.36,
+    "FT": 0.06,
+    "MW": 0.11,
+    "WW": 0.06
+  },
+  "mp5-sd-statics": {
+    "BS": 0.21,
+    "FN": 4.7,
+    "FT": 0.29,
+    "MW": 0.83,
+    "WW": 0.24
+  },
+  "mp7-abyssal-apparition": {
+    "BS": 8.47,
+    "FN": 39.84,
+    "FT": 9.23,
+    "MW": 11.93,
+    "WW": 8.69
+  },
+  "mp7-akoben": {
+    "BS": 0.48,
+    "FN": 10.13,
+    "FT": 0.51,
+    "MW": 0.8
+  },
+  "mp7-amberline": {
+    "BS": 1.48,
+    "FN": 11.5,
+    "FT": 2.2,
+    "MW": 3.75,
+    "WW": 1.65
+  },
+  "mp7-anodized-navy": {
+    "FN": 2.49,
+    "MW": 2.36
+  },
+  "mp7-armor-core": {
+    "FN": 6.34,
+    "FT": 0.51,
+    "MW": 0.98
+  },
+  "mp7-army-recon": {
+    "BS": 0.04,
+    "FN": 4.84,
+    "FT": 0.04,
+    "MW": 0.06,
+    "WW": 0.04
+  },
+  "mp7-asterion": {
+    "FN": 33.35,
+    "FT": 6.74,
+    "MW": 8.31,
+    "WW": 6.17
+  },
+  "mp7-astrolabe": {
+    "BS": 0.24,
+    "FN": 18.21,
+    "FT": 0.36,
+    "MW": 0.87,
+    "WW": 0.25
+  },
+  "mp7-bloodsport": {
+    "BS": 45.51,
+    "FN": 135.39,
+    "FT": 51.06,
+    "MW": 66.3,
+    "WW": 51.12
+  },
+  "mp7-cirrus": {
+    "BS": 0.94,
+    "FN": 31.5,
+    "FT": 1.15,
+    "MW": 2.07,
+    "WW": 1.09
+  },
+  "mp7-coral-paisley": {
+    "BS": 0.06,
+    "FN": 0.91,
+    "FT": 0.07,
+    "MW": 0.25,
+    "WW": 0.11
+  },
+  "mp7-fade": {
+    "FN": 48.39,
+    "FT": 11.2,
+    "MW": 11.83
+  },
+  "mp7-forest-ddpat": {
+    "BS": 0.04,
+    "FN": 7.26,
+    "FT": 0.04,
+    "MW": 0.11,
+    "WW": 0.06
+  },
+  "mp7-full-stop": {
+    "BS": 44.1,
+    "MW": 51.41
+  },
+  "mp7-groundwater": {
+    "BS": 4.26,
+    "FN": 65.01
+  },
+  "mp7-guerrilla": {
+    "FT": 1.47,
+    "MW": 4.35
+  },
+  "mp7-gunsmoke": {
+    "FT": 3.39
+  },
+  "mp7-impire": {
+    "FN": 42.2,
+    "FT": 3.16,
+    "MW": 4.45
+  },
+  "mp7-just-smile": {
+    "BS": 0.61,
+    "FN": 10.94,
+    "FT": 0.71,
+    "MW": 1.73,
+    "WW": 0.62
+  },
+  "mp7-mischief": {
+    "BS": 0.29,
+    "FT": 0.51,
+    "MW": 13.04,
+    "WW": 0.41
+  },
+  "mp7-motherboard": {
+    "BS": 0.07,
+    "FN": 0.61,
+    "FT": 0.06,
+    "MW": 0.11,
+    "WW": 0.07
+  },
+  "mp7-nemesis": {
+    "FN": 48.86,
+    "FT": 10.9,
+    "MW": 11.31
+  },
+  "mp7-neon-ply": {
+    "BS": 3.46,
+    "FT": 3.89,
+    "MW": 10.71,
+    "WW": 3.44
+  },
+  "mp7-ocean-foam": {
+    "FN": 53.24
+  },
+  "mp7-olive-plaid": {
+    "MW": 5.04,
+    "WW": 3.55
+  },
+  "mp7-orange-peel": {
+    "BS": 25.54,
+    "FN": 45.1,
+    "FT": 28.12,
+    "MW": 29.26
+  },
+  "mp7-powercore": {
+    "BS": 1.94,
+    "FN": 59.18,
+    "FT": 1.66,
+    "MW": 5.44,
+    "WW": 2.12
+  },
+  "mp7-prey": {
+    "FN": 5.25,
+    "FT": 1.05
+  },
+  "mp7-scorched": {
+    "BS": 9.82,
+    "FT": 14.79,
+    "MW": 14.51,
+    "WW": 11.83
+  },
+  "mp7-short-ochre": {
+    "BS": 0.04,
+    "FN": 0.18,
+    "FT": 0.04,
+    "MW": 0.04,
+    "WW": 0.04
+  },
+  "mp7-skulls": {
+    "FT": 24.65,
+    "MW": 46.87
+  },
+  "mp7-smoking-kills": {
+    "BS": 6.39,
+    "FN": 46.12,
+    "FT": 10.5,
+    "MW": 17.88,
+    "WW": 7.17
+  },
+  "mp7-special-delivery": {
+    "BS": 1.61,
+    "FN": 27.71,
+    "FT": 1.62,
+    "MW": 2.73
+  },
+  "mp7-sunbaked": {
+    "BS": 0.09,
+    "FN": 6.5,
+    "FT": 0.12,
+    "MW": 0.52,
+    "WW": 0.08
+  },
+  "mp7-tall-grass": {
+    "FN": 45.54,
+    "FT": 8.58,
+    "MW": 11.18
+  },
+  "mp7-teal-blossom": {
+    "BS": 73.03,
+    "FN": 130.75,
+    "MW": 110.36,
+    "WW": 114
+  },
+  "mp7-urban-hazard": {
+    "BS": 0.51,
+    "FN": 5.5,
+    "FT": 0.43,
+    "MW": 0.61,
+    "WW": 0.49
+  },
+  "mp7-vault-heist": {
+    "BS": 5.78,
+    "FN": 44.51,
+    "FT": 7.61,
+    "MW": 10.88
+  },
+  "mp7-whiteout": {
+    "FN": 1184.04,
+    "FT": 55.58,
+    "MW": 244.19,
+    "WW": 46.96
+  },
+  "mp9-airlock": {
+    "BS": 13.91,
+    "FN": 73.63,
+    "FT": 15.08,
+    "MW": 16.7,
+    "WW": 14.2
+  },
+  "mp9-arctic-tri-tone": {
+    "BS": 5.6,
+    "FN": 19.14,
+    "FT": 5.77,
+    "MW": 8.22,
+    "WW": 5.7
+  },
+  "mp9-army-sheen": {
+    "FN": 2.57
+  },
+  "mp9-bee-tron": {
+    "BS": 0.04,
+    "FN": 0.36,
+    "FT": 0.04,
+    "MW": 0.04,
+    "WW": 0.04
+  },
+  "mp9-bioleak": {
+    "FN": 2.08,
+    "FT": 0.51,
+    "MW": 0.53
+  },
+  "mp9-black-sand": {
+    "BS": 0.15,
+    "FN": 4.55,
+    "FT": 0.18,
+    "MW": 0.31,
+    "WW": 0.16
+  },
+  "mp9-broken-record": {
+    "BS": 0.12,
+    "FN": 1.41,
+    "FT": 0.16,
+    "MW": 0.36,
+    "WW": 0.13
+  },
+  "mp9-buff-blue": {
+    "BS": 0.04,
+    "FN": 0.2,
+    "FT": 0.04,
+    "MW": 0.04,
+    "WW": 0.04
+  },
+  "mp9-bulldozer": {
+    "BS": 122.26,
+    "MW": 345.57
+  },
+  "mp9-capillary": {
+    "BS": 0.36,
+    "FN": 5.92,
+    "FT": 0.51,
+    "MW": 0.8,
+    "WW": 0.46
+  },
+  "mp9-cobalt-paisley": {
+    "BS": 0.35,
+    "FN": 3.39,
+    "FT": 0.48,
+    "MW": 1.23
+  },
+  "mp9-dark-age": {
+    "FN": 115.41,
+    "FT": 113.74,
+    "MW": 104.83
+  },
+  "mp9-dart": {
+    "BS": 4.93,
+    "FN": 8.75,
+    "MW": 1.68,
+    "WW": 0.78
+  },
+  "mp9-deadly-poison": {
+    "BS": 0.42,
+    "FN": 18.42,
+    "FT": 0.75,
+    "MW": 1.58,
+    "WW": 0.43
+  },
+  "mp9-dizzy": {
+    "BS": 0.04,
+    "FN": 0.11,
+    "FT": 0.04,
+    "MW": 0.04,
+    "WW": 0.04
+  },
+  "mp9-dry-season": {
+    "FT": 5.71
+  },
+  "mp9-featherweight": {
+    "BS": 0.11,
+    "FN": 1.62,
+    "FT": 0.12,
+    "MW": 0.29,
+    "WW": 0.11
+  },
+  "mp9-food-chain": {
+    "BS": 4.76,
+    "FN": 48.15,
+    "FT": 5.64,
+    "MW": 10.06,
+    "WW": 4.8
+  },
+  "mp9-goo": {
+    "BS": 1.23,
+    "FN": 10.03,
+    "FT": 1.33,
+    "MW": 1.9,
+    "WW": 1.3
+  },
+  "mp9-green-plaid": {
+    "BS": 4.8,
+    "FN": 12.81,
+    "WW": 8.87
+  },
+  "mp9-hot-rod": {
+    "FN": 377.58,
+    "MW": 172.12
+  },
+  "mp9-hydra": {
+    "FN": 82.16,
+    "FT": 8.36,
+    "MW": 16.7,
+    "WW": 6.88
+  },
+  "mp9-hypnotic": {
+    "FN": 39.3,
+    "MW": 35.38
+  },
+  "mp9-latte-rush": {
+    "BS": 24.32,
+    "FN": 207.4,
+    "FT": 34.65,
+    "MW": 101.3,
+    "WW": 25.93
+  },
+  "mp9-modest-threat": {
+    "BS": 0.2,
+    "FN": 2.47,
+    "FT": 0.32,
+    "MW": 0.45
+  },
+  "mp9-mount-fuji": {
+    "BS": 6.75,
+    "FN": 25.35,
+    "FT": 7.51,
+    "MW": 13.59,
+    "WW": 7.04
+  },
+  "mp9-multi-terrain": {
+    "BS": 0.04,
+    "FN": 0.09,
+    "FT": 0.04,
+    "MW": 0.04,
+    "WW": 0.04
+  },
+  "mp9-music-box": {
+    "MW": 18.14
+  },
+  "mp9-nexus": {
+    "BS": 0.12,
+    "FN": 1.81,
+    "FT": 0.13,
+    "MW": 0.31,
+    "WW": 0.11
+  },
+  "mp9-old-roots": {
+    "BS": 4.28,
+    "FN": 17.26,
+    "FT": 5.72,
+    "MW": 6.24
+  },
+  "mp9-orange-peel": {
+    "BS": 0.07,
+    "FN": 12.71,
+    "FT": 0.07,
+    "MW": 0.27,
+    "WW": 0.07
+  },
+  "mp9-pandora-s-box": {
+    "FN": 266.47,
+    "FT": 179.19
+  },
+  "mp9-pine": {
+    "BS": 0.04,
+    "FN": 0.11,
+    "FT": 0.04,
+    "MW": 0.04,
+    "WW": 0.04
+  },
+  "mp9-rose-iron": {
+    "FN": 33.03,
+    "MW": 12.17
+  },
+  "mp9-ruby-poison-dart": {
+    "FN": 11.7,
+    "FT": 1.77,
+    "MW": 3.22,
+    "WW": 2.17
+  },
+  "mp9-sand-dashed": {
+    "BS": 0.04,
+    "FN": 4.11,
+    "FT": 0.04,
+    "MW": 0.06,
+    "WW": 0.04
+  },
+  "mp9-sand-scale": {
+    "FN": 11.48,
+    "FT": 0.78,
+    "MW": 0.78
+  },
+  "mp9-setting-sun": {
+    "FN": 86.92,
+    "FT": 32.89,
+    "WW": 23.73
+  },
+  "mp9-shredded": {
+    "BS": 0.36,
+    "FN": 2.12,
+    "FT": 0.36,
+    "MW": 0.83,
+    "WW": 0.35
+  },
+  "mp9-slide": {
+    "BS": 0.04,
+    "FN": 4.1,
+    "FT": 0.04,
+    "MW": 0.07,
+    "WW": 0.04
+  },
+  "mp9-stained-glass": {
+    "FN": 275.22,
+    "MW": 201.54,
+    "WW": 107.52
+  },
+  "mp9-starlight-protector": {
+    "BS": 95.06,
+    "FN": 166.61,
+    "FT": 97.32,
+    "MW": 110.22,
+    "WW": 94.95
+  },
+  "mp9-storm": {
+    "FN": 51.21,
+    "FT": 1.97,
+    "MW": 6.82,
+    "WW": 1.45
+  },
+  "mp9-urban-sovereign": {
+    "BS": 1.42,
+    "FN": 10.68,
+    "FT": 2.2,
+    "MW": 3.56,
+    "WW": 1.7
+  },
+  "mp9-wild-lily": {
+    "BS": 4998.75,
+    "FT": 2811.48,
+    "WW": 4615.16
+  },
+  "negev-anodized-navy": {
+    "FN": 434.02
+  },
+  "negev-army-sheen": {
+    "FN": 0.16,
+    "FT": 0.04,
+    "MW": 0.04
+  },
+  "negev-boroque-sand": {
+    "BS": 2.4,
+    "FN": 15.3,
+    "FT": 3.36,
+    "MW": 6.82
+  },
+  "negev-bratatat": {
+    "FT": 3.36,
+    "MW": 5.23,
+    "WW": 2.87
+  },
+  "negev-bulkhead": {
+    "BS": 0.08,
+    "FN": 0.46,
+    "FT": 0.07,
+    "MW": 0.11,
+    "WW": 0.08
+  },
+  "negev-calicamo": {
+    "BS": 27.95,
+    "WW": 25.04
+  },
+  "negev-dazzle": {
+    "FT": 0.36,
+    "MW": 2.67
+  },
+  "negev-desert-strike": {
+    "FN": 2.49,
+    "FT": 0.47,
+    "MW": 0.51
+  },
+  "negev-dev-texture": {
+    "BS": 0.66,
+    "FN": 5.04,
+    "FT": 0.68,
+    "MW": 1.21
+  },
+  "negev-drop-me": {
+    "BS": 0.11,
+    "FN": 1.92,
+    "FT": 0.12,
+    "MW": 0.29,
+    "WW": 0.11
+  },
+  "negev-infrastructure": {
+    "BS": 10.86
+  },
+  "negev-lionfish": {
+    "BS": 0.68,
+    "FN": 4.09,
+    "FT": 0.69,
+    "MW": 1.21
+  },
+  "negev-loudmouth": {
+    "FT": 1.56,
+    "WW": 1.33
+  },
+  "negev-man-o-war": {
+    "FT": 0.35,
+    "MW": 0.51
+  },
+  "negev-mj-lnir": {
+    "BS": 2210.15
+  },
+  "negev-nuclear-waste": {
+    "FN": 15.16,
+    "FT": 5.31,
+    "MW": 6.45
+  },
+  "negev-phoenix-stencil": {
+    "BS": 22.36,
+    "FT": 25.47,
+    "MW": 30.97
+  },
+  "negev-power-loader": {
+    "BS": 1.3,
+    "FN": 30.17,
+    "FT": 1.89,
+    "MW": 6.28,
+    "WW": 1.38
+  },
+  "negev-prototype": {
+    "BS": 0.29,
+    "FN": 1.69,
+    "FT": 0.36,
+    "MW": 0.35
+  },
+  "negev-raw-ceramic": {
+    "BS": 0.04,
+    "FN": 0.11,
+    "FT": 0.04,
+    "MW": 0.04,
+    "WW": 0.04
+  },
+  "negev-sour-grapes": {
+    "BS": 0.06,
+    "FN": 0.85,
+    "FT": 0.05,
+    "MW": 0.22,
+    "WW": 0.08
+  },
+  "negev-terrain": {
+    "FN": 1.7,
+    "FT": 0.74,
+    "MW": 0.94,
+    "WW": 0.73
+  },
+  "negev-ultralight": {
+    "BS": 0.13,
+    "FN": 0.98,
+    "FT": 0.13,
+    "MW": 0.27,
+    "WW": 0.11
+  },
+  "negev-wall-bang": {
+    "BS": 0.06,
+    "FN": 2.67,
+    "FT": 0.08,
+    "MW": 0.21,
+    "WW": 0.07
+  },
+  "nova-antique": {
+    "FN": 20.17,
+    "FT": 17.58,
+    "MW": 13.68
+  },
+  "nova-army-sheen": {
+    "FN": 3.87,
+    "MW": 2.16
+  },
+  "nova-baroque-orange": {
+    "BS": 86.71,
+    "WW": 87.76
+  },
+  "nova-blaze-orange": {
+    "BS": 16.77,
+    "FN": 691.43,
+    "WW": 18.37
+  },
+  "nova-bloomstick": {
+    "BS": 17.3,
+    "FN": 132.73,
+    "FT": 16.68
+  },
+  "nova-caged-steel": {
+    "FN": 0.29,
+    "FT": 0.12,
+    "MW": 0.14
+  },
+  "nova-candy-apple": {
+    "FN": 0.42,
+    "FT": 0.18,
+    "MW": 0.18
+  },
+  "nova-clear-polymer": {
+    "FT": 5.64,
+    "MW": 21.57,
+    "WW": 4.2
+  },
+  "nova-currents": {
+    "BS": 0.04,
+    "FN": 0.09,
+    "FT": 0.04,
+    "MW": 0.04,
+    "WW": 0.04
+  },
+  "nova-dark-sigil": {
+    "BS": 0.11,
+    "FN": 0.83,
+    "FT": 0.11,
+    "MW": 0.26,
+    "WW": 0.12
+  },
+  "nova-exo": {
+    "FN": 1.67,
+    "FT": 0.51,
+    "MW": 0.56
+  },
+  "nova-forest-leaves": {
+    "FN": 42.86,
+    "FT": 3.62,
+    "WW": 3.3
+  },
+  "nova-ghost-camo": {
+    "FN": 7.29,
+    "FT": 3.04,
+    "WW": 3.66
+  },
+  "nova-gila": {
+    "FN": 14.67,
+    "FT": 5.04,
+    "MW": 5.24
+  },
+  "nova-graphite": {
+    "FN": 22.33
+  },
+  "nova-green-apple": {
+    "MW": 14.83
+  },
+  "nova-hyper-beast": {
+    "FN": 59.05,
+    "FT": 19.11,
+    "MW": 26.72,
+    "WW": 19.25
+  },
+  "nova-interlock": {
+    "WW": 14.52
+  },
+  "nova-koi": {
+    "FN": 5.05,
+    "FT": 2.89,
+    "MW": 3.23
+  },
+  "nova-mandrel": {
+    "BS": 0.04,
+    "FN": 0.13,
+    "FT": 0.04,
+    "MW": 0.04,
+    "WW": 0.04
+  },
+  "nova-marsh-grass": {
+    "BS": 0.04,
+    "FN": 0.08,
+    "FT": 0.04,
+    "MW": 0.04,
+    "WW": 0.04
+  },
+  "nova-modern-hunter": {
+    "BS": 21.06,
+    "MW": 45.27,
+    "WW": 20.18
+  },
+  "nova-moon-in-libra": {
+    "BS": 5.01,
+    "FN": 11.86,
+    "FT": 7.13,
+    "MW": 9,
+    "WW": 6.29
+  },
+  "nova-ocular": {
+    "BS": 0.73,
+    "FN": 7.15,
+    "FT": 1.12,
+    "MW": 2.05,
+    "WW": 0.86
+  },
+  "nova-plume": {
+    "FN": 7.68,
+    "FT": 1.53,
+    "MW": 4.63
+  },
+  "nova-polar-mesh": {
+    "BS": 0.04,
+    "FN": 3.14,
+    "FT": 0.04,
+    "MW": 0.09,
+    "WW": 0.04
+  },
+  "nova-predator": {
+    "BS": 0.04,
+    "FN": 2.23,
+    "FT": 0.04,
+    "MW": 0.09,
+    "WW": 0.04
+  },
+  "nova-quick-sand": {
+    "WW": 20.61
+  },
+  "nova-rain-station": {
+    "FN": 0.48,
+    "FT": 0.07,
+    "MW": 0.09
+  },
+  "nova-ranger": {
+    "BS": 0.78,
+    "FN": 4.41,
+    "MW": 1.15,
+    "WW": 0.83
+  },
+  "nova-red-quartz": {
+    "FN": 30.5,
+    "MW": 15.76,
+    "WW": 11.11
+  },
+  "nova-rising-skull": {
+    "FN": 14.9,
+    "FT": 5.92,
+    "MW": 7.83
+  },
+  "nova-rising-sun": {
+    "BS": 0.63,
+    "FN": 10.44,
+    "FT": 0.76,
+    "MW": 1.87,
+    "WW": 0.66
+  },
+  "nova-rust-coat": {
+    "BS": 11.35,
+    "FT": 10.85,
+    "MW": 10.33,
+    "WW": 6.16
+  },
+  "nova-sand-dune": {
+    "BS": 0.04,
+    "FN": 2.39,
+    "FT": 0.04,
+    "MW": 0.09,
+    "WW": 0.04
+  },
+  "nova-sobek-s-bite": {
+    "BS": 13.59,
+    "FN": 49.8,
+    "FT": 16.57,
+    "MW": 33.27,
+    "WW": 14.19
+  },
+  "nova-tempest": {
+    "MW": 8.18
+  },
+  "nova-toy-soldier": {
+    "BS": 0.95,
+    "FN": 20.82,
+    "FT": 1.16,
+    "MW": 4.49,
+    "WW": 0.98
+  },
+  "nova-turquoise-pour": {
+    "BS": 0.06,
+    "FN": 0.48,
+    "FT": 0.06,
+    "MW": 0.16,
+    "WW": 0.07
+  },
+  "nova-walnut": {
+    "BS": 2.72,
+    "FT": 4.02,
+    "WW": 2.46
+  },
+  "nova-wild-six": {
+    "BS": 0.67,
+    "FN": 5.92,
+    "FT": 0.68,
+    "MW": 1.29,
+    "WW": 0.74
+  },
+  "nova-windblown": {
+    "FN": 1.09,
+    "FT": 0.38,
+    "MW": 0.43,
+    "WW": 0.4
+  },
+  "nova-wood-fired": {
+    "BS": 0.31,
+    "FN": 1.63,
+    "FT": 0.49,
+    "MW": 0.46,
+    "WW": 0.31
+  },
+  "nova-wurst-h-lle": {
+    "BS": 0.42,
+    "FN": 6.28,
+    "FT": 0.68,
+    "MW": 1.53,
+    "WW": 0.49
+  },
+  "nova-yorkshire": {
+    "BS": 0.59,
+    "FN": 5.05,
+    "FT": 0.72,
+    "MW": 1.45,
+    "WW": 0.59
+  },
+  "p2000-acid-etched": {
+    "BS": 0.81,
+    "FN": 41.11,
+    "FT": 0.99,
+    "MW": 2.32,
+    "WW": 0.78
+  },
+  "p2000-amber-fade": {
+    "FN": 5.09,
+    "FT": 0.72,
+    "MW": 1.32,
+    "WW": 1.27
+  },
+  "p2000-coach-class": {
+    "BS": 8.78,
+    "FN": 32.97,
+    "FT": 9.72,
+    "MW": 16.36
+  },
+  "p2000-coral-halftone": {
+    "BS": 0.29,
+    "FN": 1.55,
+    "FT": 0.28
+  },
+  "p2000-corticera": {
+    "FN": 122.31,
+    "FT": 22.9
+  },
+  "p2000-dispatch": {
+    "FN": 74.22,
+    "FT": 20.86,
+    "MW": 25.87
+  },
+  "p2000-fire-elemental": {
+    "BS": 92.26,
+    "FN": 237.01,
+    "FT": 106.93,
+    "MW": 120.67
+  },
+  "p2000-gnarled": {
+    "BS": 0.11,
+    "FN": 3.75,
+    "FT": 0.13,
+    "MW": 0.29,
+    "WW": 0.12
+  },
+  "p2000-granite-marbleized": {
+    "BS": 0.24,
+    "FN": 22.78,
+    "FT": 0.14,
+    "MW": 0.31,
+    "WW": 0.14
+  },
+  "p2000-grassland": {
+    "BS": 2.88
+  },
+  "p2000-grassland-leaves": {
+    "FN": 99.48,
+    "WW": 7.89
+  },
+  "p2000-grip-tape": {
+    "BS": 0.35,
+    "FN": 2.77,
+    "FT": 0.43,
+    "MW": 0.91
+  },
+  "p2000-handgun": {
+    "BS": 1.06,
+    "FN": 51.39,
+    "FT": 1.6,
+    "MW": 3.47,
+    "WW": 1.07
+  },
+  "p2000-imperial-dragon": {
+    "BS": 14.52,
+    "FN": 91.13,
+    "FT": 15.8,
+    "MW": 17.58,
+    "WW": 15.89
+  },
+  "p2000-imperial": {
+    "FN": 5.25,
+    "FT": 0.73,
+    "MW": 0.81
+  },
+  "p2000-ivory": {
+    "FN": 20.66,
+    "MW": 0.73,
+    "WW": 0.42
+  },
+  "p2000-lifted-spirits": {
+    "BS": 0.11,
+    "FN": 1.77,
+    "FT": 0.13,
+    "MW": 0.31,
+    "WW": 0.12
+  },
+  "p2000-marsh": {
+    "BS": 0.07,
+    "FN": 0.42,
+    "FT": 0.06,
+    "MW": 0.16,
+    "WW": 0.08
+  },
+  "p2000-obsidian": {
+    "FT": 3.95,
+    "MW": 13.52,
+    "WW": 3.76
+  },
+  "p2000-ocean-foam": {
+    "MW": 29.49
+  },
+  "p2000-oceanic": {
+    "FN": 8.08,
+    "FT": 0.54,
+    "MW": 0.55
+  },
+  "p2000-panther-camo": {
+    "BS": 6.14,
+    "FN": 42.65,
+    "FT": 8.29,
+    "WW": 6.96
+  },
+  "p2000-pathfinder": {
+    "FN": 50.02
+  },
+  "p2000-pulse": {
+    "FN": 20.89,
+    "FT": 1.52,
+    "MW": 3.04
+  },
+  "p2000-red-fragcam": {
+    "FN": 34.51,
+    "FT": 3.33,
+    "MW": 6.14
+  },
+  "p2000-red-wing": {
+    "BS": 0.11,
+    "FN": 1.46,
+    "FT": 0.15,
+    "MW": 0.35,
+    "WW": 0.12
+  },
+  "p2000-royal-baroque": {
+    "BS": 0.35,
+    "FN": 3.43,
+    "FT": 0.47,
+    "MW": 1.13,
+    "WW": 0.43
+  },
+  "p2000-scorpion": {
+    "FN": 140.7,
+    "MW": 50.44
+  },
+  "p2000-silver": {
+    "FN": 433.69,
+    "MW": 154
+  },
+  "p2000-space-race": {
+    "BS": 12.94,
+    "FN": 75.92,
+    "FT": 17.42,
+    "MW": 18.65
+  },
+  "p2000-sure-grip": {
+    "BS": 0.12,
+    "FN": 2.97,
+    "FT": 0.12,
+    "MW": 0.29,
+    "WW": 0.11
+  },
+  "p2000-turf": {
+    "FN": 27.83,
+    "FT": 0.86,
+    "MW": 1.39,
+    "WW": 0.63
+  },
+  "p2000-urban-hazard": {
+    "BS": 0.16,
+    "FN": 8.19,
+    "FT": 0.2,
+    "MW": 0.31,
+    "WW": 0.16
+  },
+  "p2000-wicked-sick": {
+    "BS": 4.41,
+    "FN": 40.61,
+    "FT": 5.2,
+    "MW": 9.56,
+    "WW": 4.56
+  },
+  "p2000-woodsman": {
+    "FN": 66.94,
+    "FT": 37.78,
+    "MW": 61.35,
+    "WW": 26.89
+  },
+  "p250-apep-s-curse": {
+    "FN": 292.91,
+    "FT": 113.4,
+    "MW": 207.18,
+    "WW": 87.59
+  },
+  "p250-asiimov": {
+    "BS": 15.19,
+    "FT": 16.84,
+    "MW": 91.26,
+    "WW": 16.17
+  },
+  "p250-bengal-tiger": {
+    "BS": 23.02,
+    "FN": 74.44,
+    "MW": 34.83,
+    "WW": 22.31
+  },
+  "p250-black-tan": {
+    "WW": 26.84
+  },
+  "p250-bone-mask": {
+    "FT": 4.07
+  },
+  "p250-boreal-forest": {
+    "BS": 0.04,
+    "FN": 10.68,
+    "FT": 0.04,
+    "MW": 0.11,
+    "WW": 0.04
+  },
+  "p250-bullfrog": {
+    "BS": 0.13,
+    "FN": 1.42,
+    "FT": 0.19,
+    "MW": 0.35,
+    "WW": 0.12
+  },
+  "p250-cartel": {
+    "FN": 92.59,
+    "FT": 11.92,
+    "MW": 20.03,
+    "WW": 11.64
+  },
+  "p250-cassette": {
+    "BS": 0.13,
+    "FN": 0.86,
+    "FT": 0.13,
+    "MW": 0.26,
+    "WW": 0.14
+  },
+  "p250-constructivist": {
+    "FN": 0.4,
+    "FT": 0.08,
+    "MW": 0.11
+  },
+  "p250-contaminant": {
+    "BS": 1.05,
+    "FN": 16.59,
+    "FT": 1.27,
+    "MW": 1.81,
+    "WW": 1.43
+  },
+  "p250-contamination": {
+    "FN": 23.27,
+    "MW": 8.9,
+    "WW": 3.78
+  },
+  "p250-copper-oxide": {
+    "BS": 0.04,
+    "FN": 0.11,
+    "FT": 0.04,
+    "MW": 0.04,
+    "WW": 0.04
+  },
+  "p250-crimson-kimono": {
+    "FN": 62.59,
+    "FT": 21.77,
+    "MW": 27.14
+  },
+  "p250-cyber-shell": {
+    "BS": 0.61,
+    "FN": 22.8,
+    "FT": 0.68,
+    "MW": 1.41,
+    "WW": 0.68
+  },
+  "p250-dark-filigree": {
+    "BS": 6.95,
+    "FN": 37.26,
+    "MW": 8.17
+  },
+  "p250-digital-architect": {
+    "BS": 54.78,
+    "FN": 99.57,
+    "MW": 62.29,
+    "WW": 56.43
+  },
+  "p250-drought": {
+    "FN": 3.98,
+    "FT": 1.16,
+    "MW": 1.42,
+    "WW": 1
+  },
+  "p250-epicenter": {
+    "BS": 5.82,
+    "FN": 58.8,
+    "FT": 7.16,
+    "MW": 17.19
+  },
+  "p250-exchanger": {
+    "FN": 2.62,
+    "FT": 0.18,
+    "MW": 0.39,
+    "WW": 0.18
+  },
+  "p250-facility-draft": {
+    "BS": 0.04,
+    "FN": 0.13,
+    "FT": 0.04,
+    "MW": 0.04,
+    "WW": 0.04
+  },
+  "p250-forest-night": {
+    "BS": 0.92,
+    "FN": 16.04,
+    "FT": 1.14,
+    "MW": 1.56
+  },
+  "p250-franklin": {
+    "FN": 10.09,
+    "FT": 2.09,
+    "MW": 3.3,
+    "WW": 4.38
+  },
+  "p250-gunsmoke": {
+    "MW": 6.89
+  },
+  "p250-hive": {
+    "FN": 22.44,
+    "FT": 4.38,
+    "MW": 4.62
+  },
+  "p250-inferno": {
+    "FN": 22.52,
+    "FT": 0.81,
+    "MW": 2.41,
+    "WW": 1.13
+  },
+  "p250-iron-clad": {
+    "FN": 17.19,
+    "FT": 0.58,
+    "MW": 1.02,
+    "WW": 0.48
+  },
+  "p250-kintsugi": {
+    "BS": 7.7,
+    "FN": 43.67,
+    "FT": 10.41,
+    "MW": 17.8,
+    "WW": 8.63
+  },
+  "p250-mehndi": {
+    "FT": 25.35,
+    "MW": 30.31,
+    "WW": 19.5
+  },
+  "p250-metallic-ddpat": {
+    "FN": 0.24,
+    "MW": 0.29
+  },
+  "p250-mint-kimono": {
+    "BS": 9.99,
+    "FN": 35.7,
+    "FT": 14.31,
+    "MW": 16.63,
+    "WW": 11.21
+  },
+  "p250-modern-hunter": {
+    "BS": 22.15,
+    "FN": 512.5,
+    "FT": 26.58,
+    "WW": 26.15
+  },
+  "p250-muertos": {
+    "BS": 17.46,
+    "FN": 49.6,
+    "FT": 17.4,
+    "MW": 18.24,
+    "WW": 16.74
+  },
+  "p250-nevermore": {
+    "FN": 5.47,
+    "FT": 1.3,
+    "MW": 1.81,
+    "WW": 1.92
+  },
+  "p250-nuclear-threat": {
+    "BS": 42.97,
+    "FT": 51.21,
+    "MW": 136.38,
+    "WW": 41.35
+  },
+  "p250-plum-netting": {
+    "BS": 0.04,
+    "FN": 0.09,
+    "FT": 0.04,
+    "MW": 0.04,
+    "WW": 0.04
+  },
+  "p250-re-built": {
+    "BS": 0.11,
+    "FN": 1.48,
+    "FT": 0.12,
+    "MW": 0.28,
+    "WW": 0.12
+  },
+  "p250-red-rock": {
+    "BS": 25.94,
+    "MW": 58.34,
+    "WW": 29.27
+  },
+  "p250-red-tide": {
+    "FN": 4.15,
+    "FT": 0.38,
+    "MW": 1.08,
+    "WW": 0.39
+  },
+  "p250-ripple": {
+    "FN": 3.81,
+    "FT": 0.6,
+    "MW": 0.67,
+    "WW": 0.46
+  },
+  "p250-sand-dune": {
+    "BS": 0.04,
+    "FN": 3.59,
+    "FT": 0.04,
+    "MW": 0.11,
+    "WW": 0.04
+  },
+  "p250-sedimentary": {
+    "BS": 0.07,
+    "FN": 0.42,
+    "FT": 0.06,
+    "MW": 0.12,
+    "WW": 0.09
+  },
+  "p250-see-ya-later": {
+    "BS": 139.15,
+    "FN": 198.89,
+    "FT": 146.08,
+    "MW": 151.84
+  },
+  "p250-sleet": {
+    "BS": 0.04,
+    "FN": 0.11,
+    "FT": 0.04,
+    "MW": 0.04,
+    "WW": 0.04
+  },
+  "p250-small-game": {
+    "BS": 0.6,
+    "FN": 2.84,
+    "FT": 0.63,
+    "MW": 1.07,
+    "WW": 0.67
+  },
+  "p250-splash": {
+    "FN": 67.2,
+    "MW": 33.02
+  },
+  "p250-steel-disruption": {
+    "FN": 20.11,
+    "FT": 3.91,
+    "MW": 4.8
+  },
+  "p250-supernova": {
+    "FN": 8.22,
+    "FT": 2.8,
+    "MW": 2.99,
+    "WW": 2.95
+  },
+  "p250-undertow": {
+    "FN": 107.02,
+    "FT": 38.37,
+    "MW": 39.61
+  },
+  "p250-valence": {
+    "BS": 0.31,
+    "FN": 5.82,
+    "FT": 0.35,
+    "MW": 0.79
+  },
+  "p250-verdigris": {
+    "BS": 0.53,
+    "FN": 8.55,
+    "FT": 0.38,
+    "MW": 0.58
+  },
+  "p250-vino-primo": {
+    "BS": 0.99,
+    "FN": 49.51,
+    "FT": 1.5,
+    "MW": 4.85,
+    "WW": 1.09
+  },
+  "p250-visions": {
+    "BS": 4.8,
+    "FN": 28.48,
+    "FT": 5.05,
+    "MW": 7.9,
+    "WW": 5.09
+  },
+  "p250-whiteout": {
+    "BS": 46.27,
+    "FN": 474.75,
+    "FT": 56.55,
+    "MW": 105.63
+  },
+  "p250-wingshot": {
+    "BS": 1.86,
+    "FN": 28.73,
+    "FT": 1.99,
+    "MW": 4.45
+  },
+  "p250-x-ray": {
+    "FN": 1.2,
+    "FT": 0.6,
+    "MW": 0.63
+  },
+  "p90-aeolian-light": {
+    "FN": 1.96,
+    "FT": 0.43,
+    "MW": 0.81
+  },
+  "p90-ancient-earth": {
+    "FN": 7.77,
+    "FT": 1.81,
+    "MW": 2.62,
+    "WW": 16.04
+  },
+  "p90-ash-wood": {
+    "FN": 0.48,
+    "FT": 0.07,
+    "MW": 0.12,
+    "WW": 0.11
+  },
+  "p90-asiimov": {
+    "BS": 239.54,
+    "FN": 369.73,
+    "FT": 241.68,
+    "MW": 263.89,
+    "WW": 232.03
+  },
+  "p90-astral-j-rmungandr": {
+    "BS": 633.99,
+    "WW": 509.3
+  },
+  "p90-attack-vector": {
+    "BS": 12.11,
+    "FN": 38.86,
+    "FT": 15.6,
+    "MW": 22.46
+  },
+  "p90-baroque-red": {
+    "BS": 32.62,
+    "FT": 38.28,
+    "MW": 38.21,
+    "WW": 27.71
+  },
+  "p90-blind-spot": {
+    "BS": 10.27,
+    "FN": 32.44,
+    "FT": 15.2,
+    "MW": 17.56
+  },
+  "p90-blue-tac": {
+    "BS": 0.04,
+    "FN": 0.09,
+    "FT": 0.04,
+    "MW": 0.04,
+    "WW": 0.04
+  },
+  "p90-chopper": {
+    "FN": 10.46,
+    "FT": 1.7,
+    "MW": 2.42,
+    "WW": 1.65
+  },
+  "p90-cocoa-rampage": {
+    "BS": 0.95,
+    "FN": 8.46,
+    "FT": 1.23,
+    "MW": 1.79
+  },
+  "p90-cold-blooded": {
+    "FN": 121.72,
+    "MW": 95.28
+  },
+  "p90-death-by-kitty": {
+    "FT": 121.99,
+    "MW": 207.18
+  },
+  "p90-deathgaze": {
+    "BS": 7.88,
+    "FN": 47.15,
+    "FT": 10.16,
+    "MW": 17.66,
+    "WW": 8.67
+  },
+  "p90-death-grip": {
+    "BS": 31.26,
+    "FN": 67.12,
+    "MW": 60.23,
+    "WW": 31.78
+  },
+  "p90-desert-ddpat": {
+    "BS": 1.06,
+    "FN": 4.73,
+    "FT": 1.01
+  },
+  "p90-desert-halftone": {
+    "BS": 0.04,
+    "FN": 0.09,
+    "FT": 0.04,
+    "MW": 0.04,
+    "WW": 0.04
+  },
+  "p90-desert-warfare": {
+    "BS": 7.73,
+    "FN": 9.5,
+    "MW": 4.33
+  },
+  "p90-elite-build": {
+    "BS": 0.83,
+    "FN": 11.2,
+    "FT": 1.03,
+    "MW": 1.06,
+    "WW": 0.86
+  },
+  "p90-emerald-dragon": {
+    "BS": 117.15,
+    "FT": 149.27,
+    "WW": 138.29
+  },
+  "p90-facility-negative": {
+    "FN": 2.14,
+    "FT": 0.16,
+    "MW": 0.38
+  },
+  "p90-fallout-warning": {
+    "BS": 12.08,
+    "MW": 43.39,
+    "WW": 12.07
+  },
+  "p90-freight": {
+    "BS": 0.11,
+    "FN": 2.06,
+    "FT": 0.13,
+    "MW": 0.29,
+    "WW": 0.12
+  },
+  "p90-glacier-mesh": {
+    "BS": 7.9,
+    "FN": 51.06,
+    "FT": 8.57,
+    "MW": 8.29
+  },
+  "p90-grim": {
+    "BS": 0.41,
+    "FN": 3.84,
+    "FT": 0.36,
+    "MW": 0.48
+  },
+  "p90-leather": {
+    "FT": 8.73
+  },
+  "p90-module": {
+    "FN": 5.32,
+    "FT": 1.48,
+    "MW": 1.66
+  },
+  "p90-mustard-gas": {
+    "BS": 0.06,
+    "FN": 0.42,
+    "FT": 0.07,
+    "MW": 0.16
+  },
+  "p90-neoqueen": {
+    "BS": 0.63,
+    "FN": 3.21,
+    "FT": 0.68,
+    "MW": 1.05,
+    "WW": 0.66
+  },
+  "p90-nostalgia": {
+    "FN": 35.75,
+    "FT": 5.72,
+    "MW": 8.28
+  },
+  "p90-off-world": {
+    "BS": 0.33,
+    "FN": 5.25,
+    "FT": 0.35,
+    "MW": 0.63
+  },
+  "p90-randy-rush": {
+    "BS": 0.83,
+    "FN": 9.69,
+    "FT": 1.08,
+    "MW": 2.2,
+    "WW": 1.16
+  },
+  "p90-reef-grief": {
+    "BS": 0.34,
+    "FN": 2.66,
+    "FT": 0.48,
+    "MW": 1.09
+  },
+  "p90-run-and-hide": {
+    "BS": 216.33,
+    "FN": 450.3,
+    "FT": 261.77,
+    "MW": 357.67
+  },
+  "p90-sand-spray": {
+    "BS": 0.04,
+    "FN": 2.82,
+    "FT": 0.04,
+    "MW": 0.06,
+    "WW": 0.04
+  },
+  "p90-scarab-rush": {
+    "FN": 59.35,
+    "FT": 16.79,
+    "MW": 36.16,
+    "WW": 14.11
+  },
+  "p90-schematic": {
+    "BS": 16.4,
+    "FT": 15.05
+  },
+  "p90-scorched": {
+    "FN": 15.16,
+    "MW": 4.82
+  },
+  "p90-shallow-grave": {
+    "BS": 41.68,
+    "FN": 88.59,
+    "FT": 46.67,
+    "MW": 59.31,
+    "WW": 41.7
+  },
+  "p90-shapewood": {
+    "BS": 10.63,
+    "FT": 13.35,
+    "MW": 16.32,
+    "WW": 11.73
+  },
+  "p90-storm": {
+    "BS": 2.84,
+    "FN": 26.46,
+    "FT": 3.04,
+    "MW": 4.14
+  },
+  "p90-straight-dimes": {
+    "BS": 0.06,
+    "FN": 3.36,
+    "FT": 0.09,
+    "MW": 0.28,
+    "WW": 0.07
+  },
+  "p90-sunset-lily": {
+    "FT": 16.52
+  },
+  "p90-teardown": {
+    "BS": 0.26,
+    "FN": 2.53,
+    "FT": 0.22,
+    "MW": 0.4
+  },
+  "p90-tiger-pit": {
+    "FN": 52.32,
+    "FT": 26.22,
+    "WW": 19.87
+  },
+  "p90-traction": {
+    "FN": 7.88,
+    "FT": 0.56,
+    "MW": 1.06,
+    "WW": 0.39
+  },
+  "p90-trigon": {
+    "BS": 13.67,
+    "FT": 12.97,
+    "MW": 21.76
+  },
+  "p90-vent-rush": {
+    "BS": 0.63,
+    "FN": 4.11,
+    "FT": 0.66,
+    "MW": 1.1,
+    "WW": 0.65
+  },
+  "p90-verdant-growth": {
+    "BS": 3.86,
+    "FN": 14.23,
+    "FT": 6.74,
+    "MW": 9.89,
+    "WW": 3.55
+  },
+  "p90-virus": {
+    "FN": 29.83,
+    "FT": 4.06,
+    "MW": 6.48,
+    "WW": 3.91
+  },
+  "p90-wash-me": {
+    "BS": 0.07,
+    "FN": 0.34,
+    "FT": 0.08,
+    "MW": 0.11,
+    "WW": 0.07
+  },
+  "p90-wave-breaker": {
+    "BS": 0.66,
+    "FN": 10.65,
+    "FT": 0.73,
+    "MW": 1.75,
+    "WW": 0.63
+  },
+  "pp-bizon-anolis": {
+    "FN": 2.93,
+    "FT": 1.13,
+    "MW": 1.55,
+    "WW": 0.95
+  },
+  "pp-bizon-antique": {
+    "BS": 7.7,
+    "FN": 24.85,
+    "FT": 9.09,
+    "MW": 16.16,
+    "WW": 7.99
+  },
+  "pp-bizon-bamboo-print": {
+    "BS": 8.42,
+    "FN": 25.47,
+    "FT": 13.73,
+    "MW": 16.24,
+    "WW": 9.54
+  },
+  "pp-bizon-bizoom": {
+    "BS": 0.04,
+    "FN": 0.08,
+    "FT": 0.04,
+    "MW": 0.04,
+    "WW": 0.04
+  },
+  "pp-bizon-blue-streak": {
+    "FT": 4.24,
+    "MW": 7.84,
+    "WW": 3.67
+  },
+  "pp-bizon-brass": {
+    "BS": 0.12,
+    "FN": 9.42,
+    "FT": 0.26,
+    "MW": 0.67,
+    "WW": 0.12
+  },
+  "pp-bizon-candy-apple": {
+    "FN": 0.36,
+    "FT": 0.11,
+    "MW": 0.13
+  },
+  "pp-bizon-carbon-fiber": {
+    "FN": 11.5
+  },
+  "pp-bizon-chemical-green": {
+    "FN": 35.58,
+    "MW": 9.15
+  },
+  "pp-bizon-cobalt-halftone": {
+    "FN": 23.6,
+    "FT": 2.52,
+    "MW": 4.08
+  },
+  "pp-bizon-cold-cell": {
+    "FN": 0.35,
+    "FT": 0.09,
+    "MW": 0.11,
+    "WW": 0.12
+  },
+  "pp-bizon-death-rattle": {
+    "BS": 2.29,
+    "FT": 1.38,
+    "MW": 3.86
+  },
+  "pp-bizon-embargo": {
+    "BS": 2.32,
+    "FT": 2.77,
+    "MW": 8.05,
+    "WW": 2.23
+  },
+  "pp-bizon-facility-sketch": {
+    "BS": 0.04,
+    "FN": 0.13,
+    "FT": 0.04,
+    "MW": 0.04,
+    "WW": 0.04
+  },
+  "pp-bizon-forest-leaves": {
+    "FT": 2.9,
+    "MW": 7.92
+  },
+  "pp-bizon-fuel-rod": {
+    "FN": 19.67,
+    "FT": 1.66,
+    "MW": 3.71,
+    "WW": 1.38
+  },
+  "pp-bizon-harvester": {
+    "FN": 9.71,
+    "FT": 0.6,
+    "WW": 0.45
+  },
+  "pp-bizon-high-roller": {
+    "BS": 12.39,
+    "FN": 74.64,
+    "FT": 13.38,
+    "MW": 15.5,
+    "WW": 12.42
+  },
+  "pp-bizon-irradiated-alert": {
+    "FN": 35.06,
+    "FT": 3.57,
+    "WW": 4.8
+  },
+  "pp-bizon-judgement-of-anubis": {
+    "BS": 153.43,
+    "FN": 187.99,
+    "FT": 176.71,
+    "MW": 176.63
+  },
+  "pp-bizon-jungle-slipstream": {
+    "BS": 0.47,
+    "FN": 2.44,
+    "FT": 0.51,
+    "MW": 0.58,
+    "WW": 0.43
+  },
+  "pp-bizon-lumen": {
+    "FN": 10.92,
+    "FT": 1.46,
+    "MW": 3.27,
+    "WW": 0.95
+  },
+  "pp-bizon-modern-hunter": {
+    "BS": 19.98,
+    "FN": 253.37,
+    "FT": 17.9,
+    "MW": 33.89
+  },
+  "pp-bizon-night-ops": {
+    "BS": 0.08,
+    "FN": 1.21,
+    "FT": 0.06,
+    "MW": 0.11,
+    "WW": 0.11
+  },
+  "pp-bizon-night-riot": {
+    "BS": 0.16,
+    "FN": 2.46,
+    "FT": 0.19,
+    "MW": 0.29,
+    "WW": 0.16
+  },
+  "pp-bizon-osiris": {
+    "FN": 7.88,
+    "FT": 2.64,
+    "MW": 2.83,
+    "WW": 2.57
+  },
+  "pp-bizon-photic-zone": {
+    "BS": 0.49,
+    "FN": 10.46,
+    "FT": 1.18,
+    "MW": 3.03,
+    "WW": 0.59
+  },
+  "pp-bizon-rmx": {
+    "BS": 0.16,
+    "FN": 2.21,
+    "FT": 0.31,
+    "MW": 0.52,
+    "WW": 0.2
+  },
+  "pp-bizon-runic": {
+    "BS": 0.13,
+    "FN": 1.68,
+    "FT": 0.13,
+    "MW": 0.29,
+    "WW": 0.11
+  },
+  "pp-bizon-rust-coat": {
+    "BS": 21.21,
+    "FN": 27.98,
+    "WW": 12.64
+  },
+  "pp-bizon-sand-dashed": {
+    "BS": 0.04,
+    "FN": 3.9,
+    "FT": 0.04,
+    "MW": 0.07,
+    "WW": 0.04
+  },
+  "pp-bizon-seabird": {
+    "FN": 15.2,
+    "WW": 6.35
+  },
+  "pp-bizon-space-cat": {
+    "BS": 0.83,
+    "FN": 3.36,
+    "FT": 0.87,
+    "MW": 1.18,
+    "WW": 0.83
+  },
+  "pp-bizon-thermal-currents": {
+    "BS": 0.04,
+    "FN": 0.11,
+    "FT": 0.04,
+    "MW": 0.04
+  },
+  "pp-bizon-urban-dashed": {
+    "BS": 0.04,
+    "FN": 3.87,
+    "FT": 0.04,
+    "MW": 0.07,
+    "WW": 0.04
+  },
+  "pp-bizon-water-sigil": {
+    "BS": 2.81,
+    "FT": 2.36
+  },
+  "pp-bizon-wood-block-camo": {
+    "BS": 0.04,
+    "FN": 0.09,
+    "FT": 0.04,
+    "MW": 0.04,
+    "WW": 0.04
+  },
+  "r8-revolver-amber-fade": {
+    "FN": 3.6,
+    "FT": 1.8,
+    "MW": 1.92,
+    "WW": 3.39
+  },
+  "r8-revolver-banana-cannon": {
+    "BS": 0.62,
+    "FN": 9.89,
+    "FT": 0.67,
+    "MW": 1.7,
+    "WW": 0.6
+  },
+  "r8-revolver-blaze": {
+    "FN": 5.82,
+    "MW": 5.3
+  },
+  "r8-revolver-bone-forged": {
+    "BS": 0.28,
+    "FN": 3.64,
+    "FT": 0.36,
+    "MW": 0.34
+  },
+  "r8-revolver-bone-mask": {
+    "BS": 0.04,
+    "FN": 3.56,
+    "FT": 0.04,
+    "MW": 0.08,
+    "WW": 0.05
+  },
+  "r8-revolver-canal-spray": {
+    "FT": 4.31,
+    "MW": 6.51
+  },
+  "r8-revolver-cobalt-grip": {
+    "BS": 0.04,
+    "FN": 0.13,
+    "FT": 0.04,
+    "MW": 0.04,
+    "WW": 0.04
+  },
+  "r8-revolver-crazy-8": {
+    "BS": 0.53,
+    "FN": 10.85,
+    "FT": 0.71,
+    "MW": 1.77,
+    "WW": 0.63
+  },
+  "r8-revolver-crimson-web": {
+    "FN": 33.97,
+    "FT": 0.43,
+    "MW": 1.63,
+    "WW": 0.42
+  },
+  "r8-revolver-dark-chamber": {
+    "BS": 0.06,
+    "FN": 0.43,
+    "FT": 0.06,
+    "MW": 0.12,
+    "WW": 0.08
+  },
+  "r8-revolver-desert-brush": {
+    "BS": 1.07,
+    "FN": 5.07,
+    "MW": 1.43,
+    "WW": 0.99
+  },
+  "r8-revolver-fade": {
+    "FN": 162.82,
+    "FT": 121.58,
+    "MW": 130.47,
+    "WW": 63.42
+  },
+  "r8-revolver-grip": {
+    "BS": 0.16,
+    "FN": 4.09,
+    "FT": 0.2,
+    "MW": 0.33,
+    "WW": 0.16
+  },
+  "r8-revolver-inlay": {
+    "BS": 0.11,
+    "FN": 1.26,
+    "FT": 0.11,
+    "MW": 0.35,
+    "WW": 0.12
+  },
+  "r8-revolver-junk-yard": {
+    "BS": 0.31,
+    "FN": 7.85,
+    "FT": 0.33,
+    "MW": 0.49,
+    "WW": 0.43
+  },
+  "r8-revolver-leafhopper": {
+    "BS": 0.06,
+    "FN": 0.49,
+    "FT": 0.07,
+    "MW": 0.16
+  },
+  "r8-revolver-llama-cannon": {
+    "BS": 12.07,
+    "FN": 58.6,
+    "FT": 13.06,
+    "MW": 14.72,
+    "WW": 12.68
+  },
+  "r8-revolver-night": {
+    "FT": 1.93,
+    "BS": 1.43,
+    "FN": 15.47,
+    "MW": 2.6
+  },
+  "r8-revolver-mauve-aside": {
+    "BS": 0.04,
+    "FN": 0.16,
+    "FT": 0.04,
+    "MW": 0.04,
+    "WW": 0.04
+  },
+  "r8-revolver-memento": {
+    "BS": 0.91,
+    "FN": 15.45,
+    "FT": 1.41,
+    "MW": 5.29
+  },
+  "r8-revolver-nitro": {
+    "BS": 0.11,
+    "FN": 11.23,
+    "FT": 0.14,
+    "MW": 0.33,
+    "WW": 0.11
+  },
+  "r8-revolver-phoenix-marker": {
+    "FN": 31.26,
+    "FT": 7.7,
+    "MW": 9.7
+  },
+  "r8-revolver-reboot": {
+    "BS": 1.4,
+    "FN": 21.56,
+    "FT": 1.79,
+    "MW": 4.44,
+    "WW": 1.62
+  },
+  "r8-revolver-skull-crusher": {
+    "BS": 6.81,
+    "FT": 13.4,
+    "WW": 7.33
+  },
+  "r8-revolver-survivalist": {
+    "FN": 6.08,
+    "FT": 0.49,
+    "MW": 0.67,
+    "WW": 0.39
+  },
+  "r8-revolver-tango": {
+    "BS": 0.26,
+    "FN": 6.88,
+    "FT": 0.26,
+    "MW": 0.8,
+    "WW": 0.36
+  },
+  "sawed-off-amber-fade": {
+    "FN": 1.12,
+    "FT": 0.24,
+    "MW": 0.36
+  },
+  "sawed-off-analog-input": {
+    "BS": 0.65,
+    "FN": 3.09,
+    "FT": 0.65,
+    "MW": 1.03,
+    "WW": 0.63
+  },
+  "sawed-off-apocalypto": {
+    "BS": 0.73,
+    "FN": 9.64,
+    "FT": 0.91,
+    "MW": 1.93,
+    "WW": 0.75
+  },
+  "sawed-off-bamboo-shadow": {
+    "FN": 17.76,
+    "FT": 13.14,
+    "MW": 16.2
+  },
+  "sawed-off-black-sand": {
+    "BS": 0.19,
+    "FN": 2.72,
+    "FT": 0.31,
+    "MW": 0.43,
+    "WW": 0.2
+  },
+  "sawed-off-brake-light": {
+    "FN": 1.76,
+    "MW": 1.46
+  },
+  "sawed-off-clay-ambush": {
+    "BS": 1.12,
+    "FN": 4.13,
+    "FT": 1.38,
+    "MW": 2.32
+  },
+  "sawed-off-copper": {
+    "BS": 110.92,
+    "FN": 126.97,
+    "MW": 113.21,
+    "WW": 95.98
+  },
+  "sawed-off-crimson-batik": {
+    "BS": 0.04,
+    "FN": 0.11,
+    "FT": 0.04,
+    "MW": 0.04,
+    "WW": 0.04
+  },
+  "sawed-off-devourer": {
+    "BS": 5.76,
+    "FN": 42.63,
+    "FT": 6.49,
+    "MW": 10.92
+  },
+  "sawed-off-first-class": {
+    "BS": 40.27,
+    "FT": 32.8,
+    "WW": 32.4
+  },
+  "sawed-off-forest-ddpat": {
+    "BS": 0.06,
+    "FN": 2.08,
+    "FT": 0.04,
+    "MW": 0.06,
+    "WW": 0.04
+  },
+  "sawed-off-fubar": {
+    "BS": 0.36,
+    "WW": 2.29
+  },
+  "sawed-off-full-stop": {
+    "FN": 1.4,
+    "FT": 0.16,
+    "MW": 0.33
+  },
+  "sawed-off-fusion": {
+    "BS": 0.18,
+    "FN": 1.81,
+    "FT": 0.26,
+    "MW": 0.42,
+    "WW": 0.21
+  },
+  "sawed-off-highwayman": {
+    "FN": 13.47,
+    "MW": 3.06
+  },
+  "sawed-off-irradiated-alert": {
+    "FN": 33.39
+  },
+  "sawed-off-jungle-thicket": {
+    "FN": 11.2,
+    "FT": 7.39,
+    "MW": 8.75
+  },
+  "sawed-off-kiss-love": {
+    "BS": 4.55,
+    "FN": 42.48,
+    "FT": 5.27,
+    "MW": 9.82,
+    "WW": 4.9
+  },
+  "sawed-off-limelight": {
+    "BS": 1.47,
+    "FT": 1.77,
+    "MW": 3.9,
+    "WW": 1.46
+  },
+  "sawed-off-morris": {
+    "BS": 0.2,
+    "FN": 2.79,
+    "FT": 0.36,
+    "MW": 0.49,
+    "WW": 0.24
+  },
+  "sawed-off-mosaico": {
+    "FN": 56.52,
+    "WW": 8.24
+  },
+  "sawed-off-orange-ddpat": {
+    "BS": 18.94,
+    "MW": 27.69,
+    "WW": 15.42
+  },
+  "sawed-off-origami": {
+    "FN": 1.3,
+    "MW": 0.48,
+    "WW": 0.31
+  },
+  "sawed-off-parched": {
+    "FN": 2.92,
+    "FT": 1.03,
+    "MW": 1.36
+  },
+  "sawed-off-runoff": {
+    "BS": 0.04,
+    "FN": 0.11,
+    "FT": 0.04,
+    "MW": 0.04,
+    "WW": 0.04
+  },
+  "sawed-off-rust-coat": {
+    "FT": 13.81,
+    "WW": 13.12
+  },
+  "sawed-off-sage-spray": {
+    "BS": 1.13
+  },
+  "sawed-off-serenity": {
+    "FN": 12.41,
+    "FT": 3.48,
+    "MW": 3.74
+  },
+  "sawed-off-snake-camo": {
+    "BS": 0.07,
+    "FT": 0.06,
+    "MW": 0.54,
+    "WW": 0.07
+  },
+  "sawed-off-spirit-board": {
+    "BS": 0.11,
+    "FN": 1.6,
+    "FT": 0.13,
+    "MW": 0.29,
+    "WW": 0.12
+  },
+  "sawed-off-the-kraken": {
+    "FN": 152.66,
+    "FT": 122.43,
+    "MW": 115.16
+  },
+  "sawed-off-wasteland-princess": {
+    "BS": 38.77,
+    "FN": 85.42,
+    "FT": 47.3,
+    "MW": 58.94,
+    "WW": 39.66
+  },
+  "sawed-off-yorick": {
+    "BS": 0.21,
+    "FN": 3.59,
+    "FT": 0.29,
+    "MW": 0.66,
+    "WW": 0.22
+  },
+  "sawed-off-zander": {
+    "BS": 0.35,
+    "FN": 5.89,
+    "FT": 0.65,
+    "MW": 1.23
+  },
+  "scar-20-army-sheen": {
+    "FN": 8.35,
+    "MW": 4.85
+  },
+  "scar-20-assault": {
+    "BS": 0.31,
+    "FN": 1.9,
+    "FT": 0.51,
+    "MW": 0.51
+  },
+  "scar-20-bloodsport": {
+    "FN": 29.93,
+    "FT": 16.24,
+    "MW": 16.53
+  },
+  "scar-20-blueprint": {
+    "BS": 0.54,
+    "FN": 2.22,
+    "FT": 0.53,
+    "MW": 0.78
+  },
+  "scar-20-brass": {
+    "BS": 111.07,
+    "FN": 195,
+    "FT": 110.83
+  },
+  "scar-20-caged": {
+    "BS": 0.11,
+    "FN": 1.42,
+    "FT": 0.18,
+    "MW": 0.36,
+    "WW": 0.13
+  },
+  "scar-20-carbon-fiber": {
+    "FN": 0.24,
+    "MW": 0.25
+  },
+  "scar-20-cardiac": {
+    "BS": 11.03,
+    "MW": 18.13,
+    "WW": 11.28
+  },
+  "scar-20-contractor": {
+    "BS": 0.06,
+    "FN": 2.08,
+    "FT": 0.04,
+    "MW": 0.06,
+    "WW": 0.04
+  },
+  "scar-20-crimson-web": {
+    "FN": 33.56,
+    "FT": 4.18,
+    "MW": 6.95
+  },
+  "scar-20-cyrex": {
+    "BS": 28.41,
+    "FN": 68.35,
+    "FT": 31.58,
+    "WW": 29.27
+  },
+  "scar-20-emerald": {
+    "FN": 69.47,
+    "MW": 50.5
+  },
+  "scar-20-enforcer": {
+    "BS": 0.74,
+    "FN": 9.26,
+    "FT": 0.94,
+    "MW": 1.99,
+    "WW": 0.78
+  },
+  "scar-20-fragments": {
+    "BS": 0.12,
+    "FN": 0.91,
+    "FT": 0.11,
+    "MW": 0.27,
+    "WW": 0.12
+  },
+  "scar-20-green-marine": {
+    "FN": 3.35,
+    "FT": 0.36
+  },
+  "scar-20-grotto": {
+    "BS": 0.66,
+    "FN": 2.69,
+    "FT": 0.71,
+    "MW": 0.83
+  },
+  "scar-20-jungle-slipstream": {
+    "BS": 0.25,
+    "FN": 1.54,
+    "FT": 0.33,
+    "MW": 0.39,
+    "WW": 0.26
+  },
+  "scar-20-magna-carta": {
+    "FT": 21.58,
+    "MW": 23.83
+  },
+  "scar-20-outbreak": {
+    "FN": 2.03,
+    "FT": 0.25,
+    "WW": 0.25
+  },
+  "scar-20-palm": {
+    "BS": 13.68,
+    "FN": 66.68
+  },
+  "scar-20-poultrygeist": {
+    "BS": 0.12,
+    "FN": 0.74,
+    "FT": 0.12,
+    "MW": 0.25,
+    "WW": 0.12
+  },
+  "scar-20-powercore": {
+    "BS": 1.25,
+    "FN": 11.85,
+    "FT": 1.62,
+    "MW": 2.15,
+    "WW": 1.38
+  },
+  "scar-20-sand-mesh": {
+    "BS": 0.04,
+    "FN": 2.07,
+    "FT": 0.04,
+    "MW": 0.06,
+    "WW": 0.04
+  },
+  "scar-20-short-ochre": {
+    "BS": 0.04,
+    "FN": 0.11,
+    "FT": 0.04,
+    "MW": 0.04,
+    "WW": 0.04
+  },
+  "scar-20-splash-jam": {
+    "BS": 16.84,
+    "FT": 20.63
+  },
+  "scar-20-stone-mosaico": {
+    "BS": 2.3,
+    "MW": 6.79
+  },
+  "scar-20-storm": {
+    "FT": 3.03,
+    "MW": 3.87
+  },
+  "scar-20-torn": {
+    "FN": 6.52,
+    "MW": 1.93
+  },
+  "scar-20-trail-blazer": {
+    "BS": 0.22,
+    "FN": 2.37,
+    "FT": 0.29,
+    "MW": 0.52
+  },
+  "scar-20-wild-berry": {
+    "FN": 6.34,
+    "FT": 2.25,
+    "MW": 3.81,
+    "WW": 2.02
+  },
+  "scar-20-zinc": {
+    "BS": 0.04,
+    "FN": 0.09,
+    "FT": 0.04,
+    "MW": 0.04,
+    "WW": 0.04
+  },
+  "sg-553-aerial": {
+    "BS": 0.38,
+    "FN": 1.59,
+    "FT": 0.56,
+    "MW": 0.65
+  },
+  "sg-553-aloha": {
+    "BS": 0.2,
+    "FN": 0.96,
+    "FT": 0.27,
+    "MW": 0.32
+  },
+  "sg-553-anodized-navy": {
+    "FN": 1.05,
+    "MW": 1.26
+  },
+  "sg-553-army-sheen": {
+    "FN": 0.14,
+    "FT": 0.04,
+    "MW": 0.04
+  },
+  "sg-553-atlas": {
+    "FT": 0.51,
+    "MW": 0.56
+  },
+  "sg-553-barricade": {
+    "FN": 19.7,
+    "FT": 12.84,
+    "MW": 14.61
+  },
+  "sg-553-basket-halftone": {
+    "BS": 0.06,
+    "FN": 0.31,
+    "FT": 0.06,
+    "MW": 0.11
+  },
+  "sg-553-berry-gel-coat": {
+    "BS": 1.76,
+    "FN": 9.85,
+    "FT": 2.3,
+    "MW": 5,
+    "WW": 1.94
+  },
+  "sg-553-bleached": {
+    "BS": 1.19,
+    "FN": 2.84,
+    "MW": 1.45
+  },
+  "sg-553-bulldozer": {
+    "BS": 307.07,
+    "FN": 369.21,
+    "WW": 592.46
+  },
+  "sg-553-candy-apple": {
+    "FN": 27.48,
+    "FT": 7.37,
+    "MW": 10.37
+  },
+  "sg-553-colony-iv": {
+    "BS": 10.49,
+    "FN": 123.36,
+    "FT": 12.97,
+    "MW": 31.82,
+    "WW": 10.17
+  },
+  "sg-553-cyberforce": {
+    "BS": 0.11,
+    "FN": 1.46,
+    "FT": 0.12,
+    "MW": 0.28,
+    "WW": 0.12
+  },
+  "sg-553-cyrex": {
+    "BS": 6.44,
+    "FN": 73.67,
+    "FT": 6.64,
+    "MW": 12.1,
+    "WW": 6.3
+  },
+  "sg-553-damascus-steel": {
+    "BS": 0.12,
+    "FN": 5.18,
+    "FT": 0.29,
+    "MW": 0.67,
+    "WW": 0.12
+  },
+  "sg-553-danger-close": {
+    "BS": 0.19,
+    "FN": 3.84,
+    "FT": 0.32,
+    "MW": 0.94,
+    "WW": 0.28
+  },
+  "sg-553-darkwing": {
+    "BS": 0.75,
+    "FN": 12.1,
+    "FT": 1.01,
+    "MW": 2.08,
+    "WW": 0.78
+  },
+  "sg-553-desert-blossom": {
+    "BS": 20.19,
+    "FN": 30.89,
+    "MW": 15.49
+  },
+  "sg-553-dragon-tech": {
+    "BS": 0.62,
+    "FN": 4.34,
+    "FT": 0.67,
+    "MW": 1.16,
+    "WW": 0.63
+  },
+  "sg-553-fallout-warning": {
+    "BS": 3.51,
+    "FN": 17.93,
+    "MW": 8.43,
+    "WW": 4.45
+  },
+  "sg-553-gator-mesh": {
+    "BS": 27.76,
+    "WW": 29.55
+  },
+  "sg-553-hazard-pay": {
+    "BS": 611.01,
+    "FN": 338.49,
+    "WW": 158.24
+  },
+  "sg-553-heavy-metal": {
+    "BS": 0.29,
+    "FN": 3.62,
+    "FT": 0.42,
+    "MW": 0.46,
+    "WW": 0.31
+  },
+  "sg-553-hypnotic": {
+    "FN": 121.69,
+    "MW": 128.25
+  },
+  "sg-553-integrale": {
+    "BS": 5.52,
+    "FN": 143.1,
+    "FT": 11.84,
+    "MW": 33.11,
+    "WW": 5.43
+  },
+  "sg-553-lush-ruins": {
+    "BS": 1.6,
+    "FN": 10.21,
+    "FT": 1.81,
+    "MW": 2.68
+  },
+  "sg-553-night-camo": {
+    "BS": 0.04,
+    "FN": 0.14,
+    "FT": 0.04,
+    "MW": 0.04,
+    "WW": 0.04
+  },
+  "sg-553-ol-rusty": {
+    "BS": 0.12,
+    "FN": 1.01,
+    "FT": 0.13,
+    "MW": 0.27,
+    "WW": 0.13
+  },
+  "sg-553-phantom": {
+    "BS": 1.16,
+    "FN": 6.27,
+    "FT": 1.23,
+    "MW": 1.53
+  },
+  "sg-553-pulse": {
+    "BS": 3.64,
+    "FT": 3.6,
+    "MW": 14.79,
+    "WW": 3.5
+  },
+  "sg-553-safari-print": {
+    "BS": 0.04,
+    "FN": 0.11,
+    "FT": 0.04,
+    "MW": 0.04,
+    "WW": 0.04
+  },
+  "sg-553-tiger-moth": {
+    "BS": 1.58,
+    "FN": 17.95,
+    "FT": 1.8,
+    "MW": 3.82,
+    "WW": 1.79
+  },
+  "sg-553-tornado": {
+    "BS": 13.65,
+    "MW": 17.71
+  },
+  "sg-553-traveler": {
+    "BS": 7.3,
+    "FN": 22.73,
+    "MW": 10.88,
+    "WW": 7.45
+  },
+  "sg-553-triarch": {
+    "BS": 1.28,
+    "FN": 14.78,
+    "FT": 1.69,
+    "MW": 2,
+    "WW": 1.38
+  },
+  "sg-553-ultraviolet": {
+    "BS": 23.11,
+    "FN": 67.52,
+    "FT": 24.05,
+    "MW": 28.65,
+    "WW": 20.86
+  },
+  "sg-553-waves-perforated": {
+    "BS": 0.04,
+    "FN": 2.64,
+    "FT": 0.04,
+    "MW": 0.07,
+    "WW": 0.04
+  },
+  "sg-553-wave-spray": {
+    "MW": 8.3,
+    "WW": 6.18
+  },
+  "ssg-08-abyss": {
+    "BS": 0.36,
+    "FN": 10.7,
+    "FT": 0.59,
+    "MW": 1.25,
+    "WW": 0.36
+  },
+  "ssg-08-acid-fade": {
+    "FN": 1.39
+  },
+  "ssg-08-azure-glyph": {
+    "BS": 0.31,
+    "FN": 10.16,
+    "FT": 0.46,
+    "MW": 2.57,
+    "WW": 0.31
+  },
+  "ssg-08-big-iron": {
+    "BS": 14.02,
+    "FN": 75.86,
+    "FT": 13.58,
+    "MW": 20.98
+  },
+  "ssg-08-blood-in-the-water": {
+    "FN": 347.96,
+    "FT": 128.02,
+    "MW": 129.61
+  },
+  "ssg-08-bloodshot": {
+    "FT": 24.45
+  },
+  "ssg-08-blue-spruce": {
+    "BS": 0.04,
+    "FN": 2.95,
+    "FT": 0.04,
+    "MW": 0.06,
+    "WW": 0.04
+  },
+  "ssg-08-blush-pour": {
+    "BS": 0.35,
+    "FN": 2.4,
+    "FT": 0.39,
+    "MW": 0.98,
+    "WW": 0.43
+  },
+  "ssg-08-calligrafaux": {
+    "BS": 0.06,
+    "FN": 3.42,
+    "FT": 0.11,
+    "MW": 0.36,
+    "WW": 0.07
+  },
+  "ssg-08-carbon-fiber": {
+    "FN": 22.59,
+    "MW": 13.78
+  },
+  "ssg-08-dark-water": {
+    "FT": 4.44,
+    "MW": 19.84
+  },
+  "ssg-08-death-s-head": {
+    "FN": 60.39,
+    "MW": 46.38,
+    "WW": 28.08
+  },
+  "ssg-08-death-strike": {
+    "FN": 765.02
+  },
+  "ssg-08-detour": {
+    "FN": 83.89,
+    "FT": 16.95,
+    "MW": 21.93,
+    "WW": 13.96
+  },
+  "ssg-08-dezastre": {
+    "BS": 0.11,
+    "FN": 1.82,
+    "FT": 0.12,
+    "MW": 0.29,
+    "WW": 0.11
+  },
+  "ssg-08-dragonfire": {
+    "BS": 336.95,
+    "FN": 562.5,
+    "FT": 366.16,
+    "MW": 430.56,
+    "WW": 311.11
+  },
+  "ssg-08-fever-dream": {
+    "BS": 1.14,
+    "FN": 10.14,
+    "FT": 1.27,
+    "MW": 3.14,
+    "WW": 2.28
+  },
+  "ssg-08-ghost-crusader": {
+    "BS": 1.45,
+    "FN": 35.05,
+    "FT": 1.82,
+    "MW": 3.27,
+    "WW": 1.61
+  },
+  "ssg-08-green-ceramic": {
+    "BS": 0.04,
+    "FN": 0.13,
+    "FT": 0.04,
+    "MW": 0.04,
+    "WW": 0.04
+  },
+  "ssg-08-grey-smoke": {
+    "BS": 0.04,
+    "FN": 0.09,
+    "FT": 0.04,
+    "MW": 0.04,
+    "WW": 0.04
+  },
+  "ssg-08-halftone-whorl": {
+    "FN": 1.2,
+    "FT": 0.27,
+    "WW": 0.33
+  },
+  "ssg-08-hand-brake": {
+    "BS": 0.91,
+    "FN": 10.19,
+    "FT": 1.59,
+    "MW": 2.57,
+    "WW": 1.42
+  },
+  "ssg-08-jungle-dashed": {
+    "BS": 1.65,
+    "FN": 15.77,
+    "FT": 1.81,
+    "WW": 1.73
+  },
+  "ssg-08-lichen-dashed": {
+    "BS": 2.37,
+    "FN": 52.94,
+    "FT": 3.56,
+    "MW": 10.76
+  },
+  "ssg-08-mainframe-001": {
+    "BS": 0.11,
+    "FN": 1.74,
+    "FT": 0.13,
+    "MW": 0.29,
+    "WW": 0.11
+  },
+  "ssg-08-mayan-dreams": {
+    "BS": 5.61,
+    "FT": 5.55
+  },
+  "ssg-08-memorial": {
+    "BS": 0.11,
+    "FN": 2.37,
+    "FT": 0.12,
+    "MW": 0.35,
+    "WW": 0.11
+  },
+  "ssg-08-necropos": {
+    "FN": 17.23,
+    "FT": 1.18,
+    "MW": 2.95,
+    "WW": 0.67
+  },
+  "ssg-08-orange-filigree": {
+    "BS": 38.8,
+    "WW": 40.01
+  },
+  "ssg-08-parallax": {
+    "BS": 3.98,
+    "FN": 39.3,
+    "FT": 5.51,
+    "MW": 20.9,
+    "WW": 4.34
+  },
+  "ssg-08-prey": {
+    "BS": 1.12,
+    "FN": 3.42,
+    "FT": 1.15,
+    "MW": 1.47,
+    "WW": 1.08
+  },
+  "ssg-08-rapid-transit": {
+    "BS": 1.15,
+    "FN": 16.59,
+    "FT": 1.47,
+    "MW": 5.18,
+    "WW": 1.97
+  },
+  "ssg-08-red-stone": {
+    "FT": 13.42,
+    "MW": 16.52
+  },
+  "ssg-08-sand-dune": {
+    "BS": 6.24,
+    "FN": 118.33,
+    "FT": 4.23,
+    "WW": 5.79
+  },
+  "ssg-08-sans-comic": {
+    "BS": 0.04,
+    "FN": 0.08,
+    "FT": 0.04,
+    "MW": 0.04,
+    "WW": 0.04
+  },
+  "ssg-08-sea-calico": {
+    "BS": 720.08,
+    "FT": 363.3,
+    "MW": 631.69,
+    "WW": 759.88
+  },
+  "ssg-08-slashed": {
+    "FT": 4.62,
+    "WW": 1.42
+  },
+  "ssg-08-spring-twilly": {
+    "FN": 13.26,
+    "FT": 2.32,
+    "MW": 4.1
+  },
+  "ssg-08-threat-detected": {
+    "BS": 20.93,
+    "FN": 59.28,
+    "MW": 21.51,
+    "WW": 25.28
+  },
+  "ssg-08-tiger-tear": {
+    "BS": 0.07,
+    "FN": 0.36,
+    "FT": 0.07,
+    "MW": 0.15
+  },
+  "ssg-08-tropical-storm": {
+    "BS": 28.33,
+    "FT": 29.52,
+    "MW": 29.66,
+    "WW": 27.66
+  },
+  "ssg-08-turbo-peek": {
+    "FN": 109.74,
+    "FT": 23.87,
+    "MW": 37.61,
+    "WW": 22.31
+  },
+  "ssg-08-zeno": {
+    "BS": 0.61,
+    "FN": 3.04,
+    "FT": 0.66,
+    "MW": 1.23,
+    "WW": 0.67
+  },
+  "ump-45-day-lily": {
+    "WW": 39.89,
+    "BS": 57.44,
+    "FN": 127.99,
+    "MW": 107.3
+  },
+  "tec-9-avalanche": {
+    "FN": 32.64,
+    "BS": 1.65,
+    "FT": 3.43,
+    "MW": 6.75,
+    "WW": 2.12
+  },
+  "tec-9-army-mesh": {
+    "BS": 0.04,
+    "FN": 0.24,
+    "FT": 0.04,
+    "MW": 0.04,
+    "WW": 0.04
+  },
+  "tec-9-bamboo-forest": {
+    "BS": 9.11,
+    "FN": 42.27,
+    "FT": 14.47,
+    "MW": 16.41
+  },
+  "tec-9-bamboozle": {
+    "BS": 0.8,
+    "FN": 25.84,
+    "FT": 1,
+    "MW": 2.53
+  },
+  "tec-9-banana-leaf": {
+    "BS": 0.06,
+    "FN": 0.49,
+    "FT": 0.06,
+    "MW": 0.16,
+    "WW": 0.07
+  },
+  "tec-9-blast-from-the-past": {
+    "WW": 16.36
+  },
+  "tec-9-blue-blast": {
+    "BS": 0.04,
+    "FN": 0.31,
+    "FT": 0.04,
+    "MW": 0.05,
+    "WW": 0.04
+  },
+  "tec-9-blue-titanium": {
+    "FN": 25.79
+  },
+  "tec-9-brass": {
+    "FN": 117.51,
+    "FT": 9.12,
+    "MW": 24.88
+  },
+  "tec-9-brother": {
+    "BS": 0.63,
+    "FN": 12.82,
+    "FT": 0.72,
+    "MW": 1.62,
+    "WW": 0.61
+  },
+  "tec-9-citric-acid": {
+    "FN": 0.34,
+    "FT": 0.06,
+    "MW": 0.12,
+    "WW": 0.06
+  },
+  "tec-9-cracked-opal": {
+    "BS": 0.25,
+    "FN": 14.65,
+    "FT": 0.35,
+    "MW": 0.53,
+    "WW": 0.24
+  },
+  "tec-9-cut-out": {
+    "FN": 28.59,
+    "FT": 8.42,
+    "MW": 13.21
+  },
+  "tec-9-decimator": {
+    "BS": 22.07,
+    "FN": 274.28,
+    "FT": 23.14,
+    "MW": 52.52,
+    "WW": 24.04
+  },
+  "tec-9-flash-out": {
+    "BS": 0.48,
+    "FN": 11.23,
+    "FT": 0.47,
+    "MW": 0.56,
+    "WW": 0.4
+  },
+  "tec-9-fubar": {
+    "BS": 0.2,
+    "FT": 0.48,
+    "MW": 12.05,
+    "WW": 0.24
+  },
+  "tec-9-fuel-injector": {
+    "BS": 13.88,
+    "FN": 89.78,
+    "FT": 15.26,
+    "MW": 18.42,
+    "WW": 14.72
+  },
+  "tec-9-garter-9": {
+    "BS": 0.07,
+    "FN": 0.67,
+    "FT": 0.07,
+    "MW": 0.24,
+    "WW": 0.11
+  },
+  "tec-9-groundwater": {
+    "BS": 0.04,
+    "FN": 5.56,
+    "FT": 0.04,
+    "MW": 0.08,
+    "WW": 0.04
+  },
+  "tec-9-hades": {
+    "BS": 22.22,
+    "FN": 51.78,
+    "MW": 22.33,
+    "WW": 20.95
+  },
+  "tec-9-ice-cap": {
+    "BS": 0.66,
+    "FN": 2.99,
+    "FT": 0.51,
+    "MW": 1.03,
+    "WW": 0.45
+  },
+  "tec-9-isaac": {
+    "BS": 2.83,
+    "FN": 39.3,
+    "FT": 5.05,
+    "MW": 7.16,
+    "WW": 3.27
+  },
+  "tec-9-jambiya": {
+    "BS": 0.52,
+    "FN": 32.2,
+    "FT": 1.22,
+    "MW": 3.09,
+    "WW": 0.62
+  },
+  "tec-9-mummy-s-rot": {
+    "BS": 1.62,
+    "FN": 43.44,
+    "FT": 2.73,
+    "MW": 7.49,
+    "WW": 2
+  },
+  "tec-9-nuclear-threat": {
+    "MW": 125.23
+  },
+  "tec-9-orange-murano": {
+    "FN": 30.31,
+    "MW": 8.67
+  },
+  "tec-9-ossified": {
+    "FN": 71.76,
+    "MW": 27.08
+  },
+  "tec-9-phoenix-chalk": {
+    "FN": 30.73,
+    "FT": 1.49,
+    "MW": 2.6
+  },
+  "tec-9-raw-ceramic": {
+    "BS": 0.04,
+    "FN": 0.12,
+    "FT": 0.04,
+    "MW": 0.04,
+    "WW": 0.04
+  },
+  "tec-9-rebel": {
+    "BS": 0.12,
+    "FN": 1.82,
+    "FT": 0.12,
+    "MW": 0.29,
+    "WW": 0.11
+  },
+  "tec-9-red-quartz": {
+    "FN": 1.05,
+    "FT": 0.51,
+    "MW": 0.53
+  },
+  "tec-9-re-entry": {
+    "FN": 16.06,
+    "FT": 1.97,
+    "MW": 2.12,
+    "WW": 1.65
+  },
+  "tec-9-remote-control": {
+    "BS": 2.64,
+    "FN": 84,
+    "FT": 3.82,
+    "MW": 10.43,
+    "WW": 2.76
+  },
+  "tec-9-rust-leaf": {
+    "FN": 32.84,
+    "FT": 16.22
+  },
+  "tec-9-safety-net": {
+    "BS": 2.07,
+    "FN": 36.42,
+    "FT": 2.41,
+    "MW": 4.36
+  },
+  "tec-9-sandstorm": {
+    "BS": 0.65,
+    "FT": 0.87,
+    "MW": 10.26,
+    "WW": 0.76
+  },
+  "tec-9-slag": {
+    "BS": 0.12,
+    "FN": 1.9,
+    "FT": 0.12,
+    "MW": 0.28,
+    "WW": 0.12
+  },
+  "tec-9-snek-9": {
+    "BS": 0.33,
+    "FN": 20.42,
+    "FT": 0.54,
+    "MW": 1.08,
+    "WW": 0.39
+  },
+  "tec-9-terrace": {
+    "FT": 141.24
+  },
+  "tec-9-tiger-stencil": {
+    "BS": 0.07,
+    "FN": 0.39,
+    "FT": 0.11,
+    "MW": 0.12,
+    "WW": 0.11
+  },
+  "tec-9-titanium-bit": {
+    "FN": 46.95
+  },
+  "tec-9-tornado": {
+    "BS": 4.53,
+    "FN": 115.76,
+    "FT": 6.27,
+    "WW": 4.27
+  },
+  "tec-9-toxic": {
+    "BS": 15.43,
+    "FN": 87.63,
+    "FT": 28.79,
+    "MW": 41.51,
+    "WW": 17.62
+  },
+  "tec-9-urban-ddpat": {
+    "BS": 0.04,
+    "FN": 8.15,
+    "FT": 0.04,
+    "MW": 0.11,
+    "WW": 0.04
+  },
+  "tec-9-varicamo": {
+    "BS": 0.08,
+    "FN": 0.79,
+    "FT": 0.06,
+    "MW": 0.11
+  },
+  "tec-9-whiteout": {
+    "BS": 3.33,
+    "FN": 445.39,
+    "FT": 7.93,
+    "MW": 44.5,
+    "WW": 4.3
+  },
+  "ump-45-arctic-wolf": {
+    "BS": 0.67,
+    "FN": 8.08,
+    "FT": 0.72,
+    "MW": 1.3,
+    "WW": 0.69
+  },
+  "ump-45-blaze": {
+    "FN": 55.53,
+    "MW": 54.58
+  },
+  "ump-45-bone-pile": {
+    "FT": 7.28
+  },
+  "ump-45-briefing": {
+    "BS": 0.28,
+    "FN": 5.05,
+    "FT": 0.39,
+    "MW": 0.54,
+    "WW": 0.29
+  },
+  "ump-45-caramel": {
+    "BS": 14.87,
+    "FT": 14.21,
+    "MW": 17.77,
+    "WW": 14.26
+  },
+  "ump-45-carbon-fiber": {
+    "FN": 0.55,
+    "MW": 0.14
+  },
+  "ump-45-continuum": {
+    "BS": 0.71,
+    "FN": 7.3,
+    "FT": 1.12,
+    "MW": 1.97,
+    "WW": 0.81
+  },
+  "ump-45-corporal": {
+    "BS": 0.63,
+    "FT": 0.86,
+    "MW": 0.88
+  },
+  "ump-45-crime-scene": {
+    "FN": 154.36,
+    "WW": 152.46
+  },
+  "ump-45-crimson-foil": {
+    "BS": 5.6,
+    "FN": 17.97,
+    "FT": 4.87,
+    "MW": 8.09,
+    "WW": 5.25
+  },
+  "ump-45-delusion": {
+    "FN": 10.56,
+    "FT": 1.03,
+    "MW": 1.81
+  },
+  "ump-45-exposure": {
+    "BS": 1.23,
+    "FN": 6.51,
+    "FT": 1.32,
+    "MW": 1.58,
+    "WW": 1.18
+  },
+  "ump-45-facility-dark": {
+    "BS": 0.04,
+    "FN": 0.12,
+    "FT": 0.04,
+    "MW": 0.04,
+    "WW": 0.04
+  },
+  "ump-45-fade": {
+    "FN": 537.6,
+    "MW": 574.22
+  },
+  "ump-45-fallout-warning": {
+    "BS": 14.03,
+    "WW": 11.55
+  },
+  "ump-45-fragment": {
+    "BS": 0.16,
+    "FN": 1.94,
+    "FT": 0.28,
+    "MW": 0.48,
+    "WW": 0.2
+  },
+  "ump-45-full-stop": {
+    "FN": 11.99,
+    "FT": 2.23,
+    "MW": 3.84,
+    "WW": 2.56
+  },
+  "ump-45-gold-bismuth": {
+    "FN": 33.47,
+    "FT": 5.32,
+    "MW": 12.14
+  },
+  "ump-45-grand-prix": {
+    "FT": 2.37
+  },
+  "ump-45-green-swirl": {
+    "BS": 0.04,
+    "FN": 0.11,
+    "FT": 0.04,
+    "MW": 0.04,
+    "WW": 0.04
+  },
+  "ump-45-gunsmoke": {
+    "BS": 0.13,
+    "FT": 0.13,
+    "MW": 0.31,
+    "WW": 0.12
+  },
+  "ump-45-houndstooth": {
+    "BS": 5.69,
+    "FT": 7.17,
+    "MW": 9.82
+  },
+  "ump-45-indigo": {
+    "FN": 24.8,
+    "FT": 3.01,
+    "MW": 4.73
+  },
+  "ump-45-k-o-factory": {
+    "BS": 5.78,
+    "FN": 42.18,
+    "FT": 6.86,
+    "MW": 11.2,
+    "WW": 6.07
+  },
+  "ump-45-labyrinth": {
+    "FN": 2.41,
+    "FT": 0.48,
+    "MW": 0.51
+  },
+  "ump-45-late-night-transit": {
+    "BS": 0.4,
+    "FN": 9.42,
+    "FT": 0.69,
+    "MW": 2.43,
+    "WW": 0.51
+  },
+  "ump-45-mechanism": {
+    "BS": 6.51,
+    "FN": 11.87,
+    "MW": 8.91,
+    "WW": 5.09
+  },
+  "ump-45-metal-flowers": {
+    "BS": 5.22,
+    "FN": 15.53,
+    "FT": 7.3,
+    "MW": 11.5
+  },
+  "ump-45-minotaur-s-labyrinth": {
+    "MW": 114.5,
+    "WW": 1.03
+  },
+  "ump-45-momentum": {
+    "FN": 22.42,
+    "FT": 6.11,
+    "MW": 8.6,
+    "WW": 6.23
+  },
+  "ump-45-moonrise": {
+    "FN": 5.12,
+    "FT": 0.91,
+    "MW": 1.18,
+    "WW": 1.21
+  },
+  "ump-45-motorized": {
+    "BS": 0.11,
+    "FN": 1.07,
+    "FT": 0.11,
+    "MW": 0.26,
+    "WW": 0.11
+  },
+  "ump-45-mudder": {
+    "BS": 0.04,
+    "FN": 3.09,
+    "FT": 0.04,
+    "MW": 0.07,
+    "WW": 0.04
+  },
+  "ump-45-neo-noir": {
+    "BS": 5.41,
+    "FN": 59.65,
+    "FT": 7.73,
+    "MW": 19.43,
+    "WW": 5.94
+  },
+  "ump-45-oscillator": {
+    "FN": 1.15,
+    "FT": 0.33,
+    "MW": 0.39
+  },
+  "ump-45-plastique": {
+    "BS": 0.74,
+    "FN": 12.97,
+    "FT": 0.83,
+    "MW": 2.02
+  },
+  "ump-45-primal-saber": {
+    "FN": 42.23,
+    "FT": 16.5,
+    "MW": 18.42,
+    "WW": 16.15
+  },
+  "ump-45-riot": {
+    "BS": 0.78,
+    "FN": 4.07,
+    "FT": 1.03,
+    "MW": 1.23,
+    "WW": 0.78
+  },
+  "ump-45-roadblock": {
+    "BS": 0.11,
+    "FN": 2.13,
+    "FT": 0.11,
+    "MW": 0.29,
+    "WW": 0.11
+  },
+  "ump-45-scaffold": {
+    "BS": 1.74,
+    "FN": 19.55,
+    "FT": 2.15,
+    "MW": 3.83,
+    "WW": 1.81
+  },
+  "ump-45-scorched": {
+    "BS": 0.89,
+    "FT": 1.7,
+    "MW": 2.84
+  },
+  "ump-45-urban-ddpat": {
+    "BS": 0.04,
+    "FN": 2.76,
+    "FT": 0.04,
+    "MW": 0.08,
+    "WW": 0.04
+  },
+  "ump-45-warm-blooded": {
+    "BS": 0.43,
+    "FN": 2.37,
+    "FT": 0.56,
+    "MW": 1.1,
+    "WW": 0.65
+  },
+  "ump-45-wild-child": {
+    "BS": 4.33,
+    "FN": 36.23,
+    "FT": 5.23,
+    "MW": 9.54,
+    "WW": 4.63
+  },
+  "usp-s-27": {
+    "BS": 0.29,
+    "FN": 14.87,
+    "FT": 0.33,
+    "MW": 0.83,
+    "WW": 0.27
+  },
+  "usp-s-alpine-camo": {
+    "BS": 0.63,
+    "FN": 5.28,
+    "FT": 0.73,
+    "MW": 1.42,
+    "WW": 0.78
+  },
+  "usp-s-ancient-visions": {
+    "FN": 213.29,
+    "WW": 57.53
+  },
+  "usp-s-black-lotus": {
+    "BS": 1.2,
+    "FN": 50.32,
+    "FT": 1.94,
+    "MW": 4.33,
+    "WW": 1.45
+  },
+  "usp-s-bleeding-edge": {
+    "FN": 18.31,
+    "FT": 2.22,
+    "MW": 6.17,
+    "WW": 2.55
+  },
+  "usp-s-blood-tiger": {
+    "FN": 57.67,
+    "FT": 4.7,
+    "MW": 5.51
+  },
+  "usp-s-blueprint": {
+    "FN": 167.13,
+    "FT": 12.55,
+    "MW": 37.46,
+    "WW": 6.86
+  },
+  "usp-s-business-class": {
+    "FN": 106.52,
+    "WW": 39.06
+  },
+  "usp-s-caiman": {
+    "FN": 202.06,
+    "MW": 49.09
+  },
+  "usp-s-check-engine": {
+    "BS": 0.83,
+    "FN": 4.06,
+    "FT": 1.32,
+    "MW": 1.85,
+    "WW": 1.05
+  },
+  "usp-s-cortex": {
+    "BS": 4.82,
+    "FN": 55.03,
+    "FT": 5.62,
+    "MW": 10.66,
+    "WW": 4.9
+  },
+  "usp-s-cyrex": {
+    "BS": 4.75,
+    "FN": 23.41,
+    "FT": 5.18,
+    "MW": 5.4
+  },
+  "usp-s-dark-water": {
+    "MW": 237.63
+  },
+  "usp-s-desert-tactical": {
+    "BS": 0.31,
+    "FN": 13.8,
+    "FT": 0.46,
+    "MW": 2.43,
+    "WW": 0.31
+  },
+  "usp-s-flashback": {
+    "BS": 1.23,
+    "FN": 7.75,
+    "FT": 0.91,
+    "MW": 1.26,
+    "WW": 1.1
+  },
+  "usp-s-forest-leaves": {
+    "BS": 0.09,
+    "FN": 19.24,
+    "FT": 0.08,
+    "MW": 0.29,
+    "WW": 0.11
+  },
+  "usp-s-guardian": {
+    "FN": 13.67,
+    "FT": 3.74,
+    "MW": 4.97
+  },
+  "usp-s-jawbreaker": {
+    "BS": 4.93,
+    "FN": 47.41,
+    "FT": 6.19,
+    "MW": 10.51,
+    "WW": 4.94
+  },
+  "usp-s-kill-confirmed": {
+    "BS": 76.06,
+    "FN": 487.54,
+    "FT": 93.75,
+    "MW": 149.73,
+    "WW": 77.94
+  },
+  "usp-s-lead-conduit": {
+    "BS": 0.86,
+    "FN": 42.81,
+    "FT": 1.35,
+    "MW": 3.31,
+    "WW": 0.86
+  },
+  "usp-s-monster-mashup": {
+    "FN": 197.05,
+    "FT": 32.72,
+    "MW": 57.46
+  },
+  "usp-s-neo-noir": {
+    "BS": 140.51,
+    "FN": 196.18,
+    "FT": 138.27,
+    "MW": 146.2,
+    "WW": 123.72
+  },
+  "usp-s-night-ops": {
+    "BS": 0.42,
+    "FN": 6.91,
+    "FT": 0.32,
+    "MW": 0.59,
+    "WW": 0.51
+  },
+  "usp-s-orange-anolis": {
+    "FN": 314.12,
+    "MW": 102.8
+  },
+  "usp-s-orion": {
+    "BS": 85.98,
+    "FN": 296.3,
+    "FT": 82.18,
+    "MW": 91.25,
+    "WW": 88.36
+  },
+  "usp-s-overgrowth": {
+    "FN": 124.77,
+    "FT": 27.24,
+    "MW": 58.3,
+    "WW": 28.9
+  },
+  "usp-s-para-green": {
+    "BS": 11.26,
+    "FN": 134.26,
+    "FT": 11.75
+  },
+  "usp-s-pathfinder": {
+    "MW": 21.6
+  },
+  "usp-s-pc-grn": {
+    "BS": 0.19,
+    "FN": 3.48,
+    "FT": 0.22,
+    "MW": 0.45,
+    "WW": 0.21
+  },
+  "usp-s-printstream": {
+    "BS": 44.68,
+    "FN": 197.89,
+    "FT": 52.54,
+    "MW": 89.91,
+    "WW": 49.98
+  },
+  "usp-s-purple-ddpat": {
+    "FN": 247.56,
+    "FT": 20.1,
+    "MW": 34.21
+  },
+  "usp-s-road-rash": {
+    "FN": 380.49,
+    "FT": 63.25,
+    "MW": 103.09,
+    "WW": 50.64
+  },
+  "usp-s-royal-blue": {
+    "FT": 13.49,
+    "MW": 40.74
+  },
+  "usp-s-royal-guard": {
+    "BS": 0.88,
+    "FN": 15.09,
+    "FT": 1.58,
+    "MW": 5.83,
+    "WW": 1.63
+  },
+  "usp-s-serum": {
+    "FN": 255.28,
+    "FT": 62.03,
+    "MW": 73.91
+  },
+  "usp-s-silent-shot": {
+    "BS": 1.05,
+    "FN": 5.75,
+    "FT": 1.66,
+    "MW": 2.83,
+    "WW": 1.45
+  },
+  "usp-s-sleeping-potion": {
+    "BS": 2.44,
+    "FN": 19.11,
+    "FT": 2.74,
+    "MW": 9.13,
+    "WW": 2.64
+  },
+  "usp-s-stainless": {
+    "BS": 6.43,
+    "FN": 111.99,
+    "FT": 8.02,
+    "MW": 17.22
+  },
+  "usp-s-target-acquired": {
+    "BS": 173.66,
+    "MW": 291.63,
+    "WW": 138.84
+  },
+  "usp-s-the-traitor": {
+    "BS": 41.09,
+    "FN": 224.95,
+    "FT": 52.03,
+    "MW": 95.49,
+    "WW": 47.48
+  },
+  "usp-s-ticket-to-hell": {
+    "BS": 0.83,
+    "FN": 5.18,
+    "FT": 0.92,
+    "MW": 1.58,
+    "WW": 1
+  },
+  "usp-s-torque": {
+    "BS": 2.19,
+    "FN": 3.43,
+    "FT": 0.98,
+    "MW": 1.7,
+    "WW": 1.01
+  },
+  "usp-s-tropical-breeze": {
+    "FN": 3.68,
+    "FT": 0.81,
+    "MW": 1.94,
+    "WW": 1.06
+  },
+  "usp-s-whiteout": {
+    "BS": 63.16,
+    "FN": 878.12,
+    "FT": 98.95,
+    "MW": 201.57,
+    "WW": 61.69
+  },
+  "xm1014-ancient-lore": {
+    "FN": 137.25,
+    "WW": 50.42
+  },
+  "xm1014-banana-leaf": {
+    "FN": 28.97,
+    "FT": 16.63
+  },
+  "xm1014-black-tie": {
+    "BS": 1.47,
+    "FN": 12.52,
+    "FT": 1.82,
+    "MW": 2.87,
+    "WW": 1.65
+  },
+  "xm1014-xoxo": {
+    "WW": 4.96,
+    "BS": 4.73,
+    "FN": 41.15,
+    "FT": 5.24,
+    "MW": 9.05
+  },
+  "xm1014-blaze-orange": {
+    "FN": 261.26,
+    "MW": 51.13,
+    "WW": 17.61
+  },
+  "xm1014-blue-spruce": {
+    "BS": 0.04,
+    "FN": 2.32,
+    "FT": 0.04,
+    "MW": 0.07,
+    "WW": 0.04
+  },
+  "xm1014-blue-steel": {
+    "BS": 0.07,
+    "FN": 2.2,
+    "FT": 0.07,
+    "MW": 0.27,
+    "WW": 0.07
+  },
+  "xm1014-blue-tire": {
+    "FN": 5.92,
+    "WW": 2.17
+  },
+  "xm1014-bone-machine": {
+    "BS": 14.66,
+    "FN": 41.07,
+    "MW": 39.04,
+    "WW": 15.28
+  },
+  "xm1014-calicamo": {
+    "BS": 0.12,
+    "FN": 0.78,
+    "FT": 0.14,
+    "MW": 0.28
+  },
+  "xm1014-canvas-cloud": {
+    "BS": 0.04,
+    "FN": 0.11,
+    "FT": 0.04,
+    "MW": 0.04,
+    "WW": 0.04
+  },
+  "xm1014-charter": {
+    "BS": 1.05,
+    "FN": 2.97,
+    "FT": 1.14,
+    "MW": 1.27,
+    "WW": 1.12
+  },
+  "xm1014-copperflage": {
+    "BS": 0.16,
+    "FN": 1.7,
+    "FT": 0.18,
+    "MW": 0.49
+  },
+  "xm1014-entombed": {
+    "BS": 5.24,
+    "FN": 12.69,
+    "FT": 5.31,
+    "MW": 6.21,
+    "WW": 4.73
+  },
+  "xm1014-fallout-warning": {
+    "BS": 11.63,
+    "FT": 14.99,
+    "WW": 12.97
+  },
+  "xm1014-frost-borre": {
+    "BS": 142.46,
+    "FN": 141.23,
+    "MW": 127.05,
+    "WW": 113.5
+  },
+  "xm1014-grassland": {
+    "WW": 2.83
+  },
+  "xm1014-gum-wall-camo": {
+    "FN": 0.49,
+    "FT": 0.06,
+    "MW": 0.15,
+    "WW": 0.08
+  },
+  "xm1014-halftone-shift": {
+    "BS": 1.82,
+    "FT": 2.41,
+    "MW": 3.51
+  },
+  "xm1014-heaven-guard": {
+    "FN": 28.54,
+    "FT": 8.46,
+    "MW": 15.47
+  },
+  "xm1014-hieroglyph": {
+    "BS": 0.08,
+    "FN": 2.62,
+    "FT": 0.12,
+    "MW": 0.51,
+    "WW": 0.08
+  },
+  "xm1014-incinegator": {
+    "BS": 6.62,
+    "FT": 7.93,
+    "WW": 7.7
+  },
+  "xm1014-irezumi": {
+    "BS": 0.11,
+    "FN": 0.99,
+    "FT": 0.11,
+    "MW": 0.26,
+    "WW": 0.13
+  },
+  "xm1014-jungle": {
+    "MW": 12.31
+  },
+  "xm1014-mockingbird": {
+    "BS": 0.11,
+    "FN": 1.65,
+    "FT": 0.12,
+    "MW": 0.31,
+    "WW": 0.11
+  },
+  "xm1014-monster-melt": {
+    "BS": 3.96,
+    "FN": 26.15,
+    "FT": 5.35,
+    "MW": 11.46,
+    "WW": 4.65
+  },
+  "xm1014-oxide-blaze": {
+    "BS": 0.16,
+    "FN": 1.12,
+    "FT": 0.19,
+    "MW": 0.29,
+    "WW": 0.16
+  },
+  "xm1014-quicksilver": {
+    "FN": 3.68,
+    "FT": 0.63,
+    "MW": 0.8,
+    "WW": 0.49
+  },
+  "xm1014-red-leather": {
+    "BS": 37.76,
+    "FN": 87.45,
+    "FT": 40.98,
+    "WW": 37.51
+  },
+  "xm1014-red-python": {
+    "BS": 2.94,
+    "FT": 3.69,
+    "MW": 6.18
+  },
+  "xm1014-run-run-run": {
+    "BS": 0.4,
+    "FN": 6.08,
+    "FT": 0.6,
+    "MW": 1.75,
+    "WW": 0.48
+  },
+  "xm1014-scumbria": {
+    "BS": 0.28,
+    "FN": 5.61,
+    "FT": 0.38,
+    "MW": 1.16
+  },
+  "xm1014-seasons": {
+    "FN": 7.89,
+    "FT": 2.23,
+    "MW": 2.67,
+    "WW": 2.14
+  },
+  "xm1014-slipstream": {
+    "FN": 1.56,
+    "FT": 0.36,
+    "MW": 0.51,
+    "WW": 0.36
+  },
+  "xm1014-solitude": {
+    "BS": 0.63,
+    "FN": 77.7,
+    "FT": 1.06,
+    "MW": 5.75,
+    "WW": 1.74
+  },
+  "xm1014-teclu-burner": {
+    "BS": 2.15,
+    "FN": 15.09,
+    "FT": 1.81,
+    "MW": 3.47
+  },
+  "xm1014-tranquility": {
+    "BS": 11.85,
+    "FN": 52.3,
+    "FT": 12.37,
+    "MW": 18.05
+  },
+  "xm1014-urban-perforated": {
+    "FN": 30.98,
+    "FT": 2.79,
+    "MW": 3.86
+  },
+  "xm1014-varicamo-blue": {
+    "BS": 11.64,
+    "FT": 14.42,
+    "WW": 14.48
+  },
+  "xm1014-watchdog": {
+    "BS": 1.52,
+    "FN": 12.25,
+    "FT": 2.49,
+    "MW": 4.62,
+    "WW": 1.63
+  },
+  "xm1014-xooom": {
+    "FN": 0.36,
+    "FT": 0.06,
+    "MW": 0.16,
+    "WW": 0.07
+  },
+  "xm1014-ziggy": {
+    "BS": 1.21,
+    "FN": 11.48,
+    "FT": 1.38,
+    "MW": 1.86,
+    "WW": 1.28
+  },
+  "xm1014-zombie-offensive": {
+    "BS": 0.85,
+    "FN": 2.95,
+    "FT": 0.86,
+    "MW": 1.06,
+    "WW": 0.83
+  },
+  "zeus-x27-charged-up": {
+    "BS": 3.33,
+    "FN": 42.9,
+    "FT": 5.2,
+    "MW": 17.66,
+    "WW": 3.98
+  },
+  "zeus-x27-dragon-snore": {
+    "BS": 28.72,
+    "FN": 199.09,
+    "FT": 40.4,
+    "MW": 93.1,
+    "WW": 32.96
+  },
+  "zeus-x27-earth-mandala": {
+    "BS": 0.48,
+    "FN": 2.35,
+    "FT": 0.56,
+    "MW": 1.05,
+    "WW": 0.63
+  },
+  "zeus-x27-electric-blue": {
+    "BS": 0.06,
+    "FN": 0.76,
+    "FT": 0.07,
+    "MW": 0.22
+  },
+  "zeus-x27-olympus": {
+    "BS": 4.76,
+    "FN": 15.63,
+    "FT": 5.09,
+    "MW": 7.82,
+    "WW": 4.93
+  },
+  "zeus-x27-swamp-ddpat": {
+    "BS": 0.04,
+    "FN": 0.11,
+    "FT": 0.04,
+    "MW": 0.04,
+    "WW": 0.04
+  },
+  "zeus-x27-tosai": {
+    "BS": 0.67,
+    "FN": 5.4,
+    "FT": 0.63,
+    "MW": 1.32,
+    "WW": 0.72
+  }
+}

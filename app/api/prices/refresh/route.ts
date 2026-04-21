@@ -39,6 +39,7 @@ export async function GET(request: NextRequest) {
 
                 // Respect Steam rate limits - pause briefly between requests
                 // Note: In a real Cloudflare Worker, you'd use a more robust queueing system
+                console.log(`Fetched price for ${skin.id} (${wear}): ${priceData.lowestPrice}`);
                 await new Promise(resolve => setTimeout(resolve, 2000));
             } catch (err) {
                 console.error(`Failed to fetch price for ${skin.id} (${wear}):`, err);
