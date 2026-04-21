@@ -29,6 +29,13 @@
 			"binding": "PRICE_CACHE",
 			"id": "77a8a9f449fd4014bb19e60f7a20c0bb",
 			"remote": true
+		},
+		{
+			// Run `wrangler kv namespace create TRADEUP_CACHE` and replace the id below
+			// before deploying to production. Leave the preview_id empty for local dev.
+			"binding": "TRADEUP_CACHE",
+			"id": "REPLACE_WITH_TRADEUP_CACHE_KV_NAMESPACE_ID",
+			"remote": true
 		}
 	],
 	"r2_buckets": [
