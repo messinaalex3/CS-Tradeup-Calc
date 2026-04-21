@@ -105,8 +105,8 @@ export async function evaluateTradeup(
     return sum + o.probability * (o.estimatedPrice ?? 0);
   }, 0);
 
-  // Calculate ROI
-  const roi = totalCost > 0 ? ((ev - totalCost) / totalCost) * 100 : 0;
+  // Calculate ROI (as a multiplier, e.g. 1.15 = 15% profit)
+  const roi = totalCost > 0 ? ev / totalCost : 0;
 
   // Min/max output value
   const validPrices = outputs
@@ -130,7 +130,7 @@ export async function evaluateTradeup(
     valid: true,
     totalCost: Math.round(totalCost * 100) / 100,
     ev: Math.round(ev * 100) / 100,
-    roi: Math.round(roi * 10) / 10,
+    roi: Math.round(roi * 1000) / 1000,
     guaranteedProfit,
     chanceToProfit: Math.round(chanceToProfit * 1000) / 1000,
     minOutput: Math.round(minOutput * 100) / 100,

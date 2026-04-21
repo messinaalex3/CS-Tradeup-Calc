@@ -105,6 +105,9 @@ function generateInventoryCandidates(
 }
 
 export async function POST(request: NextRequest) {
+  const requestStart = Date.now();
+  console.log("[inventory] POST /api/inventory — request received");
+
   const { env: rawEnv } = await getCloudflareContext();
   const env = rawEnv as unknown as CloudflareEnv;
 
@@ -112,20 +115,25 @@ export async function POST(request: NextRequest) {
   try {
     body = (await request.json()) as { profileUrl?: string };
   } catch {
+    console.warn("[inventory] Failed to parse request body as JSON");
     return NextResponse.json({ error: "Invalid JSON body" }, { status: 400 });
   }
 
   const profileUrl = body.profileUrl?.trim();
   if (!profileUrl) {
+    console.warn("[inventory] Missing profileUrl in request body");
     return NextResponse.json(
       { error: "profileUrl is required" },
       { status: 400 },
     );
   }
 
+  console.log(`[inventory] Parsing Steam ID from: ${profileUrl}`);
+
   // Parse and validate the Steam ID
   const steamId = parseSteamId(profileUrl);
   if (!steamId) {
+    console.warn(`[inventory] Could not parse a SteamID64 from: ${profileUrl}`);
     return NextResponse.json(
       {
         error:
@@ -135,17 +143,27 @@ export async function POST(request: NextRequest) {
     );
   }
 
+  console.log(`[inventory] Resolved SteamID64: ${steamId}`);
+  console.log(`[inventory] Fetching Steam inventory for ${steamId}…`);
+
   // Fetch and match the inventory
   let totalSteamItems: number;
   let matched: MatchedInventoryItem[];
+  const fetchStart = Date.now();
   try {
     ({ totalSteamItems, matched } = await fetchAndMatchInventory(steamId));
   } catch (err) {
+    const message = err instanceof Error ? err.message : String(err);
+    console.error(`[inventory] Failed to fetch inventory for ${steamId}: ${message}`);
     return NextResponse.json(
-      { error: err instanceof Error ? err.message : String(err) },
+      { error: message },
       { status: 400 },
     );
   }
+  console.log(
+    `[inventory] Inventory fetched in ${Date.now() - fetchStart}ms — ` +
+    `${totalSteamItems} total Steam items, ${matched.length} matched to catalog`,
+  );
 
   // Group matched items by rarity (skip covert — cannot be inputs)
   const byRarity = new Map<Rarity, MatchedInventoryItem[]>();
@@ -162,6 +180,7 @@ export async function POST(request: NextRequest) {
   for (const rarity of INPUT_RARITIES) {
     inventorySummary[rarity] = byRarity.get(rarity)?.length ?? 0;
   }
+  console.log("[inventory] Items by rarity:", inventorySummary);
 
   // Evaluate trade-up candidates for rarities with enough items
   const priceGetter = (skinId: string, wear: Wear) =>
@@ -184,14 +203,34 @@ export async function POST(request: NextRequest) {
 
   for (const rarity of INPUT_RARITIES) {
     const items = byRarity.get(rarity);
-    if (!items || items.length < 10) continue;
+    if (!items || items.length < 10) {
+      console.log(
+        `[inventory] Skipping rarity "${rarity}" — only ${items?.length ?? 0} item(s), need ≥10`,
+      );
+      continue;
+    }
 
     const candidates = generateInventoryCandidates(items);
+    const capped = candidates.slice(0, 30);
+    console.log(
+      `[inventory] Rarity "${rarity}": ${items.length} items → ` +
+      `${candidates.length} candidate(s) generated, evaluating up to ${capped.length}`,
+    );
+
+    let evaluated = 0;
+    let profitable = 0;
 
     // Evaluate up to 30 candidates per rarity to keep response time reasonable
-    for (const inputs of candidates.slice(0, 30)) {
+    for (const inputs of capped) {
+      evaluated++;
       const result = await evaluateTradeup(inputs, priceGetter);
       if (!result.valid || result.roi < 0) continue;
+
+      profitable++;
+      console.log(
+        `[inventory]   Candidate ${evaluated}/${capped.length} (${rarity}): ` +
+        `ROI=${((result.roi - 1) * 100).toFixed(1)}% EV=$${result.ev.toFixed(2)} cost=$${result.totalCost.toFixed(2)}`,
+      );
 
       recommendations.push({
         rarity,
@@ -213,10 +252,21 @@ export async function POST(request: NextRequest) {
         outputs: result.outputs,
       });
     }
+
+    console.log(
+      `[inventory] Rarity "${rarity}" done — ${profitable}/${evaluated} candidates profitable`,
+    );
   }
 
   // Sort by ROI descending
   recommendations.sort((a, b) => b.roi - a.roi);
+
+  const total = recommendations.length;
+  const returned = Math.min(total, 15);
+  console.log(
+    `[inventory] Returning ${returned} of ${total} recommendation(s) — ` +
+    `total elapsed ${Date.now() - requestStart}ms`,
+  );
 
   return NextResponse.json({
     steamId,

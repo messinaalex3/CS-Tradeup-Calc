@@ -31,10 +31,8 @@
 			"remote": true
 		},
 		{
-			// Run `wrangler kv namespace create TRADEUP_CACHE` and replace the id below
-			// before deploying to production. Leave the preview_id empty for local dev.
 			"binding": "TRADEUP_CACHE",
-			"id": "REPLACE_WITH_TRADEUP_CACHE_KV_NAMESPACE_ID",
+			"id": "85fa67d9815d4ad6b2627c21be3a4b85",
 			"remote": true
 		}
 	],
