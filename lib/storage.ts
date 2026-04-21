@@ -16,7 +16,15 @@ export interface CloudflareEnv {
     PRICE_CACHE: KVNamespace;
     // R2 Bucket for hourly snapshots (high volume)
     PRICE_SNAPSHOTS: R2Bucket;
+    // KV Cache for pre-computed profitable tradeup results (refreshed by cron)
+    TRADEUP_CACHE: KVNamespace;
 }
+
+/** KV key under which the profitable tradeup list is stored. */
+export const TRADEUP_CACHE_KEY = "tradeups:profitable";
+
+/** TTL in seconds for the tradeup cache (1 hour). */
+export const TRADEUP_CACHE_TTL = 3600;
 
 /**
  * Format a KV key for a specific skin price.
@@ -68,5 +76,28 @@ export async function updatePriceSnapshot(
     const content = JSON.stringify(prices);
     await env.PRICE_SNAPSHOTS.put("latest_prices.json", content, {
         httpMetadata: { contentType: "application/json" },
+    });
+}
+
+/**
+ * Read the cached profitable tradeup payload from KV.
+ * Returns the raw JSON string or null if not present / expired.
+ */
+export async function getCachedProfitableTradeups(
+    env: CloudflareEnv,
+): Promise<string | null> {
+    return env.TRADEUP_CACHE.get(TRADEUP_CACHE_KEY);
+}
+
+/**
+ * Write the profitable tradeup payload to KV with a 1-hour TTL.
+ * @param json Serialised JSON string to persist.
+ */
+export async function setCachedProfitableTradeups(
+    env: CloudflareEnv,
+    json: string,
+): Promise<void> {
+    await env.TRADEUP_CACHE.put(TRADEUP_CACHE_KEY, json, {
+        expirationTtl: TRADEUP_CACHE_TTL,
     });
 }

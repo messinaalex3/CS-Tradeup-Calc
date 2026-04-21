@@ -32,6 +32,8 @@ interface ProfitableResponse {
   contracts: ProfitableContract[];
   total: number;
   scannedRarities: string[];
+  fromCache?: boolean;
+  cachedAt?: string;
 }
 
 function formatPrice(price: number | null): string {
@@ -174,11 +176,18 @@ export default function ProfitablePage() {
 
       {data && !loading && (
         <>
-          <p className="text-zinc-500 text-xs mb-4">
+          <p className="text-zinc-500 text-xs mb-1">
             Found {data.contracts.length} profitable contract
             {data.contracts.length !== 1 ? "s" : ""} across{" "}
             {data.scannedRarities.join(", ")}.
           </p>
+          {data.cachedAt && (
+            <p className="text-zinc-600 text-xs mb-4">
+              {data.fromCache ? "Served from cache" : "Freshly computed"} · Last
+              updated{" "}
+              {new Date(data.cachedAt).toLocaleString()}
+            </p>
+          )}
 
           {data.contracts.length === 0 && (
             <div className="bg-zinc-900 rounded-xl p-8 text-center text-zinc-500 border border-zinc-800">
