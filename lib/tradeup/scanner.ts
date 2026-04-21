@@ -39,10 +39,10 @@ export interface TradeupCachePayload {
 
 /** Rarities eligible for trade-up scanning (excludes consumer_grade and covert). */
 export const SCANNABLE_RARITIES: Rarity[] = [
-  "classified",
   "restricted",
   "mil_spec",
   "industrial_grade",
+  "classified",
 ];
 
 /** Minimum ROI to consider a trade-up profitable (1.0 = break even, 1.05 = 5% profit). */
@@ -139,19 +139,24 @@ export async function computeProfitableContracts(
 
     // Process candidates in chunks of 5 to parallelize API requests (prices)
     // while keeping the logs readable and not overwhelming the runtime.
-    const CHUNK_SIZE = 10;
+    const CHUNK_SIZE = 50;
     for (let i = 0; i < candidates.length; i += CHUNK_SIZE) {
       const chunk = candidates.slice(i, i + CHUNK_SIZE);
 
       const results = await Promise.all(chunk.map(async (inputs) => {
-        const outputPool = calculateOutputPool(inputs);
-        if (outputPool.length === 0) return { type: "no-pool" as const };
+        try {
+          const outputPool = calculateOutputPool(inputs);
+          if (outputPool.length === 0) return { type: "no-pool" as const };
 
-        const result = await evaluateTradeup(inputs, priceGetter);
-        if (!result.valid || result.totalCost === 0) return { type: "invalid" as const };
-        if (result.roi < MIN_ROI) return { type: "below-roi" as const };
+          const result = await evaluateTradeup(inputs, priceGetter);
+          if (!result.valid || result.totalCost === 0) return { type: "invalid" as const };
+          if (result.roi < MIN_ROI) return { type: "below-roi" as const };
 
-        return { type: "profitable" as const, result, inputs };
+          return { type: "profitable" as const, result, inputs };
+        } catch (err) {
+          console.error(`[scanner] Error evaluating candidate: ${err instanceof Error ? err.message : String(err)}`);
+          return { type: "invalid" as const };
+        }
       }));
 
       for (const res of results) {

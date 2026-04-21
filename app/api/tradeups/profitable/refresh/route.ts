@@ -8,6 +8,7 @@ import {
 import { getCloudflareContext } from "@opennextjs/cloudflare";
 import {
   computeProfitableContracts,
+  type ProfitableContract,
   type TradeupCachePayload,
 } from "@/lib/tradeup/scanner";
 
@@ -38,7 +39,19 @@ export async function GET(request: NextRequest) {
   const priceGetter = (skinId: string, wear: Wear) =>
     getBestPrice(skinId, wear, env);
 
-  const allProfitable = await computeProfitableContracts(priceGetter);
+  const onUpdate = async (contracts: ProfitableContract[]) => {
+    console.log(`[refresh] Incremental cache update: ${contracts.length} contract(s)`);
+    const payload: TradeupCachePayload = {
+      contracts,
+      cachedAt: new Date().toISOString(),
+    };
+    await setCachedProfitableTradeups(env, JSON.stringify(payload));
+  };
+
+  const allProfitable = await computeProfitableContracts(
+    priceGetter,
+    onUpdate,
+  );
 
   const cachedAt = new Date().toISOString();
   const payload: TradeupCachePayload = { contracts: allProfitable, cachedAt };

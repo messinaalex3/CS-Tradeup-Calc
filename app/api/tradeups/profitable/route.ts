@@ -92,74 +92,22 @@ export async function GET(request: NextRequest) {
       });
     } catch (err) {
       console.warn(
-        `[profitable] Cache entry is corrupted (${err instanceof Error ? err.message : String(err)}), falling through to recompute`,
+        `[profitable] Cache entry is corrupted (${err instanceof Error ? err.message : String(err)})`,
       );
     }
   } else {
-    console.log("[profitable] Cache miss — starting fresh");
+    console.log("[profitable] Cache miss — no results found");
   }
 
-  // ── 2. Cache miss: compute on the fly and populate the cache ─────────────
-  const priceGetter = (skinId: string, wear: Wear) =>
-    getBestPrice(skinId, wear, env);
-
-  console.log("[profitable] Starting full scan across all rarities…");
-  const computeStart = Date.now();
-
-  // Create a map of existing contracts to enable per-contract overwriting
-  const contractMap = new Map<string, ProfitableContract>();
-  for (const c of initialContracts) {
-    contractMap.set(getContractKey(c.inputs), c);
-  }
-
-  const onUpdate = async (newContracts: ProfitableContract[]) => {
-    // Merge new findings into our map (overwriting by unique key)
-    for (const c of newContracts) {
-      contractMap.set(getContractKey(c.inputs), c);
-    }
-
-    const merged = [...contractMap.values()];
-    const cachedAt = new Date().toISOString();
-    const payload: TradeupCachePayload = { contracts: merged, cachedAt };
-    await setCachedProfitableTradeups(env, JSON.stringify(payload));
-    console.log(`[profitable] Incremental cache update: ${merged.length} total contracts (including ${newContracts.length} new/updated).`);
-  };
-
-  const allProfitable = await computeProfitableContracts(priceGetter, onUpdate);
-
-  console.log(
-    `[profitable] Scan complete in ${Date.now() - computeStart}ms — ` +
-    `${allProfitable.length} profitable contract(s) found in this run`,
-  );
-
-  // Apply request-time filters before returning
-  let filtered = allProfitable;
-  if (rarityParam) {
-    const before = filtered.length;
-    filtered = filtered.filter((c) => c.rarity === rarityParam);
-    console.log(
-      `[profitable] Rarity filter "${rarityParam}": ${before} → ${filtered.length} contract(s)`,
-    );
-  }
-  if (maxBudget !== undefined) {
-    const before = filtered.length;
-    filtered = filtered.filter((c) => c.totalCost <= maxBudget);
-    console.log(
-      `[profitable] Budget filter ≤$${maxBudget}: ${before} → ${filtered.length} contract(s)`,
-    );
-  }
-
-  const returned = Math.min(filtered.length, MAX_RESULTS);
-  console.log(
-    `[profitable] Returning ${returned} of ${filtered.length} contract(s) — ` +
-    `total elapsed ${Date.now() - requestStart}ms`,
-  );
+  // ── 2. Cache miss: no fallback computation ────────────────────────────────
+  // In the past, this performed a full compute on-the-fly, but this is now 
+  // handled strictly by the /refresh route and scheduled cron jobs.
 
   return NextResponse.json({
-    contracts: filtered.slice(0, MAX_RESULTS),
-    total: filtered.length,
+    contracts: [],
+    total: 0,
     scannedRarities: scannableRarities.map((r) => RARITY_LABELS[r]),
     fromCache: false,
-    cachedAt,
+    message: "No cached results found. A refresh may be in progress or required.",
   });
 }
