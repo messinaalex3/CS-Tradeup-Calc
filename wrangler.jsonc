@@ -27,13 +27,15 @@
 	"kv_namespaces": [
 		{
 			"binding": "PRICE_CACHE",
-			"id": "price-cache-id"
+			"id": "77a8a9f449fd4014bb19e60f7a20c0bb",
+			"remote": true
 		}
 	],
 	"r2_buckets": [
 		{
+			"bucket_name": "cs-tradeup-prices",
 			"binding": "PRICE_SNAPSHOTS",
-			"bucket_name": "cs-tradeup-prices"
+			"remote": true
 		}
 	]
 }
