@@ -43,7 +43,24 @@ export async function evaluateTradeup(
     if (!skin) continue;
     const wear = floatToWear(input.float);
     const price = await getPrice(input.skinId, wear);
-    totalCost += price ?? 0;
+
+    // If we can't get a price for any input item, the trade-up cost is unknown
+    if (price === null || price <= 0) {
+      return {
+        valid: false,
+        error: `Price not available for input: ${skin.name} (${wear})`,
+        totalCost: 0,
+        ev: 0,
+        roi: 0,
+        guaranteedProfit: false,
+        chanceToProfit: 0,
+        minOutput: 0,
+        maxOutput: 0,
+        outputs: [],
+      };
+    }
+
+    totalCost += price;
   }
 
   // Calculate output pool
@@ -112,11 +129,16 @@ export async function evaluateTradeup(
   const validPrices = outputs
     .map((o) => o.estimatedPrice)
     .filter((p): p is number => p !== null);
+
+  // If we're missing any output prices, we can't reliably say it's guaranteed or calculate full EV
+  const hasMissingPrices = validPrices.length < outputs.length;
+
   const minOutput = validPrices.length > 0 ? Math.min(...validPrices) : 0;
   const maxOutput = validPrices.length > 0 ? Math.max(...validPrices) : 0;
 
   // Guaranteed profit: cheapest possible output > total cost
-  const guaranteedProfit = minOutput > totalCost;
+  // Must NOT have missing prices to be "guaranteed"
+  const guaranteedProfit = !hasMissingPrices && minOutput > totalCost;
 
   // Chance to profit: sum of probabilities for outputs priced above total cost
   const chanceToProfit = outputs.reduce((sum, o) => {
@@ -127,12 +149,12 @@ export async function evaluateTradeup(
   }, 0);
 
   return {
-    valid: true,
+    valid: !hasMissingPrices, // Consider invalid if we can't price all outputs
     totalCost: Math.round(totalCost * 100) / 100,
     ev: Math.round(ev * 100) / 100,
     roi: Math.round(roi * 1000) / 1000,
     guaranteedProfit,
-    chanceToProfit: Math.round(chanceToProfit * 1000) / 1000,
+    chanceToProfit: Math.round(chanceToProfit * 100) / 100, // Round to percentage (0-100)
     minOutput: Math.round(minOutput * 100) / 100,
     maxOutput: Math.round(maxOutput * 100) / 100,
     outputs,

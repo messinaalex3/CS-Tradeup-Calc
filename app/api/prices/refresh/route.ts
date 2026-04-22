@@ -13,6 +13,8 @@ interface SkinportItem {
     suggested_price: number | null;
     /** Lowest current Skinport listing price in USD */
     min_price: number | null;
+    /** Average sales/listing price */
+    mean_price: number | null;
     quantity: number;
 }
 
@@ -76,8 +78,9 @@ export async function GET(request: NextRequest) {
             continue;
         }
 
-        // Prefer suggested_price (tracks Steam Market value); fall back to min_price
-        const price = item.suggested_price ?? item.min_price;
+        // Use mean_price as requested (Skinport API provides this as an average of sales/listings)
+        // Fall back to suggested_price if mean_price is missing.
+        const price = item.mean_price ?? item.suggested_price ?? item.min_price;
         if (!price || price <= 0) {
             ignoredNoPrice++;
             continue;

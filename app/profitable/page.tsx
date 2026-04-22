@@ -262,10 +262,13 @@ export default function ProfitablePage() {
                         {contract.inputs.map((inp, j) => (
                           <span
                             key={j}
-                            className="bg-zinc-800 text-zinc-300 text-xs rounded px-2 py-1"
+                            className="bg-zinc-800 text-zinc-300 text-xs rounded px-2 py-1 relative group cursor-help"
                           >
                             {inp.skinName} ({WEAR_LABELS[inp.wear]},{" "}
                             {inp.float.toFixed(2)})
+                            <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 bg-zinc-950 text-white rounded text-[10px] font-medium opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-10 pointer-events-none border border-zinc-700 shadow-xl">
+                              {formatPrice(inp.price)}
+                            </span>
                           </span>
                         ))}
                       </div>

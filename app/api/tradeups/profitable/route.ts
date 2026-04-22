@@ -76,7 +76,18 @@ export async function GET(request: NextRequest) {
         );
       }
 
-      contracts.sort((a, b) => b.roi - a.roi);
+      // ── Sorting ──────────────────────────────────────
+      // 1. Guaranteed Profit first
+      // 2. Then highest chance to profit (percentage)
+      // 3. Then highest ROI
+      contracts.sort((a, b) => {
+        if (a.guaranteedProfit && !b.guaranteedProfit) return -1;
+        if (!a.guaranteedProfit && b.guaranteedProfit) return 1;
+        if (b.chanceToProfit !== a.chanceToProfit)
+          return b.chanceToProfit - a.chanceToProfit;
+        return b.roi - a.roi;
+      });
+
       const returned = Math.min(contracts.length, MAX_RESULTS);
       console.log(
         `[profitable] Returning ${returned} of ${contracts.length} from cache — ` +
