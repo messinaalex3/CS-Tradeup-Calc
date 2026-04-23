@@ -117,12 +117,11 @@ function makeSkinId(weapon: string, skin: string, collSlug: string, existingIds:
   if (!existingIds.has(base)) return base;
   const withCol = `${base}-${toKebab(collSlug)}`;
   if (!existingIds.has(withCol)) return withCol;
-  let i = 2;
-  while (true) {
+  for (let i = 2; i <= 200; i++) {
     const candidate = `${base}-${i}`;
     if (!existingIds.has(candidate)) return candidate;
-    i++;
   }
+  throw new Error(`Could not generate unique skin ID for: ${weapon} | ${skin}`);
 }
 
 interface ApiSkin {
@@ -198,9 +197,13 @@ export async function refreshCatalogFromApi(env: CloudflareEnv): Promise<Catalog
     if (seenCollSlugs.has(slug)) {
       const base = slug;
       let i = 2;
-      while (seenCollSlugs.has(slug)) {
+      let limit = 100;
+      while (seenCollSlugs.has(slug) && limit-- > 0) {
         slug = `${base}-${i}`;
         i++;
+      }
+      if (seenCollSlugs.has(slug)) {
+        throw new Error(`Could not generate unique slug for collection: ${collName}`);
       }
     }
     seenCollSlugs.add(slug);
