@@ -32,6 +32,10 @@
 		{
 			"binding": "TRADEUP_CACHE",
 			"id": "85fa67d9815d4ad6b2627c21be3a4b85",
+		},
+		{
+			"binding": "CATALOG_CACHE",
+			"id": "a1b2c3d4e5f64789abcdef1234567890",
 		}
 	],
 	"r2_buckets": [

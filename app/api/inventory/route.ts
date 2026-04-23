@@ -1,13 +1,13 @@
 import { NextRequest, NextResponse } from "next/server";
-import type { Rarity, TradeupInput, Wear, OutputWithValue } from "@/lib/types";
+import type { Rarity, Skin, TradeupInput, Wear, OutputWithValue } from "@/lib/types";
 import { RARITY_ORDER } from "@/lib/types";
-import { SKINS } from "@/lib/catalog";
 import { parseSteamId, fetchAndMatchInventory } from "@/lib/steam";
 import type { MatchedInventoryItem } from "@/lib/steam";
 import { evaluateTradeup } from "@/lib/tradeup/ev";
 import { getBestPrice } from "@/lib/pricing";
 import { getCloudflareContext } from "@opennextjs/cloudflare";
 import { type CloudflareEnv } from "@/lib/storage";
+import { loadCatalog } from "@/lib/catalog/dynamic";
 
 /** Rarities that can be used as trade-up inputs. */
 const INPUT_RARITIES: Rarity[] = RARITY_ORDER.filter(
@@ -20,13 +20,14 @@ const INPUT_RARITIES: Rarity[] = RARITY_ORDER.filter(
  */
 function generateInventoryCandidates(
   items: MatchedInventoryItem[],
+  skins: Skin[],
 ): TradeupInput[][] {
   const candidates: TradeupInput[][] = [];
 
   // Group items by collection
   const byCollection = new Map<string, MatchedInventoryItem[]>();
   for (const item of items) {
-    const skin = SKINS.find((s) => s.id === item.catalogSkinId);
+    const skin = skins.find((s) => s.id === item.catalogSkinId);
     if (!skin) continue;
     const group = byCollection.get(skin.collectionId) ?? [];
     group.push(item);
@@ -111,6 +112,8 @@ export async function POST(request: NextRequest) {
   const { env: rawEnv } = await getCloudflareContext();
   const env = rawEnv as unknown as CloudflareEnv;
 
+  const { skins } = await loadCatalog(env);
+
   let body: { profileUrl?: string };
   try {
     body = (await request.json()) as { profileUrl?: string };
@@ -151,7 +154,7 @@ export async function POST(request: NextRequest) {
   let matched: MatchedInventoryItem[];
   const fetchStart = Date.now();
   try {
-    ({ totalSteamItems, matched } = await fetchAndMatchInventory(steamId));
+    ({ totalSteamItems, matched } = await fetchAndMatchInventory(steamId, skins));
   } catch (err) {
     const message = err instanceof Error ? err.message : String(err);
     console.error(`[inventory] Failed to fetch inventory for ${steamId}: ${message}`);
@@ -168,7 +171,7 @@ export async function POST(request: NextRequest) {
   // Group matched items by rarity (skip covert — cannot be inputs)
   const byRarity = new Map<Rarity, MatchedInventoryItem[]>();
   for (const item of matched) {
-    const skin = SKINS.find((s) => s.id === item.catalogSkinId);
+    const skin = skins.find((s) => s.id === item.catalogSkinId);
     if (!skin || !INPUT_RARITIES.includes(skin.rarity)) continue;
     const group = byRarity.get(skin.rarity) ?? [];
     group.push(item);
@@ -210,7 +213,7 @@ export async function POST(request: NextRequest) {
       continue;
     }
 
-    const candidates = generateInventoryCandidates(items);
+    const candidates = generateInventoryCandidates(items, skins);
     const capped = candidates.slice(0, 30);
     console.log(
       `[inventory] Rarity "${rarity}": ${items.length} items → ` +
@@ -223,7 +226,7 @@ export async function POST(request: NextRequest) {
     // Evaluate up to 30 candidates per rarity to keep response time reasonable
     for (const inputs of capped) {
       evaluated++;
-      const result = await evaluateTradeup(inputs, priceGetter);
+      const result = await evaluateTradeup(inputs, priceGetter, undefined, skins);
       if (!result.valid || result.roi < 0) continue;
 
       profitable++;
@@ -242,7 +245,7 @@ export async function POST(request: NextRequest) {
         minOutput: result.minOutput,
         maxOutput: result.maxOutput,
         inputs: inputs.map((inp) => {
-          const skin = SKINS.find((s) => s.id === inp.skinId);
+          const skin = skins.find((s) => s.id === inp.skinId);
           return {
             skinId: inp.skinId,
             skinName: skin?.name ?? inp.skinId,

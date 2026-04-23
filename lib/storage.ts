@@ -29,6 +29,8 @@ export interface CloudflareEnv {
     PRICE_SNAPSHOTS: R2Bucket;
     // KV Cache for pre-computed profitable tradeup results (refreshed by cron)
     TRADEUP_CACHE: KVNamespace;
+    // KV Cache for the dynamic skin catalog (refreshed weekly)
+    CATALOG_CACHE: KVNamespace;
 }
 
 /** KV key under which the profitable tradeup list is stored. */
@@ -36,6 +38,36 @@ export const TRADEUP_CACHE_KEY = "tradeups:profitable";
 
 /** TTL in seconds for the tradeup cache (1 hour). */
 export const TRADEUP_CACHE_TTL = 3600;
+
+/** KV key under which the catalog snapshot is stored. */
+export const CATALOG_CACHE_KEY = "catalog:v1";
+
+/** TTL in seconds for the catalog cache (24 hours). */
+export const CATALOG_CACHE_TTL = 86400;
+
+export interface CatalogData {
+    collections: Array<{ id: string; name: string }>;
+    skins: Array<{
+        id: string;
+        name: string;
+        weaponName: string;
+        skinName: string;
+        collectionId: string;
+        rarity: string;
+        minFloat: number;
+        maxFloat: number;
+        stattrak: boolean;
+    }>;
+    cachedAt: string;
+}
+
+export async function getCachedCatalog(env: CloudflareEnv): Promise<string | null> {
+    return env.CATALOG_CACHE.get(CATALOG_CACHE_KEY);
+}
+
+export async function setCachedCatalog(env: CloudflareEnv, json: string): Promise<void> {
+    await env.CATALOG_CACHE.put(CATALOG_CACHE_KEY, json, { expirationTtl: CATALOG_CACHE_TTL });
+}
 
 function normalizePricePoint(raw: PricePoint | number | undefined): PricePoint | null {
     if (raw === undefined) return null;
