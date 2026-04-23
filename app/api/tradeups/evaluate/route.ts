@@ -4,6 +4,7 @@ import { evaluateTradeup } from "@/lib/tradeup/ev";
 import { getBestPrice } from "@/lib/pricing";
 import { type CloudflareEnv } from "@/lib/storage";
 import { getCloudflareContext } from "@opennextjs/cloudflare";
+import { loadCatalog } from "@/lib/catalog/dynamic";
 
 export async function POST(request: NextRequest) {
   const { env: rawEnv } = await getCloudflareContext();
@@ -27,6 +28,7 @@ export async function POST(request: NextRequest) {
   const priceGetter = (skinId: string, wear: Wear) =>
     getBestPrice(skinId, wear, env);
 
-  const result = await evaluateTradeup(inputs, priceGetter);
+  const { skins, collections } = await loadCatalog(env);
+  const result = await evaluateTradeup(inputs, priceGetter, undefined, skins, collections);
   return NextResponse.json(result);
 }

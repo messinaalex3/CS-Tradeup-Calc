@@ -13,6 +13,7 @@ import {
   type ProfitableContract,
   type TradeupCachePayload,
 } from "@/lib/tradeup/scanner";
+import { loadCatalog } from "@/lib/catalog/dynamic";
 
 const INCREMENTAL_WRITE_MIN_INTERVAL_MS = 15000;
 const MAX_KV_RETRIES = 5;
@@ -155,6 +156,8 @@ export async function GET(request: NextRequest) {
     const outputPriceGetter = (skinId: string, wear: Wear) =>
       getSellPrice(skinId, wear, env);
 
+    const { skins } = await loadCatalog(env);
+
     // 1. Fetch existing cache to enable "merged" updates (overwrite by combination key)
     const cached = await getCachedProfitableTradeups(env);
     const contractMap = new Map<string, ProfitableContract>();
@@ -212,6 +215,7 @@ export async function GET(request: NextRequest) {
       inputPriceGetter,
       outputPriceGetter,
       onUpdate,
+      skins,
     );
 
     // Final merge and cleanup

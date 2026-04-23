@@ -3,8 +3,10 @@ import type {
   OutputWithValue,
   EvaluationResult,
   Wear,
+  Skin,
+  Collection,
 } from "../types";
-import { SKINS, getCollectionById } from "../catalog";
+import { SKINS as STATIC_SKINS, COLLECTIONS as STATIC_COLLECTIONS } from "../catalog";
 import { calculateOutputPool, validateInputs } from "./pool";
 import {
   averageNormalizedFloats,
@@ -19,11 +21,13 @@ export async function evaluateTradeup(
   inputs: TradeupInput[],
   getInputPrice: (skinId: string, wear: Wear) => Promise<number | null>,
   getOutputPrice?: (skinId: string, wear: Wear) => Promise<number | null>,
+  skins: Skin[] = STATIC_SKINS,
+  collections: Collection[] = STATIC_COLLECTIONS,
 ): Promise<EvaluationResult> {
   const outputPriceGetter = getOutputPrice ?? getInputPrice;
 
   // Validate inputs
-  const validation = validateInputs(inputs);
+  const validation = validateInputs(inputs, skins);
   if (!validation.valid) {
     return {
       valid: false,
@@ -42,7 +46,7 @@ export async function evaluateTradeup(
   // Look up input prices and calculate total cost
   let totalCost = 0;
   for (const input of inputs) {
-    const skin = SKINS.find((s) => s.id === input.skinId);
+    const skin = skins.find((s) => s.id === input.skinId);
     if (!skin) continue;
     const wear = floatToWear(input.float);
     const price = await getInputPrice(input.skinId, wear);
@@ -67,7 +71,7 @@ export async function evaluateTradeup(
   }
 
   // Calculate output pool
-  const outputPool = calculateOutputPool(inputs);
+  const outputPool = calculateOutputPool(inputs, skins);
   if (outputPool.length === 0) {
     return {
       valid: false,
@@ -84,7 +88,7 @@ export async function evaluateTradeup(
   }
 
   // Calculate the normalized float average for output float computation
-  const inputSkins = inputs.map((i) => SKINS.find((s) => s.id === i.skinId)!);
+  const inputSkins = inputs.map((i) => skins.find((s) => s.id === i.skinId)!);
   const normalizedAvg = averageNormalizedFloats(
     inputs.map((i) => i.float),
     inputSkins.map((s) => s.minFloat),
@@ -94,9 +98,9 @@ export async function evaluateTradeup(
   // Evaluate each output item
   const outputs: OutputWithValue[] = [];
   for (const poolItem of outputPool) {
-    const skin = SKINS.find((s) => s.id === poolItem.skinId);
+    const skin = skins.find((s) => s.id === poolItem.skinId);
     if (!skin) continue;
-    const collection = getCollectionById(skin.collectionId);
+    const collection = collections.find((c) => c.id === skin.collectionId);
 
     const outputFloat = computeOutputFloat(
       normalizedAvg,
