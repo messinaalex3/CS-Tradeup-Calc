@@ -1,5 +1,8 @@
 import type { PriceData, Wear } from "../types";
-import { getCachedPrice, type CloudflareEnv } from "../storage";
+import {
+    getCachedPriceBySide,
+    type CloudflareEnv,
+} from "../storage";
 
 /**
  * Get the price for a skin from Cloudflare KV/R2 storage.
@@ -11,13 +14,21 @@ export async function getPrice(
     env?: CloudflareEnv,
 ): Promise<PriceData> {
     if (env) {
-        const cachedPrice = await getCachedPrice(env, skinId, wear);
-        if (cachedPrice !== null) {
+        const minPrice = await getCachedPriceBySide(env, skinId, wear, "sell");
+        const maxPrice = await getCachedPriceBySide(env, skinId, wear, "buy");
+        const hasPrice = minPrice !== null || maxPrice !== null;
+
+        if (hasPrice) {
             return {
                 skinId,
                 wear,
-                lowestPrice: cachedPrice,
-                medianPrice: null,
+                lowestPrice: minPrice,
+                medianPrice:
+                    minPrice !== null && maxPrice !== null
+                        ? (minPrice + maxPrice) / 2
+                        : (minPrice ?? maxPrice),
+                minPrice,
+                maxPrice,
                 volume: null,
                 currency: "USD",
                 fetchedAt: new Date().toISOString(),
@@ -31,6 +42,8 @@ export async function getPrice(
         wear,
         lowestPrice: null,
         medianPrice: null,
+        minPrice: null,
+        maxPrice: null,
         volume: null,
         currency: "USD",
         fetchedAt: new Date().toISOString(),
@@ -46,6 +59,23 @@ export async function getBestPrice(
     wear: Wear,
     env?: CloudflareEnv,
 ): Promise<number | null> {
-    const data = await getPrice(skinId, wear, env);
-    return data.lowestPrice;
+    return getSellPrice(skinId, wear, env);
+}
+
+export async function getBuyPrice(
+    skinId: string,
+    wear: Wear,
+    env?: CloudflareEnv,
+): Promise<number | null> {
+    if (!env) return null;
+    return getCachedPriceBySide(env, skinId, wear, "buy");
+}
+
+export async function getSellPrice(
+    skinId: string,
+    wear: Wear,
+    env?: CloudflareEnv,
+): Promise<number | null> {
+    if (!env) return null;
+    return getCachedPriceBySide(env, skinId, wear, "sell");
 }

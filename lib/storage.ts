@@ -1,11 +1,22 @@
 import type { KVNamespace, R2Bucket } from "@cloudflare/workers-types/2023-07-01";
 import type { Wear } from "./types";
 
+export type PriceSide = "buy" | "sell";
+
+export interface PricePoint {
+    minPrice: number | null;
+    maxPrice: number | null;
+    meanPrice: number | null;
+    suggestedPrice: number | null;
+}
+
 /**
  * Common shape for our Price Storage Snapshot.
- * A simple record of SkinId -> { Wear -> Price }
+ * Record of SkinId -> { Wear -> PricePoint }.
+ *
+ * Backward compatibility: old snapshots may still contain a number.
  */
-export type PriceSnapshot = Record<string, Partial<Record<Wear, number>>>;
+export type PriceSnapshot = Record<string, Partial<Record<Wear, PricePoint | number>>>;
 
 /**
  * The expected environment with Cloudflare Bindings.
@@ -26,36 +37,71 @@ export const TRADEUP_CACHE_KEY = "tradeups:profitable";
 /** TTL in seconds for the tradeup cache (1 hour). */
 export const TRADEUP_CACHE_TTL = 3600;
 
-/**
- * Format a KV key for a specific skin price.
- */
-export function getPriceKey(skinId: string, wear: Wear): string {
-    return `price:${skinId}:${wear}`;
+function normalizePricePoint(raw: PricePoint | number | undefined): PricePoint | null {
+    if (raw === undefined) return null;
+
+    if (typeof raw === "number") {
+        // Legacy snapshot format: single numeric price.
+        return {
+            minPrice: raw,
+            maxPrice: raw,
+            meanPrice: raw,
+            suggestedPrice: raw,
+        };
+    }
+
+    return {
+        minPrice: raw.minPrice ?? null,
+        maxPrice: raw.maxPrice ?? null,
+        meanPrice: raw.meanPrice ?? null,
+        suggestedPrice: raw.suggestedPrice ?? null,
+    };
+}
+
+function pickPriceForSide(pricePoint: PricePoint, side: PriceSide): number | null {
+    if (side === "buy") {
+        return pricePoint.maxPrice ?? pricePoint.meanPrice ?? pricePoint.suggestedPrice ?? pricePoint.minPrice;
+    }
+    return pricePoint.minPrice ?? pricePoint.meanPrice ?? pricePoint.suggestedPrice ?? pricePoint.maxPrice;
 }
 
 /**
- * Get a single price from KV or fallback to R2 if available.
+ * Format a KV key for a specific skin price side.
  */
-export async function getCachedPrice(
+export function getPriceKey(skinId: string, wear: Wear, side: PriceSide = "sell"): string {
+    return `price:${skinId}:${wear}:${side}`;
+}
+
+/**
+ * Get a single sided price from KV or fallback to R2 if available.
+ */
+export async function getCachedPriceBySide(
     env: CloudflareEnv,
     skinId: string,
-    wear: Wear
+    wear: Wear,
+    side: PriceSide,
 ): Promise<number | null> {
-    const key = getPriceKey(skinId, wear);
+    const key = getPriceKey(skinId, wear, side);
 
     // 1. Try KV
     const cachedValue = await env.PRICE_CACHE.get(key);
     if (cachedValue) {
-        return parseFloat(cachedValue);
+        const parsed = parseFloat(cachedValue);
+        return Number.isFinite(parsed) ? parsed : null;
     }
 
-    // 2. Try R2 if not in KV (this would be expensive if done thousands of times, 
+    // 2. Try R2 if not in KV (this would be expensive if done thousands of times,
     // but fine for individual Lookups if we populate KV after)
     const snapshot = await env.PRICE_SNAPSHOTS.get("latest_prices.json");
     if (snapshot) {
         const data: PriceSnapshot = await snapshot.json();
-        const price = data[skinId]?.[wear];
-        if (price !== undefined) {
+        const pricePoint = normalizePricePoint(data[skinId]?.[wear]);
+        if (pricePoint) {
+            const price = pickPriceForSide(pricePoint, side);
+            if (price === null || price <= 0) {
+                return null;
+            }
+
             // Background populate KV cache (1 hour TTL)
             await env.PRICE_CACHE.put(key, price.toString(), { expirationTtl: 3600 });
             return price;
@@ -63,6 +109,18 @@ export async function getCachedPrice(
     }
 
     return null;
+}
+
+/**
+ * Backward-compatible default accessor.
+ * Defaults to sell-side (min/most conservative realized value).
+ */
+export async function getCachedPrice(
+    env: CloudflareEnv,
+    skinId: string,
+    wear: Wear,
+): Promise<number | null> {
+    return getCachedPriceBySide(env, skinId, wear, "sell");
 }
 
 /**

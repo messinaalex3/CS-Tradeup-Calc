@@ -2,7 +2,7 @@ import type { Rarity, Skin, TradeupInput, Wear } from "../types";
 import { WEAR_FLOAT_RANGES } from "../types";
 import { SKINS } from "../catalog";
 import { evaluateTradeup } from "./ev";
-import { calculateOutputPool } from "./pool";
+import { calculateOutputPool, getOutputRarity } from "./pool";
 import { floatToWear } from "./float";
 
 /**
@@ -79,6 +79,221 @@ function pickRepresentativeSkins(skins: Skin[], maxCount: number): Skin[] {
   }
 
   return reps;
+}
+
+function getWearMidFloat(wear: Wear): number {
+  const [wearMin, wearMax] = WEAR_FLOAT_RANGES[wear];
+  return (wearMin + wearMax) / 2;
+}
+
+function pickCheapestSkinsByWear(
+  skins: Skin[],
+  wear: Wear,
+  priceBySkinWear: Map<string, number>,
+  maxCount: number,
+): Skin[] {
+  return [...skins]
+    .sort((a, b) => {
+      const pa = priceBySkinWear.get(`${a.id}:${wear}`) ?? Number.POSITIVE_INFINITY;
+      const pb = priceBySkinWear.get(`${b.id}:${wear}`) ?? Number.POSITIVE_INFINITY;
+      return pa - pb;
+    })
+    .slice(0, maxCount);
+}
+
+async function generateOutputAwareCandidates(
+  rarity: Rarity,
+  getInputPrice: (skinId: string, wear: Wear) => Promise<number | null>,
+  getOutputPrice: (skinId: string, wear: Wear) => Promise<number | null>,
+): Promise<TradeupInput[][]> {
+  const outputRarity = getOutputRarity(rarity);
+  if (!outputRarity) return [];
+
+  const inputSkins = SKINS.filter((s) => s.rarity === rarity);
+  const outputSkins = SKINS.filter((s) => s.rarity === outputRarity);
+  if (inputSkins.length === 0 || outputSkins.length === 0) return [];
+
+  const targetWears: Wear[] = ["FN", "MW", "FT"];
+  const candidates: TradeupInput[][] = [];
+  const seen = new Set<string>();
+  const addCandidate = (inputs: TradeupInput[]) => {
+    const key = getContractKey(inputs);
+    if (seen.has(key)) return;
+    seen.add(key);
+    candidates.push(inputs);
+  };
+
+  const inputByCollection = new Map<string, Skin[]>();
+  for (const skin of inputSkins) {
+    const list = inputByCollection.get(skin.collectionId) ?? [];
+    list.push(skin);
+    inputByCollection.set(skin.collectionId, list);
+  }
+
+  const outputByCollection = new Map<string, Skin[]>();
+  for (const skin of outputSkins) {
+    const list = outputByCollection.get(skin.collectionId) ?? [];
+    list.push(skin);
+    outputByCollection.set(skin.collectionId, list);
+  }
+
+  const candidateCollectionIds = [...inputByCollection.keys()].filter((cid) => outputByCollection.has(cid));
+  if (candidateCollectionIds.length === 0) return [];
+
+  const inputPriceBySkinWear = new Map<string, number>();
+  const outputPriceBySkinWear = new Map<string, number>();
+  await Promise.all(
+    inputSkins.flatMap((skin) =>
+      targetWears.map(async (wear) => {
+        const price = await getInputPrice(skin.id, wear);
+        if (price != null && price > 0) {
+          inputPriceBySkinWear.set(`${skin.id}:${wear}`, price);
+        }
+      }),
+    ),
+  );
+
+  await Promise.all(
+    outputSkins.flatMap((skin) =>
+      targetWears.map(async (wear) => {
+        const price = await getOutputPrice(skin.id, wear);
+        if (price != null && price > 0) {
+          outputPriceBySkinWear.set(`${skin.id}:${wear}`, price);
+        }
+      }),
+    ),
+  );
+
+  const COLLECTIONS_PER_WEAR = 12;
+  const MAX_OUTPUT_AWARE_CANDIDATES_PER_WEAR = 280;
+  for (const wear of targetWears) {
+    const midFloat = getWearMidFloat(wear);
+
+    const scoredCollections = candidateCollectionIds
+      .map((collectionId) => {
+        const inputs = inputByCollection.get(collectionId) ?? [];
+        const outputs = outputByCollection.get(collectionId) ?? [];
+        if (inputs.length === 0 || outputs.length === 0) return null;
+
+        const cheapestInput = pickCheapestSkinsByWear(inputs, wear, inputPriceBySkinWear, 1)[0];
+        if (!cheapestInput) return null;
+
+        const cheapestInputPrice = inputPriceBySkinWear.get(`${cheapestInput.id}:${wear}`);
+        if (!cheapestInputPrice || cheapestInputPrice <= 0) return null;
+
+        const outputPrices = outputs
+          .map((s) => outputPriceBySkinWear.get(`${s.id}:${wear}`))
+          .filter((p): p is number => p != null && p > 0)
+          .sort((a, b) => b - a);
+        if (outputPrices.length === 0) return null;
+
+        const topSlice = outputPrices.slice(0, Math.min(3, outputPrices.length));
+        const outputScore = topSlice.reduce((sum, p) => sum + p, 0) / topSlice.length;
+        const quality = outputScore / cheapestInputPrice;
+
+        return {
+          collectionId,
+          quality,
+          cheapestInput,
+          inputPool: pickCheapestSkinsByWear(inputs, wear, inputPriceBySkinWear, 2),
+        };
+      })
+      .filter((v): v is {
+        collectionId: string;
+        quality: number;
+        cheapestInput: Skin;
+        inputPool: Skin[];
+      } => v !== null)
+      .sort((a, b) => b.quality - a.quality)
+      .slice(0, COLLECTIONS_PER_WEAR);
+
+    if (scoredCollections.length === 0) continue;
+
+    let addedForWear = 0;
+    const addAndCount = (inputs: TradeupInput[]) => {
+      const before = candidates.length;
+      addCandidate(inputs);
+      if (candidates.length > before) addedForWear++;
+    };
+
+    // A) Pure focused contracts from strongest collections.
+    for (const coll of scoredCollections.slice(0, 8)) {
+      const input = coll.cheapestInput;
+      const inputFloat = clampToSkinRange(midFloat, input.minFloat, input.maxFloat);
+      addAndCount(Array.from({ length: 10 }, () => ({ skinId: input.id, float: inputFloat })));
+      if (addedForWear >= MAX_OUTPUT_AWARE_CANDIDATES_PER_WEAR) break;
+    }
+
+    // B) Pair splits from top collections. These intentionally weight strong collections.
+    const pairSplits: Array<[number, number]> = [
+      [9, 1],
+      [8, 2],
+      [7, 3],
+      [6, 4],
+      [5, 5],
+    ];
+    for (let i = 0; i < scoredCollections.length; i++) {
+      for (let j = i + 1; j < scoredCollections.length; j++) {
+        const a = scoredCollections[i];
+        const b = scoredCollections[j];
+
+        for (const skinA of a.inputPool) {
+          for (const skinB of b.inputPool) {
+            const floatA = clampToSkinRange(midFloat, skinA.minFloat, skinA.maxFloat);
+            const floatB = clampToSkinRange(midFloat, skinB.minFloat, skinB.maxFloat);
+
+            for (const [countA, countB] of pairSplits) {
+              addAndCount([
+                ...Array.from({ length: countA }, () => ({ skinId: skinA.id, float: floatA })),
+                ...Array.from({ length: countB }, () => ({ skinId: skinB.id, float: floatB })),
+              ]);
+              if (addedForWear >= MAX_OUTPUT_AWARE_CANDIDATES_PER_WEAR) break;
+            }
+
+            if (addedForWear >= MAX_OUTPUT_AWARE_CANDIDATES_PER_WEAR) break;
+          }
+          if (addedForWear >= MAX_OUTPUT_AWARE_CANDIDATES_PER_WEAR) break;
+        }
+        if (addedForWear >= MAX_OUTPUT_AWARE_CANDIDATES_PER_WEAR) break;
+      }
+      if (addedForWear >= MAX_OUTPUT_AWARE_CANDIDATES_PER_WEAR) break;
+    }
+
+    // C) Tri-collection contracts to spread output odds while preserving quality.
+    const tripleSplits: Array<[number, number, number]> = [
+      [6, 2, 2],
+      [5, 3, 2],
+      [4, 3, 3],
+    ];
+    for (let i = 0; i < scoredCollections.length; i++) {
+      for (let j = i + 1; j < scoredCollections.length; j++) {
+        for (let k = j + 1; k < scoredCollections.length; k++) {
+          const a = scoredCollections[i].cheapestInput;
+          const b = scoredCollections[j].cheapestInput;
+          const c = scoredCollections[k].cheapestInput;
+
+          const floatA = clampToSkinRange(midFloat, a.minFloat, a.maxFloat);
+          const floatB = clampToSkinRange(midFloat, b.minFloat, b.maxFloat);
+          const floatC = clampToSkinRange(midFloat, c.minFloat, c.maxFloat);
+
+          for (const [countA, countB, countC] of tripleSplits) {
+            addAndCount([
+              ...Array.from({ length: countA }, () => ({ skinId: a.id, float: floatA })),
+              ...Array.from({ length: countB }, () => ({ skinId: b.id, float: floatB })),
+              ...Array.from({ length: countC }, () => ({ skinId: c.id, float: floatC })),
+            ]);
+            if (addedForWear >= MAX_OUTPUT_AWARE_CANDIDATES_PER_WEAR) break;
+          }
+
+          if (addedForWear >= MAX_OUTPUT_AWARE_CANDIDATES_PER_WEAR) break;
+        }
+        if (addedForWear >= MAX_OUTPUT_AWARE_CANDIDATES_PER_WEAR) break;
+      }
+      if (addedForWear >= MAX_OUTPUT_AWARE_CANDIDATES_PER_WEAR) break;
+    }
+  }
+
+  return candidates;
 }
 
 /** Utility to generate a unique key for a contract based on its inputs. */
@@ -303,21 +518,37 @@ export function generateCandidates(rarity: Rarity): TradeupInput[][] {
  * @param rarities    Subset of rarities to scan (defaults to SCANNABLE_RARITIES).
  */
 export async function computeProfitableContracts(
-  priceGetter: (skinId: string, wear: Wear) => Promise<number | null>,
+  getInputPrice: (skinId: string, wear: Wear) => Promise<number | null>,
+  getOutputPrice: (skinId: string, wear: Wear) => Promise<number | null>,
   onUpdate?: (contracts: ProfitableContract[]) => Promise<void>,
   rarities: Rarity[] = SCANNABLE_RARITIES,
 ): Promise<ProfitableContract[]> {
-  const priceMemo = new Map<string, Promise<number | null>>();
-  const memoizedPriceGetter = (skinId: string, wear: Wear): Promise<number | null> => {
+  const inputPriceMemo = new Map<string, Promise<number | null>>();
+  const outputPriceMemo = new Map<string, Promise<number | null>>();
+
+  const memoizedInputPriceGetter = (skinId: string, wear: Wear): Promise<number | null> => {
     const key = `${skinId}:${wear}`;
-    const cached = priceMemo.get(key);
+    const cached = inputPriceMemo.get(key);
     if (cached) return cached;
 
-    const pending = priceGetter(skinId, wear).catch((err) => {
-      priceMemo.delete(key);
+    const pending = getInputPrice(skinId, wear).catch((err) => {
+      inputPriceMemo.delete(key);
       throw err;
     });
-    priceMemo.set(key, pending);
+    inputPriceMemo.set(key, pending);
+    return pending;
+  };
+
+  const memoizedOutputPriceGetter = (skinId: string, wear: Wear): Promise<number | null> => {
+    const key = `${skinId}:${wear}`;
+    const cached = outputPriceMemo.get(key);
+    if (cached) return cached;
+
+    const pending = getOutputPrice(skinId, wear).catch((err) => {
+      outputPriceMemo.delete(key);
+      throw err;
+    });
+    outputPriceMemo.set(key, pending);
     return pending;
   };
 
@@ -329,9 +560,21 @@ export async function computeProfitableContracts(
   const allProfitable: ProfitableContract[] = [];
 
   for (const rarity of rarities) {
-    const candidates = generateCandidates(rarity);
+    const baseCandidates = generateCandidates(rarity);
+    const outputAwareCandidates = await generateOutputAwareCandidates(
+      rarity,
+      memoizedInputPriceGetter,
+      memoizedOutputPriceGetter,
+    );
+    const mergedByKey = new Map<string, TradeupInput[]>();
+    for (const candidate of [...baseCandidates, ...outputAwareCandidates]) {
+      mergedByKey.set(getContractKey(candidate), candidate);
+    }
+    const candidates = [...mergedByKey.values()];
+
     console.log(
-      `[scanner] Rarity "${rarity}": ${candidates.length} candidate(s) to evaluate`,
+      `[scanner] Rarity "${rarity}": ${candidates.length} candidate(s) to evaluate ` +
+      `(base=${baseCandidates.length}, output-aware=${outputAwareCandidates.length})`,
     );
 
     let evaluated = 0;
@@ -343,7 +586,7 @@ export async function computeProfitableContracts(
 
     // Process candidates in chunks to parallelize API requests (prices)
     // while keeping the logs readable and not overwhelming the runtime.
-    const CHUNK_SIZE = 10;
+    const CHUNK_SIZE = 25;
     const UPDATE_EVERY_CHUNKS = 25;
     for (let i = 0; i < candidates.length; i += CHUNK_SIZE) {
       const chunk = candidates.slice(i, i + CHUNK_SIZE);
@@ -353,15 +596,19 @@ export async function computeProfitableContracts(
           const outputPool = calculateOutputPool(inputs);
           if (outputPool.length === 0) return { type: "no-pool" as const };
 
-          const result = await evaluateTradeup(inputs, memoizedPriceGetter);
+          const result = await evaluateTradeup(
+            inputs,
+            memoizedInputPriceGetter,
+            memoizedOutputPriceGetter,
+          );
           if (!result.valid || result.totalCost <= 0) return { type: "invalid" as const };
           if (result.roi < MIN_ROI) return { type: "below-roi" as const };
 
-          // Look up prices again for input metadata; they are guaranteed cached by evaluateTradeup
+          // Look up buy prices again for input metadata; they are guaranteed cached by evaluateTradeup
           const inputsWithPrices = await Promise.all(inputs.map(async (inp) => {
             const skin = SKINS.find((s) => s.id === inp.skinId);
             const wear = floatToWear(inp.float);
-            const price = await memoizedPriceGetter(inp.skinId, wear);
+            const price = await memoizedInputPriceGetter(inp.skinId, wear);
             return {
               skinId: inp.skinId,
               skinName: skin?.name ?? inp.skinId,

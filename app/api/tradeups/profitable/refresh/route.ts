@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import type { Wear } from "@/lib/types";
-import { getBestPrice } from "@/lib/pricing";
+import { getBuyPrice, getSellPrice } from "@/lib/pricing";
 import {
   type CloudflareEnv,
   getCachedProfitableTradeups,
@@ -16,6 +16,7 @@ import {
 
 const INCREMENTAL_WRITE_MIN_INTERVAL_MS = 15000;
 const MAX_KV_RETRIES = 5;
+const MAX_CONTRACTS_TO_CACHE = 4000;
 
 function sleep(ms: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -24,6 +25,22 @@ function sleep(ms: number): Promise<void> {
 function isLikelyRateLimitError(error: unknown): boolean {
   const msg = error instanceof Error ? error.message : String(error);
   return /429|rate.?limit|too many/i.test(msg);
+}
+
+function isLikelyPayloadTooLargeError(error: unknown): boolean {
+  const msg = error instanceof Error ? error.message : String(error);
+  return /413|payload too large|too large|max(imum)? size|value.*exceeds/i.test(msg);
+}
+
+function sortContractsForCache(contracts: ProfitableContract[]): ProfitableContract[] {
+  return [...contracts].sort((a, b) => {
+    if (a.guaranteedProfit && !b.guaranteedProfit) return -1;
+    if (!a.guaranteedProfit && b.guaranteedProfit) return 1;
+    if (b.chanceToProfit !== a.chanceToProfit) {
+      return b.chanceToProfit - a.chanceToProfit;
+    }
+    return b.roi - a.roi;
+  });
 }
 
 async function writeTradeupsWithBackoff(
@@ -49,6 +66,45 @@ async function writeTradeupsWithBackoff(
       await sleep(backoffMs);
     }
   }
+}
+
+async function writeContractsToCacheSafely(
+  env: CloudflareEnv,
+  allContracts: ProfitableContract[],
+  cachedAt: string,
+  phase: "incremental" | "final",
+): Promise<number> {
+  const sorted = sortContractsForCache(allContracts);
+  let writeCount = Math.min(sorted.length, MAX_CONTRACTS_TO_CACHE);
+
+  while (writeCount > 0) {
+    const payload: TradeupCachePayload = {
+      contracts: sorted.slice(0, writeCount),
+      cachedAt,
+    };
+
+    try {
+      await writeTradeupsWithBackoff(env, payload);
+      if (writeCount < sorted.length) {
+        console.warn(
+          `[refresh] ${phase} cache write stored top ${writeCount}/${sorted.length} contract(s) to stay within KV limits.`,
+        );
+      }
+      return writeCount;
+    } catch (error) {
+      if (!isLikelyPayloadTooLargeError(error) || writeCount === 1) {
+        throw error;
+      }
+
+      const nextCount = Math.max(1, Math.floor(writeCount * 0.75));
+      console.warn(
+        `[refresh] ${phase} cache payload likely too large at ${writeCount} contracts, retrying with ${nextCount}.`,
+      );
+      writeCount = nextCount;
+    }
+  }
+
+  return 0;
 }
 
 /**
@@ -94,8 +150,10 @@ export async function GET(request: NextRequest) {
   });
 
   try {
-    const priceGetter = (skinId: string, wear: Wear) =>
-      getBestPrice(skinId, wear, env);
+    const inputPriceGetter = (skinId: string, wear: Wear) =>
+      getBuyPrice(skinId, wear, env);
+    const outputPriceGetter = (skinId: string, wear: Wear) =>
+      getSellPrice(skinId, wear, env);
 
     // 1. Fetch existing cache to enable "merged" updates (overwrite by combination key)
     const cached = await getCachedProfitableTradeups(env);
@@ -134,17 +192,25 @@ export async function GET(request: NextRequest) {
 
       console.log(`[refresh] Incremental update: ${mergedList.length} total contracts (${newlyFound.length} new/updated in this batch)`);
 
-      const payload: TradeupCachePayload = {
-        contracts: mergedList,
-        cachedAt: new Date().toISOString(),
-      };
-      await writeTradeupsWithBackoff(env, payload);
-      lastIncrementalWriteAt = now;
-      lastWrittenContractCount = mergedList.length;
+      try {
+        await writeContractsToCacheSafely(
+          env,
+          mergedList,
+          new Date().toISOString(),
+          "incremental",
+        );
+        lastIncrementalWriteAt = now;
+        lastWrittenContractCount = mergedList.length;
+      } catch (error) {
+        console.error(
+          `[refresh] Incremental cache write failed; continuing scan. ${error instanceof Error ? error.message : String(error)}`,
+        );
+      }
     };
 
     const runResults = await computeProfitableContracts(
-      priceGetter,
+      inputPriceGetter,
+      outputPriceGetter,
       onUpdate,
     );
 
@@ -155,13 +221,17 @@ export async function GET(request: NextRequest) {
 
     const finalMerged = [...contractMap.values()];
     const cachedAt = new Date().toISOString();
-    const payload: TradeupCachePayload = { contracts: finalMerged, cachedAt };
-
-    await writeTradeupsWithBackoff(env, payload);
+    const persistedCount = await writeContractsToCacheSafely(
+      env,
+      finalMerged,
+      cachedAt,
+      "final",
+    );
 
     return NextResponse.json({
       success: true,
-      totalContractsStored: finalMerged.length,
+      totalContractsStored: persistedCount,
+      totalContractsFound: finalMerged.length,
       newlyFoundInThisRun: runResults.length,
       cachedAt,
     });

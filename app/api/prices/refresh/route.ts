@@ -13,6 +13,8 @@ interface SkinportItem {
     suggested_price: number | null;
     /** Lowest current Skinport listing price in USD */
     min_price: number | null;
+    /** Highest current Skinport listing price in USD */
+    max_price: number | null;
     /** Average sales/listing price */
     mean_price: number | null;
     quantity: number;
@@ -78,16 +80,25 @@ export async function GET(request: NextRequest) {
             continue;
         }
 
-        // Use mean_price as requested (Skinport API provides this as an average of sales/listings)
-        // Fall back to suggested_price if mean_price is missing.
-        const price = item.mean_price ?? item.suggested_price ?? item.min_price;
-        if (!price || price <= 0) {
+        const hasAnyPrice = [
+            item.min_price,
+            item.max_price,
+            item.mean_price,
+            item.suggested_price,
+        ].some((p) => p !== null && p > 0);
+
+        if (!hasAnyPrice) {
             ignoredNoPrice++;
             continue;
         }
 
         if (!snapshot[entry.skinId]) snapshot[entry.skinId] = {};
-        snapshot[entry.skinId]![entry.wear] = price;
+        snapshot[entry.skinId]![entry.wear] = {
+            minPrice: item.min_price,
+            maxPrice: item.max_price,
+            meanPrice: item.mean_price,
+            suggestedPrice: item.suggested_price,
+        };
         matched++;
     }
 

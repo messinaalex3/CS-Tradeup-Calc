@@ -106,6 +106,8 @@ export interface PriceData {
   wear: Wear;
   lowestPrice: number | null;
   medianPrice: number | null;
+  minPrice: number | null;
+  maxPrice: number | null;
   volume: number | null;
   currency: string;
   fetchedAt: string;

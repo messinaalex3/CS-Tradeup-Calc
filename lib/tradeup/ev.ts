@@ -17,8 +17,11 @@ import {
  */
 export async function evaluateTradeup(
   inputs: TradeupInput[],
-  getPrice: (skinId: string, wear: Wear) => Promise<number | null>,
+  getInputPrice: (skinId: string, wear: Wear) => Promise<number | null>,
+  getOutputPrice?: (skinId: string, wear: Wear) => Promise<number | null>,
 ): Promise<EvaluationResult> {
+  const outputPriceGetter = getOutputPrice ?? getInputPrice;
+
   // Validate inputs
   const validation = validateInputs(inputs);
   if (!validation.valid) {
@@ -42,7 +45,7 @@ export async function evaluateTradeup(
     const skin = SKINS.find((s) => s.id === input.skinId);
     if (!skin) continue;
     const wear = floatToWear(input.float);
-    const price = await getPrice(input.skinId, wear);
+    const price = await getInputPrice(input.skinId, wear);
 
     // If we can't get a price for any input item, the trade-up cost is unknown
     if (price === null || price <= 0) {
@@ -101,7 +104,7 @@ export async function evaluateTradeup(
       skin.maxFloat,
     );
     const wear = floatToWear(outputFloat);
-    const price = await getPrice(skin.id, wear);
+    const price = await outputPriceGetter(skin.id, wear);
 
     outputs.push({
       skinId: skin.id,
