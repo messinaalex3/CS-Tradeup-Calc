@@ -142,23 +142,34 @@ async function generateOutputAwareCandidates(
 
   const inputPriceBySkinWear = new Map<string, number>();
   const outputPriceBySkinWear = new Map<string, number>();
-  await Promise.all(
+
+  // Use allSettled so a single failed KV/R2 read does not abort the entire
+  // prefetch batch — missing prices are simply omitted from scoring.
+  await Promise.allSettled(
     inputSkins.flatMap((skin) =>
       targetWears.map(async (wear) => {
-        const price = await getInputPrice(skin.id, wear);
-        if (price != null && price > 0) {
-          inputPriceBySkinWear.set(`${skin.id}:${wear}`, price);
+        try {
+          const price = await getInputPrice(skin.id, wear);
+          if (price != null && price > 0) {
+            inputPriceBySkinWear.set(`${skin.id}:${wear}`, price);
+          }
+        } catch {
+          // Transient failure — skip this skin/wear; scoring will omit it.
         }
       }),
     ),
   );
 
-  await Promise.all(
+  await Promise.allSettled(
     outputSkins.flatMap((skin) =>
       targetWears.map(async (wear) => {
-        const price = await getOutputPrice(skin.id, wear);
-        if (price != null && price > 0) {
-          outputPriceBySkinWear.set(`${skin.id}:${wear}`, price);
+        try {
+          const price = await getOutputPrice(skin.id, wear);
+          if (price != null && price > 0) {
+            outputPriceBySkinWear.set(`${skin.id}:${wear}`, price);
+          }
+        } catch {
+          // Transient failure — skip this skin/wear; scoring will omit it.
         }
       }),
     ),
@@ -531,9 +542,12 @@ export async function computeProfitableContracts(
     const cached = inputPriceMemo.get(key);
     if (cached) return cached;
 
+    // On error return null (price unavailable) — do NOT evict the key so a
+    // second caller for the same skin/wear reuses this settled null instead of
+    // firing another KV read and multiplying connection pressure.
     const pending = getInputPrice(skinId, wear).catch((err) => {
-      inputPriceMemo.delete(key);
-      throw err;
+      console.warn(`[scanner] Input price fetch failed for ${skinId}:${wear} — ${err instanceof Error ? err.message : String(err)}`);
+      return null;
     });
     inputPriceMemo.set(key, pending);
     return pending;
@@ -545,8 +559,8 @@ export async function computeProfitableContracts(
     if (cached) return cached;
 
     const pending = getOutputPrice(skinId, wear).catch((err) => {
-      outputPriceMemo.delete(key);
-      throw err;
+      console.warn(`[scanner] Output price fetch failed for ${skinId}:${wear} — ${err instanceof Error ? err.message : String(err)}`);
+      return null;
     });
     outputPriceMemo.set(key, pending);
     return pending;
@@ -679,7 +693,11 @@ export async function computeProfitableContracts(
 
       // Periodically update cache if we found new contracts
       if (onUpdate && i > 0 && Math.floor(i / CHUNK_SIZE) % UPDATE_EVERY_CHUNKS === 0) {
-        await onUpdate([...allProfitable].sort((a, b) => b.roi - a.roi));
+        try {
+          await onUpdate([...allProfitable].sort((a, b) => b.roi - a.roi));
+        } catch (err) {
+          console.error(`[scanner] onUpdate (periodic) failed — continuing scan: ${err instanceof Error ? err.message : String(err)}`);
+        }
       }
     }
 
@@ -691,7 +709,11 @@ export async function computeProfitableContracts(
 
     // Final update for this rarity
     if (onUpdate) {
-      await onUpdate([...allProfitable].sort((a, b) => b.roi - a.roi));
+      try {
+        await onUpdate([...allProfitable].sort((a, b) => b.roi - a.roi));
+      } catch (err) {
+        console.error(`[scanner] onUpdate (rarity boundary) failed — continuing scan: ${err instanceof Error ? err.message : String(err)}`);
+      }
     }
   }
 
