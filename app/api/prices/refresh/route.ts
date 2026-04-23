@@ -1,8 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
-import { SKINS } from "@/lib/catalog";
 import { WEAR_LABELS, type Wear } from "@/lib/types";
 import { updatePriceSnapshot, type PriceSnapshot, type CloudflareEnv } from "@/lib/storage";
 import { getCloudflareContext } from "@opennextjs/cloudflare";
+import { loadCatalog } from "@/lib/catalog/dynamic";
 
 const SKINPORT_API = "https://api.skinport.com/v1/items?app_id=730&currency=USD&tradable=0";
 const WEARS: Wear[] = ["FN", "MW", "FT", "WW", "BS"];
@@ -36,10 +36,15 @@ export async function GET(request: NextRequest) {
         return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
 
+    const { env: rawEnv } = await getCloudflareContext();
+    const env = rawEnv as unknown as CloudflareEnv;
+
+    const { skins } = await loadCatalog(env);
+
     // Build a reverse-lookup: "AK-47 | Redline (Field-Tested)" → { skinId, wear }
     console.log("[refresh] Building reverse-lookup map from catalog...");
     const hashToEntry = new Map<string, { skinId: string; wear: Wear }>();
-    for (const skin of SKINS) {
+    for (const skin of skins) {
         for (const wear of WEARS) {
             hashToEntry.set(`${skin.name} (${WEAR_LABELS[wear]})`, { skinId: skin.id, wear });
         }
@@ -106,9 +111,6 @@ export async function GET(request: NextRequest) {
         `[refresh] Processing done in ${Date.now() - processStart}ms — ` +
         `${matched} prices matched, ${ignoredNoMatch} items ignored (no catalog match), ${ignoredNoPrice} items ignored (missing prices).`
     );
-
-    const { env: rawEnv } = await getCloudflareContext();
-    const env = rawEnv as unknown as CloudflareEnv;
 
     try {
         console.log("[refresh] Updating price snapshot in R2 storage...");

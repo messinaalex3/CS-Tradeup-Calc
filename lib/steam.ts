@@ -1,6 +1,6 @@
-import type { Wear } from "./types";
+import type { Skin, Wear } from "./types";
 import { WEAR_LABELS } from "./types";
-import { SKINS } from "./catalog";
+import { SKINS as STATIC_SKINS } from "./catalog";
 
 /** Default float values by wear (midpoint of each float range). */
 export const WEAR_DEFAULT_FLOATS: Record<Wear, number> = {
@@ -98,6 +98,7 @@ interface SteamDescription {
  */
 export async function fetchAndMatchInventory(
   steamId: string,
+  skins: Skin[] = STATIC_SKINS,
 ): Promise<{ matched: MatchedInventoryItem[]; totalSteamItems: number }> {
   const url =
     `https://steamcommunity.com/inventory/${steamId}/730/2?l=english&count=5000`;
@@ -149,7 +150,7 @@ export async function fetchAndMatchInventory(
   // Build a reverse-lookup for catalog matching:
   // "AK-47 | Redline (Field-Tested)" → { skinId, wear }
   const hashToEntry = new Map<string, { skinId: string; wear: Wear }>();
-  for (const skin of SKINS) {
+  for (const skin of skins) {
     for (const [wear, label] of Object.entries(WEAR_LABELS) as [Wear, string][]) {
       hashToEntry.set(`${skin.name} (${label})`, { skinId: skin.id, wear });
     }

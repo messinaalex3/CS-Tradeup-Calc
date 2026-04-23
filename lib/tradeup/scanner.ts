@@ -1,6 +1,6 @@
 import type { Rarity, Skin, TradeupInput, Wear } from "../types";
 import { WEAR_FLOAT_RANGES } from "../types";
-import { SKINS } from "../catalog";
+import { SKINS as STATIC_SKINS } from "../catalog";
 import { evaluateTradeup } from "./ev";
 import { calculateOutputPool, getOutputRarity } from "./pool";
 import { floatToWear } from "./float";
@@ -105,12 +105,13 @@ async function generateOutputAwareCandidates(
   rarity: Rarity,
   getInputPrice: (skinId: string, wear: Wear) => Promise<number | null>,
   getOutputPrice: (skinId: string, wear: Wear) => Promise<number | null>,
+  skins: Skin[] = STATIC_SKINS,
 ): Promise<TradeupInput[][]> {
   const outputRarity = getOutputRarity(rarity);
   if (!outputRarity) return [];
 
-  const inputSkins = SKINS.filter((s) => s.rarity === rarity);
-  const outputSkins = SKINS.filter((s) => s.rarity === outputRarity);
+  const inputSkins = skins.filter((s) => s.rarity === rarity);
+  const outputSkins = skins.filter((s) => s.rarity === outputRarity);
   if (inputSkins.length === 0 || outputSkins.length === 0) return [];
 
   const targetWears: Wear[] = ["FN", "MW", "FT"];
@@ -325,8 +326,8 @@ export function getContractKey(inputs: TradeupInput[]): string {
  * Strategy 2 – 5 + 5 split across two skins from different collections.
  * Strategy 3 – 1 Target + 9 Cheap Fillers (High ROI gamble).
  */
-export function generateCandidates(rarity: Rarity): TradeupInput[][] {
-  const skinsOfRarity = SKINS.filter((s) => s.rarity === rarity);
+export function generateCandidates(rarity: Rarity, skins: Skin[] = STATIC_SKINS): TradeupInput[][] {
+  const skinsOfRarity = skins.filter((s) => s.rarity === rarity);
   const candidates: TradeupInput[][] = [];
   const seen = new Set<string>();
   const MAX_COLLECTION_REPRESENTATIVES = 3;
@@ -532,6 +533,7 @@ export async function computeProfitableContracts(
   getInputPrice: (skinId: string, wear: Wear) => Promise<number | null>,
   getOutputPrice: (skinId: string, wear: Wear) => Promise<number | null>,
   onUpdate?: (contracts: ProfitableContract[]) => Promise<void>,
+  skins: Skin[] = STATIC_SKINS,
   rarities: Rarity[] = SCANNABLE_RARITIES,
 ): Promise<ProfitableContract[]> {
   const inputPriceMemo = new Map<string, Promise<number | null>>();
@@ -574,11 +576,12 @@ export async function computeProfitableContracts(
   const allProfitable: ProfitableContract[] = [];
 
   for (const rarity of rarities) {
-    const baseCandidates = generateCandidates(rarity);
+    const baseCandidates = generateCandidates(rarity, skins);
     const outputAwareCandidates = await generateOutputAwareCandidates(
       rarity,
       memoizedInputPriceGetter,
       memoizedOutputPriceGetter,
+      skins,
     );
     const mergedByKey = new Map<string, TradeupInput[]>();
     for (const candidate of [...baseCandidates, ...outputAwareCandidates]) {
@@ -607,20 +610,21 @@ export async function computeProfitableContracts(
 
       const results = await Promise.all(chunk.map(async (inputs) => {
         try {
-          const outputPool = calculateOutputPool(inputs);
+          const outputPool = calculateOutputPool(inputs, skins);
           if (outputPool.length === 0) return { type: "no-pool" as const };
 
           const result = await evaluateTradeup(
             inputs,
             memoizedInputPriceGetter,
             memoizedOutputPriceGetter,
+            skins,
           );
           if (!result.valid || result.totalCost <= 0) return { type: "invalid" as const };
           if (result.roi < MIN_ROI) return { type: "below-roi" as const };
 
           // Look up buy prices again for input metadata; they are guaranteed cached by evaluateTradeup
           const inputsWithPrices = await Promise.all(inputs.map(async (inp) => {
-            const skin = SKINS.find((s) => s.id === inp.skinId);
+            const skin = skins.find((s) => s.id === inp.skinId);
             const wear = floatToWear(inp.float);
             const price = await memoizedInputPriceGetter(inp.skinId, wear);
             return {

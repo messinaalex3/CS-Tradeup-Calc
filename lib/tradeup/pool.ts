@@ -1,6 +1,6 @@
-import type { Rarity, TradeupInput, OutputItem } from "../types";
+import type { Rarity, Skin, TradeupInput, OutputItem } from "../types";
 import { RARITY_ORDER } from "../types";
-import { SKINS } from "../catalog";
+import { SKINS as STATIC_SKINS } from "../catalog";
 
 export interface ValidationResult {
   valid: boolean;
@@ -20,13 +20,13 @@ export function getOutputRarity(inputRarity: Rarity): Rarity | null {
 /**
  * Validate trade-up inputs.
  */
-export function validateInputs(inputs: TradeupInput[]): ValidationResult {
+export function validateInputs(inputs: TradeupInput[], skins: Skin[] = STATIC_SKINS): ValidationResult {
   if (inputs.length !== 10) {
     return { valid: false, error: "Trade-ups require exactly 10 input items." };
   }
 
   const rarities = new Set(inputs.map((i) => {
-    const skin = SKINS.find((s) => s.id === i.skinId);
+    const skin = skins.find((s) => s.id === i.skinId);
     return skin?.rarity;
   }));
 
@@ -62,12 +62,12 @@ export function validateInputs(inputs: TradeupInput[]): ValidationResult {
  * - Probability of each output = (count of inputs from that output item's
  *   collection) / 10
  */
-export function calculateOutputPool(inputs: TradeupInput[]): OutputItem[] {
-  const validation = validateInputs(inputs);
+export function calculateOutputPool(inputs: TradeupInput[], skins: Skin[] = STATIC_SKINS): OutputItem[] {
+  const validation = validateInputs(inputs, skins);
   if (!validation.valid) return [];
 
   // Find the input rarity (all inputs have the same rarity)
-  const firstSkin = SKINS.find((s) => s.id === inputs[0].skinId)!;
+  const firstSkin = skins.find((s) => s.id === inputs[0].skinId)!;
   const inputRarity = firstSkin.rarity;
   const outputRarity = getOutputRarity(inputRarity);
   if (!outputRarity) return [];
@@ -75,7 +75,7 @@ export function calculateOutputPool(inputs: TradeupInput[]): OutputItem[] {
   // Count inputs per collection
   const inputCollectionCounts = new Map<string, number>();
   for (const input of inputs) {
-    const skin = SKINS.find((s) => s.id === input.skinId);
+    const skin = skins.find((s) => s.id === input.skinId);
     if (skin) {
       inputCollectionCounts.set(
         skin.collectionId,
@@ -85,7 +85,7 @@ export function calculateOutputPool(inputs: TradeupInput[]): OutputItem[] {
   }
 
   // Find all output-rarity items in the represented collections
-  const outputSkins = SKINS.filter(
+  const outputSkins = skins.filter(
     (s) =>
       s.rarity === outputRarity &&
       inputCollectionCounts.has(s.collectionId),
