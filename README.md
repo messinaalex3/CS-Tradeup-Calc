@@ -95,7 +95,6 @@ Each result card on the `/profitable` page displays:
 
 | Limitation | Detail |
 |---|---|
-| **Small catalog** | The built-in catalog covers 6 collections and ~60 skins. Opportunities outside these collections are not visible. |
 | **Simple candidate strategies** | Only two float values are tried (0.20 for both strategies). A contract at float 0.05 might have a completely different ROI. |
 | **Single-skin inputs only** | Strategy A always uses 10 copies of the *same* skin. Contracts built from 3 or more distinct skins are not generated. |
 | **On-demand scanning** | ~~Results are computed fresh on every page load. There is no background refresh or persistent storage of discovered contracts.~~ **Resolved** — results are now cached in `TRADEUP_CACHE` KV and recomputed in the background via the `/api/tradeups/profitable/refresh` endpoint. |
@@ -104,7 +103,7 @@ Each result card on the `/profitable` page displays:
 
 - **Broader candidate generation** — sweep over multiple float values (e.g. 0.05, 0.15, 0.20, 0.35) and all permutations of 2–4 distinct skins from the same rarity tier to find contracts the current strategies miss.
 - **Exhaustive mixed-input contracts** — enumerate all combinations of *k* distinct skins (k = 2…5) rather than only pairs, giving a much richer search space.
-- **Expand the catalog** — import the full CS2 skin catalog (hundreds of collections) to surface a wider range of opportunities.
+- **Expand the catalog** — ✅ *Implemented.* The catalog now covers 92 collections and ~1 400 weapon skins sourced from the ByMykel CSGO-API. A dynamic catalog loader (`lib/catalog/dynamic.ts`) fetches the latest data on demand and caches it in the `CATALOG_CACHE` KV namespace, so new skins become available without redeploying. The static `lib/catalog.ts` is regenerated weekly by a GitHub Actions workflow.
 - **Background / scheduled scanning** — ✅ *Implemented.* The `/api/tradeups/profitable/refresh` endpoint runs the scanner and stores results in the `TRADEUP_CACHE` KV namespace. Schedule it hourly alongside the price-refresh cron job to keep results up-to-date without any per-request computation overhead.
 - **Multiple price sources** — incorporate additional marketplace prices (e.g. Buff163) to find arbitrage opportunities where buying inputs on one platform and receiving outputs on another is profitable.
 - **StatTrak support** — StatTrak trade-ups have separate price curves; modelling them can reveal additional profitable contracts.
@@ -243,6 +242,8 @@ app/
   calculator/page.tsx             # Trade-up calculator UI
   profitable/page.tsx             # Profitable trade-ups browser
   api/
+    catalog/
+      refresh/route.ts            # GET /api/catalog/refresh  (cron target)
     prices/route.ts               # GET /api/prices?skinId=&wear=
     prices/refresh/route.ts       # GET /api/prices/refresh  (cron target)
     tradeups/evaluate/route.ts    # POST /api/tradeups/evaluate
@@ -251,8 +252,10 @@ app/
       refresh/route.ts            # GET /api/tradeups/profitable/refresh  (cron target)
 lib/
   types.ts                        # Shared TypeScript types
-  catalog.ts                      # CS2 skin catalog (6 collections, 60 skins)
-  storage.ts                      # Cloudflare KV/R2 helpers (prices + tradeup cache)
+  catalog.ts                      # Static CS2 skin catalog (~1 400 skins, 92 collections) — auto-updated weekly by GitHub Actions
+  catalog/
+    dynamic.ts                    # Dynamic catalog loader: KV cache → ByMykel API → static fallback
+  storage.ts                      # Cloudflare KV/R2 helpers (prices, tradeup cache, catalog cache)
   tradeup/
     pool.ts                       # Output pool + probability calculation
     float.ts                      # Float normalization & output float math
@@ -260,6 +263,8 @@ lib/
     scanner.ts                    # Candidate generation + profitable contract scanner
   pricing/
     index.ts                      # Cache-only price lookup (reads from KV/R2)
+scripts/
+  generate_catalog.py             # Regenerate lib/catalog.ts from ByMykel CSGO-API
 ```
 
 ## API
@@ -278,3 +283,8 @@ Returns profitable trade-up contracts sorted by ROI descending. Serves from `TRA
 
 ### `GET /api/tradeups/profitable/refresh`
 Recomputes all profitable contracts and writes them to `TRADEUP_CACHE` KV. Protected by `Authorization: Bearer <CRON_SECRET>` when `CRON_SECRET` is set. Intended to be called on a cron schedule after each price refresh.
+
+### `GET /api/catalog/refresh`
+Fetches the latest skin catalog from the ByMykel CSGO-API, processes it, and stores it in the `CATALOG_CACHE` KV namespace (24-hour TTL). Protected by `Authorization: Bearer <CRON_SECRET>` when `CRON_SECRET` is set. Returns `{ success, collectionsCount, skinsCount, cachedAt }`. After this endpoint is called, all subsequent requests to `/api/tradeups/evaluate`, `/api/tradeups/profitable/refresh`, and `/api/inventory` will use the freshly-cached catalog data instead of the bundled static file.
+
+> **No static catalog required** — the `lib/catalog/dynamic.ts` loader tries the KV cache first, then falls back to a live ByMykel API fetch, then falls back to the bundled `lib/catalog.ts` as a last resort. The static catalog file is regenerated weekly by the `Update Catalog` GitHub Actions workflow.
