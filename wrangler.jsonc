@@ -28,12 +28,10 @@
 		{
 			"binding": "PRICE_CACHE",
 			"id": "77a8a9f449fd4014bb19e60f7a20c0bb",
-			"remote": true
 		},
 		{
 			"binding": "TRADEUP_CACHE",
 			"id": "85fa67d9815d4ad6b2627c21be3a4b85",
-			"remote": true
 		}
 	],
 	"r2_buckets": [

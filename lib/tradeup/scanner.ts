@@ -1,4 +1,4 @@
-import type { Rarity, TradeupInput, Wear } from "../types";
+import type { Rarity, Skin, TradeupInput, Wear } from "../types";
 import { WEAR_FLOAT_RANGES } from "../types";
 import { SKINS } from "../catalog";
 import { evaluateTradeup } from "./ev";
@@ -53,6 +53,34 @@ function clampToSkinRange(value: number, minFloat: number, maxFloat: number): nu
   return Math.max(minFloat, Math.min(maxFloat, value));
 }
 
+function pickRepresentativeSkins(skins: Skin[], maxCount: number): Skin[] {
+  if (skins.length <= maxCount) return skins;
+
+  const reps: Skin[] = [];
+  const seen = new Set<string>();
+  const lastIndex = skins.length - 1;
+
+  for (let i = 0; i < maxCount; i++) {
+    const ratio = maxCount === 1 ? 0 : i / (maxCount - 1);
+    const idx = Math.round(ratio * lastIndex);
+    const skin = skins[idx];
+    if (seen.has(skin.id)) continue;
+    seen.add(skin.id);
+    reps.push(skin);
+  }
+
+  if (reps.length < maxCount) {
+    for (const skin of skins) {
+      if (seen.has(skin.id)) continue;
+      seen.add(skin.id);
+      reps.push(skin);
+      if (reps.length >= maxCount) break;
+    }
+  }
+
+  return reps;
+}
+
 /** Utility to generate a unique key for a contract based on its inputs. */
 export function getContractKey(inputs: TradeupInput[]): string {
   return [...inputs]
@@ -75,6 +103,9 @@ export function generateCandidates(rarity: Rarity): TradeupInput[][] {
   const skinsOfRarity = SKINS.filter((s) => s.rarity === rarity);
   const candidates: TradeupInput[][] = [];
   const seen = new Set<string>();
+  const MAX_COLLECTION_REPRESENTATIVES = 3;
+  const MAX_PAIR_MIX_CANDIDATES = 240;
+  const MAX_TRIPLE_MIX_CANDIDATES = 200;
 
   const addCandidate = (inputs: TradeupInput[]) => {
     const key = getContractKey(inputs);
@@ -83,11 +114,23 @@ export function generateCandidates(rarity: Rarity): TradeupInput[][] {
     candidates.push(inputs);
   };
 
-  // Identify "fillers" for Strategy 3: any skin of this rarity 
-  // (In a real scan, we'd pick the absolute cheapest from the price DB, 
+  // Identify "fillers" for Strategy 3: any skin of this rarity
+  // (In a real scan, we'd pick the absolute cheapest from the price DB,
   // but for candidate generation we'll pick a few common ones)
   const fillerCandidates = skinsOfRarity.slice(0, 8);
   const strategySkins = skinsOfRarity.slice(0, Math.min(12, skinsOfRarity.length));
+  const skinsByCollection = new Map<string, Skin[]>();
+  for (const skin of skinsOfRarity) {
+    const bucket = skinsByCollection.get(skin.collectionId) ?? [];
+    bucket.push(skin);
+    skinsByCollection.set(skin.collectionId, bucket);
+  }
+
+  const collectionGroups = [...skinsByCollection.entries()].map(([collectionId, skins]) => ({
+    collectionId,
+    skins,
+    reps: pickRepresentativeSkins(skins, MAX_COLLECTION_REPRESENTATIVES),
+  }));
 
   // Target midpoints of wear bands to align with mean-by-wear pricing.
   // Using edge-biased floats (e.g. low FT) can overstate value when prices are averaged.
@@ -107,30 +150,84 @@ export function generateCandidates(rarity: Rarity): TradeupInput[][] {
       );
     }
 
-    // Strategy 2: Mix two skins from different collections (5 + 5)
-    const collectionGroups = new Map<string, typeof skinsOfRarity>();
-    for (const skin of skinsOfRarity) {
-      const group = collectionGroups.get(skin.collectionId) ?? [];
-      group.push(skin);
-      collectionGroups.set(skin.collectionId, group);
-    }
-    const groups = [...collectionGroups.values()];
-    for (let i = 0; i < groups.length; i++) {
-      for (let j = i + 1; j < groups.length; j++) {
-        const skinA = groups[i][0];
-        const skinB = groups[j][0];
-        const floatA = clampToSkinRange(targetFloat, skinA.minFloat, skinA.maxFloat);
-        const floatB = clampToSkinRange(targetFloat, skinB.minFloat, skinB.maxFloat);
-        addCandidate([
-          ...Array.from({ length: 5 }, () => ({ skinId: skinA.id, float: floatA })),
-          ...Array.from({ length: 5 }, () => ({ skinId: skinB.id, float: floatB })),
-        ]);
+    // Strategy 2: Mix two skins from different collections (5 + 5), now with representative sampling.
+    let pairMixCount = 0;
+    for (let i = 0; i < collectionGroups.length; i++) {
+      for (let j = i + 1; j < collectionGroups.length; j++) {
+        const groupA = collectionGroups[i];
+        const groupB = collectionGroups[j];
+
+        for (const skinA of groupA.reps) {
+          for (const skinB of groupB.reps) {
+            const floatA = clampToSkinRange(targetFloat, skinA.minFloat, skinA.maxFloat);
+            const floatB = clampToSkinRange(targetFloat, skinB.minFloat, skinB.maxFloat);
+            addCandidate([
+              ...Array.from({ length: 5 }, () => ({ skinId: skinA.id, float: floatA })),
+              ...Array.from({ length: 5 }, () => ({ skinId: skinB.id, float: floatB })),
+            ]);
+
+            // Extra pair split patterns increase diversity while still keeping pair collections.
+            addCandidate([
+              ...Array.from({ length: 6 }, () => ({ skinId: skinA.id, float: floatA })),
+              ...Array.from({ length: 4 }, () => ({ skinId: skinB.id, float: floatB })),
+            ]);
+
+            addCandidate([
+              ...Array.from({ length: 7 }, () => ({ skinId: skinA.id, float: floatA })),
+              ...Array.from({ length: 3 }, () => ({ skinId: skinB.id, float: floatB })),
+            ]);
+
+            pairMixCount += 3;
+            if (pairMixCount >= MAX_PAIR_MIX_CANDIDATES) break;
+          }
+          if (pairMixCount >= MAX_PAIR_MIX_CANDIDATES) break;
+        }
+        if (pairMixCount >= MAX_PAIR_MIX_CANDIDATES) break;
       }
+      if (pairMixCount >= MAX_PAIR_MIX_CANDIDATES) break;
+    }
+
+    // Strategy 2b: Three-way cross-collection blends (4 + 3 + 3) to avoid single-output concentration.
+    let tripleMixCount = 0;
+    for (let i = 0; i < collectionGroups.length; i++) {
+      for (let j = i + 1; j < collectionGroups.length; j++) {
+        for (let k = j + 1; k < collectionGroups.length; k++) {
+          const groupA = collectionGroups[i];
+          const groupB = collectionGroups[j];
+          const groupC = collectionGroups[k];
+
+          const skinA = groupA.reps[0];
+          const skinB = groupB.reps[0];
+          const skinC = groupC.reps[0];
+
+          if (!skinA || !skinB || !skinC) continue;
+
+          const floatA = clampToSkinRange(targetFloat, skinA.minFloat, skinA.maxFloat);
+          const floatB = clampToSkinRange(targetFloat, skinB.minFloat, skinB.maxFloat);
+          const floatC = clampToSkinRange(targetFloat, skinC.minFloat, skinC.maxFloat);
+
+          addCandidate([
+            ...Array.from({ length: 4 }, () => ({ skinId: skinA.id, float: floatA })),
+            ...Array.from({ length: 3 }, () => ({ skinId: skinB.id, float: floatB })),
+            ...Array.from({ length: 3 }, () => ({ skinId: skinC.id, float: floatC })),
+          ]);
+
+          tripleMixCount++;
+          if (tripleMixCount >= MAX_TRIPLE_MIX_CANDIDATES) break;
+        }
+        if (tripleMixCount >= MAX_TRIPLE_MIX_CANDIDATES) break;
+      }
+      if (tripleMixCount >= MAX_TRIPLE_MIX_CANDIDATES) break;
     }
 
     // Strategy 3: 1 Target + 9 Fillers
     for (const targetSkin of skinsOfRarity) {
-      for (const fillerSkin of fillerCandidates) {
+      const crossCollectionFillers = fillerCandidates.filter(
+        (f) => f.collectionId !== targetSkin.collectionId,
+      );
+      const fillerPool = crossCollectionFillers.length > 0 ? crossCollectionFillers : fillerCandidates;
+
+      for (const fillerSkin of fillerPool) {
         if (targetSkin.id === fillerSkin.id) continue;
 
         const floatT = clampToSkinRange(targetFloat, targetSkin.minFloat, targetSkin.maxFloat);
