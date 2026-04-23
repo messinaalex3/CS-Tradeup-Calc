@@ -38,6 +38,15 @@ const VALID_RARITIES = new Set<string>([
   "covert",
 ]);
 
+/** Maximum suffix attempts when making a skin ID unique (e.g. ak-47-redline-2, …-3). */
+const MAX_SKIN_ID_SUFFIX = 200;
+
+/** Maximum suffix attempts when making a collection slug unique. */
+const MAX_COLLECTION_SLUG_SUFFIX = 100;
+
+/** Multiplier used to round floats to 4 decimal places (1/10000). */
+const FLOAT_PRECISION_MULTIPLIER = 10000;
+
 const SKIP_NAME_KEYWORDS = [
   "sticker",
   "music kit",
@@ -117,7 +126,7 @@ function makeSkinId(weapon: string, skin: string, collSlug: string, existingIds:
   if (!existingIds.has(base)) return base;
   const withCol = `${base}-${toKebab(collSlug)}`;
   if (!existingIds.has(withCol)) return withCol;
-  for (let i = 2; i <= 200; i++) {
+  for (let i = 2; i <= MAX_SKIN_ID_SUFFIX; i++) {
     const candidate = `${base}-${i}`;
     if (!existingIds.has(candidate)) return candidate;
   }
@@ -197,7 +206,7 @@ export async function refreshCatalogFromApi(env: CloudflareEnv): Promise<Catalog
     if (seenCollSlugs.has(slug)) {
       const base = slug;
       let i = 2;
-      let limit = 100;
+      let limit = MAX_COLLECTION_SLUG_SUFFIX;
       while (seenCollSlugs.has(slug) && limit-- > 0) {
         slug = `${base}-${i}`;
         i++;
@@ -219,8 +228,8 @@ export async function refreshCatalogFromApi(env: CloudflareEnv): Promise<Catalog
 
       const detail = (s.id ? skinById.get(s.id) : undefined) ?? skinByName.get(skinName.toLowerCase());
       if (detail) {
-        if (detail.min_float != null) minFloat = Math.round(Number(detail.min_float) * 10000) / 10000;
-        if (detail.max_float != null) maxFloat = Math.round(Number(detail.max_float) * 10000) / 10000;
+        if (detail.min_float != null) minFloat = Math.round(Number(detail.min_float) * FLOAT_PRECISION_MULTIPLIER) / FLOAT_PRECISION_MULTIPLIER;
+        if (detail.max_float != null) maxFloat = Math.round(Number(detail.max_float) * FLOAT_PRECISION_MULTIPLIER) / FLOAT_PRECISION_MULTIPLIER;
       }
 
       const sid = makeSkinId(weapon, skinPart, slug, seenSkinIds);
