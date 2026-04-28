@@ -107,12 +107,26 @@ async function generateOutputAwareCandidates(
   getOutputPrice: (skinId: string, wear: Wear) => Promise<number | null>,
   skins: Skin[] = STATIC_SKINS,
 ): Promise<TradeupInput[][]> {
+  console.log(`[scanner:candidates:output-aware] start rarity=${rarity}`);
   const outputRarity = getOutputRarity(rarity);
-  if (!outputRarity) return [];
+  if (!outputRarity) {
+    console.warn(`[scanner:candidates:output-aware] no output rarity mapping for input rarity=${rarity}`);
+    return [];
+  }
 
   const inputSkins = skins.filter((s) => s.rarity === rarity);
   const outputSkins = skins.filter((s) => s.rarity === outputRarity);
-  if (inputSkins.length === 0 || outputSkins.length === 0) return [];
+  console.log(
+    `[scanner:candidates:output-aware] rarity=${rarity} outputRarity=${outputRarity} ` +
+    `inputSkins=${inputSkins.length} outputSkins=${outputSkins.length}`,
+  );
+  if (inputSkins.length === 0 || outputSkins.length === 0) {
+    console.warn(
+      `[scanner:candidates:output-aware] abort rarity=${rarity} due to empty skin pools ` +
+      `(inputSkins=${inputSkins.length}, outputSkins=${outputSkins.length})`,
+    );
+    return [];
+  }
 
   const targetWears: Wear[] = ["FN", "MW", "FT"];
   const candidates: TradeupInput[][] = [];
@@ -139,7 +153,15 @@ async function generateOutputAwareCandidates(
   }
 
   const candidateCollectionIds = [...inputByCollection.keys()].filter((cid) => outputByCollection.has(cid));
-  if (candidateCollectionIds.length === 0) return [];
+  console.log(
+    `[scanner:candidates:output-aware] rarity=${rarity} ` +
+    `inputCollections=${inputByCollection.size} outputCollections=${outputByCollection.size} ` +
+    `overlapCollections=${candidateCollectionIds.length}`,
+  );
+  if (candidateCollectionIds.length === 0) {
+    console.warn(`[scanner:candidates:output-aware] no overlapping collections for rarity=${rarity}`);
+    return [];
+  }
 
   const inputPriceBySkinWear = new Map<string, number>();
   const outputPriceBySkinWear = new Map<string, number>();
@@ -178,8 +200,13 @@ async function generateOutputAwareCandidates(
 
   const COLLECTIONS_PER_WEAR = 12;
   const MAX_OUTPUT_AWARE_CANDIDATES_PER_WEAR = 280;
+  console.log(
+    `[scanner:candidates:output-aware] prefetch complete rarity=${rarity} ` +
+    `inputPricePoints=${inputPriceBySkinWear.size} outputPricePoints=${outputPriceBySkinWear.size}`,
+  );
   for (const wear of targetWears) {
     const midFloat = getWearMidFloat(wear);
+    const wearStartCount = candidates.length;
 
     const scoredCollections = candidateCollectionIds
       .map((collectionId) => {
@@ -219,7 +246,17 @@ async function generateOutputAwareCandidates(
       .sort((a, b) => b.quality - a.quality)
       .slice(0, COLLECTIONS_PER_WEAR);
 
-    if (scoredCollections.length === 0) continue;
+    if (scoredCollections.length === 0) {
+      console.warn(
+        `[scanner:candidates:output-aware] rarity=${rarity} wear=${wear} ` +
+        `no scored collections (likely missing/invalid prices)`,
+      );
+      continue;
+    }
+    console.log(
+      `[scanner:candidates:output-aware] rarity=${rarity} wear=${wear} ` +
+      `scoredCollections=${scoredCollections.length}`,
+    );
 
     let addedForWear = 0;
     const addAndCount = (inputs: TradeupInput[]) => {
@@ -229,14 +266,19 @@ async function generateOutputAwareCandidates(
     };
 
     // A) Pure focused contracts from strongest collections.
+    const beforeA = addedForWear;
     for (const coll of scoredCollections.slice(0, 8)) {
       const input = coll.cheapestInput;
       const inputFloat = clampToSkinRange(midFloat, input.minFloat, input.maxFloat);
       addAndCount(Array.from({ length: 10 }, () => ({ skinId: input.id, float: inputFloat })));
       if (addedForWear >= MAX_OUTPUT_AWARE_CANDIDATES_PER_WEAR) break;
     }
+    console.log(
+      `[scanner:candidates:output-aware] rarity=${rarity} wear=${wear} strategy=A added=${addedForWear - beforeA}`,
+    );
 
     // B) Pair splits from top collections. These intentionally weight strong collections.
+    const beforeB = addedForWear;
     const pairSplits: Array<[number, number]> = [
       [9, 1],
       [8, 2],
@@ -270,8 +312,12 @@ async function generateOutputAwareCandidates(
       }
       if (addedForWear >= MAX_OUTPUT_AWARE_CANDIDATES_PER_WEAR) break;
     }
+    console.log(
+      `[scanner:candidates:output-aware] rarity=${rarity} wear=${wear} strategy=B added=${addedForWear - beforeB}`,
+    );
 
     // C) Tri-collection contracts to spread output odds while preserving quality.
+    const beforeC = addedForWear;
     const tripleSplits: Array<[number, number, number]> = [
       [6, 2, 2],
       [5, 3, 2],
@@ -303,8 +349,14 @@ async function generateOutputAwareCandidates(
       }
       if (addedForWear >= MAX_OUTPUT_AWARE_CANDIDATES_PER_WEAR) break;
     }
+
+    console.log(
+      `[scanner:candidates:output-aware] rarity=${rarity} wear=${wear} strategy=C added=${addedForWear - beforeC} ` +
+      `wearTotal=${addedForWear} globalTotal=${candidates.length} wearDelta=${candidates.length - wearStartCount}`,
+    );
   }
 
+  console.log(`[scanner:candidates:output-aware] done rarity=${rarity} totalCandidates=${candidates.length}`);
   return candidates;
 }
 
@@ -328,6 +380,12 @@ export function getContractKey(inputs: TradeupInput[]): string {
  */
 export function generateCandidates(rarity: Rarity, skins: Skin[] = STATIC_SKINS): TradeupInput[][] {
   const skinsOfRarity = skins.filter((s) => s.rarity === rarity);
+  console.log(`[scanner:candidates:base] start rarity=${rarity} skinsOfRarity=${skinsOfRarity.length}`);
+  if (skinsOfRarity.length === 0) {
+    console.warn(`[scanner:candidates:base] no skins found for rarity=${rarity}`);
+    return [];
+  }
+
   const candidates: TradeupInput[][] = [];
   const seen = new Set<string>();
   const MAX_COLLECTION_REPRESENTATIVES = 3;
@@ -358,6 +416,10 @@ export function generateCandidates(rarity: Rarity, skins: Skin[] = STATIC_SKINS)
     skins,
     reps: pickRepresentativeSkins(skins, MAX_COLLECTION_REPRESENTATIVES),
   }));
+  console.log(
+    `[scanner:candidates:base] rarity=${rarity} collectionGroups=${collectionGroups.length} ` +
+    `fillerCandidates=${fillerCandidates.length} strategySkins=${strategySkins.length}`,
+  );
 
   // Target midpoints of wear bands to align with mean-by-wear pricing.
   // Using edge-biased floats (e.g. low FT) can overstate value when prices are averaged.
@@ -366,8 +428,10 @@ export function generateCandidates(rarity: Rarity, skins: Skin[] = STATIC_SKINS)
   for (const targetWear of targetWears) {
     const [wearMin, wearMax] = WEAR_FLOAT_RANGES[targetWear];
     const targetFloat = (wearMin + wearMax) / 2;
+    const wearStartCount = candidates.length;
 
     // Strategy 1: 10× the same item
+    const beforeS1 = candidates.length;
     for (const skin of skinsOfRarity) {
       // Ensure the target float is within the skin's possible range
       const midFloat = clampToSkinRange(targetFloat, skin.minFloat, skin.maxFloat);
@@ -376,8 +440,12 @@ export function generateCandidates(rarity: Rarity, skins: Skin[] = STATIC_SKINS)
         Array.from({ length: 10 }, () => ({ skinId: skin.id, float: midFloat })),
       );
     }
+    console.log(
+      `[scanner:candidates:base] rarity=${rarity} wear=${targetWear} strategy=1 added=${candidates.length - beforeS1}`,
+    );
 
     // Strategy 2: Mix two skins from different collections (5 + 5), now with representative sampling.
+    const beforeS2 = candidates.length;
     let pairMixCount = 0;
     for (let i = 0; i < collectionGroups.length; i++) {
       for (let j = i + 1; j < collectionGroups.length; j++) {
@@ -413,8 +481,13 @@ export function generateCandidates(rarity: Rarity, skins: Skin[] = STATIC_SKINS)
       }
       if (pairMixCount >= MAX_PAIR_MIX_CANDIDATES) break;
     }
+    console.log(
+      `[scanner:candidates:base] rarity=${rarity} wear=${targetWear} strategy=2 added=${candidates.length - beforeS2} ` +
+      `attemptedPatterns=${pairMixCount}`,
+    );
 
     // Strategy 2b: Three-way cross-collection blends (4 + 3 + 3) to avoid single-output concentration.
+    const beforeS2b = candidates.length;
     let tripleMixCount = 0;
     for (let i = 0; i < collectionGroups.length; i++) {
       for (let j = i + 1; j < collectionGroups.length; j++) {
@@ -446,8 +519,13 @@ export function generateCandidates(rarity: Rarity, skins: Skin[] = STATIC_SKINS)
       }
       if (tripleMixCount >= MAX_TRIPLE_MIX_CANDIDATES) break;
     }
+    console.log(
+      `[scanner:candidates:base] rarity=${rarity} wear=${targetWear} strategy=2b added=${candidates.length - beforeS2b} ` +
+      `attemptedPatterns=${tripleMixCount}`,
+    );
 
     // Strategy 3: 1 Target + 9 Fillers
+    const beforeS3 = candidates.length;
     for (const targetSkin of skinsOfRarity) {
       const crossCollectionFillers = fillerCandidates.filter(
         (f) => f.collectionId !== targetSkin.collectionId,
@@ -466,8 +544,12 @@ export function generateCandidates(rarity: Rarity, skins: Skin[] = STATIC_SKINS)
         ]);
       }
     }
+    console.log(
+      `[scanner:candidates:base] rarity=${rarity} wear=${targetWear} strategy=3 added=${candidates.length - beforeS3}`,
+    );
 
     // Strategy 4: 7 + 3 split for slightly safer weighted concentration.
+    const beforeS4 = candidates.length;
     for (let i = 0; i < strategySkins.length; i++) {
       for (let j = i + 1; j < strategySkins.length; j++) {
         const skinA = strategySkins[i];
@@ -481,8 +563,12 @@ export function generateCandidates(rarity: Rarity, skins: Skin[] = STATIC_SKINS)
         ]);
       }
     }
+    console.log(
+      `[scanner:candidates:base] rarity=${rarity} wear=${targetWear} strategy=4 added=${candidates.length - beforeS4}`,
+    );
 
     // Strategy 5: 8 + 2 split for target-plus-support style contracts.
+    const beforeS5 = candidates.length;
     for (const targetSkin of strategySkins) {
       for (const supportSkin of strategySkins) {
         if (targetSkin.id === supportSkin.id) continue;
@@ -496,8 +582,12 @@ export function generateCandidates(rarity: Rarity, skins: Skin[] = STATIC_SKINS)
         ]);
       }
     }
+    console.log(
+      `[scanner:candidates:base] rarity=${rarity} wear=${targetWear} strategy=5 added=${candidates.length - beforeS5}`,
+    );
 
     // Strategy 6: 4 + 3 + 3 triple mix to diversify output distribution.
+    const beforeS6 = candidates.length;
     for (let i = 0; i < strategySkins.length; i++) {
       for (let j = i + 1; j < strategySkins.length; j++) {
         for (let k = j + 1; k < strategySkins.length; k++) {
@@ -517,8 +607,14 @@ export function generateCandidates(rarity: Rarity, skins: Skin[] = STATIC_SKINS)
         }
       }
     }
+
+    console.log(
+      `[scanner:candidates:base] rarity=${rarity} wear=${targetWear} strategy=6 added=${candidates.length - beforeS6} ` +
+      `wearTotal=${candidates.length - wearStartCount} globalTotal=${candidates.length}`,
+    );
   }
 
+  console.log(`[scanner:candidates:base] done rarity=${rarity} totalCandidates=${candidates.length}`);
   return candidates;
 }
 
@@ -576,13 +672,16 @@ export async function computeProfitableContracts(
   const allProfitable: ProfitableContract[] = [];
 
   for (const rarity of rarities) {
+    console.log("evaluating rarity", rarity);
     const baseCandidates = generateCandidates(rarity, skins);
+    console.log(`[scanner] Rarity "${rarity}": Generated ${baseCandidates.length} base candidates`);
     const outputAwareCandidates = await generateOutputAwareCandidates(
       rarity,
       memoizedInputPriceGetter,
       memoizedOutputPriceGetter,
       skins,
     );
+    console.log(`[scanner] Rarity "${rarity}": Generated ${outputAwareCandidates.length} output-aware candidates`);
     const mergedByKey = new Map<string, TradeupInput[]>();
     for (const candidate of [...baseCandidates, ...outputAwareCandidates]) {
       mergedByKey.set(getContractKey(candidate), candidate);
