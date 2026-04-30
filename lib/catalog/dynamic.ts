@@ -21,12 +21,10 @@ const RARITY_MAP: Record<string, Rarity> = {
   rarity_mythical_weapon: "restricted",
   rarity_legendary_weapon: "classified",
   rarity_ancient_weapon: "covert",
-  "Consumer Grade": "consumer_grade",
-  "Industrial Grade": "industrial_grade",
-  "Mil-Spec Grade": "mil_spec",
-  Restricted: "restricted",
-  Classified: "classified",
-  Covert: "covert",
+  // NOTE: Display-name fallbacks intentionally omitted. Agent skins share the
+  // same display names ("Consumer Grade", etc.) but have rarity IDs without the
+  // _weapon suffix (e.g. "rarity_common"). Relying on display names lets agents
+  // leak into the catalog, so we require the _weapon suffix in the ID.
 };
 
 const VALID_RARITIES = new Set<string>([

@@ -4,7 +4,7 @@ import { RARITY_ORDER } from "@/lib/types";
 import { parseSteamId, fetchAndMatchInventory } from "@/lib/steam";
 import type { MatchedInventoryItem } from "@/lib/steam";
 import { evaluateTradeup } from "@/lib/tradeup/ev";
-import { getBestPrice } from "@/lib/pricing";
+import { getBuyPrice, getSellPrice } from "@/lib/pricing";
 import { getCloudflareContext } from "@opennextjs/cloudflare";
 import { type CloudflareEnv } from "@/lib/storage";
 import { loadCatalog } from "@/lib/catalog/dynamic";
@@ -186,8 +186,11 @@ export async function POST(request: NextRequest) {
   console.log("[inventory] Items by rarity:", inventorySummary);
 
   // Evaluate trade-up candidates for rarities with enough items
-  const priceGetter = (skinId: string, wear: Wear) =>
-    getBestPrice(skinId, wear, env);
+  // Input cost: mean price (conservative); output value: floor price.
+  const inputPriceGetter = (skinId: string, wear: Wear) =>
+    getBuyPrice(skinId, wear, env);
+  const outputPriceGetter = (skinId: string, wear: Wear) =>
+    getSellPrice(skinId, wear, env);
 
   interface RecommendedContract {
     rarity: Rarity;
@@ -226,7 +229,7 @@ export async function POST(request: NextRequest) {
     // Evaluate up to 30 candidates per rarity to keep response time reasonable
     for (const inputs of capped) {
       evaluated++;
-      const result = await evaluateTradeup(inputs, priceGetter, undefined, skins);
+      const result = await evaluateTradeup(inputs, inputPriceGetter, outputPriceGetter, skins);
       if (!result.valid || result.roi < 0) continue;
 
       profitable++;

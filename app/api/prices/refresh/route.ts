@@ -4,7 +4,7 @@ import { updatePriceSnapshot, type PriceSnapshot, type CloudflareEnv } from "@/l
 import { getCloudflareContext } from "@opennextjs/cloudflare";
 import { loadCatalog } from "@/lib/catalog/dynamic";
 
-const SKINPORT_API = "https://api.skinport.com/v1/items?app_id=730&currency=USD&tradable=0";
+const SKINPORT_API = "https://api.skinport.com/v1/items?app_id=730&currency=USD";
 const WEARS: Wear[] = ["FN", "MW", "FT", "WW", "BS"];
 
 interface SkinportItem {
@@ -46,7 +46,17 @@ export async function GET(request: NextRequest) {
     const hashToEntry = new Map<string, { skinId: string; wear: Wear }>();
     for (const skin of skins) {
         for (const wear of WEARS) {
-            hashToEntry.set(`${skin.name} (${WEAR_LABELS[wear]})`, { skinId: skin.id, wear });
+            const key = `${skin.name} (${WEAR_LABELS[wear]})`;
+            const existing = hashToEntry.get(key);
+            if (existing && existing.skinId !== skin.id) {
+                // Two different catalog entries share the same market hash name.
+                // The last one wins, so the first skin's ID will never get a price.
+                console.warn(
+                    `[refresh] Duplicate market hash name: "${key}" maps to both ` +
+                    `"${existing.skinId}" and "${skin.id}" — only the latter will receive prices`,
+                );
+            }
+            hashToEntry.set(key, { skinId: skin.id, wear });
         }
     }
     console.log(`[refresh] Map built with ${hashToEntry.size} entries.`);

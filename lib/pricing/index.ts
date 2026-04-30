@@ -1,7 +1,10 @@
 import type { PriceData, Wear } from "../types";
 import {
     getCachedPriceBySide,
+    getPriceSnapshot,
+    getPriceFromSnapshot,
     type CloudflareEnv,
+    type PriceSnapshot,
 } from "../storage";
 
 /**
@@ -78,4 +81,36 @@ export async function getSellPrice(
 ): Promise<number | null> {
     if (!env) return null;
     return getCachedPriceBySide(env, skinId, wear, "sell");
+}
+
+/**
+ * Load the full price snapshot from R2 once and return a pair of price-getter
+ * functions that look up values from the in-memory map.
+ *
+ * Use this for batch scans (e.g. the profitable-tradeup scanner) to avoid
+ * downloading `latest_prices.json` once per skin/wear query.
+ *
+ * If R2 is unavailable (cold start / first deploy), both getters return null
+ * for every lookup so the caller degrades gracefully.
+ */
+export async function createSnapshotPriceGetters(env: CloudflareEnv): Promise<{
+    getBuyPrice: (skinId: string, wear: Wear) => Promise<number | null>;
+    getSellPrice: (skinId: string, wear: Wear) => Promise<number | null>;
+    snapshot: PriceSnapshot | null;
+}> {
+    const snapshot = await getPriceSnapshot(env);
+
+    if (!snapshot) {
+        console.warn("[pricing] R2 price snapshot missing — all price lookups will return null");
+        const nullGetter = async (_skinId: string, _wear: Wear): Promise<number | null> => null;
+        return { getBuyPrice: nullGetter, getSellPrice: nullGetter, snapshot: null };
+    }
+
+    return {
+        getBuyPrice: async (skinId: string, wear: Wear) =>
+            getPriceFromSnapshot(snapshot, skinId, wear, "buy"),
+        getSellPrice: async (skinId: string, wear: Wear) =>
+            getPriceFromSnapshot(snapshot, skinId, wear, "sell"),
+        snapshot,
+    };
 }

@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import type { Wear } from "@/lib/types";
-import { getBuyPrice, getSellPrice } from "@/lib/pricing";
+import { createSnapshotPriceGetters } from "@/lib/pricing";
 import {
   type CloudflareEnv,
   getCachedProfitableTradeups,
@@ -157,10 +157,20 @@ export async function GET(request: NextRequest) {
   console.log("[tradeups/refresh] Scan lock acquired");
 
   try {
-    const inputPriceGetter = (skinId: string, wear: Wear) =>
-      getBuyPrice(skinId, wear, env);
-    const outputPriceGetter = (skinId: string, wear: Wear) =>
-      getSellPrice(skinId, wear, env);
+    // Load the full price snapshot ONCE from R2 so every skin/wear lookup during
+    // the scan is an in-memory map access instead of a separate R2 download.
+    const { getBuyPrice: snapshotBuy, getSellPrice: snapshotSell, snapshot } =
+      await createSnapshotPriceGetters(env);
+
+    if (!snapshot) {
+      return NextResponse.json(
+        { error: "Price snapshot not found — run /api/prices/refresh first" },
+        { status: 503 },
+      );
+    }
+
+    const inputPriceGetter = (skinId: string, wear: Wear) => snapshotBuy(skinId, wear);
+    const outputPriceGetter = (skinId: string, wear: Wear) => snapshotSell(skinId, wear);
 
     const { skins } = await loadCatalog(env);
     console.log(`[tradeups/refresh] Catalog loaded — ${skins.length} skin(s)`);

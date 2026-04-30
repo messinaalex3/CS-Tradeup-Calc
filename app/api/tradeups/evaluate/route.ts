@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import type { TradeupInput, Wear } from "@/lib/types";
 import { evaluateTradeup } from "@/lib/tradeup/ev";
-import { getBestPrice } from "@/lib/pricing";
+import { getBuyPrice, getSellPrice } from "@/lib/pricing";
 import { type CloudflareEnv } from "@/lib/storage";
 import { getCloudflareContext } from "@opennextjs/cloudflare";
 import { loadCatalog } from "@/lib/catalog/dynamic";
@@ -30,20 +30,14 @@ export async function POST(request: NextRequest) {
     );
   }
 
-  console.log(`[evaluate] Received ${inputs.length} input(s); loading catalog…`);
-
-  const priceGetter = (skinId: string, wear: Wear) =>
-    getBestPrice(skinId, wear, env);
+  // Input cost: mean price (conservative — avoids outlier cheap listings).
+  // Output value: min price (floor — what you'd have to undercut to sell).
+  const inputPriceGetter = (skinId: string, wear: Wear) =>
+    getBuyPrice(skinId, wear, env);
+  const outputPriceGetter = (skinId: string, wear: Wear) =>
+    getSellPrice(skinId, wear, env);
 
   const { skins, collections } = await loadCatalog(env);
-  console.log(`[evaluate] Catalog loaded — ${skins.length} skins, ${collections.length} collections. Evaluating trade-up…`);
-
-  const result = await evaluateTradeup(inputs, priceGetter, undefined, skins, collections);
-
-  console.log(
-    `[evaluate] Evaluation completed in ${Date.now() - evalStart}ms — ` +
-    `ev: ${result.ev ?? "null"}, roi: ${result.roi ?? "null"}`,
-  );
-
+  const result = await evaluateTradeup(inputs, inputPriceGetter, outputPriceGetter, skins, collections);
   return NextResponse.json(result);
 }

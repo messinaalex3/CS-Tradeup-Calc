@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import type { Rarity, Wear } from "@/lib/types";
 import { RARITY_LABELS } from "@/lib/types";
-import { getBestPrice } from "@/lib/pricing";
 import {
   type CloudflareEnv,
   getCachedProfitableTradeups,

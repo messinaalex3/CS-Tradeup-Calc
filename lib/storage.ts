@@ -92,8 +92,14 @@ function normalizePricePoint(raw: PricePoint | number | undefined): PricePoint |
 
 function pickPriceForSide(pricePoint: PricePoint, side: PriceSide): number | null {
     if (side === "buy") {
+        // For input purchase cost we want a conservative (pessimistic) estimate:
+        // meanPrice is the average transaction price — more realistic than maxPrice
+        // which can be an extreme outlier listing. We fall back to suggested_price
+        // (Steam Market estimate), then the cheapest available listing.
         return pricePoint.maxPrice ?? pricePoint.meanPrice ?? pricePoint.suggestedPrice ?? pricePoint.minPrice;
     }
+    // For output sell value we want the floor — the cheapest listing we'd have
+    // to undercut to actually move the item quickly.
     return pricePoint.minPrice ?? pricePoint.meanPrice ?? pricePoint.suggestedPrice ?? pricePoint.maxPrice;
 }
 
@@ -156,17 +162,80 @@ export async function getCachedPrice(
 }
 
 /**
- * Update the full R2 snapshot and invalidate/refresh KV selectively
- * if needed (usually handled by TTL).
+ * Load the full price snapshot from R2 into memory.
+ * Returns null if the snapshot doesn't exist yet.
+ *
+ * Use this for batch operations (e.g. the scanner) to avoid repeatedly
+ * downloading the full JSON file once per price query.
+ */
+export async function getPriceSnapshot(
+    env: CloudflareEnv,
+): Promise<PriceSnapshot | null> {
+    const object = await env.PRICE_SNAPSHOTS.get("latest_prices.json");
+    if (!object) return null;
+    return object.json() as Promise<PriceSnapshot>;
+}
+
+/**
+ * Look up a single price from an already-loaded in-memory snapshot.
+ * Returns null when the skin/wear combo is absent or has no valid price.
+ */
+export function getPriceFromSnapshot(
+    snapshot: PriceSnapshot,
+    skinId: string,
+    wear: Wear,
+    side: PriceSide,
+): number | null {
+    const pricePoint = normalizePricePoint(snapshot[skinId]?.[wear]);
+    if (!pricePoint) return null;
+    const price = pickPriceForSide(pricePoint, side);
+    return price !== null && price > 0 ? price : null;
+}
+
+/**
+ * Update the full R2 snapshot and proactively populate KV so that
+ * individual lookups are fast without a subsequent R2 round-trip.
+ *
+ * KV writes are rate-limited, so we use a best-effort fire-and-forget
+ * batch: failures are logged but do not abort the snapshot update.
  */
 export async function updatePriceSnapshot(
     env: CloudflareEnv,
-    prices: PriceSnapshot
+    prices: PriceSnapshot,
 ): Promise<void> {
     const content = JSON.stringify(prices);
     await env.PRICE_SNAPSHOTS.put("latest_prices.json", content, {
         httpMetadata: { contentType: "application/json" },
     });
+
+    // Proactively warm KV so every subsequent individual lookup is a KV hit
+    // rather than a full R2 download.  We write in small concurrent batches
+    // to stay well under Cloudflare's KV write-rate limit.
+    const BATCH = 50;
+    const TTL = 3700; // slightly longer than the 1-hour price-refresh cadence
+    const entries: Array<[string, string]> = [];
+
+    for (const [skinId, wearMap] of Object.entries(prices)) {
+        for (const [wear, raw] of Object.entries(wearMap) as Array<[Wear, PricePoint | number | undefined]>) {
+            const pricePoint = normalizePricePoint(raw);
+            if (!pricePoint) continue;
+            for (const side of ["sell", "buy"] as PriceSide[]) {
+                const price = pickPriceForSide(pricePoint, side);
+                if (price !== null && price > 0) {
+                    entries.push([getPriceKey(skinId, wear, side), price.toString()]);
+                }
+            }
+        }
+    }
+
+    for (let i = 0; i < entries.length; i += BATCH) {
+        const batch = entries.slice(i, i + BATCH);
+        await Promise.allSettled(
+            batch.map(([key, value]) =>
+                env.PRICE_CACHE.put(key, value, { expirationTtl: TTL }),
+            ),
+        );
+    }
 }
 
 /**

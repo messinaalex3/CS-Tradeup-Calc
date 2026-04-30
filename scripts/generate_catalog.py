@@ -9,6 +9,10 @@ import urllib.request
 COLLECTIONS_URL = "https://raw.githubusercontent.com/ByMykel/CSGO-API/main/public/api/en/collections.json"
 SKINS_URL = "https://raw.githubusercontent.com/ByMykel/CSGO-API/main/public/api/en/skins.json"
 
+# NOTE: Display-name fallbacks intentionally omitted. Agent skins share the
+# same display names ("Consumer Grade", etc.) but have rarity IDs without the
+# _weapon suffix (e.g. "rarity_common"). Relying on display names lets agents
+# leak into the catalog, so we require the _weapon suffix in the ID.
 RARITY_MAP = {
     "rarity_common_weapon": "consumer_grade",
     "rarity_uncommon_weapon": "industrial_grade",
@@ -16,13 +20,6 @@ RARITY_MAP = {
     "rarity_mythical_weapon": "restricted",
     "rarity_legendary_weapon": "classified",
     "rarity_ancient_weapon": "covert",
-    # Handle by display name as fallback
-    "Consumer Grade": "consumer_grade",
-    "Industrial Grade": "industrial_grade",
-    "Mil-Spec Grade": "mil_spec",
-    "Restricted": "restricted",
-    "Classified": "classified",
-    "Covert": "covert",
 }
 
 VALID_RARITIES = {

@@ -81,10 +81,6 @@ function pickRepresentativeSkins(skins: Skin[], maxCount: number): Skin[] {
   return reps;
 }
 
-function getWearMidFloat(wear: Wear): number {
-  const [wearMin, wearMax] = WEAR_FLOAT_RANGES[wear];
-  return (wearMin + wearMax) / 2;
-}
 
 function pickCheapestSkinsByWear(
   skins: Skin[],
@@ -128,7 +124,18 @@ async function generateOutputAwareCandidates(
     return [];
   }
 
-  const targetWears: Wear[] = ["FN", "MW", "FT"];
+  const targetWears: Wear[] = ["FN", "MW", "FT", "WW", "BS"];
+  // Multiple float targets per tier so the scanner finds contracts using
+  // commonly-available items across the full price spectrum of each wear tier.
+  // High-end FT floats (0.29–0.33) are much easier to source than the
+  // theoretical midpoint; low-end FT floats (0.16–0.20) are rarer but cheaper.
+  const WEAR_TARGET_FLOATS: Record<Wear, number[]> = {
+    FN: [0.02, 0.04, 0.06],
+    MW: [0.08, 0.11, 0.14],
+    FT: [0.16, 0.20, 0.25, 0.29, 0.33],
+    WW: [0.39, 0.42],
+    BS: [0.47, 0.55, 0.70],
+  };
   const candidates: TradeupInput[][] = [];
   const seen = new Set<string>();
   const addCandidate = (inputs: TradeupInput[]) => {
@@ -199,13 +206,14 @@ async function generateOutputAwareCandidates(
   );
 
   const COLLECTIONS_PER_WEAR = 12;
-  const MAX_OUTPUT_AWARE_CANDIDATES_PER_WEAR = 280;
+  // Per-float cap — keeps total search space bounded even with many float targets.
+  // Total max ≈ (3+3+5+2+3) floats × 60 = ~960 candidates.
+  const MAX_CANDIDATES_PER_FLOAT = 60;
   console.log(
     `[scanner:candidates:output-aware] prefetch complete rarity=${rarity} ` +
     `inputPricePoints=${inputPriceBySkinWear.size} outputPricePoints=${outputPriceBySkinWear.size}`,
   );
   for (const wear of targetWears) {
-    const midFloat = getWearMidFloat(wear);
     const wearStartCount = candidates.length;
 
     const scoredCollections = candidateCollectionIds
@@ -255,104 +263,111 @@ async function generateOutputAwareCandidates(
     }
     console.log(
       `[scanner:candidates:output-aware] rarity=${rarity} wear=${wear} ` +
-      `scoredCollections=${scoredCollections.length}`,
+      `scoredCollections=${scoredCollections.length} floatTargets=${WEAR_TARGET_FLOATS[wear].length}`,
     );
 
-    let addedForWear = 0;
-    const addAndCount = (inputs: TradeupInput[]) => {
-      const before = candidates.length;
-      addCandidate(inputs);
-      if (candidates.length > before) addedForWear++;
-    };
+    let wearTotal = 0;
 
-    // A) Pure focused contracts from strongest collections.
-    const beforeA = addedForWear;
-    for (const coll of scoredCollections.slice(0, 8)) {
-      const input = coll.cheapestInput;
-      const inputFloat = clampToSkinRange(midFloat, input.minFloat, input.maxFloat);
-      addAndCount(Array.from({ length: 10 }, () => ({ skinId: input.id, float: inputFloat })));
-      if (addedForWear >= MAX_OUTPUT_AWARE_CANDIDATES_PER_WEAR) break;
-    }
-    console.log(
-      `[scanner:candidates:output-aware] rarity=${rarity} wear=${wear} strategy=A added=${addedForWear - beforeA}`,
-    );
+    for (const targetFloat of WEAR_TARGET_FLOATS[wear]) {
+      let addedForFloat = 0;
+      const addAndCount = (inputs: TradeupInput[]) => {
+        const before = candidates.length;
+        addCandidate(inputs);
+        if (candidates.length > before) { addedForFloat++; wearTotal++; }
+      };
 
-    // B) Pair splits from top collections. These intentionally weight strong collections.
-    const beforeB = addedForWear;
-    const pairSplits: Array<[number, number]> = [
-      [9, 1],
-      [8, 2],
-      [7, 3],
-      [6, 4],
-      [5, 5],
-    ];
-    for (let i = 0; i < scoredCollections.length; i++) {
-      for (let j = i + 1; j < scoredCollections.length; j++) {
-        const a = scoredCollections[i];
-        const b = scoredCollections[j];
+      // A) Pure focused contracts from strongest collections.
+      const beforeA = addedForFloat;
+      for (const coll of scoredCollections.slice(0, 8)) {
+        const input = coll.cheapestInput;
+        const inputFloat = clampToSkinRange(targetFloat, input.minFloat, input.maxFloat);
+        addAndCount(Array.from({ length: 10 }, () => ({ skinId: input.id, float: inputFloat })));
+        if (addedForFloat >= MAX_CANDIDATES_PER_FLOAT) break;
+      }
+      console.log(
+        `[scanner:candidates:output-aware] rarity=${rarity} wear=${wear} float=${targetFloat} strategy=A added=${addedForFloat - beforeA}`,
+      );
 
-        for (const skinA of a.inputPool) {
-          for (const skinB of b.inputPool) {
-            const floatA = clampToSkinRange(midFloat, skinA.minFloat, skinA.maxFloat);
-            const floatB = clampToSkinRange(midFloat, skinB.minFloat, skinB.maxFloat);
+      // B) Pair splits from top collections.
+      const beforeB = addedForFloat;
+      const pairSplits: Array<[number, number]> = [
+        [9, 1],
+        [8, 2],
+        [7, 3],
+        [6, 4],
+        [5, 5],
+      ];
+      for (let i = 0; i < scoredCollections.length; i++) {
+        for (let j = i + 1; j < scoredCollections.length; j++) {
+          const a = scoredCollections[i];
+          const b = scoredCollections[j];
 
-            for (const [countA, countB] of pairSplits) {
+          for (const skinA of a.inputPool) {
+            for (const skinB of b.inputPool) {
+              const floatA = clampToSkinRange(targetFloat, skinA.minFloat, skinA.maxFloat);
+              const floatB = clampToSkinRange(targetFloat, skinB.minFloat, skinB.maxFloat);
+
+              for (const [countA, countB] of pairSplits) {
+                addAndCount([
+                  ...Array.from({ length: countA }, () => ({ skinId: skinA.id, float: floatA })),
+                  ...Array.from({ length: countB }, () => ({ skinId: skinB.id, float: floatB })),
+                ]);
+                if (addedForFloat >= MAX_CANDIDATES_PER_FLOAT) break;
+              }
+
+              if (addedForFloat >= MAX_CANDIDATES_PER_FLOAT) break;
+            }
+            if (addedForFloat >= MAX_CANDIDATES_PER_FLOAT) break;
+          }
+          if (addedForFloat >= MAX_CANDIDATES_PER_FLOAT) break;
+        }
+        if (addedForFloat >= MAX_CANDIDATES_PER_FLOAT) break;
+      }
+      console.log(
+        `[scanner:candidates:output-aware] rarity=${rarity} wear=${wear} float=${targetFloat} strategy=B added=${addedForFloat - beforeB}`,
+      );
+
+      // C) Tri-collection contracts to spread output odds while preserving quality.
+      const beforeC = addedForFloat;
+      const tripleSplits: Array<[number, number, number]> = [
+        [6, 2, 2],
+        [5, 3, 2],
+        [4, 3, 3],
+      ];
+      for (let i = 0; i < scoredCollections.length; i++) {
+        for (let j = i + 1; j < scoredCollections.length; j++) {
+          for (let k = j + 1; k < scoredCollections.length; k++) {
+            const a = scoredCollections[i].cheapestInput;
+            const b = scoredCollections[j].cheapestInput;
+            const c = scoredCollections[k].cheapestInput;
+
+            const floatA = clampToSkinRange(targetFloat, a.minFloat, a.maxFloat);
+            const floatB = clampToSkinRange(targetFloat, b.minFloat, b.maxFloat);
+            const floatC = clampToSkinRange(targetFloat, c.minFloat, c.maxFloat);
+
+            for (const [countA, countB, countC] of tripleSplits) {
               addAndCount([
-                ...Array.from({ length: countA }, () => ({ skinId: skinA.id, float: floatA })),
-                ...Array.from({ length: countB }, () => ({ skinId: skinB.id, float: floatB })),
+                ...Array.from({ length: countA }, () => ({ skinId: a.id, float: floatA })),
+                ...Array.from({ length: countB }, () => ({ skinId: b.id, float: floatB })),
+                ...Array.from({ length: countC }, () => ({ skinId: c.id, float: floatC })),
               ]);
-              if (addedForWear >= MAX_OUTPUT_AWARE_CANDIDATES_PER_WEAR) break;
+              if (addedForFloat >= MAX_CANDIDATES_PER_FLOAT) break;
             }
 
-            if (addedForWear >= MAX_OUTPUT_AWARE_CANDIDATES_PER_WEAR) break;
+            if (addedForFloat >= MAX_CANDIDATES_PER_FLOAT) break;
           }
-          if (addedForWear >= MAX_OUTPUT_AWARE_CANDIDATES_PER_WEAR) break;
+          if (addedForFloat >= MAX_CANDIDATES_PER_FLOAT) break;
         }
-        if (addedForWear >= MAX_OUTPUT_AWARE_CANDIDATES_PER_WEAR) break;
+        if (addedForFloat >= MAX_CANDIDATES_PER_FLOAT) break;
       }
-      if (addedForWear >= MAX_OUTPUT_AWARE_CANDIDATES_PER_WEAR) break;
-    }
-    console.log(
-      `[scanner:candidates:output-aware] rarity=${rarity} wear=${wear} strategy=B added=${addedForWear - beforeB}`,
-    );
-
-    // C) Tri-collection contracts to spread output odds while preserving quality.
-    const beforeC = addedForWear;
-    const tripleSplits: Array<[number, number, number]> = [
-      [6, 2, 2],
-      [5, 3, 2],
-      [4, 3, 3],
-    ];
-    for (let i = 0; i < scoredCollections.length; i++) {
-      for (let j = i + 1; j < scoredCollections.length; j++) {
-        for (let k = j + 1; k < scoredCollections.length; k++) {
-          const a = scoredCollections[i].cheapestInput;
-          const b = scoredCollections[j].cheapestInput;
-          const c = scoredCollections[k].cheapestInput;
-
-          const floatA = clampToSkinRange(midFloat, a.minFloat, a.maxFloat);
-          const floatB = clampToSkinRange(midFloat, b.minFloat, b.maxFloat);
-          const floatC = clampToSkinRange(midFloat, c.minFloat, c.maxFloat);
-
-          for (const [countA, countB, countC] of tripleSplits) {
-            addAndCount([
-              ...Array.from({ length: countA }, () => ({ skinId: a.id, float: floatA })),
-              ...Array.from({ length: countB }, () => ({ skinId: b.id, float: floatB })),
-              ...Array.from({ length: countC }, () => ({ skinId: c.id, float: floatC })),
-            ]);
-            if (addedForWear >= MAX_OUTPUT_AWARE_CANDIDATES_PER_WEAR) break;
-          }
-
-          if (addedForWear >= MAX_OUTPUT_AWARE_CANDIDATES_PER_WEAR) break;
-        }
-        if (addedForWear >= MAX_OUTPUT_AWARE_CANDIDATES_PER_WEAR) break;
-      }
-      if (addedForWear >= MAX_OUTPUT_AWARE_CANDIDATES_PER_WEAR) break;
+      console.log(
+        `[scanner:candidates:output-aware] rarity=${rarity} wear=${wear} float=${targetFloat} strategy=C added=${addedForFloat - beforeC} floatTotal=${addedForFloat}`,
+      );
     }
 
     console.log(
-      `[scanner:candidates:output-aware] rarity=${rarity} wear=${wear} strategy=C added=${addedForWear - beforeC} ` +
-      `wearTotal=${addedForWear} globalTotal=${candidates.length} wearDelta=${candidates.length - wearStartCount}`,
+      `[scanner:candidates:output-aware] rarity=${rarity} wear=${wear} ` +
+      `wearTotal=${wearTotal} globalTotal=${candidates.length} wearDelta=${candidates.length - wearStartCount}`,
     );
   }
 
@@ -627,6 +642,7 @@ export function generateCandidates(rarity: Rarity, skins: Skin[] = STATIC_SKINS)
  */
 export async function computeProfitableContracts(
   getInputPrice: (skinId: string, wear: Wear) => Promise<number | null>,
+
   getOutputPrice: (skinId: string, wear: Wear) => Promise<number | null>,
   onUpdate?: (contracts: ProfitableContract[]) => Promise<void>,
   skins: Skin[] = STATIC_SKINS,
