@@ -62,7 +62,7 @@ async function writeTradeupsWithBackoff(
 
       const backoffMs = 500 * 2 ** attempt + Math.floor(Math.random() * 250);
       console.warn(
-        `[refresh] KV write rate-limited, retrying in ${backoffMs}ms (attempt ${attempt + 1}/${MAX_KV_RETRIES})`,
+        `[tradeups/refresh] KV write rate-limited, retrying in ${backoffMs}ms (attempt ${attempt + 1}/${MAX_KV_RETRIES})`,
       );
       await sleep(backoffMs);
     }
@@ -88,7 +88,7 @@ async function writeContractsToCacheSafely(
       await writeTradeupsWithBackoff(env, payload);
       if (writeCount < sorted.length) {
         console.warn(
-          `[refresh] ${phase} cache write stored top ${writeCount}/${sorted.length} contract(s) to stay within KV limits.`,
+          `[tradeups/refresh] ${phase} cache write stored top ${writeCount}/${sorted.length} contract(s) to stay within KV limits.`,
         );
       }
       return writeCount;
@@ -99,7 +99,7 @@ async function writeContractsToCacheSafely(
 
       const nextCount = Math.max(1, Math.floor(writeCount * 0.75));
       console.warn(
-        `[refresh] ${phase} cache payload likely too large at ${writeCount} contracts, retrying with ${nextCount}.`,
+        `[tradeups/refresh] ${phase} cache payload likely too large at ${writeCount} contracts, retrying with ${nextCount}.`,
       );
       writeCount = nextCount;
     }
@@ -122,10 +122,14 @@ async function writeContractsToCacheSafely(
  * Schedule via `wrangler.jsonc` triggers.crons or an external HTTP scheduler.
  */
 export async function GET(request: NextRequest) {
+  const refreshStart = Date.now();
+  console.log("[tradeups/refresh] GET /api/tradeups/profitable/refresh — request received");
+
   const authHeader = request.headers.get("Authorization");
   const cronSecret = process.env.CRON_SECRET;
 
   if (cronSecret && authHeader !== `Bearer ${cronSecret}`) {
+    console.warn("[tradeups/refresh] Unauthorized request blocked — invalid CRON_SECRET");
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
@@ -139,6 +143,7 @@ export async function GET(request: NextRequest) {
   const isLocked = await env.TRADEUP_CACHE.get(LOCK_KEY);
   if (isLocked) {
     const lockTime = new Date(isLocked).toLocaleTimeString();
+    console.warn(`[tradeups/refresh] Scan already in progress (started at ${lockTime}), returning 409`);
     return NextResponse.json(
       { error: `Scan already in progress (started at ${lockTime})` },
       { status: 409 },
@@ -149,6 +154,7 @@ export async function GET(request: NextRequest) {
   await env.TRADEUP_CACHE.put(LOCK_KEY, new Date().toISOString(), {
     expirationTtl: LOCK_TTL,
   });
+  console.log("[tradeups/refresh] Scan lock acquired");
 
   try {
     const inputPriceGetter = (skinId: string, wear: Wear) =>
@@ -157,6 +163,7 @@ export async function GET(request: NextRequest) {
       getSellPrice(skinId, wear, env);
 
     const { skins } = await loadCatalog(env);
+    console.log(`[tradeups/refresh] Catalog loaded — ${skins.length} skin(s)`);
 
     // 1. Fetch existing cache to enable "merged" updates (overwrite by combination key)
     const cached = await getCachedProfitableTradeups(env);
@@ -168,10 +175,12 @@ export async function GET(request: NextRequest) {
         for (const c of payload.contracts) {
           contractMap.set(getContractKey(c.inputs), c);
         }
-        console.log(`[refresh] Initialized with ${contractMap.size} existing contracts from cache.`);
+        console.log(`[tradeups/refresh] Initialized with ${contractMap.size} existing contracts from cache.`);
       } catch {
-        console.warn("[refresh] Failed to parse existing cache, starting fresh.");
+        console.warn("[tradeups/refresh] Failed to parse existing cache, starting fresh.");
       }
+    } else {
+      console.log("[tradeups/refresh] No existing cache found, starting fresh.");
     }
 
     let lastIncrementalWriteAt = 0;
@@ -193,7 +202,7 @@ export async function GET(request: NextRequest) {
         return;
       }
 
-      console.log(`[refresh] Incremental update: ${mergedList.length} total contracts (${newlyFound.length} new/updated in this batch)`);
+      console.log(`[tradeups/refresh] Incremental update: ${mergedList.length} total contracts (${newlyFound.length} new/updated in this batch)`);
 
       try {
         await writeContractsToCacheSafely(
@@ -206,17 +215,20 @@ export async function GET(request: NextRequest) {
         lastWrittenContractCount = mergedList.length;
       } catch (error) {
         console.error(
-          `[refresh] Incremental cache write failed; continuing scan. ${error instanceof Error ? error.message : String(error)}`,
+          `[tradeups/refresh] Incremental cache write failed; continuing scan. ${error instanceof Error ? error.message : String(error)}`,
         );
       }
     };
 
+    console.log("[tradeups/refresh] Starting profitable contract scan…");
+    const scanStart = Date.now();
     const runResults = await computeProfitableContracts(
       inputPriceGetter,
       outputPriceGetter,
       onUpdate,
       skins,
     );
+    console.log(`[tradeups/refresh] Scan finished in ${Date.now() - scanStart}ms — ${runResults.length} contract(s) found in this run`);
 
     // Final merge and cleanup
     for (const c of runResults) {
@@ -232,6 +244,11 @@ export async function GET(request: NextRequest) {
       "final",
     );
 
+    console.log(`[tradeups/refresh] Final cache write: ${finalMerged.length} total contract(s) (${persistedCount} persisted).`);
+
+    const totalDuration = Date.now() - refreshStart;
+    console.log(`[tradeups/refresh] Successfully completed in ${totalDuration}ms total.`);
+
     return NextResponse.json({
       success: true,
       totalContractsStored: persistedCount,
@@ -242,5 +259,6 @@ export async function GET(request: NextRequest) {
   } finally {
     // Always clear the lock, even if we crash
     await env.TRADEUP_CACHE.delete(LOCK_KEY);
+    console.log("[tradeups/refresh] Scan lock released.");
   }
 }
