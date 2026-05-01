@@ -207,16 +207,29 @@ Prices are sourced from the **Skinport public items API** in a single bulk reque
 - **Cloudflare KV — `TRADEUP_CACHE`:** Stores the pre-computed list of profitable trade-up contracts. Written by `/api/tradeups/profitable/refresh` (or auto-populated on the first cache miss) and read by `/api/tradeups/profitable`. Expires after 1 hour.
 - **Edge Runtime:** All API routes run on the Cloudflare Edge, ensuring fast response times for cached data.
 
+## Refresh Call Order
+
+All four refresh endpoints must be called **in the following order** — each step depends on the one before it:
+
+| Step | Endpoint | Why it must come here |
+|------|----------|-----------------------|
+| 1 | `GET /api/catalog/refresh` | Writes the skin/collection catalog to KV. Both price-refresh routes call `loadCatalog()` internally — running them with a stale or missing catalog means prices are matched against outdated skin names. |
+| 2 | `GET /api/prices/refresh` | Fetches Skinport prices and writes `latest_prices.json` to R2. Requires the catalog from step 1. |
+| 3 | `GET /api/prices/refresh-csfloat` | Fetches CSFloat float-bucketed prices and writes `csfloat_prices.json` to R2. Also requires the catalog from step 1; independent of step 2 but must finish before step 4. |
+| 4 | `GET /api/tradeups/profitable/refresh` | Runs the scanner against both R2 price snapshots. Returns HTTP 503 if the Skinport snapshot (step 2) is missing; falls back to Skinport interpolation if the CSFloat snapshot (step 3) is absent. |
+
+> Steps 2 and 3 are independent of each other and can run in parallel if your scheduler supports it. Step 4 must always be last.
+
 ## Price Refresh — Cron Job Setup
 
-Prices are refreshed by two endpoints that should be called in sequence each hour:
+Prices are refreshed by two endpoints (steps 2 and 3 above):
 
 1. `GET /api/prices/refresh` — fetches all CS2 prices from Skinport and writes `latest_prices.json` to R2.
 2. `GET /api/prices/refresh-csfloat` — fetches float-bucketed listing prices from CSFloat for classified, covert, and extraordinary (knife/glove) skins and writes `csfloat_prices.json` to R2. Requires `CSFLOAT_API_KEY`; skipped safely if the key is absent.
 
 ## Profitable Trade-ups Refresh — Cron Job Setup
 
-Pre-computed profitable trade-up results are refreshed by calling `GET /api/tradeups/profitable/refresh`. This endpoint runs the full candidate scan with the latest prices and writes the result to `TRADEUP_CACHE` KV. It should be run after each price refresh so the displayed contracts always reflect current market prices.
+Pre-computed profitable trade-up results are refreshed by calling `GET /api/tradeups/profitable/refresh` (step 4). This endpoint runs the full candidate scan with the latest prices and writes the result to `TRADEUP_CACHE` KV. It must be run **after** all three preceding refresh steps so the displayed contracts always reflect the current catalog and market prices.
 
 ### 1. Set a `CRON_SECRET` environment variable
 
@@ -241,12 +254,15 @@ Add a cron trigger in `wrangler.jsonc`:
 }
 ```
 
-Then create `app/api/cron/route.ts` (or handle it in a Cloudflare scheduled worker) that calls both refresh endpoints in sequence:
+Then create `app/api/cron/route.ts` (or handle it in a Cloudflare scheduled worker) that calls the refresh endpoints in the correct order:
 
 ```ts
+// 1. Catalog must be fresh before prices are matched against skin names
+await fetch('/api/catalog/refresh', { headers: { Authorization: 'Bearer ...' } });
+// 2 & 3. Price snapshots — independent of each other, both needed before the scanner
 await fetch('/api/prices/refresh', { headers: { Authorization: 'Bearer ...' } });
 await fetch('/api/prices/refresh-csfloat', { headers: { Authorization: 'Bearer ...' } });
-await fetch('/api/catalog/refresh', { headers: { Authorization: 'Bearer ...' } });
+// 4. Scanner reads both price snapshots; returns 503 if Skinport snapshot is missing
 await fetch('/api/tradeups/profitable/refresh', { headers: { Authorization: 'Bearer ...' } });
 ```
 
@@ -266,12 +282,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          curl -s -X GET "https://<your-domain>/api/prices/refresh" \
-            -H "Authorization: Bearer ${{ secrets.CRON_SECRET }}"
-          curl -s -X GET "https://<your-domain>/api/prices/refresh-csfloat" \
-            -H "Authorization: Bearer ${{ secrets.CRON_SECRET }}"
+          # 1. Refresh catalog first — price routes use loadCatalog() internally
           curl -s -X GET "https://<your-domain>/api/catalog/refresh" \
             -H "Authorization: Bearer ${{ secrets.CRON_SECRET }}"
+          # 2. Skinport prices
+          curl -s -X GET "https://<your-domain>/api/prices/refresh" \
+            -H "Authorization: Bearer ${{ secrets.CRON_SECRET }}"
+          # 3. CSFloat prices (independent of step 2, but both precede the scanner)
+          curl -s -X GET "https://<your-domain>/api/prices/refresh-csfloat" \
+            -H "Authorization: Bearer ${{ secrets.CRON_SECRET }}"
+          # 4. Scanner — must run after all price snapshots are written
           curl -s -X GET "https://<your-domain>/api/tradeups/profitable/refresh" \
             -H "Authorization: Bearer ${{ secrets.CRON_SECRET }}"
 ```

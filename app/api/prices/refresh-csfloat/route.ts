@@ -38,10 +38,14 @@ function sleep(ms: number): Promise<void> {
  * Requires the `CSFLOAT_API_KEY` secret to be set in the Cloudflare Worker.
  */
 export async function GET(request: NextRequest) {
+    const refreshStart = Date.now();
+    console.log("[csfloat-refresh] GET /api/prices/refresh-csfloat — request received");
+
     const authHeader = request.headers.get("Authorization");
     const cronSecret = process.env.CRON_SECRET;
 
     if (cronSecret && authHeader !== `Bearer ${cronSecret}`) {
+        console.warn("[csfloat-refresh] Unauthorized request blocked — invalid CRON_SECRET");
         return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
 
@@ -50,17 +54,20 @@ export async function GET(request: NextRequest) {
 
     const apiKey = env.CSFLOAT_API_KEY;
     if (!apiKey) {
+        console.error("[csfloat-refresh] CSFLOAT_API_KEY is not configured — aborting");
         return NextResponse.json(
             { error: "CSFLOAT_API_KEY not configured — set it as a Cloudflare Worker secret" },
             { status: 503 },
         );
     }
+    console.log("[csfloat-refresh] CSFLOAT_API_KEY present");
 
     const { skins } = await loadCatalog(env);
+    console.log(`[csfloat-refresh] Catalog loaded — ${skins.length} total skin(s)`);
 
     // Only fetch prices for high-value output skins
     const relevantSkins = skins.filter((s) => RELEVANT_RARITIES.has(s.rarity));
-    console.log(`[csfloat-refresh] Fetching CSFloat prices for ${relevantSkins.length} skins`);
+    console.log(`[csfloat-refresh] ${relevantSkins.length} relevant skin(s) to fetch (rarities: ${[...RELEVANT_RARITIES].join(", ")})`);
 
     const snapshot: CsfloatSnapshot = {};
     let fetched = 0;
@@ -74,10 +81,12 @@ export async function GET(request: NextRequest) {
         );
 
         if (applicableBuckets.length === 0) {
+            console.log(`[csfloat-refresh] Skipping "${skin.name}" — no applicable float buckets`);
             skipped++;
             continue;
         }
 
+        console.log(`[csfloat-refresh] Fetching "${skin.name}" — ${applicableBuckets.length} bucket(s)`);
         const skinBuckets = [];
 
         for (const bucket of applicableBuckets) {
@@ -91,6 +100,11 @@ export async function GET(request: NextRequest) {
             // CSFloat uses the skin name without wear suffix (e.g. "AK-47 | Redline")
             const price = await fetchCsfloatBucketPrice(apiKey, skin.name, effectiveMin, effectiveMax);
 
+            console.log(
+                `[csfloat-refresh]   bucket [${effectiveMin.toFixed(4)}, ${effectiveMax.toFixed(4)}] — ` +
+                `price: ${price !== null ? `$${price.toFixed(2)}` : "null (no listings)"}`,
+            );
+
             skinBuckets.push({ minFloat: effectiveMin, maxFloat: effectiveMax, price });
 
             if (price !== null) fetched++;
@@ -103,13 +117,19 @@ export async function GET(request: NextRequest) {
     }
 
     console.log(
-        `[csfloat-refresh] Done — ${fetched} prices fetched, ${empty} empty buckets, ${skipped} skins skipped`,
+        `[csfloat-refresh] Fetch loop done — ${fetched} prices fetched, ${empty} empty buckets, ${skipped} skins skipped`,
     );
 
     // Persist snapshot to R2
+    console.log("[csfloat-refresh] Persisting snapshot to R2...");
+    const persistStart = Date.now();
     await env.PRICE_SNAPSHOTS.put(CSFLOAT_PRICES_KEY, JSON.stringify(snapshot), {
         httpMetadata: { contentType: "application/json" },
     });
+    console.log(`[csfloat-refresh] R2 snapshot written in ${Date.now() - persistStart}ms.`);
+
+    const totalDuration = Date.now() - refreshStart;
+    console.log(`[csfloat-refresh] Successfully completed in ${totalDuration}ms total.`);
 
     return NextResponse.json({
         success: true,
@@ -117,5 +137,6 @@ export async function GET(request: NextRequest) {
         bucketsWithPrice: fetched,
         emptyBuckets: empty,
         skinnedSkipped: skipped,
+        durationMs: totalDuration,
     });
 }
