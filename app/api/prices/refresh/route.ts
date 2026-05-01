@@ -113,6 +113,7 @@ export async function GET(request: NextRequest) {
             maxPrice: item.max_price,
             meanPrice: item.mean_price,
             suggestedPrice: item.suggested_price,
+            quantity: item.quantity ?? null,
         };
         matched++;
     }

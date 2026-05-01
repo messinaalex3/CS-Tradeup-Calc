@@ -6,6 +6,7 @@ import type {
   Skin,
   Collection,
 } from "../types";
+import { DEFAULT_SELL_FEE } from "../types";
 import { SKINS as STATIC_SKINS, COLLECTIONS as STATIC_COLLECTIONS } from "../catalog";
 import { calculateOutputPool, validateInputs } from "./pool";
 import {
@@ -23,6 +24,12 @@ export async function evaluateTradeup(
   getOutputPrice?: (skinId: string, wear: Wear) => Promise<number | null>,
   skins: Skin[] = STATIC_SKINS,
   collections: Collection[] = STATIC_COLLECTIONS,
+  /**
+   * Optional float-aware output price getter. When provided, the exact computed
+   * output float is passed so the price can be interpolated toward adjacent
+   * wear-tier prices for better accuracy. Falls back to getOutputPrice if omitted.
+   */
+  getOutputPriceByFloat?: (skinId: string, float: number) => Promise<number | null>,
 ): Promise<EvaluationResult> {
   const outputPriceGetter = getOutputPrice ?? getInputPrice;
 
@@ -35,6 +42,8 @@ export async function evaluateTradeup(
       totalCost: 0,
       ev: 0,
       roi: 0,
+      netRoi: 0,
+      sellFee: DEFAULT_SELL_FEE,
       guaranteedProfit: false,
       chanceToProfit: 0,
       minOutput: 0,
@@ -59,6 +68,8 @@ export async function evaluateTradeup(
         totalCost: 0,
         ev: 0,
         roi: 0,
+        netRoi: 0,
+        sellFee: DEFAULT_SELL_FEE,
         guaranteedProfit: false,
         chanceToProfit: 0,
         minOutput: 0,
@@ -79,6 +90,8 @@ export async function evaluateTradeup(
       totalCost,
       ev: 0,
       roi: 0,
+      netRoi: 0,
+      sellFee: DEFAULT_SELL_FEE,
       guaranteedProfit: false,
       chanceToProfit: 0,
       minOutput: 0,
@@ -108,7 +121,11 @@ export async function evaluateTradeup(
       skin.maxFloat,
     );
     const wear = floatToWear(outputFloat);
-    const price = await outputPriceGetter(skin.id, wear);
+    // Prefer the float-aware getter (interpolates between tier prices at boundaries)
+    // so a FT at 0.16 prices closer to MW and a FT at 0.37 prices closer to WW.
+    const price = getOutputPriceByFloat
+      ? await getOutputPriceByFloat(skin.id, outputFloat)
+      : await outputPriceGetter(skin.id, wear);
 
     outputs.push({
       skinId: skin.id,
@@ -131,6 +148,11 @@ export async function evaluateTradeup(
 
   // Calculate ROI (as a multiplier, e.g. 1.15 = 15% profit)
   const roi = totalCost > 0 ? ev / totalCost : 0;
+
+  // Net ROI after the marketplace sell fee (Skinport charges sellers ~12%).
+  // A contract needs netRoi > 1.0 to actually be profitable after fees.
+  const netEv = ev * (1 - DEFAULT_SELL_FEE);
+  const netRoi = totalCost > 0 ? netEv / totalCost : 0;
 
   // Min/max output value
   const validPrices = outputs
@@ -160,6 +182,8 @@ export async function evaluateTradeup(
     totalCost: Math.round(totalCost * 100) / 100,
     ev: Math.round(ev * 100) / 100,
     roi: Math.round(roi * 1000) / 1000,
+    netRoi: Math.round(netRoi * 1000) / 1000,
+    sellFee: DEFAULT_SELL_FEE,
     guaranteedProfit,
     chanceToProfit: Math.round(chanceToProfit * 100) / 100, // Round to percentage (0-100)
     minOutput: Math.round(minOutput * 100) / 100,

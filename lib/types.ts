@@ -4,7 +4,8 @@ export type Rarity =
   | "mil_spec"
   | "restricted"
   | "classified"
-  | "covert";
+  | "covert"
+  | "extraordinary";
 
 export type Wear = "FN" | "MW" | "FT" | "WW" | "BS";
 
@@ -15,6 +16,7 @@ export const RARITY_ORDER: Rarity[] = [
   "restricted",
   "classified",
   "covert",
+  "extraordinary",
 ];
 
 export const RARITY_LABELS: Record<Rarity, string> = {
@@ -24,6 +26,7 @@ export const RARITY_LABELS: Record<Rarity, string> = {
   restricted: "Restricted",
   classified: "Classified",
   covert: "Covert",
+  extraordinary: "Extraordinary",
 };
 
 export const RARITY_COLORS: Record<Rarity, string> = {
@@ -33,6 +36,7 @@ export const RARITY_COLORS: Record<Rarity, string> = {
   restricted: "text-purple-500",
   classified: "text-pink-500",
   covert: "text-red-500",
+  extraordinary: "text-yellow-400",
 };
 
 export const WEAR_FLOAT_RANGES: Record<Wear, [number, number]> = {
@@ -88,12 +92,22 @@ export interface OutputWithValue {
   estimatedPrice: number | null;
 }
 
+/**
+ * Default marketplace seller fee (Skinport charges 12%).
+ * Applied to output sell prices when computing netRoi.
+ */
+export const DEFAULT_SELL_FEE = 0.12;
+
 export interface EvaluationResult {
   valid: boolean;
   error?: string;
   totalCost: number;
   ev: number;
   roi: number;
+  /** ROI after the marketplace seller fee is deducted from all output proceeds. */
+  netRoi: number;
+  /** The sell fee rate used for netRoi (e.g. 0.12 for Skinport's 12%). */
+  sellFee: number;
   guaranteedProfit: boolean;
   chanceToProfit: number;
   minOutput: number;

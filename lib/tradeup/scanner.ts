@@ -4,6 +4,7 @@ import { SKINS as STATIC_SKINS } from "../catalog";
 import { evaluateTradeup } from "./ev";
 import { calculateOutputPool, getOutputRarity } from "./pool";
 import { floatToWear } from "./float";
+import { MIN_SELL_QUANTITY } from "../storage";
 
 /**
  * A fully-evaluated, profitable trade-up contract ready to be returned to a
@@ -28,6 +29,8 @@ export interface ProfitableContract {
   totalCost: number;
   ev: number;
   roi: number;
+  /** ROI after Skinport's 12% seller fee — contracts need netRoi > 1.0 to be truly profitable. */
+  netRoi: number;
   guaranteedProfit: boolean;
   chanceToProfit: number;
 }
@@ -38,12 +41,13 @@ export interface TradeupCachePayload {
   cachedAt: string;
 }
 
-/** Rarities eligible for trade-up scanning (excludes consumer_grade and covert). */
+/** Rarities eligible for trade-up scanning (excludes consumer_grade and extraordinary). */
 export const SCANNABLE_RARITIES: Rarity[] = [
   "restricted",
   "mil_spec",
   "industrial_grade",
   "classified",
+  "covert",
 ];
 
 /** Minimum ROI to consider a trade-up profitable (1.0 = break even, 1.05 = 5% profit). */
@@ -97,6 +101,35 @@ function pickCheapestSkinsByWear(
     .slice(0, maxCount);
 }
 
+/**
+ * Compute the maximum input float value that, when used for all 10 inputs of
+ * the given skin, still results in an output float ≤ targetWearMax for the
+ * specified output skin. Returns null when no valid range exists.
+ *
+ * This is used by the float-boundary strategy (D) to source the cheapest
+ * float that still achieves the desired output wear tier (e.g., FN).
+ */
+function computeMaxInputFloatForOutputWear(
+  inputSkin: Skin,
+  outputSkin: Skin,
+  targetWearMax: number,
+): number | null {
+  const outputRange = outputSkin.maxFloat - outputSkin.minFloat;
+  if (outputRange <= 0) return null;
+
+  // outputFloat = outputMin + normalizedAvg * outputRange
+  // For outputFloat < targetWearMax:
+  //   normalizedAvg < (targetWearMax - outputMin) / outputRange
+  const maxNormalizedAvg = (targetWearMax - outputSkin.minFloat) / outputRange;
+  if (maxNormalizedAvg <= 0) return null; // Output skin can't reach this wear tier
+  if (maxNormalizedAvg >= 1) return inputSkin.maxFloat; // Any input float works
+
+  const inputRange = inputSkin.maxFloat - inputSkin.minFloat;
+  const maxInputFloat = inputSkin.minFloat + maxNormalizedAvg * inputRange;
+  const clamped = Math.min(maxInputFloat, inputSkin.maxFloat);
+  return clamped > inputSkin.minFloat ? clamped : null;
+}
+
 async function generateOutputAwareCandidates(
   rarity: Rarity,
   getInputPrice: (skinId: string, wear: Wear) => Promise<number | null>,
@@ -109,6 +142,9 @@ async function generateOutputAwareCandidates(
     console.warn(`[scanner:candidates:output-aware] no output rarity mapping for input rarity=${rarity}`);
     return [];
   }
+
+  // Covert 5-item contracts vs standard 10-item contracts
+  const CONTRACT_SIZE = rarity === "covert" ? 5 : 10;
 
   const inputSkins = skins.filter((s) => s.rarity === rarity);
   const outputSkins = skins.filter((s) => s.rarity === outputRarity);
@@ -281,7 +317,7 @@ async function generateOutputAwareCandidates(
       for (const coll of scoredCollections.slice(0, 8)) {
         const input = coll.cheapestInput;
         const inputFloat = clampToSkinRange(targetFloat, input.minFloat, input.maxFloat);
-        addAndCount(Array.from({ length: 10 }, () => ({ skinId: input.id, float: inputFloat })));
+        addAndCount(Array.from({ length: CONTRACT_SIZE }, () => ({ skinId: input.id, float: inputFloat })));
         if (addedForFloat >= MAX_CANDIDATES_PER_FLOAT) break;
       }
       console.log(
@@ -290,13 +326,9 @@ async function generateOutputAwareCandidates(
 
       // B) Pair splits from top collections.
       const beforeB = addedForFloat;
-      const pairSplits: Array<[number, number]> = [
-        [9, 1],
-        [8, 2],
-        [7, 3],
-        [6, 4],
-        [5, 5],
-      ];
+      const pairSplits: Array<[number, number]> = CONTRACT_SIZE === 5
+        ? [[4, 1], [3, 2]]
+        : [[9, 1], [8, 2], [7, 3], [6, 4], [5, 5]];
       for (let i = 0; i < scoredCollections.length; i++) {
         for (let j = i + 1; j < scoredCollections.length; j++) {
           const a = scoredCollections[i];
@@ -329,11 +361,9 @@ async function generateOutputAwareCandidates(
 
       // C) Tri-collection contracts to spread output odds while preserving quality.
       const beforeC = addedForFloat;
-      const tripleSplits: Array<[number, number, number]> = [
-        [6, 2, 2],
-        [5, 3, 2],
-        [4, 3, 3],
-      ];
+      const tripleSplits: Array<[number, number, number]> = CONTRACT_SIZE === 5
+        ? [[3, 1, 1], [2, 2, 1]]
+        : [[6, 2, 2], [5, 3, 2], [4, 3, 3]];
       for (let i = 0; i < scoredCollections.length; i++) {
         for (let j = i + 1; j < scoredCollections.length; j++) {
           for (let k = j + 1; k < scoredCollections.length; k++) {
@@ -365,6 +395,40 @@ async function generateOutputAwareCandidates(
       );
     }
 
+    // Strategy D: Float-boundary contracts — for FN and MW targets, compute the
+    // highest valid input float that still keeps the output within the target
+    // wear tier. These boundary floats are often cheaper to source than the
+    // tier midpoints while still capturing the same output wear premium.
+    if (wear === "FN" || wear === "MW") {
+      const wearUpperBound = WEAR_FLOAT_RANGES[wear][1];
+      let addedD = 0;
+      for (const coll of scoredCollections) {
+        const inputSkin = coll.cheapestInput;
+        const outputSkins = outputByCollection.get(coll.collectionId) ?? [];
+        for (const outputSkin of outputSkins) {
+          const maxFloat = computeMaxInputFloatForOutputWear(
+            inputSkin, outputSkin, wearUpperBound,
+          );
+          if (maxFloat === null) continue;
+          // Use 98% of max to stay safely within the wear-tier boundary
+          const boundaryFloat = clampToSkinRange(
+            maxFloat * 0.98,
+            inputSkin.minFloat,
+            inputSkin.maxFloat,
+          );
+          const before = candidates.length;
+          addCandidate(
+            Array.from({ length: CONTRACT_SIZE }, () => ({ skinId: inputSkin.id, float: boundaryFloat })),
+          );
+          if (candidates.length > before) { addedD++; wearTotal++; }
+          break; // One boundary float per input skin
+        }
+      }
+      console.log(
+        `[scanner:candidates:output-aware] rarity=${rarity} wear=${wear} strategy=D added=${addedD}`,
+      );
+    }
+
     console.log(
       `[scanner:candidates:output-aware] rarity=${rarity} wear=${wear} ` +
       `wearTotal=${wearTotal} globalTotal=${candidates.length} wearDelta=${candidates.length - wearStartCount}`,
@@ -384,6 +448,67 @@ export function getContractKey(inputs: TradeupInput[]): string {
 }
 
 /**
+ * Generate 5-item covert contract candidates. These contracts use exactly 5
+ * covert inputs and output a knife or glove from the same case (Oct 2025 update).
+ */
+function generateCovertCandidates(skins: Skin[]): TradeupInput[][] {
+  const covertSkins = skins.filter((s) => s.rarity === "covert");
+  if (covertSkins.length === 0) return [];
+
+  const candidates: TradeupInput[][] = [];
+  const seen = new Set<string>();
+  const addCandidate = (inputs: TradeupInput[]) => {
+    const key = getContractKey(inputs);
+    if (seen.has(key)) return;
+    seen.add(key);
+    candidates.push(inputs);
+  };
+
+  // Group covert skins by collection so we can build cross-collection splits
+  const byCollection = new Map<string, Skin[]>();
+  for (const skin of covertSkins) {
+    const list = byCollection.get(skin.collectionId) ?? [];
+    list.push(skin);
+    byCollection.set(skin.collectionId, list);
+  }
+  const collGroups = [...byCollection.values()];
+
+  const targetWears: Wear[] = ["FN", "MW", "FT", "WW", "BS"];
+  for (const targetWear of targetWears) {
+    const [wearMin, wearMax] = WEAR_FLOAT_RANGES[targetWear];
+    const targetFloat = (wearMin + wearMax) / 2;
+
+    // Strategy: 5× same skin
+    for (const skin of covertSkins) {
+      const f = clampToSkinRange(targetFloat, skin.minFloat, skin.maxFloat);
+      addCandidate(Array.from({ length: 5 }, () => ({ skinId: skin.id, float: f })));
+    }
+
+    // Strategy: 4+1 and 3+2 splits across two collections
+    for (let i = 0; i < collGroups.length; i++) {
+      for (let j = i + 1; j < collGroups.length; j++) {
+        const skinA = collGroups[i][0];
+        const skinB = collGroups[j][0];
+        if (!skinA || !skinB) continue;
+        const fA = clampToSkinRange(targetFloat, skinA.minFloat, skinA.maxFloat);
+        const fB = clampToSkinRange(targetFloat, skinB.minFloat, skinB.maxFloat);
+        addCandidate([
+          ...Array.from({ length: 4 }, () => ({ skinId: skinA.id, float: fA })),
+          { skinId: skinB.id, float: fB },
+        ]);
+        addCandidate([
+          ...Array.from({ length: 3 }, () => ({ skinId: skinA.id, float: fA })),
+          ...Array.from({ length: 2 }, () => ({ skinId: skinB.id, float: fB })),
+        ]);
+      }
+    }
+  }
+
+  console.log(`[scanner:candidates:covert] generated ${candidates.length} covert 5-item candidates`);
+  return candidates;
+}
+
+/**
  * Generate a list of candidate trade-up contracts for a given rarity.
  *
  * It generates candidates for multiple target wears (FN, MW, FT) to find
@@ -394,6 +519,9 @@ export function getContractKey(inputs: TradeupInput[]): string {
  * Strategy 3 – 1 Target + 9 Cheap Fillers (High ROI gamble).
  */
 export function generateCandidates(rarity: Rarity, skins: Skin[] = STATIC_SKINS): TradeupInput[][] {
+  // Covert contracts use 5 items and have a different candidate shape
+  if (rarity === "covert") return generateCovertCandidates(skins);
+
   const skinsOfRarity = skins.filter((s) => s.rarity === rarity);
   console.log(`[scanner:candidates:base] start rarity=${rarity} skinsOfRarity=${skinsOfRarity.length}`);
   if (skinsOfRarity.length === 0) {
@@ -647,6 +775,10 @@ export async function computeProfitableContracts(
   onUpdate?: (contracts: ProfitableContract[]) => Promise<void>,
   skins: Skin[] = STATIC_SKINS,
   rarities: Rarity[] = SCANNABLE_RARITIES,
+  getOutputPriceByFloat?: (skinId: string, float: number) => Promise<number | null>,
+  /** Optional liquidity getter: if an output skin with ≥5% probability has fewer than
+   * MIN_SELL_QUANTITY listings, the contract is skipped as unsellable. */
+  getOutputQuantity?: (skinId: string, wear: Wear) => number | null,
 ): Promise<ProfitableContract[]> {
   const inputPriceMemo = new Map<string, Promise<number | null>>();
   const outputPriceMemo = new Map<string, Promise<number | null>>();
@@ -713,6 +845,7 @@ export async function computeProfitableContracts(
     let skippedNoPool = 0;
     let skippedInvalid = 0;
     let skippedROI = 0;
+    let skippedIlliquid = 0;
     let profitable = 0;
     const rarityStart = Date.now();
 
@@ -733,9 +866,22 @@ export async function computeProfitableContracts(
             memoizedInputPriceGetter,
             memoizedOutputPriceGetter,
             skins,
+            undefined, // use default STATIC_COLLECTIONS
+            getOutputPriceByFloat,
           );
           if (!result.valid || result.totalCost <= 0) return { type: "invalid" as const };
           if (result.roi < MIN_ROI) return { type: "below-roi" as const };
+
+          // Liquidity check: skip contracts where a significant output (≥5% probability)
+          // has fewer Skinport listings than the minimum threshold — such skins can't be
+          // sold quickly at the quoted price, making the EV inflated.
+          if (getOutputQuantity) {
+            const hasIlliquidOutput = result.outputs.some(
+              (o) => o.probability >= 0.05 &&
+                (getOutputQuantity(o.skinId, o.wear) ?? Infinity) < MIN_SELL_QUANTITY,
+            );
+            if (hasIlliquidOutput) return { type: "illiquid" as const };
+          }
 
           // Look up buy prices again for input metadata; they are guaranteed cached by evaluateTradeup
           const inputsWithPrices = await Promise.all(inputs.map(async (inp) => {
@@ -781,6 +927,10 @@ export async function computeProfitableContracts(
           skippedROI++;
           continue;
         }
+        if (res.type === "illiquid") {
+          skippedIlliquid++;
+          continue;
+        }
 
         const { result, inputs } = res;
         profitable++;
@@ -803,6 +953,7 @@ export async function computeProfitableContracts(
           totalCost: result.totalCost,
           ev: result.ev,
           roi: result.roi,
+          netRoi: result.netRoi,
           guaranteedProfit: result.guaranteedProfit,
           chanceToProfit: result.chanceToProfit,
         };
@@ -823,7 +974,7 @@ export async function computeProfitableContracts(
     console.log(
       `[scanner] Rarity "${rarity}" done in ${Date.now() - rarityStart}ms — ` +
       `${evaluated} evaluated, ${profitable} profitable ` +
-      `(skipped: ${skippedNoPool} no-pool, ${skippedInvalid} invalid, ${skippedROI} below min ROI)`,
+      `(skipped: ${skippedNoPool} no-pool, ${skippedInvalid} invalid, ${skippedROI} below min ROI, ${skippedIlliquid} illiquid)`,
     );
 
     // Final update for this rarity

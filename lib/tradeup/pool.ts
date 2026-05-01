@@ -21,8 +21,8 @@ export function getOutputRarity(inputRarity: Rarity): Rarity | null {
  * Validate trade-up inputs.
  */
 export function validateInputs(inputs: TradeupInput[], skins: Skin[] = STATIC_SKINS): ValidationResult {
-  if (inputs.length !== 10) {
-    return { valid: false, error: "Trade-ups require exactly 10 input items." };
+  if (inputs.length === 0) {
+    return { valid: false, error: "Trade-up requires at least one input item." };
   }
 
   const rarities = new Set(inputs.map((i) => {
@@ -39,8 +39,21 @@ export function validateInputs(inputs: TradeupInput[], skins: Skin[] = STATIC_SK
   }
 
   const [rarity] = rarities;
-  if (rarity === "covert") {
-    return { valid: false, error: "Covert items cannot be used as trade-up inputs." };
+
+  if (rarity === "extraordinary") {
+    return { valid: false, error: "Extraordinary items cannot be used as trade-up inputs." };
+  }
+
+  // Covert trade-ups (Oct 2025 update) use exactly 5 items and output knives/gloves.
+  // All other rarities use the standard 10-item contract.
+  const requiredCount = rarity === "covert" ? 5 : 10;
+  if (inputs.length !== requiredCount) {
+    return {
+      valid: false,
+      error: rarity === "covert"
+        ? "Covert trade-ups require exactly 5 input items."
+        : "Trade-ups require exactly 10 input items.",
+    };
   }
 
   for (const input of inputs) {

@@ -6,16 +6,23 @@ A web application for looking up CS2 skin prices and finding the most profitable
 
 ## Features
 
-- **Price Lookup** — prices sourced from the Skinport API, refreshed hourly via a cron job
-- **Trade-up Calculator** — select 10 same-rarity items, set float values, and compute EV/ROI
+- **Price Lookup** — prices sourced from the Skinport API, refreshed hourly via a cron job; float-precise prices for high-value skins sourced from CSFloat
+- **Trade-up Calculator** — select same-rarity items (10 for mil-spec through classified; 5 for covert → knife/glove), set float values, and compute EV/ROI
 - **Profitable Trade-ups** — automatically scans the catalog and surfaces the highest-ROI contracts; results are cached in KV and served instantly on subsequent loads
+- **Covert → Knife/Glove contracts** — the scanner models the October 2025 CS2 update: 5 covert inputs produce a knife or glove from the case's rare-drop pool
+- **Liquidity filter** — contracts whose likely outputs have fewer than 3 active Skinport listings are skipped to avoid phantom profits on illiquid skins
 
 ## How it works
 
-CS2 trade-up contracts let you exchange 10 items of the same rarity for one item of the next rarity tier. The output item is drawn from the same collections as the inputs, weighted by how many inputs came from each collection.
+CS2 trade-up contracts let you exchange same-rarity items for one item of the next rarity tier. The number of inputs depends on rarity:
+
+- **10 inputs** for industrial grade, mil-spec, restricted, and classified
+- **5 inputs** for covert — the October 2025 CS2 update allows 5 covert items to produce a knife or glove from the same case's rare-drop pool
+
+The output item is drawn from the same collections as the inputs, weighted by how many inputs came from each collection.
 
 The calculator:
-1. Validates inputs (exactly 10 items, same rarity, valid float values)
+1. Validates inputs (correct count for the rarity, same rarity, valid float values)
 2. Determines the output pool and each item's probability
 3. Computes the output float using CS2's formula: `outputFloat = outputMin + avg(normalizedInputFloats) × (outputMax − outputMin)`
 4. Looks up cached prices (sourced from Skinport) for each possible output
@@ -46,13 +53,25 @@ Responses include `fromCache: true/false` and a `cachedAt` ISO timestamp so you 
 
 #### 1. Candidate generation (`generateCandidates`)
 
-For each scannable rarity tier (`industrial_grade`, `mil_spec`, `restricted`, `classified`), the scanner generates a list of candidate contracts using two complementary strategies:
+For each scannable rarity tier (`industrial_grade`, `mil_spec`, `restricted`, `classified`, `covert`), the scanner generates a list of candidate contracts. The strategies differ by rarity:
+
+**For industrial grade through classified (10-item contracts)**
 
 **Strategy A — 10× same item**
 For every skin of the given rarity in the catalog, create a contract that uses 10 copies of that skin at float `0.20` (or the nearest valid float for skins with a restricted range). This produces one candidate per skin and is the simplest possible trade-up structure.
 
 **Strategy B — 5+5 cross-collection mix**
 For every *pair* of collections that contain skins of the given rarity, create a contract using 5 copies from one collection and 5 copies from the other, both at float `0.20`. Mixing collections changes which output items are in the pool and their relative probabilities, which can unlock more profitable outputs that a single-collection contract would miss.
+
+**For covert (5-item contracts, output is knife/glove)**
+
+Covert inputs follow the October 2025 CS2 rule: 5 covert items produce one knife or glove (`extraordinary` rarity) from the case's rare-drop pool.
+
+**Strategy A — 5× same item**
+Five copies of the same covert skin at float `0.20`.
+
+**Strategy B — 4+1 and 3+2 cross-collection splits**
+For every pair of collections containing covert skins, create contracts with 4+1 and 3+2 splits to vary the output knife/glove probabilities.
 
 #### 2. Evaluation (`evaluateTradeup`)
 
@@ -65,7 +84,7 @@ Each candidate contract is evaluated by `lib/tradeup/ev.ts`:
    normalizedAvg = average((inputFloat − skinMin) / (skinMax − skinMin))
    outputFloat   = outputMin + normalizedAvg × (outputMax − outputMin)
    ```
-4. **Output prices** — the cached Skinport price is looked up for each output item at its predicted wear tier.
+4. **Output prices** — for classified and covert outputs (and their knife/glove drops), the app first checks the CSFloat snapshot for a float-bucketed listing price; if unavailable it falls back to Skinport interpolation.
 5. **EV & ROI** —
    ```
    EV  = Σ (probability × price)  for each output item
@@ -79,6 +98,7 @@ Each candidate contract is evaluated by `lib/tradeup/ev.ts`:
 
 After evaluation, the scanner:
 - Discards any contract with `ROI < 0` (the `MIN_ROI` threshold, currently `0`).
+- Discards contracts where any output item with a probability ≥ 5% has fewer than `MIN_SELL_QUANTITY` (3) active Skinport listings — these are flagged as **illiquid** to avoid phantom profits on paper-priced skins.
 - Discards contracts whose `totalCost` exceeds the user's optional **Max Budget** filter.
 - Sorts the remaining contracts by ROI descending.
 - Returns the top 20 results.
@@ -95,8 +115,9 @@ Each result card on the `/profitable` page displays:
 
 | Limitation | Detail |
 |---|---|
-| **Simple candidate strategies** | Only two float values are tried (0.20 for both strategies). A contract at float 0.05 might have a completely different ROI. |
-| **Single-skin inputs only** | Strategy A always uses 10 copies of the *same* skin. Contracts built from 3 or more distinct skins are not generated. |
+| **Float sweep coverage** | Only float `0.20` is tried. A contract at float 0.05 or 0.35 may have a meaningfully different ROI profile. |
+| **Single- and two-skin inputs only** | Strategies use at most two distinct skins. Contracts built from 3 or more distinct skins are not generated. |
+| **CSFloat availability** | CSFloat prices are fetched for classified/covert/extraordinary skins only, and only for the pre-defined float buckets. Skins not covered fall back to Skinport price interpolation. |
 | **On-demand scanning** | ~~Results are computed fresh on every page load. There is no background refresh or persistent storage of discovered contracts.~~ **Resolved** — results are now cached in `TRADEUP_CACHE` KV and recomputed in the background via the `/api/tradeups/profitable/refresh` endpoint. |
 
 ### Ideas for improvement
@@ -160,7 +181,19 @@ npm run preview    # builds then serves at http://localhost:8787
     ```
     > **Important:** Deploying with placeholder IDs will cause the Worker to crash at runtime with a binding error.
 
-3.  **Deploy**
+3.  **Add secrets via Wrangler** (never put secrets in `wrangler.jsonc`)
+    ```bash
+    # Protects the /api/prices/refresh, /api/tradeups/profitable/refresh,
+    # /api/prices/refresh-csfloat, and /api/catalog/refresh endpoints
+    npx wrangler secret put CRON_SECRET
+
+    # Optional: CSFloat API key for float-bucketed listing prices on high-value skins
+    # Get your key at https://csfloat.com/developer
+    npx wrangler secret put CSFLOAT_API_KEY
+    ```
+    > If `CSFLOAT_API_KEY` is not set, the app still works — all prices fall back to Skinport interpolation.
+
+4.  **Deploy**
     ```bash
     npm run deploy   # runs opennextjs-cloudflare build then deploys to Cloudflare Workers
     ```
@@ -169,14 +202,17 @@ npm run preview    # builds then serves at http://localhost:8787
 
 Prices are sourced from the **Skinport public items API** in a single bulk request and stored in Cloudflare's edge infrastructure:
 
-- **Cloudflare R2 (Object Storage):** Stores a full JSON snapshot of all skin prices (`latest_prices.json`), updated hourly by the cron job.
+- **Cloudflare R2 (Object Storage):** Stores a full JSON snapshot of all Skinport skin prices (`latest_prices.json`), updated hourly by the cron job. Also stores float-bucketed CSFloat prices for high-value skins (`csfloat_prices.json`), updated by the `/api/prices/refresh-csfloat` cron job.
 - **Cloudflare KV — `PRICE_CACHE`:** Acts as a high-speed edge cache for individual skin prices. When a price is requested, the app checks KV first. On a miss it pulls the price from the R2 snapshot and back-populates KV with a 1-hour TTL.
 - **Cloudflare KV — `TRADEUP_CACHE`:** Stores the pre-computed list of profitable trade-up contracts. Written by `/api/tradeups/profitable/refresh` (or auto-populated on the first cache miss) and read by `/api/tradeups/profitable`. Expires after 1 hour.
 - **Edge Runtime:** All API routes run on the Cloudflare Edge, ensuring fast response times for cached data.
 
 ## Price Refresh — Cron Job Setup
 
-Prices are refreshed by calling `GET /api/prices/refresh`. This endpoint fetches all CS2 prices from Skinport in a single HTTP request and writes the result to R2/KV. It should be run hourly.
+Prices are refreshed by two endpoints that should be called in sequence each hour:
+
+1. `GET /api/prices/refresh` — fetches all CS2 prices from Skinport and writes `latest_prices.json` to R2.
+2. `GET /api/prices/refresh-csfloat` — fetches float-bucketed listing prices from CSFloat for classified, covert, and extraordinary (knife/glove) skins and writes `csfloat_prices.json` to R2. Requires `CSFLOAT_API_KEY`; skipped safely if the key is absent.
 
 ## Profitable Trade-ups Refresh — Cron Job Setup
 
@@ -184,9 +220,9 @@ Pre-computed profitable trade-up results are refreshed by calling `GET /api/trad
 
 ### 1. Set a `CRON_SECRET` environment variable
 
-Both `/api/prices/refresh` and `/api/tradeups/profitable/refresh` are protected by the same secret. Set it once in your Cloudflare dashboard:
+All refresh endpoints are protected by the same secret. Set it once using Wrangler (see Deployment step 3 above) or in the Cloudflare dashboard:
 
-**Dashboard:** Workers & Pages → your project → Settings → Variables and Secrets → add `CRON_SECRET`.
+**Dashboard:** Workers & Pages → your project → Settings → Variables and Secrets → add `CRON_SECRET` (and optionally `CSFLOAT_API_KEY`).
 
 Then call either endpoint with:
 ```
@@ -209,6 +245,8 @@ Then create `app/api/cron/route.ts` (or handle it in a Cloudflare scheduled work
 
 ```ts
 await fetch('/api/prices/refresh', { headers: { Authorization: 'Bearer ...' } });
+await fetch('/api/prices/refresh-csfloat', { headers: { Authorization: 'Bearer ...' } });
+await fetch('/api/catalog/refresh', { headers: { Authorization: 'Bearer ...' } });
 await fetch('/api/tradeups/profitable/refresh', { headers: { Authorization: 'Bearer ...' } });
 ```
 
@@ -230,6 +268,10 @@ jobs:
       - run: |
           curl -s -X GET "https://<your-domain>/api/prices/refresh" \
             -H "Authorization: Bearer ${{ secrets.CRON_SECRET }}"
+          curl -s -X GET "https://<your-domain>/api/prices/refresh-csfloat" \
+            -H "Authorization: Bearer ${{ secrets.CRON_SECRET }}"
+          curl -s -X GET "https://<your-domain>/api/catalog/refresh" \
+            -H "Authorization: Bearer ${{ secrets.CRON_SECRET }}"
           curl -s -X GET "https://<your-domain>/api/tradeups/profitable/refresh" \
             -H "Authorization: Bearer ${{ secrets.CRON_SECRET }}"
 ```
@@ -245,13 +287,15 @@ app/
     catalog/
       refresh/route.ts            # GET /api/catalog/refresh  (cron target)
     prices/route.ts               # GET /api/prices?skinId=&wear=
-    prices/refresh/route.ts       # GET /api/prices/refresh  (cron target)
+    prices/refresh/route.ts       # GET /api/prices/refresh  (cron target, Skinport)
+    prices/refresh-csfloat/
+      route.ts                    # GET /api/prices/refresh-csfloat  (cron target, CSFloat)
     tradeups/evaluate/route.ts    # POST /api/tradeups/evaluate
     tradeups/profitable/
       route.ts                    # GET /api/tradeups/profitable  (cache-first)
       refresh/route.ts            # GET /api/tradeups/profitable/refresh  (cron target)
 lib/
-  types.ts                        # Shared TypeScript types
+  types.ts                        # Shared TypeScript types (Rarity, Wear, Skin, …)
   catalog.ts                      # Static CS2 skin catalog (~1 400 skins, 92 collections) — auto-updated weekly by GitHub Actions
   catalog/
     dynamic.ts                    # Dynamic catalog loader: KV cache → ByMykel API → static fallback
@@ -262,7 +306,8 @@ lib/
     ev.ts                         # EV / ROI evaluation engine
     scanner.ts                    # Candidate generation + profitable contract scanner
   pricing/
-    index.ts                      # Cache-only price lookup (reads from KV/R2)
+    index.ts                      # Cache-only price lookup (reads from KV/R2, prefers CSFloat for high-value skins)
+    csfloat.ts                    # CSFloat API client — float-bucketed listing prices
 scripts/
   generate_catalog.py             # Regenerate lib/catalog.ts from ByMykel CSGO-API
 ```
@@ -270,7 +315,13 @@ scripts/
 ## API
 
 ### `GET /api/prices?skinId=<id>&wear=<FN|MW|FT|WW|BS>`
-Returns the current Steam Market price for a skin.
+Returns the current Skinport price for a skin.
+
+### `GET /api/prices/refresh`
+Fetches all CS2 prices from Skinport and writes `latest_prices.json` to R2/KV. Protected by `Authorization: Bearer <CRON_SECRET>`.
+
+### `GET /api/prices/refresh-csfloat`
+Fetches float-bucketed listing prices from CSFloat for classified, covert, and extraordinary (knife/glove) skins and writes `csfloat_prices.json` to R2. Requires `CSFLOAT_API_KEY` and `CRON_SECRET`. Rate-limited at ~1 req/s; may take several minutes on a large catalog.
 
 ### `POST /api/tradeups/evaluate`
 ```json

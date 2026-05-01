@@ -8,6 +8,8 @@ export interface PricePoint {
     maxPrice: number | null;
     meanPrice: number | null;
     suggestedPrice: number | null;
+    /** Number of Skinport listings available for this skin/wear. Used for liquidity filtering. */
+    quantity: number | null;
 }
 
 /**
@@ -31,7 +33,15 @@ export interface CloudflareEnv {
     TRADEUP_CACHE: KVNamespace;
     // KV Cache for the dynamic skin catalog (refreshed weekly)
     CATALOG_CACHE: KVNamespace;
+    /** Optional Cloudflare secret: CSFloat API key for float-bucketed pricing. */
+    CSFLOAT_API_KEY?: string;
 }
+
+/** R2 key for the CSFloat float-bucketed price snapshot. */
+export const CSFLOAT_PRICES_KEY = "csfloat_prices.json";
+
+/** Minimum Skinport listing count for an output skin to be considered liquid in the scanner. */
+export const MIN_SELL_QUANTITY = 3;
 
 /** KV key under which the profitable tradeup list is stored. */
 export const TRADEUP_CACHE_KEY = "tradeups:profitable";
@@ -79,6 +89,7 @@ function normalizePricePoint(raw: PricePoint | number | undefined): PricePoint |
             maxPrice: raw,
             meanPrice: raw,
             suggestedPrice: raw,
+            quantity: null,
         };
     }
 
@@ -87,16 +98,16 @@ function normalizePricePoint(raw: PricePoint | number | undefined): PricePoint |
         maxPrice: raw.maxPrice ?? null,
         meanPrice: raw.meanPrice ?? null,
         suggestedPrice: raw.suggestedPrice ?? null,
+        quantity: raw.quantity ?? null,
     };
 }
 
 function pickPriceForSide(pricePoint: PricePoint, side: PriceSide): number | null {
     if (side === "buy") {
-        // For input purchase cost we want a conservative (pessimistic) estimate:
-        // meanPrice is the average transaction price — more realistic than maxPrice
-        // which can be an extreme outlier listing. We fall back to suggested_price
-        // (Steam Market estimate), then the cheapest available listing.
-        return pricePoint.maxPrice ?? pricePoint.meanPrice ?? pricePoint.suggestedPrice ?? pricePoint.minPrice;
+        // For input purchase cost use the mean (typical transaction price) so we
+        // don't wildly over-estimate cost with max_price outlier listings.
+        // Fallback chain: mean → min → suggested → max.
+        return pricePoint.meanPrice ?? pricePoint.minPrice ?? pricePoint.suggestedPrice ?? pricePoint.maxPrice;
     }
     // For output sell value we want the floor — the cheapest listing we'd have
     // to undercut to actually move the item quickly.
@@ -190,6 +201,20 @@ export function getPriceFromSnapshot(
     if (!pricePoint) return null;
     const price = pickPriceForSide(pricePoint, side);
     return price !== null && price > 0 ? price : null;
+}
+
+/**
+ * Look up the Skinport listing quantity for a skin/wear from an in-memory snapshot.
+ * Returns null when the data is absent or in legacy numeric format.
+ */
+export function getQuantityFromSnapshot(
+    snapshot: PriceSnapshot,
+    skinId: string,
+    wear: Wear,
+): number | null {
+    const raw = snapshot[skinId]?.[wear];
+    if (raw === undefined || typeof raw === "number") return null;
+    return raw.quantity ?? null;
 }
 
 /**

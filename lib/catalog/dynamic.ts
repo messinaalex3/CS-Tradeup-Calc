@@ -21,6 +21,8 @@ const RARITY_MAP: Record<string, Rarity> = {
   rarity_mythical_weapon: "restricted",
   rarity_legendary_weapon: "classified",
   rarity_ancient_weapon: "covert",
+  // Knives and gloves (extraordinary / rare-drop pool) — rarity_ancient without the _weapon suffix
+  rarity_ancient: "extraordinary",
   // NOTE: Display-name fallbacks intentionally omitted. Agent skins share the
   // same display names ("Consumer Grade", etc.) but have rarity IDs without the
   // _weapon suffix (e.g. "rarity_common"). Relying on display names lets agents
@@ -34,6 +36,7 @@ const VALID_RARITIES = new Set<string>([
   "restricted",
   "classified",
   "covert",
+  "extraordinary",
 ]);
 
 /** Maximum suffix attempts when making a skin ID unique (e.g. ak-47-redline-2, …-3). */
@@ -142,6 +145,8 @@ interface ApiSkin {
 interface ApiCollection {
   name?: string;
   contains?: ApiSkin[];
+  /** Knife/glove rare-drop pool for cases (October 2025: used as covert 5-item contract outputs). */
+  contains_rare?: ApiSkin[];
 }
 
 async function fetchJson(url: string): Promise<unknown[]> {
@@ -240,6 +245,39 @@ export async function refreshCatalogFromApi(env: CloudflareEnv): Promise<Catalog
         skinName: skinPart,
         collectionId: slug,
         rarity,
+        minFloat,
+        maxFloat,
+        stattrak: false,
+      });
+    }
+
+    // Process knife/glove rare-drop pool (contains_rare).
+    // These are the output skins for covert 5-item trade-up contracts (Oct 2025 update).
+    for (const s of (coll.contains_rare ?? [])) {
+      const skinName = s.name ?? "";
+      // Require "Weapon | Skin" format
+      if (!skinName.includes(" | ")) continue;
+
+      const [weapon, skinPart] = parseWeaponName(skinName);
+
+      let minFloat = 0.0;
+      let maxFloat = 1.0;
+      const detail = (s.id ? skinById.get(s.id) : undefined) ?? skinByName.get(skinName.toLowerCase());
+      if (detail) {
+        if (detail.min_float != null) minFloat = Math.round(Number(detail.min_float) * FLOAT_PRECISION_MULTIPLIER) / FLOAT_PRECISION_MULTIPLIER;
+        if (detail.max_float != null) maxFloat = Math.round(Number(detail.max_float) * FLOAT_PRECISION_MULTIPLIER) / FLOAT_PRECISION_MULTIPLIER;
+      }
+
+      const sid = makeSkinId(weapon, skinPart, slug, seenSkinIds);
+      seenSkinIds.add(sid);
+
+      outSkins.push({
+        id: sid,
+        name: skinName,
+        weaponName: weapon,
+        skinName: skinPart,
+        collectionId: slug,
+        rarity: "extraordinary",
         minFloat,
         maxFloat,
         stattrak: false,

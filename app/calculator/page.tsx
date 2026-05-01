@@ -23,15 +23,16 @@ function formatPrice(price: number | null): string {
 }
 
 function RoiBadge({ roi }: { roi: number }) {
+  const pct = (roi - 1) * 100;
   const color =
-    roi > 15
+    pct > 10
       ? "bg-green-500"
-      : roi > 0
+      : pct > 0
         ? "bg-yellow-500"
         : "bg-red-500";
   return (
     <span className={`${color} text-white text-xs font-bold px-2 py-0.5 rounded`}>
-      {roi > 0 ? "+" : ""}{roi.toFixed(1)}%
+      {pct > 0 ? "+" : ""}{pct.toFixed(1)}%
     </span>
   );
 }
@@ -144,11 +145,10 @@ export default function CalculatorPage() {
             <button
               key={r}
               onClick={() => handleRarityChange(r)}
-              className={`px-3 py-1.5 rounded text-sm font-medium transition-colors ${
-                selectedRarity === r
+              className={`px-3 py-1.5 rounded text-sm font-medium transition-colors ${selectedRarity === r
                   ? "bg-orange-500 text-white"
                   : "bg-zinc-800 text-zinc-300 hover:bg-zinc-700"
-              }`}
+                }`}
             >
               {RARITY_LABELS[r]}
             </button>
@@ -266,6 +266,15 @@ export default function CalculatorPage() {
                   <div className="text-xs text-zinc-500 mb-1">ROI</div>
                   <div className="flex items-center gap-2 mt-0.5">
                     <RoiBadge roi={result.roi} />
+                    {result.netRoi !== undefined && (
+                      <span
+                        className={`text-xs font-medium ${result.netRoi >= 1 ? "text-emerald-400" : "text-red-400"
+                          }`}
+                        title="After Skinport's 12% seller fee"
+                      >
+                        net {((result.netRoi - 1) * 100).toFixed(1)}%
+                      </span>
+                    )}
                   </div>
                 </div>
                 <div className="bg-zinc-900 rounded-xl p-4 border border-zinc-800">

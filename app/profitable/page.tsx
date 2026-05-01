@@ -24,6 +24,8 @@ interface ProfitableContract {
   totalCost: number;
   ev: number;
   roi: number;
+  /** ROI after Skinport's 12% seller fee. */
+  netRoi: number;
   guaranteedProfit: boolean;
   chanceToProfit: number;
 }
@@ -42,15 +44,16 @@ function formatPrice(price: number | null): string {
 }
 
 function RoiBadge({ roi }: { roi: number }) {
+  const pct = (roi - 1) * 100;
   const color =
-    roi > 15
+    pct > 10
       ? "bg-green-500"
-      : roi > 0
+      : pct > 0
         ? "bg-yellow-500"
         : "bg-red-500";
   return (
     <span className={`${color} text-white text-xs font-bold px-2 py-0.5 rounded`}>
-      {roi > 0 ? "+" : ""}{roi.toFixed(1)}%
+      {pct > 0 ? "+" : ""}{pct.toFixed(1)}%
     </span>
   );
 }
@@ -210,6 +213,15 @@ export default function ProfitablePage() {
                 >
                   <div className="flex items-center gap-3 flex-wrap">
                     <RoiBadge roi={contract.roi} />
+                    {contract.netRoi !== undefined && (
+                      <span
+                        className={`text-xs font-medium ${contract.netRoi >= 1 ? "text-emerald-400" : "text-red-400"
+                          }`}
+                        title="ROI after Skinport's 12% seller fee"
+                      >
+                        net {((contract.netRoi - 1) * 100).toFixed(1)}%
+                      </span>
+                    )}
                     {contract.guaranteedProfit && (
                       <span className="bg-green-700 text-green-100 text-xs px-2 py-0.5 rounded font-semibold">
                         Guaranteed ✅

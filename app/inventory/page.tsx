@@ -42,14 +42,15 @@ function formatPrice(price: number | null | undefined): string {
 }
 
 function RoiBadge({ roi }: { roi: number }) {
+  const pct = (roi - 1) * 100;
   const color =
-    roi > 15 ? "bg-green-500" : roi > 0 ? "bg-yellow-500" : "bg-red-500";
+    pct > 10 ? "bg-green-500" : pct > 0 ? "bg-yellow-500" : "bg-red-500";
   return (
     <span
       className={`${color} text-white text-xs font-bold px-2 py-0.5 rounded`}
     >
-      {roi > 0 ? "+" : ""}
-      {roi.toFixed(1)}%
+      {pct > 0 ? "+" : ""}
+      {pct.toFixed(1)}%
     </span>
   );
 }
@@ -312,12 +313,11 @@ export default function InventoryPage() {
                                   </div>
                                 </div>
                                 <div
-                                  className={`font-semibold ml-3 ${
-                                    out.estimatedPrice !== null &&
-                                    out.estimatedPrice > contract.totalCost
+                                  className={`font-semibold ml-3 ${out.estimatedPrice !== null &&
+                                      out.estimatedPrice > contract.totalCost
                                       ? "text-green-400"
                                       : "text-red-400"
-                                  }`}
+                                    }`}
                                 >
                                   {formatPrice(out.estimatedPrice)}
                                 </div>

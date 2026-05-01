@@ -159,7 +159,7 @@ export async function GET(request: NextRequest) {
   try {
     // Load the full price snapshot ONCE from R2 so every skin/wear lookup during
     // the scan is an in-memory map access instead of a separate R2 download.
-    const { getBuyPrice: snapshotBuy, getSellPrice: snapshotSell, snapshot } =
+    const { getBuyPrice: snapshotBuy, getSellPrice: snapshotSell, getSellPriceByFloat: snapshotSellByFloat, getQuantity: snapshotGetQuantity, snapshot } =
       await createSnapshotPriceGetters(env);
 
     if (!snapshot) {
@@ -171,6 +171,7 @@ export async function GET(request: NextRequest) {
 
     const inputPriceGetter = (skinId: string, wear: Wear) => snapshotBuy(skinId, wear);
     const outputPriceGetter = (skinId: string, wear: Wear) => snapshotSell(skinId, wear);
+    const outputPriceByFloatGetter = (skinId: string, float: number) => snapshotSellByFloat(skinId, float);
 
     const { skins } = await loadCatalog(env);
     console.log(`[tradeups/refresh] Catalog loaded — ${skins.length} skin(s)`);
@@ -237,6 +238,9 @@ export async function GET(request: NextRequest) {
       outputPriceGetter,
       onUpdate,
       skins,
+      undefined, // use default SCANNABLE_RARITIES
+      outputPriceByFloatGetter,
+      snapshotGetQuantity,
     );
     console.log(`[tradeups/refresh] Scan finished in ${Date.now() - scanStart}ms — ${runResults.length} contract(s) found in this run`);
 
