@@ -193,7 +193,7 @@ npm run preview    # http://localhost:8787
 
 There is **no separate seed script** in the current repo. The supported way to seed local KV/R2 data is to run the same refresh endpoints the deployed app uses.
 
-1. Optionally add local secrets to `/home/runner/work/CS-Tradeup-Calc/CS-Tradeup-Calc/.dev.vars`:
+1. Optionally add local secrets to `.dev.vars`:
    ```dotenv
    NEXTJS_ENV=development
    CS2C_API_KEY=...
@@ -215,7 +215,7 @@ There is **no separate seed script** in the current repo. The supported way to s
    # 4. Seed the profitable trade-up cache
    curl -X GET "http://localhost:3000/api/tradeups/profitable/refresh"
    ```
-4. If you set `CRON_SECRET`, include `Authorization: ****** on each request. If you use `npm run preview`, replace port `3000` with `8787`.
+4. If you set `CRON_SECRET`, include `Authorization: Bearer <CRON_SECRET>` on each request. If you use `npm run preview`, replace port `3000` with `8787`.
 
 If you do **not** set `CS2C_API_KEY`, the app still boots, but price-dependent routes cannot populate `latest_prices.json`, so calculator and profitable results will be incomplete.
 
@@ -298,7 +298,7 @@ This repo currently exposes **HTTP refresh endpoints** only. It does **not** shi
 Set `CRON_SECRET` in Cloudflare (or `.dev.vars` locally) and send:
 
 ```http
-Authorization: ******
+Authorization: Bearer <CRON_SECRET>
 ```
 
 ### Recommended: external scheduler
@@ -308,19 +308,19 @@ GitHub Actions, cron-job.org, or another Worker can call the endpoints in order:
 ```bash
 # 1. Refresh the catalog
 curl -s "https://<your-domain>/api/catalog/refresh" \
-  -H "Authorization: ******"
+  -H "Authorization: Bearer <CRON_SECRET>"
 
 # 2. Refresh the main CS2Cap snapshot
 curl -s "https://<your-domain>/api/prices/refresh" \
-  -H "Authorization: ******"
+  -H "Authorization: Bearer <CRON_SECRET>"
 
 # 3. Optional: refresh CSFloat prices
 curl -s "https://<your-domain>/api/prices/refresh-csfloat" \
-  -H "Authorization: ******"
+  -H "Authorization: Bearer <CRON_SECRET>"
 
 # 4. Refresh the profitable-tradeup cache
 curl -s "https://<your-domain>/api/tradeups/profitable/refresh" \
-  -H "Authorization: ******"
+  -H "Authorization: Bearer <CRON_SECRET>"
 ```
 
 If you want a pure-Cloudflare scheduler, add a separate scheduled handler or orchestrator Worker outside the current repo.

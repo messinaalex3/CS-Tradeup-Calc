@@ -67,7 +67,7 @@ Declared in `wrangler.jsonc` and typed in `lib/storage.ts` (`CloudflareEnv`):
 | `ASSETS` | Assets binding | Serves built static assets |
 | `IMAGES` | Images binding | Enables Next.js image optimization |
 
-Always obtain **bindings** via `getCloudflareContext()` from `@opennextjs/cloudflare` in Route Handlers. The refresh routes currently read `CRON_SECRET` from `process.env`, but KV/R2 bindings and Worker vars like `CS2C_API_KEY` / `CSFLOAT_API_KEY` come from the Cloudflare env object.
+Always obtain **bindings** via `getCloudflareContext()` from `@opennextjs/cloudflare` in Route Handlers. In the current codebase, the refresh routes check `process.env.CRON_SECRET` first for request authorization, then read KV/R2 bindings and Worker vars like `CS2C_API_KEY` / `CSFLOAT_API_KEY` from the Cloudflare env object returned by `getCloudflareContext()`.
 
 ```ts
 import { getCloudflareContext } from "@opennextjs/cloudflare";
