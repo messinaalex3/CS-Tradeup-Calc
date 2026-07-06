@@ -8,7 +8,7 @@ export interface PricePoint {
     maxPrice: number | null;
     meanPrice: number | null;
     suggestedPrice: number | null;
-    /** Number of Skinport listings available for this skin/wear. Used for liquidity filtering. */
+    /** Number of listings available for this skin/wear. Used for liquidity filtering. */
     quantity: number | null;
 }
 
@@ -33,6 +33,14 @@ export interface CloudflareEnv {
     TRADEUP_CACHE: KVNamespace;
     // KV Cache for the dynamic skin catalog (refreshed weekly)
     CATALOG_CACHE: KVNamespace;
+    /** Optional Cloudflare secret: CS2Cap API key for price refreshes. */
+    CS2C_API_KEY?: string;
+    /** Optional Cloudflare var: provider to fetch from CS2Cap (default: skinport). */
+    CS2C_PROVIDER?: string;
+    /** Optional Cloudflare var: set to true/1 to use CS2Cap stream endpoint. */
+    CS2C_ENABLE_STREAM?: string;
+    /** Optional Cloudflare var: minimum age (seconds) before refreshing prices. */
+    PRICE_REFRESH_MAX_AGE_SECONDS?: string;
     /** Optional Cloudflare secret: CSFloat API key for float-bucketed pricing. */
     CSFLOAT_API_KEY?: string;
 }
@@ -40,7 +48,7 @@ export interface CloudflareEnv {
 /** R2 key for the CSFloat float-bucketed price snapshot. */
 export const CSFLOAT_PRICES_KEY = "csfloat_prices.json";
 
-/** Minimum Skinport listing count for an output skin to be considered liquid in the scanner. */
+/** Minimum listing count for an output skin to be considered liquid in the scanner. */
 export const MIN_SELL_QUANTITY = 3;
 
 /** KV key under which the profitable tradeup list is stored. */
@@ -204,7 +212,7 @@ export function getPriceFromSnapshot(
 }
 
 /**
- * Look up the Skinport listing quantity for a skin/wear from an in-memory snapshot.
+ * Look up listing quantity for a skin/wear from an in-memory snapshot.
  * Returns null when the data is absent or in legacy numeric format.
  */
 export function getQuantityFromSnapshot(

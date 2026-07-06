@@ -50,7 +50,7 @@ Declared in `wrangler.jsonc` and typed in `lib/storage.ts` (`CloudflareEnv`):
 |---|---|---|
 | `PRICE_CACHE` | KV | Per-skin price points (high-frequency reads) |
 | `TRADEUP_CACHE` | KV | Pre-computed profitable contracts (1 h TTL) |
-| `PRICE_SNAPSHOTS` | R2 | Hourly Skinport price snapshots |
+| `PRICE_SNAPSHOTS` | R2 | Hourly CS2Cap price snapshots |
 
 Always obtain `env` via `getCloudflareContext()` from `@opennextjs/cloudflare` in Route Handlers — **never** use `process.env` for bindings.
 
@@ -62,7 +62,7 @@ const env = rawEnv as unknown as CloudflareEnv;
 
 ## Key Conventions
 
-- **Prices come from Skinport** — refreshed hourly via `GET /api/prices/refresh` (cron-triggered). Skin names are matched using `"<name> (<wear label>)"` market hash names.
+- **Prices come from CS2Cap** — refreshed hourly via `GET /api/prices/refresh` (cron-triggered). By default the refresh queries the `skinport` provider in CS2Cap and matches `"<name> (<wear label>)"` market hash names.
 - **Trade-up cache** — `TRADEUP_CACHE` stores a `TradeupCachePayload` JSON under `tradeups:profitable`. On a cache miss the route computes live; the `/refresh` endpoint always recomputes and repopulates.
 - **Catalog is static** — `lib/catalog.ts` is a hand-curated list of ~60 skins across 6 collections. Extend it to cover more trade-up opportunities.
 - **ROI threshold** — `MIN_ROI = 1.0` (break-even). Adjust in `scanner.ts`.
