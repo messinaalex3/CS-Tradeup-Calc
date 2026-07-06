@@ -33,7 +33,7 @@ export interface CloudflareEnv {
     TRADEUP_CACHE: KVNamespace;
     // KV Cache for the dynamic skin catalog (refreshed weekly)
     CATALOG_CACHE: KVNamespace;
-    /** Optional Cloudflare secret: CS2Cap API key for price refreshes. */
+    /** Cloudflare secret used by /api/prices/refresh (endpoint returns 503 if absent). */
     CS2C_API_KEY?: string;
     /** Optional Cloudflare var: provider to fetch from CS2Cap (default: skinport). */
     CS2C_PROVIDER?: string;

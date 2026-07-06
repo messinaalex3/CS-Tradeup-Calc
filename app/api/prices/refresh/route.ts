@@ -30,7 +30,8 @@ interface Cs2CapPaginatedResponse {
 function parsePositiveInt(value: string | undefined, fallback: number): number {
     if (!value) return fallback;
     const parsed = Number.parseInt(value, 10);
-    return Number.isFinite(parsed) && parsed > 0 ? parsed : fallback;
+    // Accept only strictly positive integers; everything else falls back.
+    return Number.isInteger(parsed) && parsed > 0 ? parsed : fallback;
 }
 
 function parseBoolean(value: string | undefined): boolean {
@@ -113,7 +114,11 @@ async function fetchCs2CapSnapshotByStream(apiKey: string, provider: string): Pr
             const line = buffer.slice(0, newlineIndex).trim();
             buffer = buffer.slice(newlineIndex + 1);
             if (line) {
-                items.push(JSON.parse(line) as Cs2CapMarketItem);
+                try {
+                    items.push(JSON.parse(line) as Cs2CapMarketItem);
+                } catch {
+                    console.warn("[refresh] Skipping malformed CS2Cap NDJSON line");
+                }
             }
             newlineIndex = buffer.indexOf("\n");
         }
@@ -121,7 +126,11 @@ async function fetchCs2CapSnapshotByStream(apiKey: string, provider: string): Pr
 
     const trailing = buffer.trim();
     if (trailing) {
-        items.push(JSON.parse(trailing) as Cs2CapMarketItem);
+        try {
+            items.push(JSON.parse(trailing) as Cs2CapMarketItem);
+        } catch {
+            console.warn("[refresh] Ignoring malformed trailing CS2Cap NDJSON chunk");
+        }
     }
 
     return items;
@@ -143,24 +152,34 @@ async function fetchCs2CapSnapshotByPagination(
         url.searchParams.set("limit", String(PAGE_LIMIT));
         url.searchParams.set("offset", String(offset));
 
-        const response = await fetch(url.toString(), {
-            headers: { Authorization: "Bearer " + apiKey },
-            signal: AbortSignal.timeout(30_000),
-        });
-        if (!response.ok) {
-            throw new Error(`CS2Cap list returned HTTP ${response.status} at offset ${offset}`);
-        }
+        try {
+            const response = await fetch(url.toString(), {
+                headers: { Authorization: "Bearer " + apiKey },
+                signal: AbortSignal.timeout(30_000),
+            });
+            if (!response.ok) {
+                throw new Error(`CS2Cap list returned HTTP ${response.status} at offset ${offset}`);
+            }
 
-        const data = (await response.json()) as Cs2CapPaginatedResponse;
-        const items = Array.isArray(data.items) ? data.items : [];
-        pages++;
-        rows += items.length;
+            const data = (await response.json()) as Cs2CapPaginatedResponse;
+            const items = Array.isArray(data.items) ? data.items : [];
+            pages++;
+            rows += items.length;
 
-        const shouldStop = await onItems(items);
-        if (shouldStop || !data.pagination?.has_next || items.length === 0) {
-            break;
+            const shouldStop = await onItems(items);
+            if (shouldStop) {
+                break;
+            }
+            if (!data.pagination?.has_next || items.length === 0) {
+                break;
+            }
+            offset = data.pagination.offset + data.pagination.limit;
+        } catch (error) {
+            const detail = error instanceof Error ? error.message : String(error);
+            throw new Error(
+                `CS2Cap paginated fetch failed after ${pages} page(s) and ${rows} row(s): ${detail}`,
+            );
         }
-        offset = data.pagination.offset + data.pagination.limit;
     }
 
     return { pages, rows };
@@ -223,7 +242,7 @@ export async function GET(request: NextRequest) {
     if (!apiKey) {
         console.error("[refresh] CS2C_API_KEY is not configured — aborting");
         return NextResponse.json(
-            { error: "CS2C_API_KEY not configured — set it as a Cloudflare Worker secret" },
+            { error: "CS2C_API_KEY not configured — set it as a Cloudflare secret" },
             { status: 503 },
         );
     }
@@ -257,6 +276,10 @@ export async function GET(request: NextRequest) {
     let pagedRows = 0;
     let pagedPages = 0;
 
+    /**
+     * Process a page of CS2Cap rows. Return true to stop pagination early once
+     * all catalog hashes have been seen.
+     */
     const processItems = async (items: Cs2CapMarketItem[]): Promise<boolean> => {
         for (const item of items) {
             const result = applyItemToSnapshot(snapshot, hashToEntry, item);
@@ -274,14 +297,14 @@ export async function GET(request: NextRequest) {
         return seenHashes.size >= hashToEntry.size;
     };
 
-    const useStream = parseBoolean(env.CS2C_ENABLE_STREAM);
+    const useNdjsonStreamMode = parseBoolean(env.CS2C_ENABLE_STREAM);
     console.log(
-        `[refresh] Fetching prices from CS2Cap using provider "${provider}" (${useStream ? "stream" : "paginated"} mode).`,
+        `[refresh] Fetching prices from CS2Cap using provider "${provider}" (${useNdjsonStreamMode ? "stream" : "paginated"} mode).`,
     );
 
     try {
         const fetchStart = Date.now();
-        if (useStream) {
+        if (useNdjsonStreamMode) {
             const streamItems = await fetchCs2CapSnapshotByStream(apiKey, provider);
             streamedRows = streamItems.length;
             await processItems(streamItems);
@@ -318,15 +341,15 @@ export async function GET(request: NextRequest) {
             success: true,
             source: "cs2cap",
             provider,
-            streamMode: useStream,
+            streamMode: useNdjsonStreamMode,
             matchedCount: refreshStats.matched,
             ignoredNoMatch: refreshStats.noMatch,
             ignoredNoPrice: refreshStats.noPrice,
-            rowsFetched: useStream ? streamedRows : pagedRows,
-            pagesFetched: useStream ? null : pagedPages,
+            rowsFetched: useNdjsonStreamMode ? streamedRows : pagedRows,
+            pagesFetched: useNdjsonStreamMode ? null : pagedPages,
             matchedHashes: seenHashes.size,
             totalRequiredHashes: hashToEntry.size,
-            durationMs: totalDuration
+            durationMs: totalDuration,
         });
     } catch (err) {
         console.error(`[refresh] Failed to update R2 snapshot: ${err instanceof Error ? err.message : String(err)}`);
