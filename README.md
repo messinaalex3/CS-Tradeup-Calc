@@ -215,7 +215,7 @@ There is **no separate seed script** in the current repo. The supported way to s
    # 4. Seed the profitable trade-up cache
    curl -X GET "http://localhost:3000/api/tradeups/profitable/refresh"
    ```
-4. If you set `CRON_SECRET`, include the matching `Authorization` header on each request. If you use `npm run preview`, replace port `3000` with `8787`.
+4. If you set `CRON_SECRET`, include `Authorization: ****** on each request. If you use `npm run preview`, replace port `3000` with `8787`.
 
 If you do **not** set `CS2C_API_KEY`, the app still boots, but price-dependent routes cannot populate `latest_prices.json`, so calculator and profitable results will be incomplete.
 
