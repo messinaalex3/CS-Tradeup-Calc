@@ -97,7 +97,7 @@ Each candidate contract is evaluated by `lib/tradeup/ev.ts`:
 #### 3. Filtering and ranking
 
 After evaluation, the scanner:
-- Discards any contract with `ROI < 0` (the `MIN_ROI` threshold, currently `0`).
+- Discards any contract with `ROI < 1.0` (the `MIN_ROI` threshold, where `1.0` = break-even).
 - Discards contracts where any output item with a probability ≥ 5% has fewer than `MIN_SELL_QUANTITY` (3) active Skinport listings — these are flagged as **illiquid** to avoid phantom profits on paper-priced skins.
 - Discards contracts whose `totalCost` exceeds the user's optional **Max Budget** filter.
 - Sorts the remaining contracts by ROI descending.
@@ -134,171 +134,196 @@ Each result card on the `/profitable` page displays:
 
 This app runs on the **Cloudflare Workers** runtime using [`@opennextjs/cloudflare`](https://opennext.js.org/cloudflare) v1.x. There is no Cloudflare Pages mode in v1.x — the adapter exclusively targets Workers.
 
+### Cloudflare tech used by this repo
+
+| Item | Type | How it is used | Do you create it manually? |
+|---|---|---|---|
+| Cloudflare Workers | Runtime | Runs the Next.js server and API routes | Yes |
+| Wrangler | CLI / local emulator | Deploys the worker and simulates bindings locally | Installed via `devDependencies` |
+| `PRICE_CACHE` | KV namespace | Fast per-skin price cache for read-heavy lookups | Yes |
+| `TRADEUP_CACHE` | KV namespace | Cached profitable trade-up payload | Yes |
+| `CATALOG_CACHE` | KV namespace | Cached dynamic catalog snapshot | Yes |
+| `PRICE_SNAPSHOTS` | R2 bucket | Stores `latest_prices.json` and `csfloat_prices.json` | Yes |
+| `WORKER_SELF_REFERENCE` | Service binding | Required by the OpenNext Cloudflare adapter | No extra storage to seed |
+| `ASSETS` | Assets binding | Serves the built Next.js static assets | No extra storage to seed |
+| `IMAGES` | Images binding | Enables Next.js image optimization on Workers | No extra storage to seed |
+
+### What is actually required?
+
+- **Local development:** no real Cloudflare resources are required. `npm run dev` and `npm run preview` use Wrangler's local emulation for KV/R2.
+- **Production with the current codebase:** all **three KV namespaces** and the **one R2 bucket** are actively used and should be treated as required.
+  - `PRICE_CACHE` is used for fast individual price lookups.
+  - `PRICE_SNAPSHOTS` is the source of truth for the hourly price snapshots.
+  - `TRADEUP_CACHE` avoids recomputing the scanner payload on every request.
+  - `CATALOG_CACHE` stores the dynamic catalog used by refresh, evaluation, profitable, and inventory flows.
+- **Optional secret:** `CSFLOAT_API_KEY` improves float-aware pricing, but the app still works without it by falling back to interpolation from the main snapshot.
+- **Near-free setup:** if you want the cheapest setup, skip `CSFLOAT_API_KEY` and use local emulation for development. In production, removing any of the current KV/R2 resources would require code changes because the repo reads and writes all of them today.
+
 ### Prerequisites
 
 - [Node.js](https://nodejs.org/) (v20 or later)
-- A Cloudflare account — run `npx wrangler login` once to authenticate
+- npm
+- For deployment only: a Cloudflare account and `npx wrangler login`
+- For full data refreshes: a CS2Cap API key (`CS2C_API_KEY`)
+- Optional for float-accurate pricing: a CSFloat API key (`CSFLOAT_API_KEY`)
 
 ### Local Development
 
-You have two options:
+Install dependencies once:
+
+```bash
+npm install
+```
+
+You have two supported local runtimes:
 
 **Option A — Next.js dev server** (fast iteration, Cloudflare bindings available via `initOpenNextCloudflareForDev`)
 ```bash
-npm install
 npm run dev        # http://localhost:3000
 ```
 
-**Option B — Full Workers preview** (same runtime as production)
+**Option B — Full Workers preview** (closest to production)
 ```bash
-npm install
-npm run preview    # builds then serves at http://localhost:8787
+npm run preview    # http://localhost:8787
 ```
 
-> `npm run preview` runs `opennextjs-cloudflare build && opennextjs-cloudflare preview`. KV and R2 are simulated locally by Wrangler — no real Cloudflare resources are required for local development.
+> `npm run preview` runs `opennextjs-cloudflare build && opennextjs-cloudflare preview`.
+
+### Seeding local data
+
+There is **no separate seed script** in the current repo. The supported way to seed local KV/R2 data is to run the same refresh endpoints the deployed app uses.
+
+1. Optionally add local secrets to `/home/runner/work/CS-Tradeup-Calc/CS-Tradeup-Calc/.dev.vars`:
+   ```dotenv
+   NEXTJS_ENV=development
+   CS2C_API_KEY=...
+   CSFLOAT_API_KEY=...   # optional
+   CRON_SECRET=...       # optional locally; if set, include Authorization headers below
+   ```
+2. Start the app with `npm run dev` or `npm run preview`.
+3. Call the refresh endpoints in this order:
+   ```bash
+   # 1. Seed the catalog cache
+   curl -X GET "http://localhost:3000/api/catalog/refresh"
+
+   # 2. Seed the main CS2Cap price snapshot + warm the price KV cache
+   curl -X GET "http://localhost:3000/api/prices/refresh"
+
+   # 3. Optional: seed float-bucketed CSFloat prices
+   curl -X GET "http://localhost:3000/api/prices/refresh-csfloat"
+
+   # 4. Seed the profitable trade-up cache
+   curl -X GET "http://localhost:3000/api/tradeups/profitable/refresh"
+   ```
+4. If you set `CRON_SECRET`, include the matching `Authorization` header on each request. If you use `npm run preview`, replace port `3000` with `8787`.
+
+If you do **not** set `CS2C_API_KEY`, the app still boots, but price-dependent routes cannot populate `latest_prices.json`, so calculator and profitable results will be incomplete.
 
 ### Deployment to Cloudflare Workers
 
-1.  **Create your Cloudflare resources** (one-time setup)
-    ```bash
-    # Create the KV namespace for price caching
-    npx wrangler kv namespace create PRICE_CACHE
+1. **Create the Cloudflare storage resources used by the app**
+   ```bash
+   npx wrangler kv namespace create PRICE_CACHE
+   npx wrangler kv namespace create TRADEUP_CACHE
+   npx wrangler kv namespace create CATALOG_CACHE
+   npx wrangler r2 bucket create cs-tradeup-prices
+   ```
 
-    # Create the KV namespace for profitable tradeup caching
-    npx wrangler kv namespace create TRADEUP_CACHE
+2. **Update `wrangler.jsonc` with the real binding IDs**
+   ```jsonc
+   "kv_namespaces": [
+     { "binding": "PRICE_CACHE", "id": "<paste-price-cache-id-here>" },
+     { "binding": "TRADEUP_CACHE", "id": "<paste-tradeup-cache-id-here>" },
+     { "binding": "CATALOG_CACHE", "id": "<paste-catalog-cache-id-here>" }
+   ],
+   "r2_buckets": [
+     { "binding": "PRICE_SNAPSHOTS", "bucket_name": "cs-tradeup-prices" }
+   ]
+   ```
+   > **Important:** deploying with missing bindings causes runtime errors when the app touches KV/R2.
 
-    # Create the R2 bucket for price snapshots
-    npx wrangler r2 bucket create cs-tradeup-prices
-    ```
+3. **Add secrets via Wrangler** (never commit secrets into `wrangler.jsonc`)
+   ```bash
+   # Recommended in production to protect the refresh endpoints
+   npx wrangler secret put CRON_SECRET
 
-2.  **Update `wrangler.jsonc` with the real KV namespace IDs**
-    Each `kv namespace create` command prints an `id`. Replace the placeholders in `wrangler.jsonc`:
-    ```jsonc
-    "kv_namespaces": [
-      { "binding": "PRICE_CACHE",    "id": "<paste-price-cache-id-here>" },
-      { "binding": "TRADEUP_CACHE",  "id": "<paste-tradeup-cache-id-here>" }
-    ]
-    ```
-    > **Important:** Deploying with placeholder IDs will cause the Worker to crash at runtime with a binding error.
+   # Required to build the main market-price snapshot
+   npx wrangler secret put CS2C_API_KEY
 
-3.  **Add secrets via Wrangler** (never put secrets in `wrangler.jsonc`)
-    ```bash
-    # Protects the /api/prices/refresh, /api/tradeups/profitable/refresh,
-    # /api/prices/refresh-csfloat, and /api/catalog/refresh endpoints
-    npx wrangler secret put CRON_SECRET
+   # Optional: only needed for /api/prices/refresh-csfloat
+   npx wrangler secret put CSFLOAT_API_KEY
+   ```
 
-    # Required: CS2Cap API key for /api/prices/refresh
-    # Get your key at https://cs2cap.com/account/api-keys
-    npx wrangler secret put CS2C_API_KEY
+4. **Deploy**
+   ```bash
+   npm run deploy
+   ```
 
-    # Optional: CSFloat API key for float-bucketed listing prices on high-value skins
-    # Get your key at https://csfloat.com/developer
-    npx wrangler secret put CSFLOAT_API_KEY
-    ```
-    > If `CSFLOAT_API_KEY` is not set, the app still works — output float pricing falls back to interpolation from the main snapshot.
-
-4.  **Deploy**
-    ```bash
-    npm run deploy   # runs opennextjs-cloudflare build then deploys to Cloudflare Workers
-    ```
+5. **Seed production data** by calling the refresh endpoints in the order documented below.
 
 ## Architecture & Storage Strategy
 
-Prices are sourced from the **CS2Cap Prices API** and stored in Cloudflare's edge infrastructure:
+Prices and catalog data are stored in Cloudflare's edge services:
 
-- **Cloudflare R2 (Object Storage):** Stores a full JSON snapshot of CS2Cap prices (`latest_prices.json`), updated hourly by the cron job. Also stores float-bucketed CSFloat prices for high-value skins (`csfloat_prices.json`), updated by the `/api/prices/refresh-csfloat` cron job.
-- **Cloudflare KV — `PRICE_CACHE`:** Acts as a high-speed edge cache for individual skin prices. When a price is requested, the app checks KV first. On a miss it pulls the price from the R2 snapshot and back-populates KV with a 1-hour TTL.
-- **Cloudflare KV — `TRADEUP_CACHE`:** Stores the pre-computed list of profitable trade-up contracts. Written by `/api/tradeups/profitable/refresh` (or auto-populated on the first cache miss) and read by `/api/tradeups/profitable`. Expires after 1 hour.
-- **Edge Runtime:** All API routes run on the Cloudflare Edge, ensuring fast response times for cached data.
+- **Cloudflare R2 (`PRICE_SNAPSHOTS`)** — stores the full CS2Cap snapshot (`latest_prices.json`) and the optional CSFloat snapshot (`csfloat_prices.json`).
+- **Cloudflare KV — `PRICE_CACHE`** — a 1-hour edge cache for individual skin prices. On a miss, the app falls back to the R2 snapshot and back-populates KV.
+- **Cloudflare KV — `TRADEUP_CACHE`** — stores the pre-computed profitable trade-up list so `/api/tradeups/profitable` is usually cache-only.
+- **Cloudflare KV — `CATALOG_CACHE`** — stores the dynamic catalog snapshot created by `/api/catalog/refresh`.
+- **Cloudflare Workers runtime** — serves the UI and all API routes.
+- **OpenNext Cloudflare adapter bindings** — `WORKER_SELF_REFERENCE`, `ASSETS`, and `IMAGES` are part of the runtime integration; they are not user-managed application data stores.
 
 ## Refresh Call Order
 
-All four refresh endpoints must be called **in the following order** — each step depends on the one before it:
+Use the following order whenever you seed or refresh data:
 
-| Step | Endpoint | Why it must come here |
-|------|----------|-----------------------|
-| 1 | `GET /api/catalog/refresh` | Writes the skin/collection catalog to KV. Both price-refresh routes call `loadCatalog()` internally — running them with a stale or missing catalog means prices are matched against outdated skin names. |
-| 2 | `GET /api/prices/refresh` | Fetches CS2Cap prices and writes `latest_prices.json` to R2. Requires the catalog from step 1. |
-| 3 | `GET /api/prices/refresh-csfloat` | Fetches CSFloat float-bucketed prices and writes `csfloat_prices.json` to R2. Also requires the catalog from step 1; independent of step 2 but must finish before step 4. |
-| 4 | `GET /api/tradeups/profitable/refresh` | Runs the scanner against both R2 price snapshots. Returns HTTP 503 if the main snapshot (step 2) is missing; falls back to interpolation if the CSFloat snapshot (step 3) is absent. |
+| Step | Endpoint | Required? | Why it comes here |
+|------|----------|-----------|-------------------|
+| 1 | `GET /api/catalog/refresh` | Yes | Refreshes the catalog used by the other refresh routes. |
+| 2 | `GET /api/prices/refresh` | Yes | Builds `latest_prices.json` in R2 and warms `PRICE_CACHE`. |
+| 3 | `GET /api/prices/refresh-csfloat` | Optional | Adds `csfloat_prices.json` for more accurate high-value output pricing. |
+| 4 | `GET /api/tradeups/profitable/refresh` | Yes | Computes the profitable contracts from the latest catalog and price snapshots. |
 
-> Steps 2 and 3 are independent of each other and can run in parallel if your scheduler supports it. Step 4 must always be last.
+Notes:
 
-## Price Refresh — Cron Job Setup
+- Step 4 must always be last.
+- Step 3 is optional. If you skip it, the profitable scanner still works and falls back to interpolated prices from the main CS2Cap snapshot.
+- The `/api/prices/refresh-csfloat` endpoint itself returns `503` if `CSFLOAT_API_KEY` is not configured, so omit that step entirely unless you set the key.
 
-Prices are refreshed by two endpoints (steps 2 and 3 above):
+## Scheduling refreshes
 
-1. `GET /api/prices/refresh` — fetches all CS2 prices from CS2Cap and writes `latest_prices.json` to R2.
-2. `GET /api/prices/refresh-csfloat` — fetches float-bucketed listing prices from CSFloat for classified, covert, and extraordinary (knife/glove) skins and writes `csfloat_prices.json` to R2. Requires `CSFLOAT_API_KEY`; skipped safely if the key is absent.
+This repo currently exposes **HTTP refresh endpoints** only. It does **not** ship a `scheduled()` handler or an in-repo cron orchestrator route, so the simplest supported scheduler is an external job that calls the endpoints in order.
 
-## Profitable Trade-ups Refresh — Cron Job Setup
+### Protect the refresh endpoints
 
-Pre-computed profitable trade-up results are refreshed by calling `GET /api/tradeups/profitable/refresh` (step 4). This endpoint runs the full candidate scan with the latest prices and writes the result to `TRADEUP_CACHE` KV. It must be run **after** all three preceding refresh steps so the displayed contracts always reflect the current catalog and market prices.
+Set `CRON_SECRET` in Cloudflare (or `.dev.vars` locally) and send:
 
-### 1. Set a `CRON_SECRET` environment variable
-
-All refresh endpoints are protected by the same secret. Set it once using Wrangler (see Deployment step 3 above) or in the Cloudflare dashboard:
-
-**Dashboard:** Workers & Pages → your project → Settings → Variables and Secrets → add `CRON_SECRET`, `CS2C_API_KEY`, and optionally `CSFLOAT_API_KEY`.
-
-Then call either endpoint with:
-```
-Authorization: Bearer <your-secret>
+```http
+Authorization: ******
 ```
 
-### 2. Cloudflare Pages Cron Trigger (recommended)
+### Recommended: external scheduler
 
-Add a cron trigger in `wrangler.jsonc`:
-
-```jsonc
-{
-  "triggers": {
-    "crons": ["0 * * * *"]
-  }
-}
-```
-
-Then create `app/api/cron/route.ts` (or handle it in a Cloudflare scheduled worker) that calls the refresh endpoints in the correct order:
-
-```ts
-// 1. Catalog must be fresh before prices are matched against skin names
-await fetch('/api/catalog/refresh', { headers: { Authorization: 'Bearer ...' } });
-// 2 & 3. Price snapshots — independent of each other, both needed before the scanner
-await fetch('/api/prices/refresh', { headers: { Authorization: 'Bearer ...' } });
-await fetch('/api/prices/refresh-csfloat', { headers: { Authorization: 'Bearer ...' } });
-// 4. Scanner reads both price snapshots; returns 503 if the main snapshot is missing
-await fetch('/api/tradeups/profitable/refresh', { headers: { Authorization: 'Bearer ...' } });
-```
-
-Alternatively, configure the trigger directly in the Cloudflare dashboard under **Workers & Pages → your project → Triggers → Cron Triggers**, and add `0 * * * *` (every hour on the hour).
-
-### 3. External cron service (alternative)
-
-If you prefer not to use Cloudflare cron triggers, any external scheduler (GitHub Actions, cron-job.org, etc.) can call the endpoints:
+GitHub Actions, cron-job.org, or another Worker can call the endpoints in order:
 
 ```bash
-# GitHub Actions example (.github/workflows/refresh-prices.yml)
-on:
-  schedule:
-    - cron: '0 * * * *'
-jobs:
-  refresh:
-    runs-on: ubuntu-latest
-    steps:
-      - run: |
-          # 1. Refresh catalog first — price routes use loadCatalog() internally
-          curl -s -X GET "https://<your-domain>/api/catalog/refresh" \
-            -H "Authorization: Bearer ${{ secrets.CRON_SECRET }}"
-          # 2. CS2Cap prices
-          curl -s -X GET "https://<your-domain>/api/prices/refresh" \
-            -H "Authorization: Bearer ${{ secrets.CRON_SECRET }}"
-          # 3. CSFloat prices (independent of step 2, but both precede the scanner)
-          curl -s -X GET "https://<your-domain>/api/prices/refresh-csfloat" \
-            -H "Authorization: Bearer ${{ secrets.CRON_SECRET }}"
-          # 4. Scanner — must run after all price snapshots are written
-          curl -s -X GET "https://<your-domain>/api/tradeups/profitable/refresh" \
-            -H "Authorization: Bearer ${{ secrets.CRON_SECRET }}"
+# 1. Refresh the catalog
+curl -s "https://<your-domain>/api/catalog/refresh" \
+  -H "Authorization: ******"
+
+# 2. Refresh the main CS2Cap snapshot
+curl -s "https://<your-domain>/api/prices/refresh" \
+  -H "Authorization: ******"
+
+# 3. Optional: refresh CSFloat prices
+curl -s "https://<your-domain>/api/prices/refresh-csfloat" \
+  -H "Authorization: ******"
+
+# 4. Refresh the profitable-tradeup cache
+curl -s "https://<your-domain>/api/tradeups/profitable/refresh" \
+  -H "Authorization: ******"
 ```
+
+If you want a pure-Cloudflare scheduler, add a separate scheduled handler or orchestrator Worker outside the current repo.
 
 ## Project Structure
 
@@ -306,34 +331,38 @@ jobs:
 app/
   page.tsx                        # Home page
   calculator/page.tsx             # Trade-up calculator UI
+  inventory/page.tsx              # Inventory-based trade-up finder UI
   profitable/page.tsx             # Profitable trade-ups browser
   api/
     catalog/
-      refresh/route.ts            # GET /api/catalog/refresh  (cron target)
+      refresh/route.ts            # GET /api/catalog/refresh
+    inventory/route.ts            # POST /api/inventory
     prices/route.ts               # GET /api/prices?skinId=&wear=
-    prices/refresh/route.ts       # GET /api/prices/refresh  (cron target, CS2Cap)
+    prices/refresh/route.ts       # GET /api/prices/refresh
     prices/refresh-csfloat/
-      route.ts                    # GET /api/prices/refresh-csfloat  (cron target, CSFloat)
+      route.ts                    # GET /api/prices/refresh-csfloat
     tradeups/evaluate/route.ts    # POST /api/tradeups/evaluate
     tradeups/profitable/
-      route.ts                    # GET /api/tradeups/profitable  (cache-first)
-      refresh/route.ts            # GET /api/tradeups/profitable/refresh  (cron target)
+      route.ts                    # GET /api/tradeups/profitable
+      refresh/route.ts            # GET /api/tradeups/profitable/refresh
 lib/
   types.ts                        # Shared TypeScript types (Rarity, Wear, Skin, …)
-  catalog.ts                      # Static CS2 skin catalog (~1 400 skins, 92 collections) — auto-updated weekly by GitHub Actions
+  catalog.ts                      # Bundled static catalog fallback, regenerated by GitHub Actions
   catalog/
-    dynamic.ts                    # Dynamic catalog loader: KV cache → ByMykel API → static fallback
-  storage.ts                      # Cloudflare KV/R2 helpers (prices, tradeup cache, catalog cache)
+    dynamic.ts                    # KV cache → ByMykel API → static fallback
+  storage.ts                      # Cloudflare KV/R2 helpers and env typing
+  steam.ts                        # Steam inventory parsing and matching
   tradeup/
     pool.ts                       # Output pool + probability calculation
     float.ts                      # Float normalization & output float math
     ev.ts                         # EV / ROI evaluation engine
     scanner.ts                    # Candidate generation + profitable contract scanner
   pricing/
-    index.ts                      # Cache-only price lookup (reads from KV/R2, prefers CSFloat for high-value skins)
-    csfloat.ts                    # CSFloat API client — float-bucketed listing prices
+    index.ts                      # Price lookup helpers
+    csfloat.ts                    # CSFloat API client
 scripts/
   generate_catalog.py             # Regenerate lib/catalog.ts from ByMykel CSGO-API
+  prices-snapshot.json            # Sample/offline snapshot data checked into the repo
 ```
 
 ## API
@@ -342,10 +371,10 @@ scripts/
 Returns the current cached price for a skin.
 
 ### `GET /api/prices/refresh`
-Fetches all CS2 prices from CS2Cap and writes `latest_prices.json` to R2/KV. Protected by the `Authorization` bearer cron secret and requires `CS2C_API_KEY`.
+Fetches CS2Cap prices and writes `latest_prices.json` to R2, while warming `PRICE_CACHE`. Protected by the `Authorization` header when `CRON_SECRET` is set. Requires `CS2C_API_KEY`.
 
 ### `GET /api/prices/refresh-csfloat`
-Fetches float-bucketed listing prices from CSFloat for classified, covert, and extraordinary (knife/glove) skins and writes `csfloat_prices.json` to R2. Requires `CSFLOAT_API_KEY` and `CRON_SECRET`. Rate-limited at ~1 req/s; may take several minutes on a large catalog.
+Fetches float-bucketed listing prices from CSFloat for classified, covert, and extraordinary skins and writes `csfloat_prices.json` to R2. Protected by the `Authorization` header when `CRON_SECRET` is set. Requires `CSFLOAT_API_KEY`; without that secret, this endpoint returns `503`.
 
 ### `POST /api/tradeups/evaluate`
 ```json
@@ -354,12 +383,15 @@ Fetches float-bucketed listing prices from CSFloat for classified, covert, and e
 Returns EV, ROI, output pool, and per-item probabilities.
 
 ### `GET /api/tradeups/profitable?rarity=mil_spec&maxBudget=50`
-Returns profitable trade-up contracts sorted by ROI descending. Serves from `TRADEUP_CACHE` KV if available (response includes `fromCache: true` and `cachedAt`); falls back to on-demand computation on a cold cache.
+Returns profitable trade-up contracts sorted by ROI descending. Serves from `TRADEUP_CACHE` when available and computes on demand on a cold cache.
 
 ### `GET /api/tradeups/profitable/refresh`
-Recomputes all profitable contracts and writes them to `TRADEUP_CACHE` KV. Protected by `Authorization: Bearer <CRON_SECRET>` when `CRON_SECRET` is set. Intended to be called on a cron schedule after each price refresh.
+Recomputes all profitable contracts and writes them to `TRADEUP_CACHE`. Intended to be called after the catalog and price refreshes.
 
 ### `GET /api/catalog/refresh`
-Fetches the latest skin catalog from the ByMykel CSGO-API, processes it, and stores it in the `CATALOG_CACHE` KV namespace (24-hour TTL). Protected by `Authorization: Bearer <CRON_SECRET>` when `CRON_SECRET` is set. Returns `{ success, collectionsCount, skinsCount, cachedAt }`. After this endpoint is called, all subsequent requests to `/api/tradeups/evaluate`, `/api/tradeups/profitable/refresh`, and `/api/inventory` will use the freshly-cached catalog data instead of the bundled static file.
+Fetches the latest catalog from the ByMykel CSGO-API, stores it in `CATALOG_CACHE`, and returns `{ success, collectionsCount, skinsCount, cachedAt }`.
 
-> **No static catalog required** — the `lib/catalog/dynamic.ts` loader tries the KV cache first, then falls back to a live ByMykel API fetch, then falls back to the bundled `lib/catalog.ts` as a last resort. The static catalog file is regenerated weekly by the `Update Catalog` GitHub Actions workflow.
+### `POST /api/inventory`
+Accepts `{ "profileUrl": "..." }`, fetches the user's public Steam inventory, matches items against the catalog, and returns inventory-based trade-up recommendations.
+
+> `lib/catalog/dynamic.ts` loads data in this order: `CATALOG_CACHE` KV → live ByMykel API refresh → bundled `lib/catalog.ts` fallback.
