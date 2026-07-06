@@ -6,7 +6,7 @@ A web application for looking up CS2 skin prices and finding the most profitable
 
 ## Features
 
-- **Price Lookup** — prices sourced from the Skinport API, refreshed hourly via a cron job; float-precise prices for high-value skins sourced from CSFloat
+- **Price Lookup** — prices sourced from the CS2Cap API (default provider: Skinport), refreshed hourly via a cron job; float-precise prices for high-value skins sourced from CSFloat
 - **Trade-up Calculator** — select same-rarity items (10 for mil-spec through classified; 5 for covert → knife/glove), set float values, and compute EV/ROI
 - **Profitable Trade-ups** — automatically scans the catalog and surfaces the highest-ROI contracts; results are cached in KV and served instantly on subsequent loads
 - **Covert → Knife/Glove contracts** — the scanner models the October 2025 CS2 update: 5 covert inputs produce a knife or glove from the case's rare-drop pool
@@ -25,7 +25,7 @@ The calculator:
 1. Validates inputs (correct count for the rarity, same rarity, valid float values)
 2. Determines the output pool and each item's probability
 3. Computes the output float using CS2's formula: `outputFloat = outputMin + avg(normalizedInputFloats) × (outputMax − outputMin)`
-4. Looks up cached prices (sourced from Skinport) for each possible output
+4. Looks up cached prices (sourced from CS2Cap) for each possible output
 5. Calculates **EV** (Σ probability × price) and **ROI** ((EV − cost) / cost × 100%)
 
 ## Profitable Trade-ups — Deep Dive
@@ -77,14 +77,14 @@ For every pair of collections containing covert skins, create contracts with 4+1
 
 Each candidate contract is evaluated by `lib/tradeup/ev.ts`:
 
-1. **Input cost** — look up the cached Skinport price for each input item (skin + wear tier derived from its float) and sum them to get `totalCost`.
+1. **Input cost** — look up the cached market price for each input item (skin + wear tier derived from its float) and sum them to get `totalCost`.
 2. **Output pool** — `lib/tradeup/pool.ts` identifies all items of the next rarity tier that belong to the same collections as the inputs, and assigns each a probability proportional to how many inputs came from its collection.
 3. **Output float** — the output float is the same for every item in the pool and is computed as:
    ```
    normalizedAvg = average((inputFloat − skinMin) / (skinMax − skinMin))
    outputFloat   = outputMin + normalizedAvg × (outputMax − outputMin)
    ```
-4. **Output prices** — for classified and covert outputs (and their knife/glove drops), the app first checks the CSFloat snapshot for a float-bucketed listing price; if unavailable it falls back to Skinport interpolation.
+4. **Output prices** — for classified and covert outputs (and their knife/glove drops), the app first checks the CSFloat snapshot for a float-bucketed listing price; if unavailable it falls back to interpolation from the main price snapshot.
 5. **EV & ROI** —
    ```
    EV  = Σ (probability × price)  for each output item
@@ -117,7 +117,7 @@ Each result card on the `/profitable` page displays:
 |---|---|
 | **Float sweep coverage** | Only float `0.20` is tried. A contract at float 0.05 or 0.35 may have a meaningfully different ROI profile. |
 | **Single- and two-skin inputs only** | Strategies use at most two distinct skins. Contracts built from 3 or more distinct skins are not generated. |
-| **CSFloat availability** | CSFloat prices are fetched for classified/covert/extraordinary skins only, and only for the pre-defined float buckets. Skins not covered fall back to Skinport price interpolation. |
+| **CSFloat availability** | CSFloat prices are fetched for classified/covert/extraordinary skins only, and only for the pre-defined float buckets. Skins not covered fall back to interpolation from the main price snapshot. |
 | **On-demand scanning** | ~~Results are computed fresh on every page load. There is no background refresh or persistent storage of discovered contracts.~~ **Resolved** — results are now cached in `TRADEUP_CACHE` KV and recomputed in the background via the `/api/tradeups/profitable/refresh` endpoint. |
 
 ### Ideas for improvement
@@ -187,11 +187,15 @@ npm run preview    # builds then serves at http://localhost:8787
     # /api/prices/refresh-csfloat, and /api/catalog/refresh endpoints
     npx wrangler secret put CRON_SECRET
 
+    # Required: CS2Cap API key for /api/prices/refresh
+    # Get your key at https://cs2cap.com/account/api-keys
+    npx wrangler secret put CS2C_API_KEY
+
     # Optional: CSFloat API key for float-bucketed listing prices on high-value skins
     # Get your key at https://csfloat.com/developer
     npx wrangler secret put CSFLOAT_API_KEY
     ```
-    > If `CSFLOAT_API_KEY` is not set, the app still works — all prices fall back to Skinport interpolation.
+    > If `CSFLOAT_API_KEY` is not set, the app still works — output float pricing falls back to interpolation from the main snapshot.
 
 4.  **Deploy**
     ```bash
@@ -200,9 +204,9 @@ npm run preview    # builds then serves at http://localhost:8787
 
 ## Architecture & Storage Strategy
 
-Prices are sourced from the **Skinport public items API** in a single bulk request and stored in Cloudflare's edge infrastructure:
+Prices are sourced from the **CS2Cap Prices API** and stored in Cloudflare's edge infrastructure:
 
-- **Cloudflare R2 (Object Storage):** Stores a full JSON snapshot of all Skinport skin prices (`latest_prices.json`), updated hourly by the cron job. Also stores float-bucketed CSFloat prices for high-value skins (`csfloat_prices.json`), updated by the `/api/prices/refresh-csfloat` cron job.
+- **Cloudflare R2 (Object Storage):** Stores a full JSON snapshot of CS2Cap prices (`latest_prices.json`), updated hourly by the cron job. Also stores float-bucketed CSFloat prices for high-value skins (`csfloat_prices.json`), updated by the `/api/prices/refresh-csfloat` cron job.
 - **Cloudflare KV — `PRICE_CACHE`:** Acts as a high-speed edge cache for individual skin prices. When a price is requested, the app checks KV first. On a miss it pulls the price from the R2 snapshot and back-populates KV with a 1-hour TTL.
 - **Cloudflare KV — `TRADEUP_CACHE`:** Stores the pre-computed list of profitable trade-up contracts. Written by `/api/tradeups/profitable/refresh` (or auto-populated on the first cache miss) and read by `/api/tradeups/profitable`. Expires after 1 hour.
 - **Edge Runtime:** All API routes run on the Cloudflare Edge, ensuring fast response times for cached data.
@@ -214,9 +218,9 @@ All four refresh endpoints must be called **in the following order** — each st
 | Step | Endpoint | Why it must come here |
 |------|----------|-----------------------|
 | 1 | `GET /api/catalog/refresh` | Writes the skin/collection catalog to KV. Both price-refresh routes call `loadCatalog()` internally — running them with a stale or missing catalog means prices are matched against outdated skin names. |
-| 2 | `GET /api/prices/refresh` | Fetches Skinport prices and writes `latest_prices.json` to R2. Requires the catalog from step 1. |
+| 2 | `GET /api/prices/refresh` | Fetches CS2Cap prices and writes `latest_prices.json` to R2. Requires the catalog from step 1. |
 | 3 | `GET /api/prices/refresh-csfloat` | Fetches CSFloat float-bucketed prices and writes `csfloat_prices.json` to R2. Also requires the catalog from step 1; independent of step 2 but must finish before step 4. |
-| 4 | `GET /api/tradeups/profitable/refresh` | Runs the scanner against both R2 price snapshots. Returns HTTP 503 if the Skinport snapshot (step 2) is missing; falls back to Skinport interpolation if the CSFloat snapshot (step 3) is absent. |
+| 4 | `GET /api/tradeups/profitable/refresh` | Runs the scanner against both R2 price snapshots. Returns HTTP 503 if the main snapshot (step 2) is missing; falls back to interpolation if the CSFloat snapshot (step 3) is absent. |
 
 > Steps 2 and 3 are independent of each other and can run in parallel if your scheduler supports it. Step 4 must always be last.
 
@@ -224,7 +228,7 @@ All four refresh endpoints must be called **in the following order** — each st
 
 Prices are refreshed by two endpoints (steps 2 and 3 above):
 
-1. `GET /api/prices/refresh` — fetches all CS2 prices from Skinport and writes `latest_prices.json` to R2.
+1. `GET /api/prices/refresh` — fetches all CS2 prices from CS2Cap and writes `latest_prices.json` to R2.
 2. `GET /api/prices/refresh-csfloat` — fetches float-bucketed listing prices from CSFloat for classified, covert, and extraordinary (knife/glove) skins and writes `csfloat_prices.json` to R2. Requires `CSFLOAT_API_KEY`; skipped safely if the key is absent.
 
 ## Profitable Trade-ups Refresh — Cron Job Setup
@@ -235,7 +239,7 @@ Pre-computed profitable trade-up results are refreshed by calling `GET /api/trad
 
 All refresh endpoints are protected by the same secret. Set it once using Wrangler (see Deployment step 3 above) or in the Cloudflare dashboard:
 
-**Dashboard:** Workers & Pages → your project → Settings → Variables and Secrets → add `CRON_SECRET` (and optionally `CSFLOAT_API_KEY`).
+**Dashboard:** Workers & Pages → your project → Settings → Variables and Secrets → add `CRON_SECRET`, `CS2C_API_KEY`, and optionally `CSFLOAT_API_KEY`.
 
 Then call either endpoint with:
 ```
@@ -262,7 +266,7 @@ await fetch('/api/catalog/refresh', { headers: { Authorization: 'Bearer ...' } }
 // 2 & 3. Price snapshots — independent of each other, both needed before the scanner
 await fetch('/api/prices/refresh', { headers: { Authorization: 'Bearer ...' } });
 await fetch('/api/prices/refresh-csfloat', { headers: { Authorization: 'Bearer ...' } });
-// 4. Scanner reads both price snapshots; returns 503 if Skinport snapshot is missing
+// 4. Scanner reads both price snapshots; returns 503 if the main snapshot is missing
 await fetch('/api/tradeups/profitable/refresh', { headers: { Authorization: 'Bearer ...' } });
 ```
 
@@ -285,7 +289,7 @@ jobs:
           # 1. Refresh catalog first — price routes use loadCatalog() internally
           curl -s -X GET "https://<your-domain>/api/catalog/refresh" \
             -H "Authorization: Bearer ${{ secrets.CRON_SECRET }}"
-          # 2. Skinport prices
+          # 2. CS2Cap prices
           curl -s -X GET "https://<your-domain>/api/prices/refresh" \
             -H "Authorization: Bearer ${{ secrets.CRON_SECRET }}"
           # 3. CSFloat prices (independent of step 2, but both precede the scanner)
@@ -307,7 +311,7 @@ app/
     catalog/
       refresh/route.ts            # GET /api/catalog/refresh  (cron target)
     prices/route.ts               # GET /api/prices?skinId=&wear=
-    prices/refresh/route.ts       # GET /api/prices/refresh  (cron target, Skinport)
+    prices/refresh/route.ts       # GET /api/prices/refresh  (cron target, CS2Cap)
     prices/refresh-csfloat/
       route.ts                    # GET /api/prices/refresh-csfloat  (cron target, CSFloat)
     tradeups/evaluate/route.ts    # POST /api/tradeups/evaluate
@@ -335,10 +339,10 @@ scripts/
 ## API
 
 ### `GET /api/prices?skinId=<id>&wear=<FN|MW|FT|WW|BS>`
-Returns the current Skinport price for a skin.
+Returns the current cached price for a skin.
 
 ### `GET /api/prices/refresh`
-Fetches all CS2 prices from Skinport and writes `latest_prices.json` to R2/KV. Protected by `Authorization: Bearer <CRON_SECRET>`.
+Fetches all CS2 prices from CS2Cap and writes `latest_prices.json` to R2/KV. Protected by the `Authorization` bearer cron secret and requires `CS2C_API_KEY`.
 
 ### `GET /api/prices/refresh-csfloat`
 Fetches float-bucketed listing prices from CSFloat for classified, covert, and extraordinary (knife/glove) skins and writes `csfloat_prices.json` to R2. Requires `CSFLOAT_API_KEY` and `CRON_SECRET`. Rate-limited at ~1 req/s; may take several minutes on a large catalog.
