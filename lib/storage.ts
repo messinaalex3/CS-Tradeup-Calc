@@ -48,6 +48,9 @@ export interface CloudflareEnv {
 /** R2 key for the CSFloat float-bucketed price snapshot. */
 export const CSFLOAT_PRICES_KEY = "csfloat_prices.json";
 
+/** Minimum listing count for an input skin to be considered realistically purchasable. */
+export const MIN_INPUT_QUANTITY = 8;
+
 /** Minimum listing count for an output skin to be considered liquid in the scanner. */
 export const MIN_SELL_QUANTITY = 3;
 

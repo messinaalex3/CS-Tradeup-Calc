@@ -22,6 +22,11 @@ import {
  */
 const WEAR_TIER_ORDER: Wear[] = ["FN", "MW", "FT", "WW", "BS"];
 
+function smoothstep(edge0: number, edge1: number, x: number): number {
+    const t = Math.min(Math.max((x - edge0) / (edge1 - edge0), 0), 1);
+    return t * t * (3 - 2 * t);
+}
+
 /**
  * Get a float-adjusted price for a skin by blending toward adjacent wear-tier
  * prices when the exact output float falls near a tier boundary.
@@ -55,26 +60,27 @@ export function getFloatAdjustedPriceFromSnapshot(
     const wearRange = wearMax - wearMin;
     if (wearRange <= 0) return basePrice;
 
-    // pos = 0 at the cleanest end of the tier, 1 at the most worn end
+    // pos = 0 at the cleanest end of the tier, 1 at the most worn end.
+    // We use a smoothstep curve so values near the center stay close to the
+    // tier's base price while values near either boundary pull more strongly
+    // toward the adjacent tier's pricing.
     const pos = (float - wearMin) / wearRange;
     const wearIdx = WEAR_TIER_ORDER.indexOf(wear);
 
-    // Near the cleaner boundary — blend toward the better (lower-index) tier
     if (pos < blendZone && wearIdx > 0) {
         const betterWear = WEAR_TIER_ORDER[wearIdx - 1];
         const betterPrice = getPriceFromSnapshot(snapshot, skinId, betterWear, side);
         if (betterPrice !== null) {
-            const blend = pos / blendZone; // 0 at boundary → 1 at blendZone inside tier
+            const blend = smoothstep(0, blendZone, pos);
             return betterPrice * (1 - blend) + basePrice * blend;
         }
     }
 
-    // Near the more-worn boundary — blend toward the worse (higher-index) tier
     if (pos > (1 - blendZone) && wearIdx < WEAR_TIER_ORDER.length - 1) {
         const worseWear = WEAR_TIER_ORDER[wearIdx + 1];
         const worsePrice = getPriceFromSnapshot(snapshot, skinId, worseWear, side);
         if (worsePrice !== null) {
-            const blend = (pos - (1 - blendZone)) / blendZone; // 0 at (1-blendZone) → 1 at boundary
+            const blend = smoothstep(1 - blendZone, 1, pos);
             return basePrice * (1 - blend) + worsePrice * blend;
         }
     }

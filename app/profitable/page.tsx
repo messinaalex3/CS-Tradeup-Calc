@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import type { Rarity } from "@/lib/types";
 import { RARITY_LABELS, RARITY_COLORS, WEAR_LABELS } from "@/lib/types";
 import type { Wear } from "@/lib/types";
+import { summarizeContractInputs } from "@/lib/tradeup/input-summary";
 
 interface ProfitableContract {
   inputs: Array<{
@@ -233,9 +234,7 @@ export default function ProfitablePage() {
                       {RARITY_LABELS[contract.rarity]}
                     </span>
                     <span className="text-zinc-400 text-sm">
-                      10×{" "}
-                      {contract.inputs[0]?.skinName ??
-                        contract.inputs[0]?.skinId}
+                      {summarizeContractInputs(contract.inputs)}
                     </span>
                   </div>
                   <div className="flex items-center gap-6 text-sm shrink-0 ml-4">

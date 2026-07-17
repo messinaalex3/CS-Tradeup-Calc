@@ -4,7 +4,7 @@ import { SKINS as STATIC_SKINS } from "../catalog";
 import { evaluateTradeup } from "./ev";
 import { calculateOutputPool, getOutputRarity } from "./pool";
 import { floatToWear } from "./float";
-import { MIN_SELL_QUANTITY } from "../storage";
+import { MIN_INPUT_QUANTITY, MIN_SELL_QUANTITY } from "../storage";
 
 /**
  * A fully-evaluated, profitable trade-up contract ready to be returned to a
@@ -52,6 +52,20 @@ export const SCANNABLE_RARITIES: Rarity[] = [
 
 /** Minimum ROI to consider a trade-up profitable (1.0 = break even, 1.05 = 5% profit). */
 export const MIN_ROI = 1.0;
+
+export function getAvailabilityAdjustedInputPrice(
+  basePrice: number,
+  quantity: number | null | undefined,
+): number {
+  if (!Number.isFinite(basePrice) || basePrice <= 0) return basePrice;
+  if (quantity == null || quantity <= 0) {
+    return Number((basePrice * 1.35).toFixed(2));
+  }
+  if (quantity >= MIN_INPUT_QUANTITY) return basePrice;
+
+  const penalty = Math.max(0, (MIN_INPUT_QUANTITY - quantity) * 0.07);
+  return Number((basePrice * (1 + penalty)).toFixed(2));
+}
 
 function clampToSkinRange(value: number, minFloat: number, maxFloat: number): number {
   return Math.max(minFloat, Math.min(maxFloat, value));
@@ -243,8 +257,8 @@ async function generateOutputAwareCandidates(
 
   const COLLECTIONS_PER_WEAR = 12;
   // Per-float cap — keeps total search space bounded even with many float targets.
-  // Total max ≈ (3+3+5+2+3) floats × 60 = ~960 candidates.
-  const MAX_CANDIDATES_PER_FLOAT = 60;
+  // The expanded search now covers more mixed-input and anchor-plus-filler variants.
+  const MAX_CANDIDATES_PER_FLOAT = 120;
   console.log(
     `[scanner:candidates:output-aware] prefetch complete rarity=${rarity} ` +
     `inputPricePoints=${inputPriceBySkinWear.size} outputPricePoints=${outputPriceBySkinWear.size}`,
@@ -362,8 +376,8 @@ async function generateOutputAwareCandidates(
       // C) Tri-collection contracts to spread output odds while preserving quality.
       const beforeC = addedForFloat;
       const tripleSplits: Array<[number, number, number]> = CONTRACT_SIZE === 5
-        ? [[3, 1, 1], [2, 2, 1]]
-        : [[6, 2, 2], [5, 3, 2], [4, 3, 3]];
+        ? [[3, 1, 1], [2, 2, 1], [2, 1, 2], [1, 2, 2]]
+        : [[6, 2, 2], [5, 3, 2], [4, 3, 3], [4, 4, 2], [3, 4, 3]];
       for (let i = 0; i < scoredCollections.length; i++) {
         for (let j = i + 1; j < scoredCollections.length; j++) {
           for (let k = j + 1; k < scoredCollections.length; k++) {
@@ -393,9 +407,53 @@ async function generateOutputAwareCandidates(
       console.log(
         `[scanner:candidates:output-aware] rarity=${rarity} wear=${wear} float=${targetFloat} strategy=C added=${addedForFloat - beforeC} floatTotal=${addedForFloat}`,
       );
+
+      // D) Anchor-plus-filler contracts where one collection is treated as the
+      // ideal output target while the rest of the slots are filled by cheaper
+      // supporting skins from other collections.
+      const beforeD = addedForFloat;
+      const anchorPatterns: Array<[number, ...number[]]> = CONTRACT_SIZE === 5
+        ? [[3, 1, 1], [2, 2, 1], [2, 1, 2]]
+        : [[5, 2, 2, 1], [4, 3, 2, 1], [4, 2, 2, 2], [3, 3, 2, 2]];
+      for (const coll of scoredCollections.slice(0, 6)) {
+        const anchorInput = coll.cheapestInput;
+        const anchorFloat = clampToSkinRange(targetFloat, anchorInput.minFloat, anchorInput.maxFloat);
+        const fillerCollections = scoredCollections.filter((other) => other.collectionId !== coll.collectionId).slice(0, 3);
+        if (fillerCollections.length === 0) continue;
+
+        const anchorOutputSkins = (outputByCollection.get(coll.collectionId) ?? [])
+          .map((skin) => ({ skin, price: outputPriceBySkinWear.get(`${skin.id}:${wear}`) }))
+          .filter((entry): entry is { skin: Skin; price: number } => entry.price != null && entry.price > 0)
+          .sort((a, b) => b.price - a.price);
+        if (anchorOutputSkins.length === 0) continue;
+
+        for (const pattern of anchorPatterns) {
+          const fillerSkinGroups = fillerCollections.slice(0, pattern.length - 1);
+          if (fillerSkinGroups.length < pattern.length - 1) continue;
+
+          const contractInputs: TradeupInput[] = [];
+          contractInputs.push(...Array.from({ length: pattern[0] }, () => ({ skinId: anchorInput.id, float: anchorFloat })));
+
+          for (let i = 1; i < pattern.length; i++) {
+            const fillerCollection = fillerSkinGroups[i - 1];
+            const fillerSkin = fillerCollection.inputPool[0] ?? fillerCollection.cheapestInput;
+            const fillerFloat = clampToSkinRange(targetFloat, fillerSkin.minFloat, fillerSkin.maxFloat);
+            contractInputs.push(...Array.from({ length: pattern[i] }, () => ({ skinId: fillerSkin.id, float: fillerFloat })));
+          }
+
+          if (contractInputs.length !== CONTRACT_SIZE) continue;
+          addAndCount(contractInputs);
+          if (addedForFloat >= MAX_CANDIDATES_PER_FLOAT) break;
+        }
+
+        if (addedForFloat >= MAX_CANDIDATES_PER_FLOAT) break;
+      }
+      console.log(
+        `[scanner:candidates:output-aware] rarity=${rarity} wear=${wear} float=${targetFloat} strategy=D added=${addedForFloat - beforeD} floatTotal=${addedForFloat}`,
+      );
     }
 
-    // Strategy D: Float-boundary contracts — for FN and MW targets, compute the
+    // Strategy E: Float-boundary contracts — for FN and MW targets, compute the
     // highest valid input float that still keeps the output within the target
     // wear tier. These boundary floats are often cheaper to source than the
     // tier midpoints while still capturing the same output wear premium.
@@ -511,13 +569,49 @@ function generateCovertCandidates(skins: Skin[]): TradeupInput[][] {
 /**
  * Generate a list of candidate trade-up contracts for a given rarity.
  *
- * It generates candidates for multiple target wears (FN, MW, FT) to find
- * profitable contracts across different price points.
+ * It generates candidates across multiple wear bands and float samples so the
+ * scanner can explore both high-confidence and more experimental contracts.
  *
- * Strategy 1 – 10× the same skin at a mid-range float for the target wear.
- * Strategy 2 – 5 + 5 split across two skins from different collections.
- * Strategy 3 – 1 Target + 9 Cheap Fillers (High ROI gamble).
+ * The current base generator uses six concrete strategies:
+ * 1. 10× the same skin at a sampled float for the target wear.
+ * 2. Two-skin pair mixes across different collections.
+ * 3. Three-skin blends to diversify the output pool.
+ * 4. Target-plus-filler contracts with one preferred anchor skin.
+ * 5. Wider support-skin mixes using a small set of representative skins.
+ * 6. Spread mixes that intentionally use four distinct skins for a more varied contract set.
  */
+function getWearTargetFloats(wear: Wear): number[] {
+  const [low, high] = WEAR_FLOAT_RANGES[wear];
+  const span = Math.max(high - low, 0.01);
+  const values = new Set<number>();
+
+  const anchors = [
+    low,
+    low + span * 0.2,
+    low + span * 0.4,
+    low + span * 0.6,
+    low + span * 0.8,
+    high,
+  ];
+
+  for (const value of anchors) {
+    values.add(Number(value.toFixed(4)));
+  }
+
+  if (wear === "FN") {
+    values.add(Number((low + span * 0.1).toFixed(4)));
+    values.add(Number((low + span * 0.3).toFixed(4)));
+  } else if (wear === "FT") {
+    values.add(Number((low + span * 0.15).toFixed(4)));
+    values.add(Number((high - span * 0.15).toFixed(4)));
+  } else if (wear === "BS") {
+    values.add(Number((low + span * 0.25).toFixed(4)));
+    values.add(Number((high - span * 0.2).toFixed(4)));
+  }
+
+  return [...values].sort((a, b) => a - b);
+}
+
 export function generateCandidates(rarity: Rarity, skins: Skin[] = STATIC_SKINS): TradeupInput[][] {
   // Covert contracts use 5 items and have a different candidate shape
   if (rarity === "covert") return generateCovertCandidates(skins);
@@ -531,9 +625,11 @@ export function generateCandidates(rarity: Rarity, skins: Skin[] = STATIC_SKINS)
 
   const candidates: TradeupInput[][] = [];
   const seen = new Set<string>();
-  const MAX_COLLECTION_REPRESENTATIVES = 3;
-  const MAX_PAIR_MIX_CANDIDATES = 240;
-  const MAX_TRIPLE_MIX_CANDIDATES = 200;
+  const MAX_COLLECTION_REPRESENTATIVES = 4;
+  const MAX_PAIR_MIX_CANDIDATES = 800;
+  const MAX_TRIPLE_MIX_CANDIDATES = 800;
+  const MAX_TARGET_FILL_CANDIDATES = 1200;
+  const MAX_SPREAD_MIX_CANDIDATES = 500;
 
   const addCandidate = (inputs: TradeupInput[]) => {
     const key = getContractKey(inputs);
@@ -542,9 +638,6 @@ export function generateCandidates(rarity: Rarity, skins: Skin[] = STATIC_SKINS)
     candidates.push(inputs);
   };
 
-  // Identify "fillers" for Strategy 3: any skin of this rarity
-  // (In a real scan, we'd pick the absolute cheapest from the price DB,
-  // but for candidate generation we'll pick a few common ones)
   const fillerCandidates = skinsOfRarity.slice(0, 8);
   const strategySkins = skinsOfRarity.slice(0, Math.min(12, skinsOfRarity.length));
   const skinsByCollection = new Map<string, Skin[]>();
@@ -564,197 +657,227 @@ export function generateCandidates(rarity: Rarity, skins: Skin[] = STATIC_SKINS)
     `fillerCandidates=${fillerCandidates.length} strategySkins=${strategySkins.length}`,
   );
 
-  // Target midpoints of wear bands to align with mean-by-wear pricing.
-  // Using edge-biased floats (e.g. low FT) can overstate value when prices are averaged.
-  const targetWears: Wear[] = ["FN", "MW", "FT"];
+  const targetWears: Wear[] = ["FN", "MW", "FT", "WW", "BS"];
+  const pairMixPatterns: Array<[number, number]> = [[5, 5], [6, 4], [7, 3], [4, 6], [3, 7]];
+  const tripleMixPatterns: Array<[number, number, number]> = [[4, 3, 3], [5, 3, 2], [6, 2, 2], [3, 4, 3], [3, 3, 4], [2, 4, 4]];
+  const targetFillPatterns: Array<[number, number]> = [[1, 9], [2, 8], [3, 7], [4, 6]];
+  const spreadMixPatterns: Array<[number, number, number, number]> = [[3, 2, 2, 3], [4, 2, 2, 2], [2, 3, 2, 3], [2, 2, 3, 3], [3, 3, 2, 2]];
 
   for (const targetWear of targetWears) {
-    const [wearMin, wearMax] = WEAR_FLOAT_RANGES[targetWear];
-    const targetFloat = (wearMin + wearMax) / 2;
-    const wearStartCount = candidates.length;
+    for (const targetFloat of getWearTargetFloats(targetWear)) {
+      const wearStartCount = candidates.length;
 
-    // Strategy 1: 10× the same item
-    const beforeS1 = candidates.length;
-    for (const skin of skinsOfRarity) {
-      // Ensure the target float is within the skin's possible range
-      const midFloat = clampToSkinRange(targetFloat, skin.minFloat, skin.maxFloat);
-
-      addCandidate(
-        Array.from({ length: 10 }, () => ({ skinId: skin.id, float: midFloat })),
+      // Strategy 1: 10× the same item, sampled at multiple float values.
+      const beforeS1 = candidates.length;
+      for (const skin of skinsOfRarity) {
+        const clampedFloat = clampToSkinRange(targetFloat, skin.minFloat, skin.maxFloat);
+        addCandidate(
+          Array.from({ length: 10 }, () => ({ skinId: skin.id, float: clampedFloat })),
+        );
+      }
+      console.log(
+        `[scanner:candidates:base] rarity=${rarity} wear=${targetWear} float=${targetFloat} strategy=1 added=${candidates.length - beforeS1}`,
       );
-    }
-    console.log(
-      `[scanner:candidates:base] rarity=${rarity} wear=${targetWear} strategy=1 added=${candidates.length - beforeS1}`,
-    );
 
-    // Strategy 2: Mix two skins from different collections (5 + 5), now with representative sampling.
-    const beforeS2 = candidates.length;
-    let pairMixCount = 0;
-    for (let i = 0; i < collectionGroups.length; i++) {
-      for (let j = i + 1; j < collectionGroups.length; j++) {
-        const groupA = collectionGroups[i];
-        const groupB = collectionGroups[j];
+      // Strategy 2: mixed pair contracts across collections.
+      const beforeS2 = candidates.length;
+      let pairMixCount = 0;
+      for (let i = 0; i < collectionGroups.length; i++) {
+        for (let j = i + 1; j < collectionGroups.length; j++) {
+          const groupA = collectionGroups[i];
+          const groupB = collectionGroups[j];
 
-        for (const skinA of groupA.reps) {
-          for (const skinB of groupB.reps) {
-            const floatA = clampToSkinRange(targetFloat, skinA.minFloat, skinA.maxFloat);
-            const floatB = clampToSkinRange(targetFloat, skinB.minFloat, skinB.maxFloat);
-            addCandidate([
-              ...Array.from({ length: 5 }, () => ({ skinId: skinA.id, float: floatA })),
-              ...Array.from({ length: 5 }, () => ({ skinId: skinB.id, float: floatB })),
-            ]);
+          for (const skinA of groupA.reps) {
+            for (const skinB of groupB.reps) {
+              const floatA = clampToSkinRange(targetFloat, skinA.minFloat, skinA.maxFloat);
+              const floatB = clampToSkinRange(targetFloat, skinB.minFloat, skinB.maxFloat);
 
-            // Extra pair split patterns increase diversity while still keeping pair collections.
-            addCandidate([
-              ...Array.from({ length: 6 }, () => ({ skinId: skinA.id, float: floatA })),
-              ...Array.from({ length: 4 }, () => ({ skinId: skinB.id, float: floatB })),
-            ]);
+              for (const [countA, countB] of pairMixPatterns) {
+                addCandidate([
+                  ...Array.from({ length: countA }, () => ({ skinId: skinA.id, float: floatA })),
+                  ...Array.from({ length: countB }, () => ({ skinId: skinB.id, float: floatB })),
+                ]);
+                pairMixCount++;
+                if (pairMixCount >= MAX_PAIR_MIX_CANDIDATES) break;
+              }
 
-            addCandidate([
-              ...Array.from({ length: 7 }, () => ({ skinId: skinA.id, float: floatA })),
-              ...Array.from({ length: 3 }, () => ({ skinId: skinB.id, float: floatB })),
-            ]);
-
-            pairMixCount += 3;
+              if (pairMixCount >= MAX_PAIR_MIX_CANDIDATES) break;
+            }
             if (pairMixCount >= MAX_PAIR_MIX_CANDIDATES) break;
           }
           if (pairMixCount >= MAX_PAIR_MIX_CANDIDATES) break;
         }
         if (pairMixCount >= MAX_PAIR_MIX_CANDIDATES) break;
       }
-      if (pairMixCount >= MAX_PAIR_MIX_CANDIDATES) break;
-    }
-    console.log(
-      `[scanner:candidates:base] rarity=${rarity} wear=${targetWear} strategy=2 added=${candidates.length - beforeS2} ` +
-      `attemptedPatterns=${pairMixCount}`,
-    );
+      console.log(
+        `[scanner:candidates:base] rarity=${rarity} wear=${targetWear} float=${targetFloat} strategy=2 added=${candidates.length - beforeS2} ` +
+        `attemptedPatterns=${pairMixCount}`,
+      );
 
-    // Strategy 2b: Three-way cross-collection blends (4 + 3 + 3) to avoid single-output concentration.
-    const beforeS2b = candidates.length;
-    let tripleMixCount = 0;
-    for (let i = 0; i < collectionGroups.length; i++) {
-      for (let j = i + 1; j < collectionGroups.length; j++) {
-        for (let k = j + 1; k < collectionGroups.length; k++) {
-          const groupA = collectionGroups[i];
-          const groupB = collectionGroups[j];
-          const groupC = collectionGroups[k];
+      // Strategy 2b: three-way blends to diversify the output pool.
+      const beforeS2b = candidates.length;
+      let tripleMixCount = 0;
+      for (let i = 0; i < collectionGroups.length; i++) {
+        for (let j = i + 1; j < collectionGroups.length; j++) {
+          for (let k = j + 1; k < collectionGroups.length; k++) {
+            const groupA = collectionGroups[i];
+            const groupB = collectionGroups[j];
+            const groupC = collectionGroups[k];
 
-          const skinA = groupA.reps[0];
-          const skinB = groupB.reps[0];
-          const skinC = groupC.reps[0];
+            const skinA = groupA.reps[0];
+            const skinB = groupB.reps[0];
+            const skinC = groupC.reps[0];
 
-          if (!skinA || !skinB || !skinC) continue;
+            if (!skinA || !skinB || !skinC) continue;
 
-          const floatA = clampToSkinRange(targetFloat, skinA.minFloat, skinA.maxFloat);
-          const floatB = clampToSkinRange(targetFloat, skinB.minFloat, skinB.maxFloat);
-          const floatC = clampToSkinRange(targetFloat, skinC.minFloat, skinC.maxFloat);
+            const floatA = clampToSkinRange(targetFloat, skinA.minFloat, skinA.maxFloat);
+            const floatB = clampToSkinRange(targetFloat, skinB.minFloat, skinB.maxFloat);
+            const floatC = clampToSkinRange(targetFloat, skinC.minFloat, skinC.maxFloat);
 
-          addCandidate([
-            ...Array.from({ length: 4 }, () => ({ skinId: skinA.id, float: floatA })),
-            ...Array.from({ length: 3 }, () => ({ skinId: skinB.id, float: floatB })),
-            ...Array.from({ length: 3 }, () => ({ skinId: skinC.id, float: floatC })),
-          ]);
+            for (const [countA, countB, countC] of tripleMixPatterns) {
+              addCandidate([
+                ...Array.from({ length: countA }, () => ({ skinId: skinA.id, float: floatA })),
+                ...Array.from({ length: countB }, () => ({ skinId: skinB.id, float: floatB })),
+                ...Array.from({ length: countC }, () => ({ skinId: skinC.id, float: floatC })),
+              ]);
+              tripleMixCount++;
+              if (tripleMixCount >= MAX_TRIPLE_MIX_CANDIDATES) break;
+            }
 
-          tripleMixCount++;
+            if (tripleMixCount >= MAX_TRIPLE_MIX_CANDIDATES) break;
+          }
           if (tripleMixCount >= MAX_TRIPLE_MIX_CANDIDATES) break;
         }
         if (tripleMixCount >= MAX_TRIPLE_MIX_CANDIDATES) break;
       }
-      if (tripleMixCount >= MAX_TRIPLE_MIX_CANDIDATES) break;
-    }
-    console.log(
-      `[scanner:candidates:base] rarity=${rarity} wear=${targetWear} strategy=2b added=${candidates.length - beforeS2b} ` +
-      `attemptedPatterns=${tripleMixCount}`,
-    );
-
-    // Strategy 3: 1 Target + 9 Fillers
-    const beforeS3 = candidates.length;
-    for (const targetSkin of skinsOfRarity) {
-      const crossCollectionFillers = fillerCandidates.filter(
-        (f) => f.collectionId !== targetSkin.collectionId,
+      console.log(
+        `[scanner:candidates:base] rarity=${rarity} wear=${targetWear} float=${targetFloat} strategy=2b added=${candidates.length - beforeS2b} ` +
+        `attemptedPatterns=${tripleMixCount}`,
       );
-      const fillerPool = crossCollectionFillers.length > 0 ? crossCollectionFillers : fillerCandidates;
 
-      for (const fillerSkin of fillerPool) {
-        if (targetSkin.id === fillerSkin.id) continue;
+      // Strategy 3: target-plus-filler contracts where one skin is the preferred anchor.
+      const beforeS3 = candidates.length;
+      let targetFillCount = 0;
+      for (const targetSkin of skinsOfRarity) {
+        const crossCollectionFillers = fillerCandidates.filter(
+          (f) => f.collectionId !== targetSkin.collectionId,
+        );
+        const fillerPool = crossCollectionFillers.length > 0 ? crossCollectionFillers : fillerCandidates;
 
-        const floatT = clampToSkinRange(targetFloat, targetSkin.minFloat, targetSkin.maxFloat);
-        const floatF = clampToSkinRange(targetFloat, fillerSkin.minFloat, fillerSkin.maxFloat);
+        for (const fillerSkin of fillerPool) {
+          if (targetSkin.id === fillerSkin.id) continue;
 
-        addCandidate([
-          { skinId: targetSkin.id, float: floatT },
-          ...Array.from({ length: 9 }, () => ({ skinId: fillerSkin.id, float: floatF })),
-        ]);
+          const floatT = clampToSkinRange(targetFloat, targetSkin.minFloat, targetSkin.maxFloat);
+          const floatF = clampToSkinRange(targetFloat, fillerSkin.minFloat, fillerSkin.maxFloat);
+
+          for (const [targetCount, fillerCount] of targetFillPatterns) {
+            addCandidate([
+              ...Array.from({ length: targetCount }, () => ({ skinId: targetSkin.id, float: floatT })),
+              ...Array.from({ length: fillerCount }, () => ({ skinId: fillerSkin.id, float: floatF })),
+            ]);
+            targetFillCount++;
+            if (targetFillCount >= MAX_TARGET_FILL_CANDIDATES) break;
+          }
+
+          if (targetFillCount >= MAX_TARGET_FILL_CANDIDATES) break;
+        }
+        if (targetFillCount >= MAX_TARGET_FILL_CANDIDATES) break;
       }
-    }
-    console.log(
-      `[scanner:candidates:base] rarity=${rarity} wear=${targetWear} strategy=3 added=${candidates.length - beforeS3}`,
-    );
+      console.log(
+        `[scanner:candidates:base] rarity=${rarity} wear=${targetWear} float=${targetFloat} strategy=3 added=${candidates.length - beforeS3} ` +
+        `attemptedPatterns=${targetFillCount}`,
+      );
 
-    // Strategy 4: 7 + 3 split for slightly safer weighted concentration.
-    const beforeS4 = candidates.length;
-    for (let i = 0; i < strategySkins.length; i++) {
-      for (let j = i + 1; j < strategySkins.length; j++) {
-        const skinA = strategySkins[i];
-        const skinB = strategySkins[j];
-        const floatA = clampToSkinRange(targetFloat, skinA.minFloat, skinA.maxFloat);
-        const floatB = clampToSkinRange(targetFloat, skinB.minFloat, skinB.maxFloat);
-
-        addCandidate([
-          ...Array.from({ length: 7 }, () => ({ skinId: skinA.id, float: floatA })),
-          ...Array.from({ length: 3 }, () => ({ skinId: skinB.id, float: floatB })),
-        ]);
-      }
-    }
-    console.log(
-      `[scanner:candidates:base] rarity=${rarity} wear=${targetWear} strategy=4 added=${candidates.length - beforeS4}`,
-    );
-
-    // Strategy 5: 8 + 2 split for target-plus-support style contracts.
-    const beforeS5 = candidates.length;
-    for (const targetSkin of strategySkins) {
-      for (const supportSkin of strategySkins) {
-        if (targetSkin.id === supportSkin.id) continue;
-
-        const floatTarget = clampToSkinRange(targetFloat, targetSkin.minFloat, targetSkin.maxFloat);
-        const floatSupport = clampToSkinRange(targetFloat, supportSkin.minFloat, supportSkin.maxFloat);
-
-        addCandidate([
-          ...Array.from({ length: 8 }, () => ({ skinId: targetSkin.id, float: floatTarget })),
-          ...Array.from({ length: 2 }, () => ({ skinId: supportSkin.id, float: floatSupport })),
-        ]);
-      }
-    }
-    console.log(
-      `[scanner:candidates:base] rarity=${rarity} wear=${targetWear} strategy=5 added=${candidates.length - beforeS5}`,
-    );
-
-    // Strategy 6: 4 + 3 + 3 triple mix to diversify output distribution.
-    const beforeS6 = candidates.length;
-    for (let i = 0; i < strategySkins.length; i++) {
-      for (let j = i + 1; j < strategySkins.length; j++) {
-        for (let k = j + 1; k < strategySkins.length; k++) {
+      // Strategy 4: wider support-skin mixes for balanced target/support contracts.
+      const beforeS4 = candidates.length;
+      for (let i = 0; i < strategySkins.length; i++) {
+        for (let j = i + 1; j < strategySkins.length; j++) {
           const skinA = strategySkins[i];
           const skinB = strategySkins[j];
-          const skinC = strategySkins[k];
-
           const floatA = clampToSkinRange(targetFloat, skinA.minFloat, skinA.maxFloat);
           const floatB = clampToSkinRange(targetFloat, skinB.minFloat, skinB.maxFloat);
-          const floatC = clampToSkinRange(targetFloat, skinC.minFloat, skinC.maxFloat);
 
           addCandidate([
-            ...Array.from({ length: 4 }, () => ({ skinId: skinA.id, float: floatA })),
+            ...Array.from({ length: 7 }, () => ({ skinId: skinA.id, float: floatA })),
             ...Array.from({ length: 3 }, () => ({ skinId: skinB.id, float: floatB })),
-            ...Array.from({ length: 3 }, () => ({ skinId: skinC.id, float: floatC })),
+          ]);
+          addCandidate([
+            ...Array.from({ length: 8 }, () => ({ skinId: skinA.id, float: floatA })),
+            ...Array.from({ length: 2 }, () => ({ skinId: skinB.id, float: floatB })),
           ]);
         }
       }
-    }
+      console.log(
+        `[scanner:candidates:base] rarity=${rarity} wear=${targetWear} float=${targetFloat} strategy=4 added=${candidates.length - beforeS4}`,
+      );
 
-    console.log(
-      `[scanner:candidates:base] rarity=${rarity} wear=${targetWear} strategy=6 added=${candidates.length - beforeS6} ` +
-      `wearTotal=${candidates.length - wearStartCount} globalTotal=${candidates.length}`,
-    );
+      // Strategy 5: broad 4+3+3 mixes using the top sampled skins.
+      const beforeS5 = candidates.length;
+      for (let i = 0; i < strategySkins.length; i++) {
+        for (let j = i + 1; j < strategySkins.length; j++) {
+          for (let k = j + 1; k < strategySkins.length; k++) {
+            const skinA = strategySkins[i];
+            const skinB = strategySkins[j];
+            const skinC = strategySkins[k];
+
+            const floatA = clampToSkinRange(targetFloat, skinA.minFloat, skinA.maxFloat);
+            const floatB = clampToSkinRange(targetFloat, skinB.minFloat, skinB.maxFloat);
+            const floatC = clampToSkinRange(targetFloat, skinC.minFloat, skinC.maxFloat);
+
+            addCandidate([
+              ...Array.from({ length: 4 }, () => ({ skinId: skinA.id, float: floatA })),
+              ...Array.from({ length: 3 }, () => ({ skinId: skinB.id, float: floatB })),
+              ...Array.from({ length: 3 }, () => ({ skinId: skinC.id, float: floatC })),
+            ]);
+          }
+        }
+      }
+      console.log(
+        `[scanner:candidates:base] rarity=${rarity} wear=${targetWear} float=${targetFloat} strategy=5 added=${candidates.length - beforeS5}`,
+      );
+
+      // Strategy 6: spread mixes that intentionally use four distinct skins to
+      // create a much more diverse contract set.
+      const beforeS6 = candidates.length;
+      let spreadMixCount = 0;
+      for (let i = 0; i < strategySkins.length; i++) {
+        for (let j = i + 1; j < strategySkins.length; j++) {
+          for (let k = j + 1; k < strategySkins.length; k++) {
+            for (let l = k + 1; l < strategySkins.length; l++) {
+              const skinA = strategySkins[i];
+              const skinB = strategySkins[j];
+              const skinC = strategySkins[k];
+              const skinD = strategySkins[l];
+
+              const floatA = clampToSkinRange(targetFloat, skinA.minFloat, skinA.maxFloat);
+              const floatB = clampToSkinRange(targetFloat, skinB.minFloat, skinB.maxFloat);
+              const floatC = clampToSkinRange(targetFloat, skinC.minFloat, skinC.maxFloat);
+              const floatD = clampToSkinRange(targetFloat, skinD.minFloat, skinD.maxFloat);
+
+              for (const [countA, countB, countC, countD] of spreadMixPatterns) {
+                addCandidate([
+                  ...Array.from({ length: countA }, () => ({ skinId: skinA.id, float: floatA })),
+                  ...Array.from({ length: countB }, () => ({ skinId: skinB.id, float: floatB })),
+                  ...Array.from({ length: countC }, () => ({ skinId: skinC.id, float: floatC })),
+                  ...Array.from({ length: countD }, () => ({ skinId: skinD.id, float: floatD })),
+                ]);
+                spreadMixCount++;
+                if (spreadMixCount >= MAX_SPREAD_MIX_CANDIDATES) break;
+              }
+
+              if (spreadMixCount >= MAX_SPREAD_MIX_CANDIDATES) break;
+            }
+            if (spreadMixCount >= MAX_SPREAD_MIX_CANDIDATES) break;
+          }
+          if (spreadMixCount >= MAX_SPREAD_MIX_CANDIDATES) break;
+        }
+        if (spreadMixCount >= MAX_SPREAD_MIX_CANDIDATES) break;
+      }
+      console.log(
+        `[scanner:candidates:base] rarity=${rarity} wear=${targetWear} float=${targetFloat} strategy=6 added=${candidates.length - beforeS6} ` +
+        `attemptedPatterns=${spreadMixCount} wearTotal=${candidates.length - wearStartCount} globalTotal=${candidates.length}`,
+      );
+    }
   }
 
   console.log(`[scanner:candidates:base] done rarity=${rarity} totalCandidates=${candidates.length}`);
@@ -779,6 +902,9 @@ export async function computeProfitableContracts(
   /** Optional liquidity getter: if an output skin with ≥5% probability has fewer than
    * MIN_SELL_QUANTITY listings, the contract is skipped as unsellable. */
   getOutputQuantity?: (skinId: string, wear: Wear) => number | null,
+  /** Optional input availability getter: if any input skin/wear has fewer than
+   * MIN_INPUT_QUANTITY listings, the contract is skipped as too thin to buy. */
+  getInputQuantity?: (skinId: string, wear: Wear) => number | null,
 ): Promise<ProfitableContract[]> {
   const inputPriceMemo = new Map<string, Promise<number | null>>();
   const outputPriceMemo = new Map<string, Promise<number | null>>();
@@ -791,10 +917,18 @@ export async function computeProfitableContracts(
     // On error return null (price unavailable) — do NOT evict the key so a
     // second caller for the same skin/wear reuses this settled null instead of
     // firing another KV read and multiplying connection pressure.
-    const pending = getInputPrice(skinId, wear).catch((err) => {
-      console.warn(`[scanner] Input price fetch failed for ${skinId}:${wear} — ${err instanceof Error ? err.message : String(err)}`);
-      return null;
-    });
+    const pending = (async () => {
+      const basePrice = await getInputPrice(skinId, wear).catch((err) => {
+        console.warn(`[scanner] Input price fetch failed for ${skinId}:${wear} — ${err instanceof Error ? err.message : String(err)}`);
+        return null;
+      });
+
+      if (basePrice == null || basePrice <= 0) return null;
+      if (!getInputQuantity) return basePrice;
+
+      const quantity = getInputQuantity(skinId, wear);
+      return getAvailabilityAdjustedInputPrice(basePrice, quantity);
+    })();
     inputPriceMemo.set(key, pending);
     return pending;
   };
@@ -846,6 +980,7 @@ export async function computeProfitableContracts(
     let skippedInvalid = 0;
     let skippedROI = 0;
     let skippedIlliquid = 0;
+    let skippedUnavailable = 0;
     let profitable = 0;
     const rarityStart = Date.now();
 
@@ -871,6 +1006,18 @@ export async function computeProfitableContracts(
           );
           if (!result.valid || result.totalCost <= 0) return { type: "invalid" as const };
           if (result.roi < MIN_ROI) return { type: "below-roi" as const };
+
+          // Input availability guard: skip contracts whose buy-side listings are too thin.
+          // This prevents the scanner from surfacing contracts that look attractive on paper
+          // but are effectively impossible to source in real market conditions.
+          if (getInputQuantity) {
+            const hasThinInput = inputs.some((inp) => {
+              const wear = floatToWear(inp.float);
+              const quantity = getInputQuantity(inp.skinId, wear);
+              return (quantity ?? 0) < MIN_INPUT_QUANTITY;
+            });
+            if (hasThinInput) return { type: "unavailable" as const };
+          }
 
           // Liquidity check: skip contracts where a significant output (≥5% probability)
           // has fewer Skinport listings than the minimum threshold — such skins can't be
@@ -931,6 +1078,10 @@ export async function computeProfitableContracts(
           skippedIlliquid++;
           continue;
         }
+        if (res.type === "unavailable") {
+          skippedUnavailable++;
+          continue;
+        }
 
         const { result, inputs } = res;
         profitable++;
@@ -974,7 +1125,8 @@ export async function computeProfitableContracts(
     console.log(
       `[scanner] Rarity "${rarity}" done in ${Date.now() - rarityStart}ms — ` +
       `${evaluated} evaluated, ${profitable} profitable ` +
-      `(skipped: ${skippedNoPool} no-pool, ${skippedInvalid} invalid, ${skippedROI} below min ROI, ${skippedIlliquid} illiquid)`,
+      `(skipped: ${skippedNoPool} no-pool, ${skippedInvalid} invalid, ${skippedROI} below min ROI, ` +
+      `${skippedIlliquid} illiquid, ${skippedUnavailable} unavailable)`,
     );
 
     // Final update for this rarity
